@@ -300,11 +300,12 @@
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/02_fit_models.R"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>es_all  <span class="ot">&lt;-</span> <span class="fu">prepare_effect_sizes</span>(<span class="st">"data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"</span>,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">include_inclusive_pool =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">drop_contaminated_ttp  =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_jama.R"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/02_fit_models.R"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>es_all  <span class="ot">&lt;-</span> <span class="fu">prepare_effect_sizes</span>(<span class="st">"data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">include_inclusive_pool =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">drop_contaminated_ttp  =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Pool: 100 studies (inclusive_pool=FALSE, drop_contaminated=TRUE)</code></pre>
@@ -355,23 +356,23 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
 </figcaption>
 <div aria-describedby="tbl-pathogen-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ocsxnuejtk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ocsxnuejtk table {
+<div id="lhuhcxnirw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lhuhcxnirw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ocsxnuejtk thead, #ocsxnuejtk tbody, #ocsxnuejtk tfoot, #ocsxnuejtk tr, #ocsxnuejtk td, #ocsxnuejtk th {
+#lhuhcxnirw thead, #lhuhcxnirw tbody, #lhuhcxnirw tfoot, #lhuhcxnirw tr, #lhuhcxnirw td, #lhuhcxnirw th {
   border-style: none;
 }
 
-#ocsxnuejtk p {
+#lhuhcxnirw p {
   margin: 0;
   padding: 0;
 }
 
-#ocsxnuejtk .gt_table {
+#lhuhcxnirw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -397,12 +398,12 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-left-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_caption {
+#lhuhcxnirw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ocsxnuejtk .gt_title {
+#lhuhcxnirw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -414,7 +415,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-bottom-width: 0;
 }
 
-#ocsxnuejtk .gt_subtitle {
+#lhuhcxnirw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -426,7 +427,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-top-width: 0;
 }
 
-#ocsxnuejtk .gt_heading {
+#lhuhcxnirw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -438,13 +439,13 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-right-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_bottom_border {
+#lhuhcxnirw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_col_headings {
+#lhuhcxnirw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -459,7 +460,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-right-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_col_heading {
+#lhuhcxnirw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -479,7 +480,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   overflow-x: hidden;
 }
 
-#ocsxnuejtk .gt_column_spanner_outer {
+#lhuhcxnirw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -491,15 +492,15 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   padding-right: 4px;
 }
 
-#ocsxnuejtk .gt_column_spanner_outer:first-child {
+#lhuhcxnirw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ocsxnuejtk .gt_column_spanner_outer:last-child {
+#lhuhcxnirw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ocsxnuejtk .gt_column_spanner {
+#lhuhcxnirw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -511,11 +512,11 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   width: 100%;
 }
 
-#ocsxnuejtk .gt_spanner_row {
+#lhuhcxnirw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ocsxnuejtk .gt_group_heading {
+#lhuhcxnirw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -541,7 +542,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   text-align: left;
 }
 
-#ocsxnuejtk .gt_empty_group_heading {
+#lhuhcxnirw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -556,15 +557,15 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   vertical-align: middle;
 }
 
-#ocsxnuejtk .gt_from_md > :first-child {
+#lhuhcxnirw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ocsxnuejtk .gt_from_md > :last-child {
+#lhuhcxnirw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ocsxnuejtk .gt_row {
+#lhuhcxnirw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -583,7 +584,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   overflow-x: hidden;
 }
 
-#ocsxnuejtk .gt_stub {
+#lhuhcxnirw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -596,7 +597,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   padding-right: 5px;
 }
 
-#ocsxnuejtk .gt_stub_row_group {
+#lhuhcxnirw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -610,15 +611,15 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   vertical-align: top;
 }
 
-#ocsxnuejtk .gt_row_group_first td {
+#lhuhcxnirw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ocsxnuejtk .gt_row_group_first th {
+#lhuhcxnirw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ocsxnuejtk .gt_summary_row {
+#lhuhcxnirw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -628,16 +629,16 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   padding-right: 5px;
 }
 
-#ocsxnuejtk .gt_first_summary_row {
+#lhuhcxnirw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_first_summary_row.thick {
+#lhuhcxnirw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ocsxnuejtk .gt_last_summary_row {
+#lhuhcxnirw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -647,7 +648,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-bottom-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_grand_summary_row {
+#lhuhcxnirw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -657,7 +658,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   padding-right: 5px;
 }
 
-#ocsxnuejtk .gt_first_grand_summary_row {
+#lhuhcxnirw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -667,7 +668,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-top-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_last_grand_summary_row_top {
+#lhuhcxnirw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -677,11 +678,11 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-bottom-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_striped {
+#lhuhcxnirw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ocsxnuejtk .gt_table_body {
+#lhuhcxnirw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -690,7 +691,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-bottom-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_footnotes {
+#lhuhcxnirw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -704,7 +705,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-right-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_footnote {
+#lhuhcxnirw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -713,7 +714,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   padding-right: 5px;
 }
 
-#ocsxnuejtk .gt_sourcenotes {
+#lhuhcxnirw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -727,7 +728,7 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   border-right-color: #D3D3D3;
 }
 
-#ocsxnuejtk .gt_sourcenote {
+#lhuhcxnirw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -735,72 +736,72 @@ Mortality effect sizes by pathogen class (strict pool). Classes with fewer than 
   padding-right: 5px;
 }
 
-#ocsxnuejtk .gt_left {
+#lhuhcxnirw .gt_left {
   text-align: left;
 }
 
-#ocsxnuejtk .gt_center {
+#lhuhcxnirw .gt_center {
   text-align: center;
 }
 
-#ocsxnuejtk .gt_right {
+#lhuhcxnirw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ocsxnuejtk .gt_font_normal {
+#lhuhcxnirw .gt_font_normal {
   font-weight: normal;
 }
 
-#ocsxnuejtk .gt_font_bold {
+#lhuhcxnirw .gt_font_bold {
   font-weight: bold;
 }
 
-#ocsxnuejtk .gt_font_italic {
+#lhuhcxnirw .gt_font_italic {
   font-style: italic;
 }
 
-#ocsxnuejtk .gt_super {
+#lhuhcxnirw .gt_super {
   font-size: 65%;
 }
 
-#ocsxnuejtk .gt_footnote_marks {
+#lhuhcxnirw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ocsxnuejtk .gt_asterisk {
+#lhuhcxnirw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ocsxnuejtk .gt_indent_1 {
+#lhuhcxnirw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ocsxnuejtk .gt_indent_2 {
+#lhuhcxnirw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ocsxnuejtk .gt_indent_3 {
+#lhuhcxnirw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ocsxnuejtk .gt_indent_4 {
+#lhuhcxnirw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ocsxnuejtk .gt_indent_5 {
+#lhuhcxnirw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ocsxnuejtk .katex-display {
+#lhuhcxnirw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ocsxnuejtk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lhuhcxnirw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -891,23 +892,23 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
 </figcaption>
 <div aria-describedby="tbl-pathogen-pooled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="peclzkumyt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#peclzkumyt table {
+<div id="tzmnkshipx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tzmnkshipx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#peclzkumyt thead, #peclzkumyt tbody, #peclzkumyt tfoot, #peclzkumyt tr, #peclzkumyt td, #peclzkumyt th {
+#tzmnkshipx thead, #tzmnkshipx tbody, #tzmnkshipx tfoot, #tzmnkshipx tr, #tzmnkshipx td, #tzmnkshipx th {
   border-style: none;
 }
 
-#peclzkumyt p {
+#tzmnkshipx p {
   margin: 0;
   padding: 0;
 }
 
-#peclzkumyt .gt_table {
+#tzmnkshipx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -933,12 +934,12 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-left-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_caption {
+#tzmnkshipx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#peclzkumyt .gt_title {
+#tzmnkshipx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -950,7 +951,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-bottom-width: 0;
 }
 
-#peclzkumyt .gt_subtitle {
+#tzmnkshipx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -962,7 +963,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-top-width: 0;
 }
 
-#peclzkumyt .gt_heading {
+#tzmnkshipx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -974,13 +975,13 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-right-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_bottom_border {
+#tzmnkshipx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_col_headings {
+#tzmnkshipx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -995,7 +996,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-right-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_col_heading {
+#tzmnkshipx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1015,7 +1016,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   overflow-x: hidden;
 }
 
-#peclzkumyt .gt_column_spanner_outer {
+#tzmnkshipx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1027,15 +1028,15 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   padding-right: 4px;
 }
 
-#peclzkumyt .gt_column_spanner_outer:first-child {
+#tzmnkshipx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#peclzkumyt .gt_column_spanner_outer:last-child {
+#tzmnkshipx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#peclzkumyt .gt_column_spanner {
+#tzmnkshipx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1047,11 +1048,11 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   width: 100%;
 }
 
-#peclzkumyt .gt_spanner_row {
+#tzmnkshipx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#peclzkumyt .gt_group_heading {
+#tzmnkshipx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1077,7 +1078,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   text-align: left;
 }
 
-#peclzkumyt .gt_empty_group_heading {
+#tzmnkshipx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1092,15 +1093,15 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   vertical-align: middle;
 }
 
-#peclzkumyt .gt_from_md > :first-child {
+#tzmnkshipx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#peclzkumyt .gt_from_md > :last-child {
+#tzmnkshipx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#peclzkumyt .gt_row {
+#tzmnkshipx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1119,7 +1120,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   overflow-x: hidden;
 }
 
-#peclzkumyt .gt_stub {
+#tzmnkshipx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1132,7 +1133,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   padding-right: 5px;
 }
 
-#peclzkumyt .gt_stub_row_group {
+#tzmnkshipx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1146,15 +1147,15 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   vertical-align: top;
 }
 
-#peclzkumyt .gt_row_group_first td {
+#tzmnkshipx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#peclzkumyt .gt_row_group_first th {
+#tzmnkshipx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#peclzkumyt .gt_summary_row {
+#tzmnkshipx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1164,16 +1165,16 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   padding-right: 5px;
 }
 
-#peclzkumyt .gt_first_summary_row {
+#tzmnkshipx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_first_summary_row.thick {
+#tzmnkshipx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#peclzkumyt .gt_last_summary_row {
+#tzmnkshipx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1183,7 +1184,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-bottom-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_grand_summary_row {
+#tzmnkshipx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1193,7 +1194,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   padding-right: 5px;
 }
 
-#peclzkumyt .gt_first_grand_summary_row {
+#tzmnkshipx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1203,7 +1204,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-top-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_last_grand_summary_row_top {
+#tzmnkshipx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1213,11 +1214,11 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-bottom-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_striped {
+#tzmnkshipx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#peclzkumyt .gt_table_body {
+#tzmnkshipx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1226,7 +1227,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-bottom-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_footnotes {
+#tzmnkshipx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1240,7 +1241,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-right-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_footnote {
+#tzmnkshipx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1249,7 +1250,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   padding-right: 5px;
 }
 
-#peclzkumyt .gt_sourcenotes {
+#tzmnkshipx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1263,7 +1264,7 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   border-right-color: #D3D3D3;
 }
 
-#peclzkumyt .gt_sourcenote {
+#tzmnkshipx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1271,72 +1272,72 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
   padding-right: 5px;
 }
 
-#peclzkumyt .gt_left {
+#tzmnkshipx .gt_left {
   text-align: left;
 }
 
-#peclzkumyt .gt_center {
+#tzmnkshipx .gt_center {
   text-align: center;
 }
 
-#peclzkumyt .gt_right {
+#tzmnkshipx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#peclzkumyt .gt_font_normal {
+#tzmnkshipx .gt_font_normal {
   font-weight: normal;
 }
 
-#peclzkumyt .gt_font_bold {
+#tzmnkshipx .gt_font_bold {
   font-weight: bold;
 }
 
-#peclzkumyt .gt_font_italic {
+#tzmnkshipx .gt_font_italic {
   font-style: italic;
 }
 
-#peclzkumyt .gt_super {
+#tzmnkshipx .gt_super {
   font-size: 65%;
 }
 
-#peclzkumyt .gt_footnote_marks {
+#tzmnkshipx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#peclzkumyt .gt_asterisk {
+#tzmnkshipx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#peclzkumyt .gt_indent_1 {
+#tzmnkshipx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#peclzkumyt .gt_indent_2 {
+#tzmnkshipx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#peclzkumyt .gt_indent_3 {
+#tzmnkshipx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#peclzkumyt .gt_indent_4 {
+#tzmnkshipx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#peclzkumyt .gt_indent_5 {
+#tzmnkshipx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#peclzkumyt .katex-display {
+#tzmnkshipx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#peclzkumyt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tzmnkshipx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1407,11 +1408,11 @@ Pooled OR (short vs long TTP) by pathogen class. Each class fitted as a separate
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(density_data, <span class="fu">aes</span>(<span class="at">x =</span> OR, <span class="at">fill =</span> Class)) <span class="sc">+</span></span>
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.40</span>) <span class="sc">+</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="dv">8</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_jama</span>() <span class="sc">+</span></span>
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pooled OR (short vs long TTP)"</span>, <span class="at">y =</span> <span class="st">"Posterior density"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>() <span class="sc">+</span></span>
 <span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
@@ -1441,9 +1442,9 @@ Posterior densities of pooled OR by pathogen class, alongside the overall primar
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">fungal        =</span> <span class="st">"Fungal"</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>pathogen_colours <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">gram_negative =</span> <span class="st">"#E41A1C"</span>,</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">gram_positive =</span> <span class="st">"#377EB8"</span>,</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">fungal        =</span> <span class="st">"#4DAF4A"</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">gram_negative =</span> <span class="st">"#1F3447"</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">gram_positive =</span> <span class="st">"#7F9DB9"</span>,</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">fungal        =</span> <span class="st">"#5B7A99"</span></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>study_df <span class="ot">&lt;-</span> es_mort <span class="sc">|&gt;</span></span>
@@ -1453,7 +1454,7 @@ Posterior densities of pooled OR by pathogen class, alongside the overall primar
 <span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_low  =</span> <span class="fu">exp</span>(yi <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> sei),</span>
 <span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_high =</span> <span class="fu">exp</span>(yi <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> sei),</span>
 <span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">lbl     =</span> <span class="fu">paste0</span>(study_id,</span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">ifelse</span>(arm_id <span class="sc">==</span> <span class="st">"all"</span>, <span class="st">""</span>, <span class="fu">paste0</span>(<span class="st">" ["</span>, arm_id, <span class="st">"]"</span>)))</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">ifelse</span>(<span class="fu">is.na</span>(arm_id) <span class="sc">|</span> arm_id <span class="sc">==</span> <span class="st">"all"</span>, <span class="st">""</span>, <span class="fu">paste0</span>(<span class="st">" ["</span>, arm_id, <span class="st">"]"</span>)))</span>
 <span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>pooled_pts <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
@@ -1467,7 +1468,7 @@ Posterior densities of pooled OR by pathogen class, alongside the overall primar
 <span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(study_df,</span>
 <span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> or, <span class="at">y =</span> <span class="fu">reorder</span>(lbl, or), <span class="at">color =</span> pathogen_class)) <span class="sc">+</span></span>
-<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.2</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> <span class="fu">pmax</span>(ci_low, <span class="fl">0.05</span>), <span class="at">xmax =</span> <span class="fu">pmin</span>(ci_high, <span class="dv">50</span>)),</span>
 <span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
@@ -1485,7 +1486,7 @@ Posterior densities of pooled OR by pathogen class, alongside the overall primar
 <span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> pathogen_class, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">ncol =</span> <span class="dv">1</span>,</span>
 <span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a>             <span class="at">labeller =</span> <span class="fu">as_labeller</span>(pathogen_labels)) <span class="sc">+</span></span>
 <span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"OR, short vs long TTP (log scale)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">color =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
+<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
 <span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
 <span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
 <span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"gray92"</span>),</span>
@@ -1555,23 +1556,23 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
 </figcaption>
 <div aria-describedby="tbl-infection-source-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="iwdnhpprrl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iwdnhpprrl table {
+<div id="zasuhwhrip" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zasuhwhrip table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iwdnhpprrl thead, #iwdnhpprrl tbody, #iwdnhpprrl tfoot, #iwdnhpprrl tr, #iwdnhpprrl td, #iwdnhpprrl th {
+#zasuhwhrip thead, #zasuhwhrip tbody, #zasuhwhrip tfoot, #zasuhwhrip tr, #zasuhwhrip td, #zasuhwhrip th {
   border-style: none;
 }
 
-#iwdnhpprrl p {
+#zasuhwhrip p {
   margin: 0;
   padding: 0;
 }
 
-#iwdnhpprrl .gt_table {
+#zasuhwhrip .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1597,12 +1598,12 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-left-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_caption {
+#zasuhwhrip .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iwdnhpprrl .gt_title {
+#zasuhwhrip .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1614,7 +1615,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-bottom-width: 0;
 }
 
-#iwdnhpprrl .gt_subtitle {
+#zasuhwhrip .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1626,7 +1627,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-top-width: 0;
 }
 
-#iwdnhpprrl .gt_heading {
+#zasuhwhrip .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1638,13 +1639,13 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-right-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_bottom_border {
+#zasuhwhrip .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_col_headings {
+#zasuhwhrip .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1659,7 +1660,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-right-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_col_heading {
+#zasuhwhrip .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1679,7 +1680,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   overflow-x: hidden;
 }
 
-#iwdnhpprrl .gt_column_spanner_outer {
+#zasuhwhrip .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1691,15 +1692,15 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   padding-right: 4px;
 }
 
-#iwdnhpprrl .gt_column_spanner_outer:first-child {
+#zasuhwhrip .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iwdnhpprrl .gt_column_spanner_outer:last-child {
+#zasuhwhrip .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iwdnhpprrl .gt_column_spanner {
+#zasuhwhrip .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1711,11 +1712,11 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   width: 100%;
 }
 
-#iwdnhpprrl .gt_spanner_row {
+#zasuhwhrip .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iwdnhpprrl .gt_group_heading {
+#zasuhwhrip .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1741,7 +1742,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   text-align: left;
 }
 
-#iwdnhpprrl .gt_empty_group_heading {
+#zasuhwhrip .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1756,15 +1757,15 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   vertical-align: middle;
 }
 
-#iwdnhpprrl .gt_from_md > :first-child {
+#zasuhwhrip .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iwdnhpprrl .gt_from_md > :last-child {
+#zasuhwhrip .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iwdnhpprrl .gt_row {
+#zasuhwhrip .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1783,7 +1784,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   overflow-x: hidden;
 }
 
-#iwdnhpprrl .gt_stub {
+#zasuhwhrip .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1796,7 +1797,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   padding-right: 5px;
 }
 
-#iwdnhpprrl .gt_stub_row_group {
+#zasuhwhrip .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1810,15 +1811,15 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   vertical-align: top;
 }
 
-#iwdnhpprrl .gt_row_group_first td {
+#zasuhwhrip .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iwdnhpprrl .gt_row_group_first th {
+#zasuhwhrip .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iwdnhpprrl .gt_summary_row {
+#zasuhwhrip .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1828,16 +1829,16 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   padding-right: 5px;
 }
 
-#iwdnhpprrl .gt_first_summary_row {
+#zasuhwhrip .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_first_summary_row.thick {
+#zasuhwhrip .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iwdnhpprrl .gt_last_summary_row {
+#zasuhwhrip .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1847,7 +1848,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-bottom-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_grand_summary_row {
+#zasuhwhrip .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1857,7 +1858,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   padding-right: 5px;
 }
 
-#iwdnhpprrl .gt_first_grand_summary_row {
+#zasuhwhrip .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1867,7 +1868,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-top-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_last_grand_summary_row_top {
+#zasuhwhrip .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1877,11 +1878,11 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-bottom-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_striped {
+#zasuhwhrip .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iwdnhpprrl .gt_table_body {
+#zasuhwhrip .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1890,7 +1891,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-bottom-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_footnotes {
+#zasuhwhrip .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1904,7 +1905,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-right-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_footnote {
+#zasuhwhrip .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1913,7 +1914,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   padding-right: 5px;
 }
 
-#iwdnhpprrl .gt_sourcenotes {
+#zasuhwhrip .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1927,7 +1928,7 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   border-right-color: #D3D3D3;
 }
 
-#iwdnhpprrl .gt_sourcenote {
+#zasuhwhrip .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1935,72 +1936,72 @@ Mortality effect sizes by infection source (strict pool). The dominant category 
   padding-right: 5px;
 }
 
-#iwdnhpprrl .gt_left {
+#zasuhwhrip .gt_left {
   text-align: left;
 }
 
-#iwdnhpprrl .gt_center {
+#zasuhwhrip .gt_center {
   text-align: center;
 }
 
-#iwdnhpprrl .gt_right {
+#zasuhwhrip .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iwdnhpprrl .gt_font_normal {
+#zasuhwhrip .gt_font_normal {
   font-weight: normal;
 }
 
-#iwdnhpprrl .gt_font_bold {
+#zasuhwhrip .gt_font_bold {
   font-weight: bold;
 }
 
-#iwdnhpprrl .gt_font_italic {
+#zasuhwhrip .gt_font_italic {
   font-style: italic;
 }
 
-#iwdnhpprrl .gt_super {
+#zasuhwhrip .gt_super {
   font-size: 65%;
 }
 
-#iwdnhpprrl .gt_footnote_marks {
+#zasuhwhrip .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iwdnhpprrl .gt_asterisk {
+#zasuhwhrip .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iwdnhpprrl .gt_indent_1 {
+#zasuhwhrip .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iwdnhpprrl .gt_indent_2 {
+#zasuhwhrip .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iwdnhpprrl .gt_indent_3 {
+#zasuhwhrip .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iwdnhpprrl .gt_indent_4 {
+#zasuhwhrip .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iwdnhpprrl .gt_indent_5 {
+#zasuhwhrip .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iwdnhpprrl .katex-display {
+#zasuhwhrip .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iwdnhpprrl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zasuhwhrip div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2115,23 +2116,23 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
 </figcaption>
 <div aria-describedby="tbl-infection-source-pooled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="jfvgyjwffz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jfvgyjwffz table {
+<div id="izcbjsiesr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#izcbjsiesr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jfvgyjwffz thead, #jfvgyjwffz tbody, #jfvgyjwffz tfoot, #jfvgyjwffz tr, #jfvgyjwffz td, #jfvgyjwffz th {
+#izcbjsiesr thead, #izcbjsiesr tbody, #izcbjsiesr tfoot, #izcbjsiesr tr, #izcbjsiesr td, #izcbjsiesr th {
   border-style: none;
 }
 
-#jfvgyjwffz p {
+#izcbjsiesr p {
   margin: 0;
   padding: 0;
 }
 
-#jfvgyjwffz .gt_table {
+#izcbjsiesr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2157,12 +2158,12 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-left-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_caption {
+#izcbjsiesr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jfvgyjwffz .gt_title {
+#izcbjsiesr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2174,7 +2175,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-bottom-width: 0;
 }
 
-#jfvgyjwffz .gt_subtitle {
+#izcbjsiesr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2186,7 +2187,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-top-width: 0;
 }
 
-#jfvgyjwffz .gt_heading {
+#izcbjsiesr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2198,13 +2199,13 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-right-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_bottom_border {
+#izcbjsiesr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_col_headings {
+#izcbjsiesr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2219,7 +2220,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-right-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_col_heading {
+#izcbjsiesr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2239,7 +2240,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   overflow-x: hidden;
 }
 
-#jfvgyjwffz .gt_column_spanner_outer {
+#izcbjsiesr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2251,15 +2252,15 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   padding-right: 4px;
 }
 
-#jfvgyjwffz .gt_column_spanner_outer:first-child {
+#izcbjsiesr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jfvgyjwffz .gt_column_spanner_outer:last-child {
+#izcbjsiesr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jfvgyjwffz .gt_column_spanner {
+#izcbjsiesr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2271,11 +2272,11 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   width: 100%;
 }
 
-#jfvgyjwffz .gt_spanner_row {
+#izcbjsiesr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jfvgyjwffz .gt_group_heading {
+#izcbjsiesr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2301,7 +2302,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   text-align: left;
 }
 
-#jfvgyjwffz .gt_empty_group_heading {
+#izcbjsiesr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2316,15 +2317,15 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   vertical-align: middle;
 }
 
-#jfvgyjwffz .gt_from_md > :first-child {
+#izcbjsiesr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jfvgyjwffz .gt_from_md > :last-child {
+#izcbjsiesr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jfvgyjwffz .gt_row {
+#izcbjsiesr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2343,7 +2344,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   overflow-x: hidden;
 }
 
-#jfvgyjwffz .gt_stub {
+#izcbjsiesr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2356,7 +2357,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   padding-right: 5px;
 }
 
-#jfvgyjwffz .gt_stub_row_group {
+#izcbjsiesr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2370,15 +2371,15 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   vertical-align: top;
 }
 
-#jfvgyjwffz .gt_row_group_first td {
+#izcbjsiesr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jfvgyjwffz .gt_row_group_first th {
+#izcbjsiesr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jfvgyjwffz .gt_summary_row {
+#izcbjsiesr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2388,16 +2389,16 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   padding-right: 5px;
 }
 
-#jfvgyjwffz .gt_first_summary_row {
+#izcbjsiesr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_first_summary_row.thick {
+#izcbjsiesr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jfvgyjwffz .gt_last_summary_row {
+#izcbjsiesr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2407,7 +2408,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-bottom-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_grand_summary_row {
+#izcbjsiesr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2417,7 +2418,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   padding-right: 5px;
 }
 
-#jfvgyjwffz .gt_first_grand_summary_row {
+#izcbjsiesr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2427,7 +2428,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-top-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_last_grand_summary_row_top {
+#izcbjsiesr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2437,11 +2438,11 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-bottom-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_striped {
+#izcbjsiesr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jfvgyjwffz .gt_table_body {
+#izcbjsiesr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2450,7 +2451,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-bottom-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_footnotes {
+#izcbjsiesr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2464,7 +2465,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-right-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_footnote {
+#izcbjsiesr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2473,7 +2474,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   padding-right: 5px;
 }
 
-#jfvgyjwffz .gt_sourcenotes {
+#izcbjsiesr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2487,7 +2488,7 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   border-right-color: #D3D3D3;
 }
 
-#jfvgyjwffz .gt_sourcenote {
+#izcbjsiesr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2495,72 +2496,72 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
   padding-right: 5px;
 }
 
-#jfvgyjwffz .gt_left {
+#izcbjsiesr .gt_left {
   text-align: left;
 }
 
-#jfvgyjwffz .gt_center {
+#izcbjsiesr .gt_center {
   text-align: center;
 }
 
-#jfvgyjwffz .gt_right {
+#izcbjsiesr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jfvgyjwffz .gt_font_normal {
+#izcbjsiesr .gt_font_normal {
   font-weight: normal;
 }
 
-#jfvgyjwffz .gt_font_bold {
+#izcbjsiesr .gt_font_bold {
   font-weight: bold;
 }
 
-#jfvgyjwffz .gt_font_italic {
+#izcbjsiesr .gt_font_italic {
   font-style: italic;
 }
 
-#jfvgyjwffz .gt_super {
+#izcbjsiesr .gt_super {
   font-size: 65%;
 }
 
-#jfvgyjwffz .gt_footnote_marks {
+#izcbjsiesr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jfvgyjwffz .gt_asterisk {
+#izcbjsiesr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jfvgyjwffz .gt_indent_1 {
+#izcbjsiesr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jfvgyjwffz .gt_indent_2 {
+#izcbjsiesr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jfvgyjwffz .gt_indent_3 {
+#izcbjsiesr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jfvgyjwffz .gt_indent_4 {
+#izcbjsiesr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jfvgyjwffz .gt_indent_5 {
+#izcbjsiesr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jfvgyjwffz .katex-display {
+#izcbjsiesr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jfvgyjwffz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#izcbjsiesr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2611,11 +2612,11 @@ Pooled OR for the mixed-source subgroup vs overall primary pool.
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> OR, <span class="at">fill =</span> Source)) <span class="sc">+</span></span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.50</span>) <span class="sc">+</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="dv">6</span>)) <span class="sc">+</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_jama</span>() <span class="sc">+</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pooled OR (short vs long TTP)"</span>, <span class="at">y =</span> <span class="st">"Posterior density"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>() <span class="sc">+</span></span>
 <span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
@@ -2678,23 +2679,23 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
 </figcaption>
 <div aria-describedby="tbl-infection-source-metareg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="dovsroqkhp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dovsroqkhp table {
+<div id="uofdcwdeom" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uofdcwdeom table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dovsroqkhp thead, #dovsroqkhp tbody, #dovsroqkhp tfoot, #dovsroqkhp tr, #dovsroqkhp td, #dovsroqkhp th {
+#uofdcwdeom thead, #uofdcwdeom tbody, #uofdcwdeom tfoot, #uofdcwdeom tr, #uofdcwdeom td, #uofdcwdeom th {
   border-style: none;
 }
 
-#dovsroqkhp p {
+#uofdcwdeom p {
   margin: 0;
   padding: 0;
 }
 
-#dovsroqkhp .gt_table {
+#uofdcwdeom .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2720,12 +2721,12 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-left-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_caption {
+#uofdcwdeom .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dovsroqkhp .gt_title {
+#uofdcwdeom .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2737,7 +2738,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-bottom-width: 0;
 }
 
-#dovsroqkhp .gt_subtitle {
+#uofdcwdeom .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2749,7 +2750,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-top-width: 0;
 }
 
-#dovsroqkhp .gt_heading {
+#uofdcwdeom .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2761,13 +2762,13 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-right-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_bottom_border {
+#uofdcwdeom .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_col_headings {
+#uofdcwdeom .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2782,7 +2783,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-right-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_col_heading {
+#uofdcwdeom .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2802,7 +2803,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   overflow-x: hidden;
 }
 
-#dovsroqkhp .gt_column_spanner_outer {
+#uofdcwdeom .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2814,15 +2815,15 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   padding-right: 4px;
 }
 
-#dovsroqkhp .gt_column_spanner_outer:first-child {
+#uofdcwdeom .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dovsroqkhp .gt_column_spanner_outer:last-child {
+#uofdcwdeom .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dovsroqkhp .gt_column_spanner {
+#uofdcwdeom .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2834,11 +2835,11 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   width: 100%;
 }
 
-#dovsroqkhp .gt_spanner_row {
+#uofdcwdeom .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dovsroqkhp .gt_group_heading {
+#uofdcwdeom .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2864,7 +2865,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   text-align: left;
 }
 
-#dovsroqkhp .gt_empty_group_heading {
+#uofdcwdeom .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2879,15 +2880,15 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   vertical-align: middle;
 }
 
-#dovsroqkhp .gt_from_md > :first-child {
+#uofdcwdeom .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dovsroqkhp .gt_from_md > :last-child {
+#uofdcwdeom .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dovsroqkhp .gt_row {
+#uofdcwdeom .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2906,7 +2907,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   overflow-x: hidden;
 }
 
-#dovsroqkhp .gt_stub {
+#uofdcwdeom .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2919,7 +2920,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   padding-right: 5px;
 }
 
-#dovsroqkhp .gt_stub_row_group {
+#uofdcwdeom .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2933,15 +2934,15 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   vertical-align: top;
 }
 
-#dovsroqkhp .gt_row_group_first td {
+#uofdcwdeom .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dovsroqkhp .gt_row_group_first th {
+#uofdcwdeom .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dovsroqkhp .gt_summary_row {
+#uofdcwdeom .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2951,16 +2952,16 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   padding-right: 5px;
 }
 
-#dovsroqkhp .gt_first_summary_row {
+#uofdcwdeom .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_first_summary_row.thick {
+#uofdcwdeom .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dovsroqkhp .gt_last_summary_row {
+#uofdcwdeom .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2970,7 +2971,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-bottom-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_grand_summary_row {
+#uofdcwdeom .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2980,7 +2981,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   padding-right: 5px;
 }
 
-#dovsroqkhp .gt_first_grand_summary_row {
+#uofdcwdeom .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2990,7 +2991,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-top-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_last_grand_summary_row_top {
+#uofdcwdeom .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3000,11 +3001,11 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-bottom-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_striped {
+#uofdcwdeom .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dovsroqkhp .gt_table_body {
+#uofdcwdeom .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3013,7 +3014,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-bottom-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_footnotes {
+#uofdcwdeom .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3027,7 +3028,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-right-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_footnote {
+#uofdcwdeom .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3036,7 +3037,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   padding-right: 5px;
 }
 
-#dovsroqkhp .gt_sourcenotes {
+#uofdcwdeom .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3050,7 +3051,7 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   border-right-color: #D3D3D3;
 }
 
-#dovsroqkhp .gt_sourcenote {
+#uofdcwdeom .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3058,72 +3059,72 @@ Meta-regression coefficient for mixed vs non-mixed infection source. A negative 
   padding-right: 5px;
 }
 
-#dovsroqkhp .gt_left {
+#uofdcwdeom .gt_left {
   text-align: left;
 }
 
-#dovsroqkhp .gt_center {
+#uofdcwdeom .gt_center {
   text-align: center;
 }
 
-#dovsroqkhp .gt_right {
+#uofdcwdeom .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dovsroqkhp .gt_font_normal {
+#uofdcwdeom .gt_font_normal {
   font-weight: normal;
 }
 
-#dovsroqkhp .gt_font_bold {
+#uofdcwdeom .gt_font_bold {
   font-weight: bold;
 }
 
-#dovsroqkhp .gt_font_italic {
+#uofdcwdeom .gt_font_italic {
   font-style: italic;
 }
 
-#dovsroqkhp .gt_super {
+#uofdcwdeom .gt_super {
   font-size: 65%;
 }
 
-#dovsroqkhp .gt_footnote_marks {
+#uofdcwdeom .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dovsroqkhp .gt_asterisk {
+#uofdcwdeom .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dovsroqkhp .gt_indent_1 {
+#uofdcwdeom .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dovsroqkhp .gt_indent_2 {
+#uofdcwdeom .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dovsroqkhp .gt_indent_3 {
+#uofdcwdeom .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dovsroqkhp .gt_indent_4 {
+#uofdcwdeom .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dovsroqkhp .gt_indent_5 {
+#uofdcwdeom .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dovsroqkhp .katex-display {
+#uofdcwdeom .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dovsroqkhp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uofdcwdeom div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

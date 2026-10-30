@@ -9,6 +9,7 @@ suppressPackageStartupMessages({
   library(tidyverse); library(gt); library(scales); library(patchwork)
 })
 source("R/01_prepare_data.R")
+source("R/theme_jama.R")
 es_all  <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
                                 include_inclusive_pool = FALSE,
                                 drop_contaminated_ttp  = TRUE)
@@ -58,19 +59,20 @@ rob_long <- tbl_study |>
 
 ```{r}
 #| label: fig-rob-traffic
-#| fig-cap: "QUIPS traffic-light plot. Each row is a study; columns are domains. Green = low, amber = moderate, red = high risk of bias."
+#| fig-cap: "QUIPS traffic-light plot. Each row is a study; columns are domains. Light = low, medium = moderate, dark = high risk of bias."
 
 knitr::opts_current$set(fig.height = max(8, nrow(tbl_study) * 0.15 + 2))
 
 ggplot(rob_long, aes(x = domain, y = reorder(study_id, pub_year), fill = score_lbl)) +
   geom_tile(color = "white", linewidth = 0.6) +
-  geom_text(aes(label = score), color = "white", size = 2.7, fontface = "bold") +
-  scale_fill_manual(values = c("Low" = "#2ca02c", "Moderate" = "#ff9f1c",
-                                "High" = "#d62728", "NR" = "gray70"),
+  geom_text(aes(label = score, color = score_lbl), size = 2.7, fontface = "bold", show.legend = FALSE) +
+  scale_color_manual(values = c("Low" = "#1A1F24", "Moderate" = "#1A1F24", "High" = "white", "NR" = "#1A1F24")) +
+  scale_fill_manual(values = c("Low" = "#C9D6E2", "Moderate" = "#7F9DB9",
+                                "High" = "#3F5A75", "NR" = "#E3E9EF"),
                     name = "Risk of bias") +
   scale_x_discrete(position = "top") +
   labs(x = NULL, y = NULL) +
-  theme_minimal(base_size = 9) +
+  theme_jama(base_size = 9) +
   theme(axis.text.x.top = element_text(angle = 35, hjust = 0, size = 9),
         axis.text.y = element_text(size = 7),
         panel.grid = element_blank(),
@@ -92,11 +94,11 @@ rob_long |>
             position = position_stack(vjust = 0.5),
             color = "white", size = 3, fontface = "bold") +
   scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
-  scale_fill_manual(values = c("Low" = "#2ca02c", "Moderate" = "#ff9f1c",
-                                "High" = "#d62728", "NR" = "gray70"),
+  scale_fill_manual(values = c("Low" = "#C9D6E2", "Moderate" = "#7F9DB9",
+                                "High" = "#3F5A75", "NR" = "#E3E9EF"),
                     name = "Risk of bias") +
   labs(x = NULL, y = NULL) +
-  theme_minimal()
+  theme_jama()
 ```
 
 # Overall RoB by study
@@ -134,10 +136,10 @@ es_with_rob |>
              fill = factor(rob_overall, levels = c("low", "moderate", "high", "critical")))) +
   geom_col(width = 0.6) +
   scale_y_continuous(labels = scales::percent_format(1)) +
-  scale_fill_manual(values = c("low" = "#2ca02c", "moderate" = "#ff9f1c",
-                                "high" = "#d62728", "critical" = "#7a0019"),
+  scale_fill_manual(values = c("low" = "#C9D6E2", "moderate" = "#7F9DB9",
+                                "high" = "#3F5A75", "critical" = "#1F3447"),
                     name = "QUIPS overall") +
   labs(x = NULL, y = NULL,
        title = "RoB representation by raw count vs by analytic weight") +
-  theme_minimal()
+  theme_jama()
 ```

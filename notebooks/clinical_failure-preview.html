@@ -293,11 +293,12 @@
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/02_fit_models.R"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>es_all  <span class="ot">&lt;-</span> <span class="fu">prepare_effect_sizes</span>(<span class="st">"data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"</span>,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">include_inclusive_pool =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">drop_contaminated_ttp  =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_jama.R"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/02_fit_models.R"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>es_all  <span class="ot">&lt;-</span> <span class="fu">prepare_effect_sizes</span>(<span class="st">"data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">include_inclusive_pool =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">drop_contaminated_ttp  =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Pool: 100 studies (inclusive_pool=FALSE, drop_contaminated=TRUE)</code></pre>
@@ -344,23 +345,23 @@ Available effect sizes per clinical-failure outcome (strict pool).
 </figcaption>
 <div aria-describedby="tbl-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="fgvqfpbisp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fgvqfpbisp table {
+<div id="wqdefhkqjf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wqdefhkqjf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fgvqfpbisp thead, #fgvqfpbisp tbody, #fgvqfpbisp tfoot, #fgvqfpbisp tr, #fgvqfpbisp td, #fgvqfpbisp th {
+#wqdefhkqjf thead, #wqdefhkqjf tbody, #wqdefhkqjf tfoot, #wqdefhkqjf tr, #wqdefhkqjf td, #wqdefhkqjf th {
   border-style: none;
 }
 
-#fgvqfpbisp p {
+#wqdefhkqjf p {
   margin: 0;
   padding: 0;
 }
 
-#fgvqfpbisp .gt_table {
+#wqdefhkqjf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -386,12 +387,12 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-left-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_caption {
+#wqdefhkqjf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fgvqfpbisp .gt_title {
+#wqdefhkqjf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -403,7 +404,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-bottom-width: 0;
 }
 
-#fgvqfpbisp .gt_subtitle {
+#wqdefhkqjf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -415,7 +416,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-top-width: 0;
 }
 
-#fgvqfpbisp .gt_heading {
+#wqdefhkqjf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -427,13 +428,13 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-right-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_bottom_border {
+#wqdefhkqjf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_col_headings {
+#wqdefhkqjf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -448,7 +449,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-right-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_col_heading {
+#wqdefhkqjf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -468,7 +469,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   overflow-x: hidden;
 }
 
-#fgvqfpbisp .gt_column_spanner_outer {
+#wqdefhkqjf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -480,15 +481,15 @@ Available effect sizes per clinical-failure outcome (strict pool).
   padding-right: 4px;
 }
 
-#fgvqfpbisp .gt_column_spanner_outer:first-child {
+#wqdefhkqjf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fgvqfpbisp .gt_column_spanner_outer:last-child {
+#wqdefhkqjf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fgvqfpbisp .gt_column_spanner {
+#wqdefhkqjf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -500,11 +501,11 @@ Available effect sizes per clinical-failure outcome (strict pool).
   width: 100%;
 }
 
-#fgvqfpbisp .gt_spanner_row {
+#wqdefhkqjf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fgvqfpbisp .gt_group_heading {
+#wqdefhkqjf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -530,7 +531,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   text-align: left;
 }
 
-#fgvqfpbisp .gt_empty_group_heading {
+#wqdefhkqjf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -545,15 +546,15 @@ Available effect sizes per clinical-failure outcome (strict pool).
   vertical-align: middle;
 }
 
-#fgvqfpbisp .gt_from_md > :first-child {
+#wqdefhkqjf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fgvqfpbisp .gt_from_md > :last-child {
+#wqdefhkqjf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fgvqfpbisp .gt_row {
+#wqdefhkqjf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -572,7 +573,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   overflow-x: hidden;
 }
 
-#fgvqfpbisp .gt_stub {
+#wqdefhkqjf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -585,7 +586,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   padding-right: 5px;
 }
 
-#fgvqfpbisp .gt_stub_row_group {
+#wqdefhkqjf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -599,15 +600,15 @@ Available effect sizes per clinical-failure outcome (strict pool).
   vertical-align: top;
 }
 
-#fgvqfpbisp .gt_row_group_first td {
+#wqdefhkqjf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fgvqfpbisp .gt_row_group_first th {
+#wqdefhkqjf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fgvqfpbisp .gt_summary_row {
+#wqdefhkqjf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -617,16 +618,16 @@ Available effect sizes per clinical-failure outcome (strict pool).
   padding-right: 5px;
 }
 
-#fgvqfpbisp .gt_first_summary_row {
+#wqdefhkqjf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_first_summary_row.thick {
+#wqdefhkqjf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fgvqfpbisp .gt_last_summary_row {
+#wqdefhkqjf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -636,7 +637,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-bottom-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_grand_summary_row {
+#wqdefhkqjf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -646,7 +647,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   padding-right: 5px;
 }
 
-#fgvqfpbisp .gt_first_grand_summary_row {
+#wqdefhkqjf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -656,7 +657,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-top-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_last_grand_summary_row_top {
+#wqdefhkqjf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -666,11 +667,11 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-bottom-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_striped {
+#wqdefhkqjf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fgvqfpbisp .gt_table_body {
+#wqdefhkqjf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -679,7 +680,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-bottom-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_footnotes {
+#wqdefhkqjf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -693,7 +694,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-right-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_footnote {
+#wqdefhkqjf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -702,7 +703,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   padding-right: 5px;
 }
 
-#fgvqfpbisp .gt_sourcenotes {
+#wqdefhkqjf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -716,7 +717,7 @@ Available effect sizes per clinical-failure outcome (strict pool).
   border-right-color: #D3D3D3;
 }
 
-#fgvqfpbisp .gt_sourcenote {
+#wqdefhkqjf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -724,72 +725,72 @@ Available effect sizes per clinical-failure outcome (strict pool).
   padding-right: 5px;
 }
 
-#fgvqfpbisp .gt_left {
+#wqdefhkqjf .gt_left {
   text-align: left;
 }
 
-#fgvqfpbisp .gt_center {
+#wqdefhkqjf .gt_center {
   text-align: center;
 }
 
-#fgvqfpbisp .gt_right {
+#wqdefhkqjf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fgvqfpbisp .gt_font_normal {
+#wqdefhkqjf .gt_font_normal {
   font-weight: normal;
 }
 
-#fgvqfpbisp .gt_font_bold {
+#wqdefhkqjf .gt_font_bold {
   font-weight: bold;
 }
 
-#fgvqfpbisp .gt_font_italic {
+#wqdefhkqjf .gt_font_italic {
   font-style: italic;
 }
 
-#fgvqfpbisp .gt_super {
+#wqdefhkqjf .gt_super {
   font-size: 65%;
 }
 
-#fgvqfpbisp .gt_footnote_marks {
+#wqdefhkqjf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fgvqfpbisp .gt_asterisk {
+#wqdefhkqjf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fgvqfpbisp .gt_indent_1 {
+#wqdefhkqjf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fgvqfpbisp .gt_indent_2 {
+#wqdefhkqjf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fgvqfpbisp .gt_indent_3 {
+#wqdefhkqjf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fgvqfpbisp .gt_indent_4 {
+#wqdefhkqjf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fgvqfpbisp .gt_indent_5 {
+#wqdefhkqjf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fgvqfpbisp .katex-display {
+#wqdefhkqjf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fgvqfpbisp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wqdefhkqjf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -849,22 +850,22 @@ Available effect sizes per clinical-failure outcome (strict pool).
 <span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  forest_pb <span class="ot">&lt;-</span> es_pb <span class="sc">|&gt;</span></span>
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">or =</span> <span class="fu">exp</span>(yi), <span class="at">ci_low =</span> <span class="fu">exp</span>(yi <span class="sc">-</span> <span class="fl">1.96</span><span class="sc">*</span>sei), <span class="at">ci_high =</span> <span class="fu">exp</span>(yi <span class="sc">+</span> <span class="fl">1.96</span><span class="sc">*</span>sei),</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">lbl =</span> <span class="fu">paste0</span>(study_id, <span class="fu">ifelse</span>(arm_id <span class="sc">==</span> <span class="st">"all"</span>, <span class="st">""</span>, <span class="fu">paste0</span>(<span class="st">" ["</span>, arm_id, <span class="st">"]"</span>))),</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">lbl =</span> <span class="fu">paste0</span>(study_id, <span class="fu">ifelse</span>(<span class="fu">is.na</span>(arm_id) <span class="sc">|</span> arm_id <span class="sc">==</span> <span class="st">"all"</span>, <span class="st">""</span>, <span class="fu">paste0</span>(<span class="st">" ["</span>, arm_id, <span class="st">"]"</span>))),</span>
 <span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">type =</span> <span class="st">"Study"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bind_rows</span>(<span class="fu">tibble</span>(<span class="at">lbl =</span> <span class="st">"POOLED"</span>, <span class="at">or =</span> pb_post<span class="sc">$</span>median_OR,</span>
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ci_low =</span> pb_post<span class="sc">$</span>ci_OR[<span class="dv">1</span>], <span class="at">ci_high =</span> pb_post<span class="sc">$</span>ci_OR[<span class="dv">2</span>], <span class="at">type =</span> <span class="st">"Pooled"</span>))</span>
 <span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(forest_pb, <span class="fu">aes</span>(<span class="at">x =</span> or, <span class="at">y =</span> <span class="fu">reorder</span>(lbl, or), <span class="at">color =</span> type)) <span class="sc">+</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
 <span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> <span class="fu">pmax</span>(ci_low, <span class="fl">0.05</span>), <span class="at">xmax =</span> <span class="fu">pmin</span>(ci_high, <span class="dv">50</span>)),</span>
 <span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">orientation =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Study"</span> <span class="ot">=</span> <span class="st">"#2c7fb8"</span>, <span class="st">"Pooled"</span> <span class="ot">=</span> <span class="st">"darkred"</span>)) <span class="sc">+</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Study"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>, <span class="st">"Pooled"</span> <span class="ot">=</span> <span class="st">"#1F3447"</span>)) <span class="sc">+</span></span>
 <span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">25</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="dv">50</span>)) <span class="sc">+</span></span>
 <span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"OR (short vs long TTP)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">color =</span> <span class="cn">NULL</span>,</span>
 <span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="fu">sprintf</span>(<span class="st">"Persistent bacteremia / IE — pooled OR %.2f [%.2f, %.2f]"</span>,</span>
 <span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>                         pb_post<span class="sc">$</span>median_OR, pb_post<span class="sc">$</span>ci_OR[<span class="dv">1</span>], pb_post<span class="sc">$</span>ci_OR[<span class="dv">2</span>])) <span class="sc">+</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
 <span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
 <span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Fewer than 3 effect sizes available — cannot fit pooled model."</span>)</span>
 <span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -923,15 +924,15 @@ Forest plot of OR (short vs long TTP) for persistent bacteremia. NB: many studie
 <span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>           <span class="at">def_group_lbl =</span> <span class="fu">str_replace_all</span>(def_group, <span class="st">"_"</span>, <span class="st">" "</span>) <span class="sc">|&gt;</span> <span class="fu">str_to_title</span>())</span>
 <span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(forest_bydef, <span class="fu">aes</span>(<span class="at">x =</span> or, <span class="at">y =</span> <span class="fu">reorder</span>(lbl, or))) <span class="sc">+</span></span>
-<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
-<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">color =</span> <span class="st">"#2c7fb8"</span>) <span class="sc">+</span></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">color =</span> <span class="st">"#7F9DB9"</span>) <span class="sc">+</span></span>
 <span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> <span class="fu">pmax</span>(ci_low, <span class="fl">0.05</span>), <span class="at">xmax =</span> <span class="fu">pmin</span>(ci_high, <span class="dv">50</span>)),</span>
-<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">color =</span> <span class="st">"#2c7fb8"</span>) <span class="sc">+</span></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">color =</span> <span class="st">"#7F9DB9"</span>) <span class="sc">+</span></span>
 <span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">25</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="dv">50</span>)) <span class="sc">+</span></span>
 <span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> def_group_lbl, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">ncol =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"OR (short vs long TTP)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
 <span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">"Persistent bacteremia — by outcome definition group"</span>) <span class="sc">+</span></span>
-<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>)</span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">10</span>)</span>
 <span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
 <span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"Too few effect sizes or definition groups to fit subset model."</span>)</span>
@@ -1074,23 +1075,23 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
 </figcaption>
 <div aria-describedby="tbl-defs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="knylowmnub" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#knylowmnub table {
+<div id="wtpmmcbemo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wtpmmcbemo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#knylowmnub thead, #knylowmnub tbody, #knylowmnub tfoot, #knylowmnub tr, #knylowmnub td, #knylowmnub th {
+#wtpmmcbemo thead, #wtpmmcbemo tbody, #wtpmmcbemo tfoot, #wtpmmcbemo tr, #wtpmmcbemo td, #wtpmmcbemo th {
   border-style: none;
 }
 
-#knylowmnub p {
+#wtpmmcbemo p {
   margin: 0;
   padding: 0;
 }
 
-#knylowmnub .gt_table {
+#wtpmmcbemo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1116,12 +1117,12 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-left-color: #D3D3D3;
 }
 
-#knylowmnub .gt_caption {
+#wtpmmcbemo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#knylowmnub .gt_title {
+#wtpmmcbemo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1133,7 +1134,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-bottom-width: 0;
 }
 
-#knylowmnub .gt_subtitle {
+#wtpmmcbemo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1145,7 +1146,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-top-width: 0;
 }
 
-#knylowmnub .gt_heading {
+#wtpmmcbemo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1157,13 +1158,13 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-right-color: #D3D3D3;
 }
 
-#knylowmnub .gt_bottom_border {
+#wtpmmcbemo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#knylowmnub .gt_col_headings {
+#wtpmmcbemo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1178,7 +1179,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-right-color: #D3D3D3;
 }
 
-#knylowmnub .gt_col_heading {
+#wtpmmcbemo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1198,7 +1199,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   overflow-x: hidden;
 }
 
-#knylowmnub .gt_column_spanner_outer {
+#wtpmmcbemo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1210,15 +1211,15 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   padding-right: 4px;
 }
 
-#knylowmnub .gt_column_spanner_outer:first-child {
+#wtpmmcbemo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#knylowmnub .gt_column_spanner_outer:last-child {
+#wtpmmcbemo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#knylowmnub .gt_column_spanner {
+#wtpmmcbemo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1230,11 +1231,11 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   width: 100%;
 }
 
-#knylowmnub .gt_spanner_row {
+#wtpmmcbemo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#knylowmnub .gt_group_heading {
+#wtpmmcbemo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1260,7 +1261,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   text-align: left;
 }
 
-#knylowmnub .gt_empty_group_heading {
+#wtpmmcbemo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1275,15 +1276,15 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   vertical-align: middle;
 }
 
-#knylowmnub .gt_from_md > :first-child {
+#wtpmmcbemo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#knylowmnub .gt_from_md > :last-child {
+#wtpmmcbemo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#knylowmnub .gt_row {
+#wtpmmcbemo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1302,7 +1303,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   overflow-x: hidden;
 }
 
-#knylowmnub .gt_stub {
+#wtpmmcbemo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1315,7 +1316,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   padding-right: 5px;
 }
 
-#knylowmnub .gt_stub_row_group {
+#wtpmmcbemo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1329,15 +1330,15 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   vertical-align: top;
 }
 
-#knylowmnub .gt_row_group_first td {
+#wtpmmcbemo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#knylowmnub .gt_row_group_first th {
+#wtpmmcbemo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#knylowmnub .gt_summary_row {
+#wtpmmcbemo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1347,16 +1348,16 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   padding-right: 5px;
 }
 
-#knylowmnub .gt_first_summary_row {
+#wtpmmcbemo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#knylowmnub .gt_first_summary_row.thick {
+#wtpmmcbemo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#knylowmnub .gt_last_summary_row {
+#wtpmmcbemo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1366,7 +1367,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-bottom-color: #D3D3D3;
 }
 
-#knylowmnub .gt_grand_summary_row {
+#wtpmmcbemo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1376,7 +1377,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   padding-right: 5px;
 }
 
-#knylowmnub .gt_first_grand_summary_row {
+#wtpmmcbemo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1386,7 +1387,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-top-color: #D3D3D3;
 }
 
-#knylowmnub .gt_last_grand_summary_row_top {
+#wtpmmcbemo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1396,11 +1397,11 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-bottom-color: #D3D3D3;
 }
 
-#knylowmnub .gt_striped {
+#wtpmmcbemo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#knylowmnub .gt_table_body {
+#wtpmmcbemo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1409,7 +1410,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-bottom-color: #D3D3D3;
 }
 
-#knylowmnub .gt_footnotes {
+#wtpmmcbemo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1423,7 +1424,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-right-color: #D3D3D3;
 }
 
-#knylowmnub .gt_footnote {
+#wtpmmcbemo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1432,7 +1433,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   padding-right: 5px;
 }
 
-#knylowmnub .gt_sourcenotes {
+#wtpmmcbemo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1446,7 +1447,7 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   border-right-color: #D3D3D3;
 }
 
-#knylowmnub .gt_sourcenote {
+#wtpmmcbemo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1454,72 +1455,72 @@ Outcome definitions used by each contributing study (top 30 rows by study_id).
   padding-right: 5px;
 }
 
-#knylowmnub .gt_left {
+#wtpmmcbemo .gt_left {
   text-align: left;
 }
 
-#knylowmnub .gt_center {
+#wtpmmcbemo .gt_center {
   text-align: center;
 }
 
-#knylowmnub .gt_right {
+#wtpmmcbemo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#knylowmnub .gt_font_normal {
+#wtpmmcbemo .gt_font_normal {
   font-weight: normal;
 }
 
-#knylowmnub .gt_font_bold {
+#wtpmmcbemo .gt_font_bold {
   font-weight: bold;
 }
 
-#knylowmnub .gt_font_italic {
+#wtpmmcbemo .gt_font_italic {
   font-style: italic;
 }
 
-#knylowmnub .gt_super {
+#wtpmmcbemo .gt_super {
   font-size: 65%;
 }
 
-#knylowmnub .gt_footnote_marks {
+#wtpmmcbemo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#knylowmnub .gt_asterisk {
+#wtpmmcbemo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#knylowmnub .gt_indent_1 {
+#wtpmmcbemo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#knylowmnub .gt_indent_2 {
+#wtpmmcbemo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#knylowmnub .gt_indent_3 {
+#wtpmmcbemo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#knylowmnub .gt_indent_4 {
+#wtpmmcbemo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#knylowmnub .gt_indent_5 {
+#wtpmmcbemo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#knylowmnub .katex-display {
+#wtpmmcbemo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#knylowmnub div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wtpmmcbemo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

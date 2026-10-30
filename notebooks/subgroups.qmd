@@ -23,6 +23,7 @@ suppressPackageStartupMessages({
   library(patchwork)
 })
 source("R/01_prepare_data.R")
+source("R/theme_jama.R")
 source("R/02_fit_models.R")
 
 es_all  <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
@@ -117,11 +118,11 @@ density_data <- bind_rows(
 
 ggplot(density_data, aes(x = OR, fill = Class)) +
   geom_density(alpha = 0.40) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
   scale_x_continuous(limits = c(0.2, 8), breaks = c(0.5, 1, 2, 4, 8)) +
-  scale_fill_brewer(palette = "Set1") +
+  scale_fill_jama() +
   labs(x = "Pooled OR (short vs long TTP)", y = "Posterior density", fill = NULL) +
-  theme_minimal() +
+  theme_jama() +
   theme(legend.position = "bottom")
 ```
 
@@ -139,9 +140,9 @@ pathogen_labels  <- c(
   fungal        = "Fungal"
 )
 pathogen_colours <- c(
-  gram_negative = "#E41A1C",
-  gram_positive = "#377EB8",
-  fungal        = "#4DAF4A"
+  gram_negative = "#1F3447",
+  gram_positive = "#7F9DB9",
+  fungal        = "#5B7A99"
 )
 
 study_df <- es_mort |>
@@ -151,7 +152,7 @@ study_df <- es_mort |>
     ci_low  = exp(yi - 1.96 * sei),
     ci_high = exp(yi + 1.96 * sei),
     lbl     = paste0(study_id,
-                     ifelse(arm_id == "all", "", paste0(" [", arm_id, "]")))
+                     ifelse(is.na(arm_id) | arm_id == "all", "", paste0(" [", arm_id, "]")))
   )
 
 pooled_pts <- bind_rows(
@@ -165,7 +166,7 @@ pooled_pts <- bind_rows(
 
 ggplot(study_df,
        aes(x = or, y = reorder(lbl, or), color = pathogen_class)) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
   geom_point(size = 2.2, alpha = 0.8) +
   geom_errorbar(aes(xmin = pmax(ci_low, 0.05), xmax = pmin(ci_high, 50)),
                 width = 0.25, linewidth = 0.6) +
@@ -183,7 +184,7 @@ ggplot(study_df,
   facet_wrap(~ pathogen_class, scales = "free_y", ncol = 1,
              labeller = as_labeller(pathogen_labels)) +
   labs(x = "OR, short vs long TTP (log scale)", y = NULL, color = NULL) +
-  theme_minimal(base_size = 9) +
+  theme_jama(base_size = 9) +
   theme(legend.position = "none",
         strip.text = element_text(face = "bold", size = 10),
         panel.grid.major.y = element_line(color = "gray92"),
@@ -278,11 +279,11 @@ bind_rows(
 ) |>
   ggplot(aes(x = OR, fill = Source)) +
   geom_density(alpha = 0.50) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
   scale_x_continuous(limits = c(0.3, 6)) +
-  scale_fill_brewer(palette = "Set2") +
+  scale_fill_jama() +
   labs(x = "Pooled OR (short vs long TTP)", y = "Posterior density", fill = NULL) +
-  theme_minimal() +
+  theme_jama() +
   theme(legend.position = "bottom")
 ```
 

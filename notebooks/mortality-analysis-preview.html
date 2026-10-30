@@ -339,12 +339,13 @@
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/02_fit_models.R"</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -------- PRIMARY POOL: strict (n=100) ---------------------------------------</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>es_all   <span class="ot">&lt;-</span> <span class="fu">prepare_effect_sizes</span>(<span class="st">"data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"</span>,</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">include_inclusive_pool =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">drop_contaminated_ttp  =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_jama.R"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/02_fit_models.R"</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># -------- PRIMARY POOL: strict (n=100) ---------------------------------------</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>es_all   <span class="ot">&lt;-</span> <span class="fu">prepare_effect_sizes</span>(<span class="st">"data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">include_inclusive_pool =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">drop_contaminated_ttp  =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Pool: 100 studies (inclusive_pool=FALSE, drop_contaminated=TRUE)</code></pre>
@@ -421,7 +422,7 @@
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>            base_post<span class="sc">$</span>pi_OR[<span class="dv">1</span>], base_post<span class="sc">$</span>pi_OR[<span class="dv">2</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <ul>
-<li>95% prediction interval (new study): <strong>0.49–8.41</strong></li>
+<li>95% prediction interval (new study): <strong>0.50–8.41</strong></li>
 </ul>
 <details class="code-fold">
 <summary>Code</summary>
@@ -532,23 +533,23 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
 </figcaption>
 <div aria-describedby="tbl-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="nyxiiofulh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nyxiiofulh table {
+<div id="ckyjqabnyo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ckyjqabnyo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nyxiiofulh thead, #nyxiiofulh tbody, #nyxiiofulh tfoot, #nyxiiofulh tr, #nyxiiofulh td, #nyxiiofulh th {
+#ckyjqabnyo thead, #ckyjqabnyo tbody, #ckyjqabnyo tfoot, #ckyjqabnyo tr, #ckyjqabnyo td, #ckyjqabnyo th {
   border-style: none;
 }
 
-#nyxiiofulh p {
+#ckyjqabnyo p {
   margin: 0;
   padding: 0;
 }
 
-#nyxiiofulh .gt_table {
+#ckyjqabnyo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -574,12 +575,12 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-left-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_caption {
+#ckyjqabnyo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nyxiiofulh .gt_title {
+#ckyjqabnyo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -591,7 +592,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-bottom-width: 0;
 }
 
-#nyxiiofulh .gt_subtitle {
+#ckyjqabnyo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -603,7 +604,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-top-width: 0;
 }
 
-#nyxiiofulh .gt_heading {
+#ckyjqabnyo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -615,13 +616,13 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-right-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_bottom_border {
+#ckyjqabnyo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_col_headings {
+#ckyjqabnyo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -636,7 +637,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-right-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_col_heading {
+#ckyjqabnyo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -656,7 +657,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   overflow-x: hidden;
 }
 
-#nyxiiofulh .gt_column_spanner_outer {
+#ckyjqabnyo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -668,15 +669,15 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   padding-right: 4px;
 }
 
-#nyxiiofulh .gt_column_spanner_outer:first-child {
+#ckyjqabnyo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nyxiiofulh .gt_column_spanner_outer:last-child {
+#ckyjqabnyo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nyxiiofulh .gt_column_spanner {
+#ckyjqabnyo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -688,11 +689,11 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   width: 100%;
 }
 
-#nyxiiofulh .gt_spanner_row {
+#ckyjqabnyo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nyxiiofulh .gt_group_heading {
+#ckyjqabnyo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -718,7 +719,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   text-align: left;
 }
 
-#nyxiiofulh .gt_empty_group_heading {
+#ckyjqabnyo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -733,15 +734,15 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   vertical-align: middle;
 }
 
-#nyxiiofulh .gt_from_md > :first-child {
+#ckyjqabnyo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nyxiiofulh .gt_from_md > :last-child {
+#ckyjqabnyo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nyxiiofulh .gt_row {
+#ckyjqabnyo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -760,7 +761,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   overflow-x: hidden;
 }
 
-#nyxiiofulh .gt_stub {
+#ckyjqabnyo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -773,7 +774,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   padding-right: 5px;
 }
 
-#nyxiiofulh .gt_stub_row_group {
+#ckyjqabnyo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -787,15 +788,15 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   vertical-align: top;
 }
 
-#nyxiiofulh .gt_row_group_first td {
+#ckyjqabnyo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nyxiiofulh .gt_row_group_first th {
+#ckyjqabnyo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nyxiiofulh .gt_summary_row {
+#ckyjqabnyo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -805,16 +806,16 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   padding-right: 5px;
 }
 
-#nyxiiofulh .gt_first_summary_row {
+#ckyjqabnyo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_first_summary_row.thick {
+#ckyjqabnyo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nyxiiofulh .gt_last_summary_row {
+#ckyjqabnyo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -824,7 +825,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-bottom-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_grand_summary_row {
+#ckyjqabnyo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -834,7 +835,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   padding-right: 5px;
 }
 
-#nyxiiofulh .gt_first_grand_summary_row {
+#ckyjqabnyo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -844,7 +845,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-top-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_last_grand_summary_row_top {
+#ckyjqabnyo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -854,11 +855,11 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-bottom-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_striped {
+#ckyjqabnyo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nyxiiofulh .gt_table_body {
+#ckyjqabnyo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -867,7 +868,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-bottom-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_footnotes {
+#ckyjqabnyo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -881,7 +882,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-right-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_footnote {
+#ckyjqabnyo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -890,7 +891,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   padding-right: 5px;
 }
 
-#nyxiiofulh .gt_sourcenotes {
+#ckyjqabnyo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -904,7 +905,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   border-right-color: #D3D3D3;
 }
 
-#nyxiiofulh .gt_sourcenote {
+#ckyjqabnyo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -912,72 +913,72 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
   padding-right: 5px;
 }
 
-#nyxiiofulh .gt_left {
+#ckyjqabnyo .gt_left {
   text-align: left;
 }
 
-#nyxiiofulh .gt_center {
+#ckyjqabnyo .gt_center {
   text-align: center;
 }
 
-#nyxiiofulh .gt_right {
+#ckyjqabnyo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nyxiiofulh .gt_font_normal {
+#ckyjqabnyo .gt_font_normal {
   font-weight: normal;
 }
 
-#nyxiiofulh .gt_font_bold {
+#ckyjqabnyo .gt_font_bold {
   font-weight: bold;
 }
 
-#nyxiiofulh .gt_font_italic {
+#ckyjqabnyo .gt_font_italic {
   font-style: italic;
 }
 
-#nyxiiofulh .gt_super {
+#ckyjqabnyo .gt_super {
   font-size: 65%;
 }
 
-#nyxiiofulh .gt_footnote_marks {
+#ckyjqabnyo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nyxiiofulh .gt_asterisk {
+#ckyjqabnyo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nyxiiofulh .gt_indent_1 {
+#ckyjqabnyo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nyxiiofulh .gt_indent_2 {
+#ckyjqabnyo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nyxiiofulh .gt_indent_3 {
+#ckyjqabnyo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nyxiiofulh .gt_indent_4 {
+#ckyjqabnyo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nyxiiofulh .gt_indent_5 {
+#ckyjqabnyo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nyxiiofulh .katex-display {
+#ckyjqabnyo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nyxiiofulh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ckyjqabnyo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1000,7 +1001,7 @@ Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful).
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Parameter" style="color: #666666; font-style: italic">95% prediction interval (new study)</td>
-<td class="gt_row gt_left" headers="Value" style="color: #666666; font-style: italic">[0.49, 8.41]</td>
+<td class="gt_row gt_left" headers="Value" style="color: #666666; font-style: italic">[0.50, 8.41]</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Parameter">P(short TTP harmful)</td>
@@ -1046,7 +1047,7 @@ enforced in future versions of knitr and this warning will become an error.</cod
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(yi) <span class="sc">|&gt;</span></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lbl =</span> <span class="fu">paste0</span>(study_id,</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">ifelse</span>(arm_id <span class="sc">==</span> <span class="st">"all"</span>, <span class="st">""</span>, <span class="fu">paste0</span>(<span class="st">" ["</span>, arm_id, <span class="st">"]"</span>))),</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">ifelse</span>(<span class="fu">is.na</span>(arm_id) <span class="sc">|</span> arm_id <span class="sc">==</span> <span class="st">"all"</span>, <span class="st">""</span>, <span class="fu">paste0</span>(<span class="st">" ["</span>, arm_id, <span class="st">"]"</span>))),</span>
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lbl =</span> <span class="fu">make.unique</span>(lbl, <span class="at">sep =</span> <span class="st">" #"</span>),</span>
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lbl =</span> <span class="fu">factor</span>(lbl, <span class="at">levels =</span> lbl),</span>
 <span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">or =</span> <span class="fu">exp</span>(yi),</span>
@@ -1075,7 +1076,7 @@ enforced in future versions of knitr and this warning will become an error.</cod
 <span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">bind_rows</span>(forest_data, pooled_row),</span>
 <span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> or, <span class="at">y =</span> lbl, <span class="at">color =</span> type)) <span class="sc">+</span></span>
-<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
 <span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> <span class="fu">pmax</span>(ci_low, <span class="fl">0.05</span>),</span>
 <span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xmax =</span> <span class="fu">pmin</span>(ci_high, <span class="dv">50</span>)),</span>
@@ -1086,15 +1087,15 @@ enforced in future versions of knitr and this warning will become an error.</cod
 <span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xmin =</span> <span class="fu">pmax</span>(pi_low,  <span class="fl">0.05</span>),</span>
 <span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xmax =</span> <span class="fu">pmin</span>(pi_high, <span class="dv">50</span>)),</span>
 <span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
-<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"darkred"</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Study"</span> <span class="ot">=</span> <span class="st">"steelblue"</span>, <span class="st">"Pooled"</span> <span class="ot">=</span> <span class="st">"darkred"</span>)) <span class="sc">+</span></span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">"#1F3447"</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Study"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>, <span class="st">"Pooled"</span> <span class="ot">=</span> <span class="st">"#1F3447"</span>)) <span class="sc">+</span></span>
 <span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="dv">32</span>),</span>
 <span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>                <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="dv">50</span>)) <span class="sc">+</span></span>
 <span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mortality forest plot — primary pool"</span>,</span>
-<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Red solid bar = 95% CrI of pooled OR; red dashed bar = 95% prediction interval"</span>,</span>
+<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Solid bar = 95% CrI of pooled OR; dashed bar = 95% prediction interval"</span>,</span>
 <span id="cb35-52"><a href="#cb35-52" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"OR, short vs long TTP (log scale)"</span>,</span>
 <span id="cb35-53"><a href="#cb35-53" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">color =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb35-54"><a href="#cb35-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
+<span id="cb35-54"><a href="#cb35-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
 <span id="cb35-55"><a href="#cb35-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
 <span id="cb35-56"><a href="#cb35-56" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">lineheight =</span> <span class="fl">0.85</span>),</span>
 <span id="cb35-57"><a href="#cb35-57" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"gray92"</span>),</span>
@@ -1104,10 +1105,10 @@ enforced in future versions of knitr and this warning will become an error.</cod
 <div id="fig-forest" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="mortality-analysis_files/figure-html/fig-forest-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in red."><img src="mortality-analysis_files/figure-html/fig-forest-1.png" class="img-fluid figure-img" width="2000"></a>
+<a href="mortality-analysis_files/figure-html/fig-forest-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in dark navy."><img src="mortality-analysis_files/figure-html/fig-forest-1.png" class="img-fluid figure-img" width="2000"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in red.
+Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in dark navy.
 </figcaption>
 </figure>
 </div>
@@ -1121,20 +1122,20 @@ Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>post_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">OR =</span> base_post<span class="sc">$</span>OR_draws)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(post_df, <span class="fu">aes</span>(<span class="at">x =</span> OR)) <span class="sc">+</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_halfeye</span>(<span class="at">fill =</span> <span class="st">"#1f78b4"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_halfeye</span>(<span class="at">fill =</span> <span class="st">"#5B7A99"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">6</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="sc">+</span></span>
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pooled OR (short vs long TTP)"</span>, <span class="at">y =</span> <span class="st">"Posterior density"</span>) <span class="sc">+</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-posterior" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-posterior-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="mortality-analysis_files/figure-html/fig-posterior-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Posterior density of the pooled OR (short vs long TTP). The vertical red line marks no effect (OR = 1)."><img src="mortality-analysis_files/figure-html/fig-posterior-1.png" class="img-fluid figure-img" width="2000"></a>
+<a href="mortality-analysis_files/figure-html/fig-posterior-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Posterior density of the pooled OR (short vs long TTP). The vertical dashed line marks no effect (OR = 1)."><img src="mortality-analysis_files/figure-html/fig-posterior-1.png" class="img-fluid figure-img" width="2000"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-posterior-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Posterior density of the pooled OR (short vs long TTP). The vertical red line marks no effect (OR = 1).
+Posterior density of the pooled OR (short vs long TTP). The vertical dashed line marks no effect (OR = 1).
 </figcaption>
 </figure>
 </div>
@@ -1166,23 +1167,23 @@ Convergence diagnostics for the primary pooled model.
 </figcaption>
 <div aria-describedby="tbl-diag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="gjkxxodozs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gjkxxodozs table {
+<div id="zzuhhhuinc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zzuhhhuinc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gjkxxodozs thead, #gjkxxodozs tbody, #gjkxxodozs tfoot, #gjkxxodozs tr, #gjkxxodozs td, #gjkxxodozs th {
+#zzuhhhuinc thead, #zzuhhhuinc tbody, #zzuhhhuinc tfoot, #zzuhhhuinc tr, #zzuhhhuinc td, #zzuhhhuinc th {
   border-style: none;
 }
 
-#gjkxxodozs p {
+#zzuhhhuinc p {
   margin: 0;
   padding: 0;
 }
 
-#gjkxxodozs .gt_table {
+#zzuhhhuinc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1208,12 +1209,12 @@ Convergence diagnostics for the primary pooled model.
   border-left-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_caption {
+#zzuhhhuinc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gjkxxodozs .gt_title {
+#zzuhhhuinc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1225,7 +1226,7 @@ Convergence diagnostics for the primary pooled model.
   border-bottom-width: 0;
 }
 
-#gjkxxodozs .gt_subtitle {
+#zzuhhhuinc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1237,7 +1238,7 @@ Convergence diagnostics for the primary pooled model.
   border-top-width: 0;
 }
 
-#gjkxxodozs .gt_heading {
+#zzuhhhuinc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1249,13 +1250,13 @@ Convergence diagnostics for the primary pooled model.
   border-right-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_bottom_border {
+#zzuhhhuinc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_col_headings {
+#zzuhhhuinc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1270,7 +1271,7 @@ Convergence diagnostics for the primary pooled model.
   border-right-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_col_heading {
+#zzuhhhuinc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1290,7 +1291,7 @@ Convergence diagnostics for the primary pooled model.
   overflow-x: hidden;
 }
 
-#gjkxxodozs .gt_column_spanner_outer {
+#zzuhhhuinc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1302,15 +1303,15 @@ Convergence diagnostics for the primary pooled model.
   padding-right: 4px;
 }
 
-#gjkxxodozs .gt_column_spanner_outer:first-child {
+#zzuhhhuinc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gjkxxodozs .gt_column_spanner_outer:last-child {
+#zzuhhhuinc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gjkxxodozs .gt_column_spanner {
+#zzuhhhuinc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1322,11 +1323,11 @@ Convergence diagnostics for the primary pooled model.
   width: 100%;
 }
 
-#gjkxxodozs .gt_spanner_row {
+#zzuhhhuinc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gjkxxodozs .gt_group_heading {
+#zzuhhhuinc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1352,7 +1353,7 @@ Convergence diagnostics for the primary pooled model.
   text-align: left;
 }
 
-#gjkxxodozs .gt_empty_group_heading {
+#zzuhhhuinc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1367,15 +1368,15 @@ Convergence diagnostics for the primary pooled model.
   vertical-align: middle;
 }
 
-#gjkxxodozs .gt_from_md > :first-child {
+#zzuhhhuinc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gjkxxodozs .gt_from_md > :last-child {
+#zzuhhhuinc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gjkxxodozs .gt_row {
+#zzuhhhuinc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1394,7 +1395,7 @@ Convergence diagnostics for the primary pooled model.
   overflow-x: hidden;
 }
 
-#gjkxxodozs .gt_stub {
+#zzuhhhuinc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1407,7 +1408,7 @@ Convergence diagnostics for the primary pooled model.
   padding-right: 5px;
 }
 
-#gjkxxodozs .gt_stub_row_group {
+#zzuhhhuinc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1421,15 +1422,15 @@ Convergence diagnostics for the primary pooled model.
   vertical-align: top;
 }
 
-#gjkxxodozs .gt_row_group_first td {
+#zzuhhhuinc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gjkxxodozs .gt_row_group_first th {
+#zzuhhhuinc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gjkxxodozs .gt_summary_row {
+#zzuhhhuinc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1439,16 +1440,16 @@ Convergence diagnostics for the primary pooled model.
   padding-right: 5px;
 }
 
-#gjkxxodozs .gt_first_summary_row {
+#zzuhhhuinc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_first_summary_row.thick {
+#zzuhhhuinc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gjkxxodozs .gt_last_summary_row {
+#zzuhhhuinc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1458,7 +1459,7 @@ Convergence diagnostics for the primary pooled model.
   border-bottom-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_grand_summary_row {
+#zzuhhhuinc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1468,7 +1469,7 @@ Convergence diagnostics for the primary pooled model.
   padding-right: 5px;
 }
 
-#gjkxxodozs .gt_first_grand_summary_row {
+#zzuhhhuinc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1478,7 +1479,7 @@ Convergence diagnostics for the primary pooled model.
   border-top-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_last_grand_summary_row_top {
+#zzuhhhuinc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1488,11 +1489,11 @@ Convergence diagnostics for the primary pooled model.
   border-bottom-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_striped {
+#zzuhhhuinc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gjkxxodozs .gt_table_body {
+#zzuhhhuinc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1501,7 +1502,7 @@ Convergence diagnostics for the primary pooled model.
   border-bottom-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_footnotes {
+#zzuhhhuinc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1515,7 +1516,7 @@ Convergence diagnostics for the primary pooled model.
   border-right-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_footnote {
+#zzuhhhuinc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1524,7 +1525,7 @@ Convergence diagnostics for the primary pooled model.
   padding-right: 5px;
 }
 
-#gjkxxodozs .gt_sourcenotes {
+#zzuhhhuinc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1538,7 +1539,7 @@ Convergence diagnostics for the primary pooled model.
   border-right-color: #D3D3D3;
 }
 
-#gjkxxodozs .gt_sourcenote {
+#zzuhhhuinc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1546,72 +1547,72 @@ Convergence diagnostics for the primary pooled model.
   padding-right: 5px;
 }
 
-#gjkxxodozs .gt_left {
+#zzuhhhuinc .gt_left {
   text-align: left;
 }
 
-#gjkxxodozs .gt_center {
+#zzuhhhuinc .gt_center {
   text-align: center;
 }
 
-#gjkxxodozs .gt_right {
+#zzuhhhuinc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gjkxxodozs .gt_font_normal {
+#zzuhhhuinc .gt_font_normal {
   font-weight: normal;
 }
 
-#gjkxxodozs .gt_font_bold {
+#zzuhhhuinc .gt_font_bold {
   font-weight: bold;
 }
 
-#gjkxxodozs .gt_font_italic {
+#zzuhhhuinc .gt_font_italic {
   font-style: italic;
 }
 
-#gjkxxodozs .gt_super {
+#zzuhhhuinc .gt_super {
   font-size: 65%;
 }
 
-#gjkxxodozs .gt_footnote_marks {
+#zzuhhhuinc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gjkxxodozs .gt_asterisk {
+#zzuhhhuinc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gjkxxodozs .gt_indent_1 {
+#zzuhhhuinc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gjkxxodozs .gt_indent_2 {
+#zzuhhhuinc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gjkxxodozs .gt_indent_3 {
+#zzuhhhuinc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gjkxxodozs .gt_indent_4 {
+#zzuhhhuinc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gjkxxodozs .gt_indent_5 {
+#zzuhhhuinc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gjkxxodozs .katex-display {
+#zzuhhhuinc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gjkxxodozs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zzuhhhuinc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1955,7 +1956,7 @@ Convergence diagnostics for the primary pooled model.
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_study_id__Intercept   =</span> <span class="st">"τ (between-study SD)"</span></span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  )))</span>
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-trace" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1977,7 +1978,7 @@ Trace plots for key parameters of the primary pooled model. Well-mixed chains (c
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  fits<span class="sc">$</span>fit_base,</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"sd_study_id__Intercept"</span>)</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-rank" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2000,8 +2001,8 @@ Rank histograms for key parameters. Uniform bars across all chains indicate no c
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  (\(d) <span class="fu">setNames</span>(d<span class="sc">$</span>rhat, d<span class="sc">$</span>variable))()</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_rhat</span>(rhat_vals) <span class="sc">+</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.01</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.01</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Dropped 1 NAs from 'new_rhat(rhat)'.</code></pre>
@@ -2050,16 +2051,16 @@ R̂ dot plot for all parameters of the primary pooled model. All values should f
 <span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">bind_rows</span>(sub_df, pooled_sub),</span>
 <span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>         <span class="fu">aes</span>(<span class="at">x =</span> or, <span class="at">y =</span> <span class="fu">reorder</span>(study_id, or), <span class="at">color =</span> pathogen_class, <span class="at">shape =</span> type, <span class="at">size =</span> type)) <span class="sc">+</span></span>
-<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> <span class="fu">pmax</span>(ci_low, <span class="fl">0.05</span>), <span class="at">xmax =</span> <span class="fu">pmin</span>(ci_high, <span class="dv">50</span>)),</span>
 <span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">orientation =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
-<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"gram_positive"</span> <span class="ot">=</span> <span class="st">"#377EB8"</span>, <span class="st">"gram_negative"</span> <span class="ot">=</span> <span class="st">"#E41A1C"</span>)) <span class="sc">+</span></span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"gram_positive"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>, <span class="st">"gram_negative"</span> <span class="ot">=</span> <span class="st">"#1F3447"</span>)) <span class="sc">+</span></span>
 <span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Study"</span> <span class="ot">=</span> <span class="dv">16</span>, <span class="st">"Pooled"</span> <span class="ot">=</span> <span class="dv">18</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
 <span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_size_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Study"</span> <span class="ot">=</span> <span class="fl">2.5</span>, <span class="st">"Pooled"</span> <span class="ot">=</span> <span class="dv">5</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
 <span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="dv">50</span>)) <span class="sc">+</span></span>
 <span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"OR, short vs long TTP (log scale)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">color =</span> <span class="st">"Pathogen class"</span>) <span class="sc">+</span></span>
-<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
 <span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
 <span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -2106,23 +2107,23 @@ Pooled OR by pathogen subgroup.
 </figcaption>
 <div aria-describedby="tbl-subgroup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="thpbmxwoce" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#thpbmxwoce table {
+<div id="mrdxazcmtv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mrdxazcmtv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#thpbmxwoce thead, #thpbmxwoce tbody, #thpbmxwoce tfoot, #thpbmxwoce tr, #thpbmxwoce td, #thpbmxwoce th {
+#mrdxazcmtv thead, #mrdxazcmtv tbody, #mrdxazcmtv tfoot, #mrdxazcmtv tr, #mrdxazcmtv td, #mrdxazcmtv th {
   border-style: none;
 }
 
-#thpbmxwoce p {
+#mrdxazcmtv p {
   margin: 0;
   padding: 0;
 }
 
-#thpbmxwoce .gt_table {
+#mrdxazcmtv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2148,12 +2149,12 @@ Pooled OR by pathogen subgroup.
   border-left-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_caption {
+#mrdxazcmtv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#thpbmxwoce .gt_title {
+#mrdxazcmtv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2165,7 +2166,7 @@ Pooled OR by pathogen subgroup.
   border-bottom-width: 0;
 }
 
-#thpbmxwoce .gt_subtitle {
+#mrdxazcmtv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2177,7 +2178,7 @@ Pooled OR by pathogen subgroup.
   border-top-width: 0;
 }
 
-#thpbmxwoce .gt_heading {
+#mrdxazcmtv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2189,13 +2190,13 @@ Pooled OR by pathogen subgroup.
   border-right-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_bottom_border {
+#mrdxazcmtv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_col_headings {
+#mrdxazcmtv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2210,7 +2211,7 @@ Pooled OR by pathogen subgroup.
   border-right-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_col_heading {
+#mrdxazcmtv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2230,7 +2231,7 @@ Pooled OR by pathogen subgroup.
   overflow-x: hidden;
 }
 
-#thpbmxwoce .gt_column_spanner_outer {
+#mrdxazcmtv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2242,15 +2243,15 @@ Pooled OR by pathogen subgroup.
   padding-right: 4px;
 }
 
-#thpbmxwoce .gt_column_spanner_outer:first-child {
+#mrdxazcmtv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#thpbmxwoce .gt_column_spanner_outer:last-child {
+#mrdxazcmtv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#thpbmxwoce .gt_column_spanner {
+#mrdxazcmtv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2262,11 +2263,11 @@ Pooled OR by pathogen subgroup.
   width: 100%;
 }
 
-#thpbmxwoce .gt_spanner_row {
+#mrdxazcmtv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#thpbmxwoce .gt_group_heading {
+#mrdxazcmtv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2292,7 +2293,7 @@ Pooled OR by pathogen subgroup.
   text-align: left;
 }
 
-#thpbmxwoce .gt_empty_group_heading {
+#mrdxazcmtv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2307,15 +2308,15 @@ Pooled OR by pathogen subgroup.
   vertical-align: middle;
 }
 
-#thpbmxwoce .gt_from_md > :first-child {
+#mrdxazcmtv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#thpbmxwoce .gt_from_md > :last-child {
+#mrdxazcmtv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#thpbmxwoce .gt_row {
+#mrdxazcmtv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2334,7 +2335,7 @@ Pooled OR by pathogen subgroup.
   overflow-x: hidden;
 }
 
-#thpbmxwoce .gt_stub {
+#mrdxazcmtv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2347,7 +2348,7 @@ Pooled OR by pathogen subgroup.
   padding-right: 5px;
 }
 
-#thpbmxwoce .gt_stub_row_group {
+#mrdxazcmtv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2361,15 +2362,15 @@ Pooled OR by pathogen subgroup.
   vertical-align: top;
 }
 
-#thpbmxwoce .gt_row_group_first td {
+#mrdxazcmtv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#thpbmxwoce .gt_row_group_first th {
+#mrdxazcmtv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#thpbmxwoce .gt_summary_row {
+#mrdxazcmtv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2379,16 +2380,16 @@ Pooled OR by pathogen subgroup.
   padding-right: 5px;
 }
 
-#thpbmxwoce .gt_first_summary_row {
+#mrdxazcmtv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_first_summary_row.thick {
+#mrdxazcmtv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#thpbmxwoce .gt_last_summary_row {
+#mrdxazcmtv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2398,7 +2399,7 @@ Pooled OR by pathogen subgroup.
   border-bottom-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_grand_summary_row {
+#mrdxazcmtv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2408,7 +2409,7 @@ Pooled OR by pathogen subgroup.
   padding-right: 5px;
 }
 
-#thpbmxwoce .gt_first_grand_summary_row {
+#mrdxazcmtv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2418,7 +2419,7 @@ Pooled OR by pathogen subgroup.
   border-top-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_last_grand_summary_row_top {
+#mrdxazcmtv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2428,11 +2429,11 @@ Pooled OR by pathogen subgroup.
   border-bottom-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_striped {
+#mrdxazcmtv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#thpbmxwoce .gt_table_body {
+#mrdxazcmtv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2441,7 +2442,7 @@ Pooled OR by pathogen subgroup.
   border-bottom-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_footnotes {
+#mrdxazcmtv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2455,7 +2456,7 @@ Pooled OR by pathogen subgroup.
   border-right-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_footnote {
+#mrdxazcmtv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2464,7 +2465,7 @@ Pooled OR by pathogen subgroup.
   padding-right: 5px;
 }
 
-#thpbmxwoce .gt_sourcenotes {
+#mrdxazcmtv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2478,7 +2479,7 @@ Pooled OR by pathogen subgroup.
   border-right-color: #D3D3D3;
 }
 
-#thpbmxwoce .gt_sourcenote {
+#mrdxazcmtv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2486,72 +2487,72 @@ Pooled OR by pathogen subgroup.
   padding-right: 5px;
 }
 
-#thpbmxwoce .gt_left {
+#mrdxazcmtv .gt_left {
   text-align: left;
 }
 
-#thpbmxwoce .gt_center {
+#mrdxazcmtv .gt_center {
   text-align: center;
 }
 
-#thpbmxwoce .gt_right {
+#mrdxazcmtv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#thpbmxwoce .gt_font_normal {
+#mrdxazcmtv .gt_font_normal {
   font-weight: normal;
 }
 
-#thpbmxwoce .gt_font_bold {
+#mrdxazcmtv .gt_font_bold {
   font-weight: bold;
 }
 
-#thpbmxwoce .gt_font_italic {
+#mrdxazcmtv .gt_font_italic {
   font-style: italic;
 }
 
-#thpbmxwoce .gt_super {
+#mrdxazcmtv .gt_super {
   font-size: 65%;
 }
 
-#thpbmxwoce .gt_footnote_marks {
+#mrdxazcmtv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#thpbmxwoce .gt_asterisk {
+#mrdxazcmtv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#thpbmxwoce .gt_indent_1 {
+#mrdxazcmtv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#thpbmxwoce .gt_indent_2 {
+#mrdxazcmtv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#thpbmxwoce .gt_indent_3 {
+#mrdxazcmtv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#thpbmxwoce .gt_indent_4 {
+#mrdxazcmtv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#thpbmxwoce .gt_indent_5 {
+#mrdxazcmtv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#thpbmxwoce .katex-display {
+#mrdxazcmtv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#thpbmxwoce div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mrdxazcmtv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2614,15 +2615,15 @@ Pooled OR by pathogen subgroup.
 <span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
 <span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gram-positive"</span> <span class="ot">=</span> <span class="st">"#2196C4"</span>,</span>
-<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Overall"</span>       <span class="ot">=</span> <span class="st">"#607D8B"</span>,</span>
-<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Gram-negative"</span> <span class="ot">=</span> <span class="st">"#C75450"</span>),</span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gram-positive"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>,</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Overall"</span>       <span class="ot">=</span> <span class="st">"#5B7A99"</span>,</span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Gram-negative"</span> <span class="ot">=</span> <span class="st">"#1F3447"</span>),</span>
 <span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
 <span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">6</span>), <span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
 <span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>                       <span class="at">name =</span> <span class="st">"Pooled odds ratio (short vs long time-to-positivity)"</span>) <span class="sc">+</span></span>
 <span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>,</span>
 <span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">"Mixed follow-up (predominantly 30-day mortality); short vs long time-to-positivity.</span><span class="sc">\n</span><span class="st">Point, posterior median; bar, 95% credible interval. Dashed line, OR = 1 (no effect)."</span>) <span class="sc">+</span></span>
-<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
 <span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor   =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y        =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span>
@@ -2674,12 +2675,12 @@ Pooled OR by pathogen subgroup.
 <span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>  slope_med <span class="ot">&lt;-</span> <span class="fu">median</span>(draws<span class="sc">$</span>b_cutpoint_c)</span>
 <span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(pred_df, <span class="fu">aes</span>(<span class="at">x =</span> cutpoint, <span class="at">y =</span> median_OR)) <span class="sc">+</span></span>
-<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"darkblue"</span>, <span class="at">linewidth =</span> <span class="fl">1.4</span>) <span class="sc">+</span></span>
-<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"#7F9DB9"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#1F3447"</span>, <span class="at">linewidth =</span> <span class="fl">1.4</span>) <span class="sc">+</span></span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> obs_df,</span>
 <span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> ttp_cutpoint_hours, <span class="at">y =</span> or, <span class="at">size =</span> w),</span>
-<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.55</span>, <span class="at">color =</span> <span class="st">"darkred"</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.55</span>, <span class="at">color =</span> <span class="st">"#1F3447"</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">7</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
 <span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(<span class="dv">5</span>, <span class="fu">max</span>(pred_df<span class="sc">$</span>hi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))),</span>
 <span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a>                       <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="fl">0.5</span>)) <span class="sc">+</span></span>
@@ -2687,7 +2688,7 @@ Pooled OR by pathogen subgroup.
 <span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a>                         slope_med, slope_p_neg),</span>
 <span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"TTP cutpoint (hours)"</span>,</span>
 <span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Predicted OR (short vs long TTP)"</span>) <span class="sc">+</span></span>
-<span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_jama</span>()</span>
 <span id="cb47-37"><a href="#cb47-37" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
@@ -2698,10 +2699,10 @@ Pooled OR by pathogen subgroup.
 <div id="fig-cutpoint" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="mortality-analysis_files/figure-html/fig-cutpoint-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="TTP cutpoint meta-regression. The blue line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Red points are observed 2×2-derived effect sizes (size ∝ precision)."><img src="mortality-analysis_files/figure-html/fig-cutpoint-1.png" class="img-fluid figure-img" width="2000"></a>
+<a href="mortality-analysis_files/figure-html/fig-cutpoint-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="TTP cutpoint meta-regression. The line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Dark points are observed 2×2-derived effect sizes (size ∝ precision)."><img src="mortality-analysis_files/figure-html/fig-cutpoint-1.png" class="img-fluid figure-img" width="2000"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-TTP cutpoint meta-regression. The blue line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Red points are observed 2×2-derived effect sizes (size ∝ precision).
+TTP cutpoint meta-regression. The line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Dark points are observed 2×2-derived effect sizes (size ∝ precision).
 </figcaption>
 </figure>
 </div>
@@ -2755,23 +2756,23 @@ TTP cutpoint meta-regression. The blue line is the Bayesian posterior median pre
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pred_gneg, <span class="fu">aes</span>(<span class="at">x =</span> cutpoint, <span class="at">y =</span> median_OR)) <span class="sc">+</span></span>
 <span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="fu">min</span>(roc_cuts_gneg), <span class="at">xmax =</span> <span class="fu">max</span>(roc_cuts_gneg),</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">fill =</span> <span class="st">"#d4e8f7"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">fill =</span> <span class="st">"#E3E9EF"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
 <span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">mean</span>(<span class="fu">range</span>(roc_cuts_gneg)), <span class="at">y =</span> <span class="dv">13</span>,</span>
 <span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"ROC-derived range</span><span class="sc">\n</span><span class="st">(8–18 h)"</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"steelblue4"</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"darkblue"</span>, <span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"#3F5A75"</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"#7F9DB9"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#1F3447"</span>, <span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> obs_gneg_cp,</span>
 <span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> ttp_cutpoint_hours, <span class="at">y =</span> or, <span class="at">size =</span> w),</span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"#E41A1C"</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"#1F3447"</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">8</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
 <span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="dv">16</span>), <span class="at">trans =</span> <span class="st">"log10"</span>,</span>
 <span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">16</span>)) <span class="sc">+</span></span>
 <span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
 <span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"TTP cutpoint (hours)"</span>,</span>
 <span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"OR for mortality (short vs long TTP, log scale)"</span>) <span class="sc">+</span></span>
-<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>() <span class="sc">+</span></span>
 <span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
@@ -2789,10 +2790,10 @@ TTP cutpoint meta-regression. The blue line is the Bayesian posterior median pre
 <div id="fig-gneg-cutpoint" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gneg-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="mortality-analysis_files/figure-html/fig-gneg-cutpoint-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="TTP cutpoint dose-response for Gram-negative bacteremia. The curve is the Bayesian posterior median predicted OR; ribbon is the 95% CrI. Red points are 2×2-derived effect sizes (size ∝ precision). Blue shaded zone spans the range of ROC-derived optimal cutpoints reported in individual Gram-negative studies (8–18 h). The median cutpoint across studies is 10 h."><img src="mortality-analysis_files/figure-html/fig-gneg-cutpoint-1.png" class="img-fluid figure-img" width="2000"></a>
+<a href="mortality-analysis_files/figure-html/fig-gneg-cutpoint-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="TTP cutpoint dose-response for Gram-negative bacteremia. The curve is the Bayesian posterior median predicted OR; ribbon is the 95% CrI. Dark points are 2×2-derived effect sizes (size ∝ precision). Shaded zone spans the range of ROC-derived optimal cutpoints reported in individual Gram-negative studies (8–18 h). The median cutpoint across studies is 10 h."><img src="mortality-analysis_files/figure-html/fig-gneg-cutpoint-1.png" class="img-fluid figure-img" width="2000"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gneg-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-TTP cutpoint dose-response for Gram-negative bacteremia. The curve is the Bayesian posterior median predicted OR; ribbon is the 95% CrI. Red points are 2×2-derived effect sizes (size ∝ precision). Blue shaded zone spans the range of ROC-derived optimal cutpoints reported in individual Gram-negative studies (8–18 h). The median cutpoint across studies is 10 h.
+TTP cutpoint dose-response for Gram-negative bacteremia. The curve is the Bayesian posterior median predicted OR; ribbon is the 95% CrI. Dark points are 2×2-derived effect sizes (size ∝ precision). Shaded zone spans the range of ROC-derived optimal cutpoints reported in individual Gram-negative studies (8–18 h). The median cutpoint across studies is 10 h.
 </figcaption>
 </figure>
 </div>
@@ -2831,23 +2832,23 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
 </figcaption>
 <div aria-describedby="tbl-gneg-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ozecfenlip" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ozecfenlip table {
+<div id="zjsnuiknsx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zjsnuiknsx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ozecfenlip thead, #ozecfenlip tbody, #ozecfenlip tfoot, #ozecfenlip tr, #ozecfenlip td, #ozecfenlip th {
+#zjsnuiknsx thead, #zjsnuiknsx tbody, #zjsnuiknsx tfoot, #zjsnuiknsx tr, #zjsnuiknsx td, #zjsnuiknsx th {
   border-style: none;
 }
 
-#ozecfenlip p {
+#zjsnuiknsx p {
   margin: 0;
   padding: 0;
 }
 
-#ozecfenlip .gt_table {
+#zjsnuiknsx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2873,12 +2874,12 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-left-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_caption {
+#zjsnuiknsx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ozecfenlip .gt_title {
+#zjsnuiknsx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2890,7 +2891,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-bottom-width: 0;
 }
 
-#ozecfenlip .gt_subtitle {
+#zjsnuiknsx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2902,7 +2903,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-top-width: 0;
 }
 
-#ozecfenlip .gt_heading {
+#zjsnuiknsx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2914,13 +2915,13 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-right-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_bottom_border {
+#zjsnuiknsx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_col_headings {
+#zjsnuiknsx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2935,7 +2936,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-right-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_col_heading {
+#zjsnuiknsx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2955,7 +2956,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   overflow-x: hidden;
 }
 
-#ozecfenlip .gt_column_spanner_outer {
+#zjsnuiknsx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2967,15 +2968,15 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   padding-right: 4px;
 }
 
-#ozecfenlip .gt_column_spanner_outer:first-child {
+#zjsnuiknsx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ozecfenlip .gt_column_spanner_outer:last-child {
+#zjsnuiknsx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ozecfenlip .gt_column_spanner {
+#zjsnuiknsx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2987,11 +2988,11 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   width: 100%;
 }
 
-#ozecfenlip .gt_spanner_row {
+#zjsnuiknsx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ozecfenlip .gt_group_heading {
+#zjsnuiknsx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3017,7 +3018,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   text-align: left;
 }
 
-#ozecfenlip .gt_empty_group_heading {
+#zjsnuiknsx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3032,15 +3033,15 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   vertical-align: middle;
 }
 
-#ozecfenlip .gt_from_md > :first-child {
+#zjsnuiknsx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ozecfenlip .gt_from_md > :last-child {
+#zjsnuiknsx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ozecfenlip .gt_row {
+#zjsnuiknsx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3059,7 +3060,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   overflow-x: hidden;
 }
 
-#ozecfenlip .gt_stub {
+#zjsnuiknsx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3072,7 +3073,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   padding-right: 5px;
 }
 
-#ozecfenlip .gt_stub_row_group {
+#zjsnuiknsx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3086,15 +3087,15 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   vertical-align: top;
 }
 
-#ozecfenlip .gt_row_group_first td {
+#zjsnuiknsx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ozecfenlip .gt_row_group_first th {
+#zjsnuiknsx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ozecfenlip .gt_summary_row {
+#zjsnuiknsx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3104,16 +3105,16 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   padding-right: 5px;
 }
 
-#ozecfenlip .gt_first_summary_row {
+#zjsnuiknsx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_first_summary_row.thick {
+#zjsnuiknsx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ozecfenlip .gt_last_summary_row {
+#zjsnuiknsx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3123,7 +3124,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-bottom-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_grand_summary_row {
+#zjsnuiknsx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3133,7 +3134,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   padding-right: 5px;
 }
 
-#ozecfenlip .gt_first_grand_summary_row {
+#zjsnuiknsx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3143,7 +3144,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-top-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_last_grand_summary_row_top {
+#zjsnuiknsx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3153,11 +3154,11 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-bottom-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_striped {
+#zjsnuiknsx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ozecfenlip .gt_table_body {
+#zjsnuiknsx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3166,7 +3167,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-bottom-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_footnotes {
+#zjsnuiknsx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3180,7 +3181,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-right-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_footnote {
+#zjsnuiknsx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3189,7 +3190,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   padding-right: 5px;
 }
 
-#ozecfenlip .gt_sourcenotes {
+#zjsnuiknsx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3203,7 +3204,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   border-right-color: #D3D3D3;
 }
 
-#ozecfenlip .gt_sourcenote {
+#zjsnuiknsx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3211,72 +3212,72 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
   padding-right: 5px;
 }
 
-#ozecfenlip .gt_left {
+#zjsnuiknsx .gt_left {
   text-align: left;
 }
 
-#ozecfenlip .gt_center {
+#zjsnuiknsx .gt_center {
   text-align: center;
 }
 
-#ozecfenlip .gt_right {
+#zjsnuiknsx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ozecfenlip .gt_font_normal {
+#zjsnuiknsx .gt_font_normal {
   font-weight: normal;
 }
 
-#ozecfenlip .gt_font_bold {
+#zjsnuiknsx .gt_font_bold {
   font-weight: bold;
 }
 
-#ozecfenlip .gt_font_italic {
+#zjsnuiknsx .gt_font_italic {
   font-style: italic;
 }
 
-#ozecfenlip .gt_super {
+#zjsnuiknsx .gt_super {
   font-size: 65%;
 }
 
-#ozecfenlip .gt_footnote_marks {
+#zjsnuiknsx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ozecfenlip .gt_asterisk {
+#zjsnuiknsx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ozecfenlip .gt_indent_1 {
+#zjsnuiknsx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ozecfenlip .gt_indent_2 {
+#zjsnuiknsx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ozecfenlip .gt_indent_3 {
+#zjsnuiknsx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ozecfenlip .gt_indent_4 {
+#zjsnuiknsx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ozecfenlip .gt_indent_5 {
+#zjsnuiknsx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ozecfenlip .katex-display {
+#zjsnuiknsx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ozecfenlip div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zjsnuiknsx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3409,24 +3410,24 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
 <span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pred_gpos_cp, <span class="fu">aes</span>(<span class="at">x =</span> cutpoint, <span class="at">y =</span> median_OR)) <span class="sc">+</span></span>
 <span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="fu">min</span>(roc_cuts_gpos), <span class="at">xmax =</span> <span class="fu">max</span>(roc_cuts_gpos),</span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">fill =</span> <span class="st">"#f7e4d4"</span>, <span class="at">alpha =</span> <span class="fl">0.65</span>) <span class="sc">+</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">fill =</span> <span class="st">"#E3E9EF"</span>, <span class="at">alpha =</span> <span class="fl">0.65</span>) <span class="sc">+</span></span>
 <span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">mean</span>(<span class="fu">range</span>(roc_cuts_gpos)), <span class="at">y =</span> <span class="dv">12</span>,</span>
 <span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"ROC-derived range</span><span class="sc">\n</span><span class="st">(9–13 h)"</span>, <span class="at">size =</span> <span class="dv">3</span>,</span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"#b35900"</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"#E41A1C"</span>, <span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#b22222"</span>, <span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"#6B7680"</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"#1F3447"</span>, <span class="at">alpha =</span> <span class="fl">0.15</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#1F3447"</span>, <span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
 <span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> pred_gpos_sens_cp,</span>
-<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"gray60"</span>, <span class="at">alpha =</span> <span class="fl">0.12</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"#A9BBCB"</span>, <span class="at">alpha =</span> <span class="fl">0.12</span>, <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
 <span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> pred_gpos_sens_cp,</span>
 <span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">linewidth =</span> <span class="fl">0.9</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> obs_gpos_cp,</span>
 <span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> ttp_cutpoint_hours, <span class="at">y =</span> or, <span class="at">size =</span> w),</span>
-<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.65</span>, <span class="at">color =</span> <span class="st">"#1a7bbf"</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.65</span>, <span class="at">color =</span> <span class="st">"#7F9DB9"</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Flag truncated 72h outlier</span></span>
 <span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="dv">30</span>, <span class="at">y =</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="fl">1.06</span>), <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"gray50"</span>, <span class="at">shape =</span> <span class="dv">17</span>) <span class="sc">+</span></span>
 <span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">29.5</span>, <span class="at">y =</span> <span class="fl">0.5</span>,</span>
-<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Minejima2019</span><span class="sc">\n</span><span class="st">(72 h, truncated →)"</span>, <span class="at">size =</span> <span class="fl">2.6</span>,</span>
+<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Minejima2019</span><span class="sc">\n</span><span class="st">(72 h, off scale)"</span>, <span class="at">size =</span> <span class="fl">2.6</span>,</span>
 <span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">hjust =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">8</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
 <span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="dv">14</span>), <span class="at">trans =</span> <span class="st">"log10"</span>,</span>
@@ -3434,7 +3435,7 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
 <span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">4</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">30</span>)) <span class="sc">+</span></span>
 <span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"TTP cutpoint (hours)"</span>,</span>
 <span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"OR for mortality (short vs long TTP, log scale)"</span>) <span class="sc">+</span></span>
-<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>() <span class="sc">+</span></span>
 <span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
@@ -3448,10 +3449,10 @@ Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
 <div id="fig-gpos-cutpoint" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gpos-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="mortality-analysis_files/figure-html/fig-gpos-cutpoint-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="TTP cutpoint dose-response for Gram-positive bacteremia. Red curve = full model (8–72 h); dashed gray = sensitivity excluding Minejima2019 (72 h), which uses a biologically distinct definition of prolonged bacteremia. Blue points are 2×2-derived effect sizes. Orange zone = range of ROC-derived cutpoints from Gram-positive studies (9–13 h). The negative slope in the full model is driven almost entirely by Minejima2019; after exclusion the slope becomes uncertain (P[slope < 0] = 75%)."><img src="mortality-analysis_files/figure-html/fig-gpos-cutpoint-1.png" class="img-fluid figure-img" width="2000"></a>
+<a href="mortality-analysis_files/figure-html/fig-gpos-cutpoint-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="TTP cutpoint dose-response for Gram-positive bacteremia. Solid curve = full model (8–72 h); dashed gray = sensitivity excluding Minejima2019 (72 h), which uses a biologically distinct definition of prolonged bacteremia. Light points are 2×2-derived effect sizes. Shaded zone = range of ROC-derived cutpoints from Gram-positive studies (9–13 h). The negative slope in the full model is driven almost entirely by Minejima2019; after exclusion the slope becomes uncertain (P[slope < 0] = 75%)."><img src="mortality-analysis_files/figure-html/fig-gpos-cutpoint-1.png" class="img-fluid figure-img" width="2000"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gpos-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-TTP cutpoint dose-response for Gram-positive bacteremia. Red curve = full model (8–72 h); dashed gray = sensitivity excluding Minejima2019 (72 h), which uses a biologically distinct definition of prolonged bacteremia. Blue points are 2×2-derived effect sizes. Orange zone = range of ROC-derived cutpoints from Gram-positive studies (9–13 h). The negative slope in the full model is driven almost entirely by Minejima2019; after exclusion the slope becomes uncertain (P[slope &lt; 0] = 75%).
+TTP cutpoint dose-response for Gram-positive bacteremia. Solid curve = full model (8–72 h); dashed gray = sensitivity excluding Minejima2019 (72 h), which uses a biologically distinct definition of prolonged bacteremia. Light points are 2×2-derived effect sizes. Shaded zone = range of ROC-derived cutpoints from Gram-positive studies (9–13 h). The negative slope in the full model is driven almost entirely by Minejima2019; after exclusion the slope becomes uncertain (P[slope &lt; 0] = 75%).
 </figcaption>
 </figure>
 </div>
@@ -3487,23 +3488,23 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
 </figcaption>
 <div aria-describedby="tbl-gpos-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="nfifkdecok" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nfifkdecok table {
+<div id="ixseuannwc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ixseuannwc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nfifkdecok thead, #nfifkdecok tbody, #nfifkdecok tfoot, #nfifkdecok tr, #nfifkdecok td, #nfifkdecok th {
+#ixseuannwc thead, #ixseuannwc tbody, #ixseuannwc tfoot, #ixseuannwc tr, #ixseuannwc td, #ixseuannwc th {
   border-style: none;
 }
 
-#nfifkdecok p {
+#ixseuannwc p {
   margin: 0;
   padding: 0;
 }
 
-#nfifkdecok .gt_table {
+#ixseuannwc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3529,12 +3530,12 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-left-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_caption {
+#ixseuannwc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nfifkdecok .gt_title {
+#ixseuannwc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3546,7 +3547,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-bottom-width: 0;
 }
 
-#nfifkdecok .gt_subtitle {
+#ixseuannwc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3558,7 +3559,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-top-width: 0;
 }
 
-#nfifkdecok .gt_heading {
+#ixseuannwc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3570,13 +3571,13 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-right-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_bottom_border {
+#ixseuannwc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_col_headings {
+#ixseuannwc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3591,7 +3592,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-right-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_col_heading {
+#ixseuannwc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3611,7 +3612,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   overflow-x: hidden;
 }
 
-#nfifkdecok .gt_column_spanner_outer {
+#ixseuannwc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3623,15 +3624,15 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   padding-right: 4px;
 }
 
-#nfifkdecok .gt_column_spanner_outer:first-child {
+#ixseuannwc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nfifkdecok .gt_column_spanner_outer:last-child {
+#ixseuannwc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nfifkdecok .gt_column_spanner {
+#ixseuannwc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3643,11 +3644,11 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   width: 100%;
 }
 
-#nfifkdecok .gt_spanner_row {
+#ixseuannwc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nfifkdecok .gt_group_heading {
+#ixseuannwc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3673,7 +3674,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   text-align: left;
 }
 
-#nfifkdecok .gt_empty_group_heading {
+#ixseuannwc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3688,15 +3689,15 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   vertical-align: middle;
 }
 
-#nfifkdecok .gt_from_md > :first-child {
+#ixseuannwc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nfifkdecok .gt_from_md > :last-child {
+#ixseuannwc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nfifkdecok .gt_row {
+#ixseuannwc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3715,7 +3716,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   overflow-x: hidden;
 }
 
-#nfifkdecok .gt_stub {
+#ixseuannwc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3728,7 +3729,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   padding-right: 5px;
 }
 
-#nfifkdecok .gt_stub_row_group {
+#ixseuannwc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3742,15 +3743,15 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   vertical-align: top;
 }
 
-#nfifkdecok .gt_row_group_first td {
+#ixseuannwc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nfifkdecok .gt_row_group_first th {
+#ixseuannwc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nfifkdecok .gt_summary_row {
+#ixseuannwc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3760,16 +3761,16 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   padding-right: 5px;
 }
 
-#nfifkdecok .gt_first_summary_row {
+#ixseuannwc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_first_summary_row.thick {
+#ixseuannwc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nfifkdecok .gt_last_summary_row {
+#ixseuannwc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3779,7 +3780,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-bottom-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_grand_summary_row {
+#ixseuannwc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3789,7 +3790,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   padding-right: 5px;
 }
 
-#nfifkdecok .gt_first_grand_summary_row {
+#ixseuannwc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3799,7 +3800,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-top-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_last_grand_summary_row_top {
+#ixseuannwc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3809,11 +3810,11 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-bottom-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_striped {
+#ixseuannwc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nfifkdecok .gt_table_body {
+#ixseuannwc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3822,7 +3823,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-bottom-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_footnotes {
+#ixseuannwc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3836,7 +3837,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-right-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_footnote {
+#ixseuannwc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3845,7 +3846,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   padding-right: 5px;
 }
 
-#nfifkdecok .gt_sourcenotes {
+#ixseuannwc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3859,7 +3860,7 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   border-right-color: #D3D3D3;
 }
 
-#nfifkdecok .gt_sourcenote {
+#ixseuannwc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3867,72 +3868,72 @@ Gram-positive cutpoint meta-regression: slope comparison between full model and 
   padding-right: 5px;
 }
 
-#nfifkdecok .gt_left {
+#ixseuannwc .gt_left {
   text-align: left;
 }
 
-#nfifkdecok .gt_center {
+#ixseuannwc .gt_center {
   text-align: center;
 }
 
-#nfifkdecok .gt_right {
+#ixseuannwc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nfifkdecok .gt_font_normal {
+#ixseuannwc .gt_font_normal {
   font-weight: normal;
 }
 
-#nfifkdecok .gt_font_bold {
+#ixseuannwc .gt_font_bold {
   font-weight: bold;
 }
 
-#nfifkdecok .gt_font_italic {
+#ixseuannwc .gt_font_italic {
   font-style: italic;
 }
 
-#nfifkdecok .gt_super {
+#ixseuannwc .gt_super {
   font-size: 65%;
 }
 
-#nfifkdecok .gt_footnote_marks {
+#ixseuannwc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nfifkdecok .gt_asterisk {
+#ixseuannwc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nfifkdecok .gt_indent_1 {
+#ixseuannwc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nfifkdecok .gt_indent_2 {
+#ixseuannwc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nfifkdecok .gt_indent_3 {
+#ixseuannwc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nfifkdecok .gt_indent_4 {
+#ixseuannwc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nfifkdecok .gt_indent_5 {
+#ixseuannwc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nfifkdecok .katex-display {
+#ixseuannwc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nfifkdecok div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ixseuannwc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4117,7 +4118,7 @@ Attaching package: 'lme4'</code></pre>
 <span id="cb64-123"><a href="#cb64-123" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">8.5</span>), <span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">8</span>,</span>
 <span id="cb64-124"><a href="#cb64-124" aria-hidden="true" tabindex="-1"></a>                       <span class="at">name   =</span> <span class="st">"OR for mortality vs TTP = 24 h"</span>) <span class="sc">+</span></span>
 <span id="cb64-125"><a href="#cb64-125" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> title_label) <span class="sc">+</span></span>
-<span id="cb64-126"><a href="#cb64-126" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb64-126"><a href="#cb64-126" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
 <span id="cb64-127"><a href="#cb64-127" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb64-128"><a href="#cb64-128" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">10</span>))</span>
 <span id="cb64-129"><a href="#cb64-129" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -4147,7 +4148,7 @@ Attaching package: 'lme4'</code></pre>
 <span id="cb64-153"><a href="#cb64-153" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>),</span>
 <span id="cb64-154"><a href="#cb64-154" aria-hidden="true" tabindex="-1"></a>                       <span class="at">name   =</span> <span class="st">"Predicted mortality probability"</span>) <span class="sc">+</span></span>
 <span id="cb64-155"><a href="#cb64-155" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> title_label) <span class="sc">+</span></span>
-<span id="cb64-156"><a href="#cb64-156" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb64-156"><a href="#cb64-156" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
 <span id="cb64-157"><a href="#cb64-157" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb64-158"><a href="#cb64-158" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">10</span>))</span>
 <span id="cb64-159"><a href="#cb64-159" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -4156,20 +4157,20 @@ Attaching package: 'lme4'</code></pre>
 <span id="cb64-162"><a href="#cb64-162" aria-hidden="true" tabindex="-1"></a>obs_pts_gneg <span class="ot">&lt;-</span> dose_long_gneg <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">mort =</span> events <span class="sc">/</span> n)</span>
 <span id="cb64-163"><a href="#cb64-163" aria-hidden="true" tabindex="-1"></a>obs_pts_gpos <span class="ot">&lt;-</span> dose_long_gpos <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">mort =</span> events <span class="sc">/</span> n)</span>
 <span id="cb64-164"><a href="#cb64-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-165"><a href="#cb64-165" aria-hidden="true" tabindex="-1"></a>p_or_gneg   <span class="ot">&lt;-</span> <span class="fu">make_or_panel</span>(curve_gneg, <span class="st">"#E41A1C"</span>,</span>
+<span id="cb64-165"><a href="#cb64-165" aria-hidden="true" tabindex="-1"></a>p_or_gneg   <span class="ot">&lt;-</span> <span class="fu">make_or_panel</span>(curve_gneg, <span class="st">"#1F3447"</span>,</span>
 <span id="cb64-166"><a href="#cb64-166" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"A  Gram-negative: OR vs TTP = 24 h"</span>)</span>
 <span id="cb64-167"><a href="#cb64-167" aria-hidden="true" tabindex="-1"></a>p_prob_gneg <span class="ot">&lt;-</span> <span class="fu">make_prob_panel</span>(</span>
-<span id="cb64-168"><a href="#cb64-168" aria-hidden="true" tabindex="-1"></a>  abs_gneg, obs_pts_gneg, <span class="st">"#E41A1C"</span>, anc_gneg,</span>
+<span id="cb64-168"><a href="#cb64-168" aria-hidden="true" tabindex="-1"></a>  abs_gneg, obs_pts_gneg, <span class="st">"#1F3447"</span>, anc_gneg,</span>
 <span id="cb64-169"><a href="#cb64-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sprintf</span>(<span class="st">"Anchor: %.1f%% at %.1f h</span><span class="sc">\n</span><span class="st">%d deaths / %s patients</span><span class="sc">\n</span><span class="st">%d studies</span><span class="sc">\n</span><span class="st">(patient-weighted mean TTP)"</span>,</span>
 <span id="cb64-170"><a href="#cb64-170" aria-hidden="true" tabindex="-1"></a>          anc_gneg<span class="sc">$</span>mort <span class="sc">*</span> <span class="dv">100</span>, anc_gneg<span class="sc">$</span>ref_ttp,</span>
 <span id="cb64-171"><a href="#cb64-171" aria-hidden="true" tabindex="-1"></a>          anc_gneg<span class="sc">$</span>n_deaths, <span class="fu">format</span>(anc_gneg<span class="sc">$</span>n_pts, <span class="at">big.mark =</span> <span class="st">","</span>),</span>
 <span id="cb64-172"><a href="#cb64-172" aria-hidden="true" tabindex="-1"></a>          anc_gneg<span class="sc">$</span>n_studies),</span>
 <span id="cb64-173"><a href="#cb64-173" aria-hidden="true" tabindex="-1"></a>  <span class="st">"B  Gram-negative: absolute mortality probability"</span></span>
 <span id="cb64-174"><a href="#cb64-174" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb64-175"><a href="#cb64-175" aria-hidden="true" tabindex="-1"></a>p_or_gpos   <span class="ot">&lt;-</span> <span class="fu">make_or_panel</span>(curve_gpos, <span class="st">"#377EB8"</span>,</span>
+<span id="cb64-175"><a href="#cb64-175" aria-hidden="true" tabindex="-1"></a>p_or_gpos   <span class="ot">&lt;-</span> <span class="fu">make_or_panel</span>(curve_gpos, <span class="st">"#7F9DB9"</span>,</span>
 <span id="cb64-176"><a href="#cb64-176" aria-hidden="true" tabindex="-1"></a>                              <span class="st">"C  Gram-positive: OR vs TTP = 24 h"</span>)</span>
 <span id="cb64-177"><a href="#cb64-177" aria-hidden="true" tabindex="-1"></a>p_prob_gpos <span class="ot">&lt;-</span> <span class="fu">make_prob_panel</span>(</span>
-<span id="cb64-178"><a href="#cb64-178" aria-hidden="true" tabindex="-1"></a>  abs_gpos, obs_pts_gpos, <span class="st">"#377EB8"</span>, anc_gpos,</span>
+<span id="cb64-178"><a href="#cb64-178" aria-hidden="true" tabindex="-1"></a>  abs_gpos, obs_pts_gpos, <span class="st">"#7F9DB9"</span>, anc_gpos,</span>
 <span id="cb64-179"><a href="#cb64-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sprintf</span>(<span class="st">"Anchor: %.1f%% at %.1f h</span><span class="sc">\n</span><span class="st">%d deaths / %s patients</span><span class="sc">\n</span><span class="st">%d studies</span><span class="sc">\n</span><span class="st">(patient-weighted mean TTP)"</span>,</span>
 <span id="cb64-180"><a href="#cb64-180" aria-hidden="true" tabindex="-1"></a>          anc_gpos<span class="sc">$</span>mort <span class="sc">*</span> <span class="dv">100</span>, anc_gpos<span class="sc">$</span>ref_ttp,</span>
 <span id="cb64-181"><a href="#cb64-181" aria-hidden="true" tabindex="-1"></a>          anc_gpos<span class="sc">$</span>n_deaths, <span class="fu">format</span>(anc_gpos<span class="sc">$</span>n_pts, <span class="at">big.mark =</span> <span class="st">","</span>),</span>
@@ -4192,21 +4193,21 @@ Attaching package: 'lme4'</code></pre>
 <span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
 <span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">35.5</span>, <span class="at">y =</span> <span class="fl">7.2</span>,</span>
 <span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Gram-negative</span><span class="sc">\n</span><span class="st">OR×0.44 per 2× TTP</span><span class="sc">\n</span><span class="st">(56% lower odds)"</span>,</span>
-<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">2.9</span>, <span class="at">color =</span> <span class="st">"#E41A1C"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">2.9</span>, <span class="at">color =</span> <span class="st">"#1F3447"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
 <span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">35.5</span>, <span class="at">y =</span> <span class="fl">4.5</span>,</span>
 <span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Gram-positive</span><span class="sc">\n</span><span class="st">OR×0.64 per 2× TTP</span><span class="sc">\n</span><span class="st">(36% lower odds)"</span>,</span>
-<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">2.9</span>, <span class="at">color =</span> <span class="st">"#377EB8"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
-<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gram-negative"</span> <span class="ot">=</span> <span class="st">"#E41A1C"</span>,</span>
-<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Gram-positive"</span> <span class="ot">=</span> <span class="st">"#377EB8"</span>)) <span class="sc">+</span></span>
-<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>( <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gram-negative"</span> <span class="ot">=</span> <span class="st">"#E41A1C"</span>,</span>
-<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Gram-positive"</span> <span class="ot">=</span> <span class="st">"#377EB8"</span>)) <span class="sc">+</span></span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="fl">2.9</span>, <span class="at">color =</span> <span class="st">"#7F9DB9"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gram-negative"</span> <span class="ot">=</span> <span class="st">"#1F3447"</span>,</span>
+<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Gram-positive"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>)) <span class="sc">+</span></span>
+<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>( <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gram-negative"</span> <span class="ot">=</span> <span class="st">"#1F3447"</span>,</span>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Gram-positive"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>)) <span class="sc">+</span></span>
 <span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">24</span>, <span class="dv">30</span>, <span class="dv">36</span>),</span>
 <span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">1.5</span>, <span class="dv">37</span>),</span>
 <span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a>                     <span class="at">name   =</span> <span class="st">"Time to positivity (hours)"</span>) <span class="sc">+</span></span>
 <span id="cb65-21"><a href="#cb65-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">8.5</span>), <span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">8</span>,</span>
 <span id="cb65-22"><a href="#cb65-22" aria-hidden="true" tabindex="-1"></a>                     <span class="at">name   =</span> <span class="st">"Odds ratio for mortality vs TTP = 24 h"</span>) <span class="sc">+</span></span>
 <span id="cb65-23"><a href="#cb65-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb65-24"><a href="#cb65-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb65-24"><a href="#cb65-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
 <span id="cb65-25"><a href="#cb65-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb65-26"><a href="#cb65-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position  =</span> <span class="st">"bottom"</span>,</span>
 <span id="cb65-27"><a href="#cb65-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.key.width =</span> <span class="fu">unit</span>(<span class="fl">1.5</span>, <span class="st">"cm"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4223,10 +4224,10 @@ Attaching package: 'lme4'</code></pre>
 <div id="fig-dr-overlay" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dr-overlay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="mortality-analysis_files/figure-html/fig-dr-overlay-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Continuous TTP dose-response for mortality: Gram-negative (red) vs Gram-positive (blue) bacteremia. OR expressed relative to TTP = 24 h (dashed reference line). Shaded bands are 95% confidence intervals on the dose-response slope. Each doubling of TTP was associated with a 56% reduction in mortality odds in Gram-negative bacteremia (OR per 2× TTP = 0.44, 95% CI 0.38–0.51) and a 36% reduction in Gram-positive bacteremia (OR per 2× TTP = 0.64, 95% CI 0.51–0.80). Model: simulation-assisted mixed-effects logistic regression; representative TTP estimated from truncated log-normal distributions. Gram-negative: Prinsloo2023 excluded (anomalous group composition at 24 h cutpoint). Gram-positive: Minejima2019 excluded (72 h cutpoint reflects persistent bacteremia, a biologically distinct signal)."><img src="mortality-analysis_files/figure-html/fig-dr-overlay-1.png" class="img-fluid figure-img" width="2000"></a>
+<a href="mortality-analysis_files/figure-html/fig-dr-overlay-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Continuous TTP dose-response for mortality: Gram-negative (dark navy) vs Gram-positive (light blue-grey) bacteremia. OR expressed relative to TTP = 24 h (dashed reference line). Shaded bands are 95% confidence intervals on the dose-response slope. Each doubling of TTP was associated with a 56% reduction in mortality odds in Gram-negative bacteremia (OR per 2× TTP = 0.44, 95% CI 0.38–0.51) and a 36% reduction in Gram-positive bacteremia (OR per 2× TTP = 0.64, 95% CI 0.51–0.80). Model: simulation-assisted mixed-effects logistic regression; representative TTP estimated from truncated log-normal distributions. Gram-negative: Prinsloo2023 excluded (anomalous group composition at 24 h cutpoint). Gram-positive: Minejima2019 excluded (72 h cutpoint reflects persistent bacteremia, a biologically distinct signal)."><img src="mortality-analysis_files/figure-html/fig-dr-overlay-1.png" class="img-fluid figure-img" width="2000"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dr-overlay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Continuous TTP dose-response for mortality: Gram-negative (red) vs Gram-positive (blue) bacteremia. OR expressed relative to TTP = 24 h (dashed reference line). Shaded bands are 95% confidence intervals on the dose-response slope. Each doubling of TTP was associated with a 56% reduction in mortality odds in Gram-negative bacteremia (OR per 2× TTP = 0.44, 95% CI 0.38–0.51) and a 36% reduction in Gram-positive bacteremia (OR per 2× TTP = 0.64, 95% CI 0.51–0.80). Model: simulation-assisted mixed-effects logistic regression; representative TTP estimated from truncated log-normal distributions. Gram-negative: Prinsloo2023 excluded (anomalous group composition at 24 h cutpoint). Gram-positive: Minejima2019 excluded (72 h cutpoint reflects persistent bacteremia, a biologically distinct signal).
+Continuous TTP dose-response for mortality: Gram-negative (dark navy) vs Gram-positive (light blue-grey) bacteremia. OR expressed relative to TTP = 24 h (dashed reference line). Shaded bands are 95% confidence intervals on the dose-response slope. Each doubling of TTP was associated with a 56% reduction in mortality odds in Gram-negative bacteremia (OR per 2× TTP = 0.44, 95% CI 0.38–0.51) and a 36% reduction in Gram-positive bacteremia (OR per 2× TTP = 0.64, 95% CI 0.51–0.80). Model: simulation-assisted mixed-effects logistic regression; representative TTP estimated from truncated log-normal distributions. Gram-negative: Prinsloo2023 excluded (anomalous group composition at 24 h cutpoint). Gram-positive: Minejima2019 excluded (72 h cutpoint reflects persistent bacteremia, a biologically distinct signal).
 </figcaption>
 </figure>
 </div>
@@ -4876,39 +4877,39 @@ Summary of continuous TTP dose-response estimates by pathogen class.
 <span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb80-15"><a href="#cb80-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Shaded significance regions (draw outermost first, then overwrite inward)</span></span>
 <span id="cb80-16"><a href="#cb80-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> contours,</span>
-<span id="cb80-17"><a href="#cb80-17" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> x_lo,  <span class="at">xmax =</span> lo01), <span class="at">fill =</span> <span class="st">"gray55"</span>) <span class="sc">+</span></span>
+<span id="cb80-17"><a href="#cb80-17" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> x_lo,  <span class="at">xmax =</span> lo01), <span class="at">fill =</span> <span class="st">"#6F8499"</span>) <span class="sc">+</span></span>
 <span id="cb80-18"><a href="#cb80-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> contours,</span>
-<span id="cb80-19"><a href="#cb80-19" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> hi01,  <span class="at">xmax =</span> x_hi), <span class="at">fill =</span> <span class="st">"gray55"</span>) <span class="sc">+</span></span>
+<span id="cb80-19"><a href="#cb80-19" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> hi01,  <span class="at">xmax =</span> x_hi), <span class="at">fill =</span> <span class="st">"#6F8499"</span>) <span class="sc">+</span></span>
 <span id="cb80-20"><a href="#cb80-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> contours,</span>
-<span id="cb80-21"><a href="#cb80-21" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> lo01,  <span class="at">xmax =</span> lo05), <span class="at">fill =</span> <span class="st">"gray75"</span>) <span class="sc">+</span></span>
+<span id="cb80-21"><a href="#cb80-21" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> lo01,  <span class="at">xmax =</span> lo05), <span class="at">fill =</span> <span class="st">"#A9BBCB"</span>) <span class="sc">+</span></span>
 <span id="cb80-22"><a href="#cb80-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> contours,</span>
-<span id="cb80-23"><a href="#cb80-23" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> hi05,  <span class="at">xmax =</span> hi01), <span class="at">fill =</span> <span class="st">"gray75"</span>) <span class="sc">+</span></span>
+<span id="cb80-23"><a href="#cb80-23" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> hi05,  <span class="at">xmax =</span> hi01), <span class="at">fill =</span> <span class="st">"#A9BBCB"</span>) <span class="sc">+</span></span>
 <span id="cb80-24"><a href="#cb80-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> contours,</span>
-<span id="cb80-25"><a href="#cb80-25" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> lo05,  <span class="at">xmax =</span> lo10), <span class="at">fill =</span> <span class="st">"gray90"</span>) <span class="sc">+</span></span>
+<span id="cb80-25"><a href="#cb80-25" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> lo05,  <span class="at">xmax =</span> lo10), <span class="at">fill =</span> <span class="st">"#DCE4EC"</span>) <span class="sc">+</span></span>
 <span id="cb80-26"><a href="#cb80-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> contours,</span>
-<span id="cb80-27"><a href="#cb80-27" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> hi10,  <span class="at">xmax =</span> hi05), <span class="at">fill =</span> <span class="st">"gray90"</span>) <span class="sc">+</span></span>
+<span id="cb80-27"><a href="#cb80-27" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> hi10,  <span class="at">xmax =</span> hi05), <span class="at">fill =</span> <span class="st">"#DCE4EC"</span>) <span class="sc">+</span></span>
 <span id="cb80-28"><a href="#cb80-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="at">data =</span> contours,</span>
 <span id="cb80-29"><a href="#cb80-29" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">y =</span> se, <span class="at">xmin =</span> lo10,  <span class="at">xmax =</span> hi10), <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb80-30"><a href="#cb80-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Study points</span></span>
 <span id="cb80-31"><a href="#cb80-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> es_mort, <span class="fu">aes</span>(<span class="at">x =</span> yi, <span class="at">y =</span> sei),</span>
-<span id="cb80-32"><a href="#cb80-32" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>,</span>
+<span id="cb80-32"><a href="#cb80-32" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">"#7F9DB9"</span>, <span class="at">color =</span> <span class="st">"white"</span>,</span>
 <span id="cb80-33"><a href="#cb80-33" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="fl">2.2</span>, <span class="at">alpha =</span> <span class="fl">0.75</span>) <span class="sc">+</span></span>
 <span id="cb80-34"><a href="#cb80-34" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pooled estimate (REML)</span></span>
-<span id="cb80-35"><a href="#cb80-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mu_pool, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"darkred"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb80-35"><a href="#cb80-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mu_pool, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"#1F3447"</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb80-36"><a href="#cb80-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Null line</span></span>
 <span id="cb80-37"><a href="#cb80-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">color =</span> <span class="st">"gray30"</span>) <span class="sc">+</span></span>
 <span id="cb80-38"><a href="#cb80-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Contour labels</span></span>
 <span id="cb80-39"><a href="#cb80-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> x_hi <span class="sc">-</span> <span class="fl">0.05</span>, <span class="at">y =</span> max_se <span class="sc">*</span> <span class="fl">0.12</span>,</span>
-<span id="cb80-40"><a href="#cb80-40" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"p &lt; 0.01"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"gray30"</span>) <span class="sc">+</span></span>
+<span id="cb80-40"><a href="#cb80-40" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"p &lt; 0.01"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb80-41"><a href="#cb80-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> x_hi <span class="sc">-</span> <span class="fl">0.05</span>, <span class="at">y =</span> max_se <span class="sc">*</span> <span class="fl">0.38</span>,</span>
-<span id="cb80-42"><a href="#cb80-42" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"p &lt; 0.05"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"gray40"</span>) <span class="sc">+</span></span>
+<span id="cb80-42"><a href="#cb80-42" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"p &lt; 0.05"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#1A1F24"</span>) <span class="sc">+</span></span>
 <span id="cb80-43"><a href="#cb80-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> x_hi <span class="sc">-</span> <span class="fl">0.05</span>, <span class="at">y =</span> max_se <span class="sc">*</span> <span class="fl">0.62</span>,</span>
-<span id="cb80-44"><a href="#cb80-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"p &lt; 0.10"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb80-44"><a href="#cb80-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"p &lt; 0.10"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#1A1F24"</span>) <span class="sc">+</span></span>
 <span id="cb80-45"><a href="#cb80-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_reverse</span>(<span class="at">limits =</span> <span class="fu">c</span>(max_se, <span class="dv">0</span>),</span>
 <span id="cb80-46"><a href="#cb80-46" aria-hidden="true" tabindex="-1"></a>                  <span class="at">name =</span> <span class="st">"Standard error (SE)"</span>) <span class="sc">+</span></span>
 <span id="cb80-47"><a href="#cb80-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(x_lo, x_hi),</span>
 <span id="cb80-48"><a href="#cb80-48" aria-hidden="true" tabindex="-1"></a>                     <span class="at">name =</span> <span class="st">"Log OR (short vs long TTP)"</span>) <span class="sc">+</span></span>
-<span id="cb80-49"><a href="#cb80-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb80-49"><a href="#cb80-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
 <span id="cb80-50"><a href="#cb80-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
@@ -5470,11 +5471,11 @@ Egger’s regression test for funnel-plot asymmetry (primary pool, mortality; me
 <span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sens_df, <span class="fu">aes</span>(<span class="at">x =</span> OR, <span class="at">fill =</span> Pool)) <span class="sc">+</span></span>
 <span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.55</span>) <span class="sc">+</span></span>
-<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_jama</span>() <span class="sc">+</span></span>
 <span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"OR (short vs long TTP)"</span>, <span class="at">y =</span> <span class="st">"Posterior density"</span>) <span class="sc">+</span></span>
-<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-sens-inc" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -6540,11 +6541,11 @@ Pooled OR by effect-size source. The 2×2 and reported-only estimates come from 
 <span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> OR, <span class="at">fill =</span> Source)) <span class="sc">+</span></span>
 <span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.45</span>) <span class="sc">+</span></span>
-<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
 <span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
 <span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
 <span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pooled OR (short vs long TTP)"</span>, <span class="at">y =</span> <span class="st">"Posterior density"</span>) <span class="sc">+</span></span>
-<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_jama</span>() <span class="sc">+</span></span>
 <span id="cb85-17"><a href="#cb85-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
 <span id="cb85-18"><a href="#cb85-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -7083,7 +7084,7 @@ Meta-regression contrasts vs the 2×2-derived reference. A positive Δ log-OR in
 <span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_study_id__Intercept   =</span> <span class="st">"τ (between-study SD)"</span></span>
 <span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>  )))</span>
 <span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-trace-sens" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -7105,7 +7106,7 @@ Trace plots for key parameters of the sensitivity (n=140) model.
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>  fits_inc<span class="sc">$</span>fit_base,</span>
 <span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"sd_study_id__Intercept"</span>)</span>
 <span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-rank-sens" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -7128,8 +7129,8 @@ Rank histograms for key parameters of the sensitivity (n=140) model.
 <span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>  (\(d) <span class="fu">setNames</span>(d<span class="sc">$</span>rhat, d<span class="sc">$</span>variable))()</span>
 <span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>bayesplot<span class="sc">::</span><span class="fu">mcmc_rhat</span>(rhat_vals_sens) <span class="sc">+</span></span>
-<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.01</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">1.01</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> jama_ref_line) <span class="sc">+</span></span>
+<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Dropped 1 NAs from 'new_rhat(rhat)'.</code></pre>

@@ -283,9 +283,10 @@
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>es_all  <span class="ot">&lt;-</span> <span class="fu">prepare_effect_sizes</span>(<span class="st">"data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"</span>,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                                <span class="at">include_inclusive_pool =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">drop_contaminated_ttp  =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/theme_jama.R"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>es_all  <span class="ot">&lt;-</span> <span class="fu">prepare_effect_sizes</span>(<span class="st">"data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">include_inclusive_pool =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                <span class="at">drop_contaminated_ttp  =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Pool: 100 studies (inclusive_pool=FALSE, drop_contaminated=TRUE)</code></pre>
@@ -355,26 +356,27 @@ enforced in future versions of knitr and this warning will become an error.</cod
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rob_long, <span class="fu">aes</span>(<span class="at">x =</span> domain, <span class="at">y =</span> <span class="fu">reorder</span>(study_id, pub_year), <span class="at">fill =</span> score_lbl)) <span class="sc">+</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> score), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="fl">2.7</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Low"</span> <span class="ot">=</span> <span class="st">"#2ca02c"</span>, <span class="st">"Moderate"</span> <span class="ot">=</span> <span class="st">"#ff9f1c"</span>,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"#d62728"</span>, <span class="st">"NR"</span> <span class="ot">=</span> <span class="st">"gray70"</span>),</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">"Risk of bias"</span>) <span class="sc">+</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">position =</span> <span class="st">"top"</span>) <span class="sc">+</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x.top =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">35</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>),</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> score, <span class="at">color =</span> score_lbl), <span class="at">size =</span> <span class="fl">2.7</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Low"</span> <span class="ot">=</span> <span class="st">"#1A1F24"</span>, <span class="st">"Moderate"</span> <span class="ot">=</span> <span class="st">"#1A1F24"</span>, <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"white"</span>, <span class="st">"NR"</span> <span class="ot">=</span> <span class="st">"#1A1F24"</span>)) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Low"</span> <span class="ot">=</span> <span class="st">"#C9D6E2"</span>, <span class="st">"Moderate"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"#3F5A75"</span>, <span class="st">"NR"</span> <span class="ot">=</span> <span class="st">"#E3E9EF"</span>),</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">"Risk of bias"</span>) <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">position =</span> <span class="st">"top"</span>) <span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>(<span class="at">base_size =</span> <span class="dv">9</span>) <span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x.top =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">35</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>),</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-rob-traffic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rob-traffic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="rob_files/figure-html/fig-rob-traffic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="QUIPS traffic-light plot. Each row is a study; columns are domains. Green = low, amber = moderate, red = high risk of bias."><img src="rob_files/figure-html/fig-rob-traffic-1.png" class="img-fluid figure-img" width="1400"></a>
+<a href="rob_files/figure-html/fig-rob-traffic-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="QUIPS traffic-light plot. Each row is a study; columns are domains. Light = low, medium = moderate, dark = high risk of bias."><img src="rob_files/figure-html/fig-rob-traffic-1.png" class="img-fluid figure-img" width="1400"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rob-traffic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-QUIPS traffic-light plot. Each row is a study; columns are domains. Green = low, amber = moderate, red = high risk of bias.
+QUIPS traffic-light plot. Each row is a study; columns are domains. Light = low, medium = moderate, dark = high risk of bias.
 </figcaption>
 </figure>
 </div>
@@ -396,11 +398,11 @@ QUIPS traffic-light plot. Each row is a study; columns are domains. Green = low,
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">accuracy =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Low"</span> <span class="ot">=</span> <span class="st">"#2ca02c"</span>, <span class="st">"Moderate"</span> <span class="ot">=</span> <span class="st">"#ff9f1c"</span>,</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"#d62728"</span>, <span class="st">"NR"</span> <span class="ot">=</span> <span class="st">"gray70"</span>),</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Low"</span> <span class="ot">=</span> <span class="st">"#C9D6E2"</span>, <span class="st">"Moderate"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>,</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"High"</span> <span class="ot">=</span> <span class="st">"#3F5A75"</span>, <span class="st">"NR"</span> <span class="ot">=</span> <span class="st">"#E3E9EF"</span>),</span>
 <span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">"Risk of bias"</span>) <span class="sc">+</span></span>
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-rob-bars" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -436,23 +438,23 @@ Overall QUIPS rating per study (primary pool, n=100).
 </figcaption>
 <div aria-describedby="tbl-rob-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zopnidsenp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zopnidsenp table {
+<div id="hnnmnulciv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hnnmnulciv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zopnidsenp thead, #zopnidsenp tbody, #zopnidsenp tfoot, #zopnidsenp tr, #zopnidsenp td, #zopnidsenp th {
+#hnnmnulciv thead, #hnnmnulciv tbody, #hnnmnulciv tfoot, #hnnmnulciv tr, #hnnmnulciv td, #hnnmnulciv th {
   border-style: none;
 }
 
-#zopnidsenp p {
+#hnnmnulciv p {
   margin: 0;
   padding: 0;
 }
 
-#zopnidsenp .gt_table {
+#hnnmnulciv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -478,12 +480,12 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-left-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_caption {
+#hnnmnulciv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zopnidsenp .gt_title {
+#hnnmnulciv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -495,7 +497,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-bottom-width: 0;
 }
 
-#zopnidsenp .gt_subtitle {
+#hnnmnulciv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -507,7 +509,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-top-width: 0;
 }
 
-#zopnidsenp .gt_heading {
+#hnnmnulciv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -519,13 +521,13 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-right-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_bottom_border {
+#hnnmnulciv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_col_headings {
+#hnnmnulciv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -540,7 +542,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-right-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_col_heading {
+#hnnmnulciv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -560,7 +562,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   overflow-x: hidden;
 }
 
-#zopnidsenp .gt_column_spanner_outer {
+#hnnmnulciv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -572,15 +574,15 @@ Overall QUIPS rating per study (primary pool, n=100).
   padding-right: 4px;
 }
 
-#zopnidsenp .gt_column_spanner_outer:first-child {
+#hnnmnulciv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zopnidsenp .gt_column_spanner_outer:last-child {
+#hnnmnulciv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zopnidsenp .gt_column_spanner {
+#hnnmnulciv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -592,11 +594,11 @@ Overall QUIPS rating per study (primary pool, n=100).
   width: 100%;
 }
 
-#zopnidsenp .gt_spanner_row {
+#hnnmnulciv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zopnidsenp .gt_group_heading {
+#hnnmnulciv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -622,7 +624,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   text-align: left;
 }
 
-#zopnidsenp .gt_empty_group_heading {
+#hnnmnulciv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -637,15 +639,15 @@ Overall QUIPS rating per study (primary pool, n=100).
   vertical-align: middle;
 }
 
-#zopnidsenp .gt_from_md > :first-child {
+#hnnmnulciv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zopnidsenp .gt_from_md > :last-child {
+#hnnmnulciv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zopnidsenp .gt_row {
+#hnnmnulciv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -664,7 +666,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   overflow-x: hidden;
 }
 
-#zopnidsenp .gt_stub {
+#hnnmnulciv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -677,7 +679,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   padding-right: 5px;
 }
 
-#zopnidsenp .gt_stub_row_group {
+#hnnmnulciv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -691,15 +693,15 @@ Overall QUIPS rating per study (primary pool, n=100).
   vertical-align: top;
 }
 
-#zopnidsenp .gt_row_group_first td {
+#hnnmnulciv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zopnidsenp .gt_row_group_first th {
+#hnnmnulciv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zopnidsenp .gt_summary_row {
+#hnnmnulciv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -709,16 +711,16 @@ Overall QUIPS rating per study (primary pool, n=100).
   padding-right: 5px;
 }
 
-#zopnidsenp .gt_first_summary_row {
+#hnnmnulciv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_first_summary_row.thick {
+#hnnmnulciv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zopnidsenp .gt_last_summary_row {
+#hnnmnulciv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -728,7 +730,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-bottom-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_grand_summary_row {
+#hnnmnulciv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -738,7 +740,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   padding-right: 5px;
 }
 
-#zopnidsenp .gt_first_grand_summary_row {
+#hnnmnulciv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -748,7 +750,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-top-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_last_grand_summary_row_top {
+#hnnmnulciv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -758,11 +760,11 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-bottom-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_striped {
+#hnnmnulciv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zopnidsenp .gt_table_body {
+#hnnmnulciv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -771,7 +773,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-bottom-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_footnotes {
+#hnnmnulciv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -785,7 +787,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-right-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_footnote {
+#hnnmnulciv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -794,7 +796,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   padding-right: 5px;
 }
 
-#zopnidsenp .gt_sourcenotes {
+#hnnmnulciv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -808,7 +810,7 @@ Overall QUIPS rating per study (primary pool, n=100).
   border-right-color: #D3D3D3;
 }
 
-#zopnidsenp .gt_sourcenote {
+#hnnmnulciv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -816,72 +818,72 @@ Overall QUIPS rating per study (primary pool, n=100).
   padding-right: 5px;
 }
 
-#zopnidsenp .gt_left {
+#hnnmnulciv .gt_left {
   text-align: left;
 }
 
-#zopnidsenp .gt_center {
+#hnnmnulciv .gt_center {
   text-align: center;
 }
 
-#zopnidsenp .gt_right {
+#hnnmnulciv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zopnidsenp .gt_font_normal {
+#hnnmnulciv .gt_font_normal {
   font-weight: normal;
 }
 
-#zopnidsenp .gt_font_bold {
+#hnnmnulciv .gt_font_bold {
   font-weight: bold;
 }
 
-#zopnidsenp .gt_font_italic {
+#hnnmnulciv .gt_font_italic {
   font-style: italic;
 }
 
-#zopnidsenp .gt_super {
+#hnnmnulciv .gt_super {
   font-size: 65%;
 }
 
-#zopnidsenp .gt_footnote_marks {
+#hnnmnulciv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zopnidsenp .gt_asterisk {
+#hnnmnulciv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zopnidsenp .gt_indent_1 {
+#hnnmnulciv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zopnidsenp .gt_indent_2 {
+#hnnmnulciv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zopnidsenp .gt_indent_3 {
+#hnnmnulciv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zopnidsenp .gt_indent_4 {
+#hnnmnulciv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zopnidsenp .gt_indent_5 {
+#hnnmnulciv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zopnidsenp .katex-display {
+#hnnmnulciv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zopnidsenp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hnnmnulciv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -948,12 +950,12 @@ Overall QUIPS rating per study (primary pool, n=100).
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">fill =</span> <span class="fu">factor</span>(rob_overall, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"low"</span>, <span class="st">"moderate"</span>, <span class="st">"high"</span>, <span class="st">"critical"</span>)))) <span class="sc">+</span></span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
 <span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"low"</span> <span class="ot">=</span> <span class="st">"#2ca02c"</span>, <span class="st">"moderate"</span> <span class="ot">=</span> <span class="st">"#ff9f1c"</span>,</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"high"</span> <span class="ot">=</span> <span class="st">"#d62728"</span>, <span class="st">"critical"</span> <span class="ot">=</span> <span class="st">"#7a0019"</span>),</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"low"</span> <span class="ot">=</span> <span class="st">"#C9D6E2"</span>, <span class="st">"moderate"</span> <span class="ot">=</span> <span class="st">"#7F9DB9"</span>,</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"high"</span> <span class="ot">=</span> <span class="st">"#3F5A75"</span>, <span class="st">"critical"</span> <span class="ot">=</span> <span class="st">"#1F3447"</span>),</span>
 <span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">"QUIPS overall"</span>) <span class="sc">+</span></span>
 <span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
 <span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"RoB representation by raw count vs by analytic weight"</span>) <span class="sc">+</span></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_jama</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div class="">
