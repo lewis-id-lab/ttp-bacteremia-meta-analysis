@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.9.35" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="author" content="Francesco Pangallo" />
+<meta name="author" content="Russell E. Lewis" />
+<meta name="dcterms.date" content="2026-10-30" />
+<meta name="keywords" content="time to positivity, blood culture, bacteremia, mortality, meta-analysis" />
+
+<title>Blood culture time to positivity and mortality in bacteremia: a systematic review and Bayesian meta-analysis</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 1em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<!-- htmldependencies:E3FAD763 -->
+<script async src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous" data-relocate-top="true"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <div id="quarto-toc-target"></div>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default toc-left">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
+      <h1 class="title">Blood culture time to positivity and mortality in bacteremia: a systematic review and Bayesian meta-analysis</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Authors</div>
+          <div class="quarto-title-meta-heading">Affiliations</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">Francesco Pangallo </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Padova
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Russell E. Lewis </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Padova
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta">
+
+                      
+                <div>
+            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date">October 30, 2026</p>
+            </div>
+          </div>
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+    <div>
+      <div class="abstract">
+        <div class="block-title">Abstract</div>
+        <p><strong>Background.</strong> Blood culture time to positivity (TTP) has been proposed as a prognostic marker in bacteremia, but studies use different thresholds, pathogens, and outcomes. We synthesized the association between short versus long TTP and clinical outcomes.</p>
+        <p><strong>Methods.</strong> We searched PubMed, Embase, Scopus, the Cochrane Library, and Web of Science (updated May 2026) and extracted effect sizes from 100 studies meeting strict eligibility criteria. Log odds ratios for all-cause mortality (short versus long TTP) were pooled with a Bayesian random-effects model. We examined pathogen class, TTP cutpoint, publication bias, and a sensitivity analysis adding studies meeting more inclusive criteria. Persistent bacteremia and microbiological clearance were analyzed as secondary outcomes.</p>
+        <p><strong>Results.</strong> Fifty-eight studies (72 effect sizes) reported mortality. Short TTP was associated with higher mortality (pooled OR 2.06; 95% credible interval [CrI], 1.67 to 2.55), with substantial heterogeneity (median I² 62%; 95% prediction interval, 0.5 to 8.6). The association was larger in Gram-negative (OR 2.66; 95% CrI, 1.72 to 4.06) than Gram-positive bacteremia (OR 1.48; 95% CrI, 0.85 to 2.58), although the credible intervals overlapped. Higher TTP cutpoints were associated with weaker associations overall, but this was not consistent across subgroups. The funnel plot was asymmetric, and trim-and-fill gave an adjusted OR of 1.51 (95% CI, 1.23 to 1.86). Short TTP was also associated with persistent bacteremia (OR 1.74; 95% CrI, 1.09 to 2.80); data on clearance were sparse.</p>
+        <p><strong>Conclusions.</strong> Short TTP is associated with higher mortality, particularly in Gram-negative bacteremia, but heterogeneity, cutpoint dependence, probable confounding, and small-study effects limit its use as a stand-alone prognostic tool. Standardized thresholds and adjusted, individual-patient analyses are needed.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="keywords">
+        <div class="block-title">Keywords</div>
+        <p>time to positivity, blood culture, bacteremia, mortality, meta-analysis</p>
+      </div>
+    </div>
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header>
+
+  
+
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+  <li><a href="#materials-and-methods" id="toc-materials-and-methods">Materials and Methods</a>
+  <ul>
+  <li><a href="#protocol-and-registration" id="toc-protocol-and-registration">Protocol and registration</a></li>
+  <li><a href="#search-strategy-and-study-selection" id="toc-search-strategy-and-study-selection">Search strategy and study selection</a></li>
+  <li><a href="#data-extraction-and-risk-of-bias" id="toc-data-extraction-and-risk-of-bias">Data extraction and risk of bias</a></li>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis">Statistical analysis</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results">Results</a>
+  <ul>
+  <li><a href="#study-selection-and-characteristics" id="toc-study-selection-and-characteristics">Study selection and characteristics</a></li>
+  <li><a href="#primary-analysis" id="toc-primary-analysis">Primary analysis</a></li>
+  <li><a href="#pathogen-class" id="toc-pathogen-class">Pathogen class</a></li>
+  <li><a href="#ttp-cutpoint" id="toc-ttp-cutpoint">TTP cutpoint</a></li>
+  <li><a href="#publication-bias" id="toc-publication-bias">Publication bias</a></li>
+  <li><a href="#sensitivity-analyses" id="toc-sensitivity-analyses">Sensitivity analyses</a></li>
+  <li><a href="#clinical-failure-outcomes" id="toc-clinical-failure-outcomes">Clinical failure outcomes</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion">Discussion</a></li>
+  <li><a href="#funding" id="toc-funding">Funding</a></li>
+  <li><a href="#conflicts-of-interest" id="toc-conflicts-of-interest">Conflicts of interest</a></li>
+  <li><a href="#data-and-code-availability" id="toc-data-and-code-availability">Data and code availability</a></li>
+  <li><a href="#use-of-artificial-intelligence" id="toc-use-of-artificial-intelligence">Use of artificial intelligence</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+  <li><a href="#references" id="toc-references">References</a></li>
+  </ul>
+</nav>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Bloodstream infection is a major cause of morbidity and mortality, and early risk stratification remains a practical clinical problem. Automated continuous-monitoring blood culture systems record the time to positivity (TTP), the interval from the start of incubation to the instrument’s detection of microbial growth. Because growth kinetics depend on the starting inoculum and on organism-specific factors, shorter TTP has been proposed as a readily available, laboratory-generated marker of high bacterial burden and severe infection.</p>
+<p>Individual cohorts have examined whether TTP carries prognostic information in specific settings, including <em>Staphylococcus aureus</em> bacteremia, where TTP has been explored as a marker of endocarditis and poor outcome <span class="citation" data-cites="Sowden2008 Kahn2021 Stromdahl2025">(<a href="#ref-Sowden2008" role="doc-biblioref">1</a>–<a href="#ref-Stromdahl2025" role="doc-biblioref">3</a>)</span>; Gram-negative bacteremia, including <em>Pseudomonas aeruginosa</em> <span class="citation" data-cites="Willmann2013 Tang2017">(<a href="#ref-Willmann2013" role="doc-biblioref">4</a>, <a href="#ref-Tang2017" role="doc-biblioref">5</a>)</span> and <em>Escherichia coli</em> <span class="citation" data-cites="Martinez2006">(<a href="#ref-Martinez2006" role="doc-biblioref">6</a>)</span>; candidemia <span class="citation" data-cites="Keighley2023">(<a href="#ref-Keighley2023" role="doc-biblioref">7</a>)</span>; and bacteremia in neutropenic patients, where TTP has been suggested as a stewardship tool <span class="citation" data-cites="PuertaAlcalde2019">(<a href="#ref-PuertaAlcalde2019" role="doc-biblioref">8</a>)</span>. These studies differ in organism mix, patient population, outcome definition, and, importantly, the TTP threshold used to define “short” versus “long” TTP. Whether the association is consistent across pathogens, whether it varies with the chosen cutpoint, and how large it is once adjusted estimates are considered remain unclear.</p>
+<p>We therefore updated a systematic review of the association between blood culture TTP and clinical outcomes in bacteremia. Our primary objective was to estimate the association between short versus long TTP and all-cause mortality using a Bayesian random-effects meta-analysis. Secondary objectives were to examine heterogeneity by pathogen class and by TTP cutpoint, to assess publication bias and the robustness of the findings to study inclusion criteria, and to summarize associations with persistent bacteremia and other markers of clinical failure.</p>
+</section>
+<section id="materials-and-methods" class="level1">
+<h1>Materials and Methods</h1>
+<section id="protocol-and-registration" class="level2">
+<h2>Protocol and registration</h2>
+<p>The review is reported according to the PRISMA 2020 statement and the PRISMA-S extension for searches. A protocol was prepared for registration in PROSPERO (registration number: [PROSPERO registration number to be inserted]). The review builds on a master’s thesis at the University of Padova (F. Pangallo, 2025/2026; supervisor R. E. Lewis) that produced the original 57-study extraction database. Because that work was substantially complete before the protocol was registered, registration is retrospective for the baseline studies, and the 2026 update (additional search, screening, extraction, and the inclusive-criterion re-screen) was added afterwards. The analysis plan was developed during the thesis; deviations from the protocol are listed in the supplementary notebook (<a href="notebooks/methods.qmd">Methods and PRISMA</a>).</p>
+</section>
+<section id="search-strategy-and-study-selection" class="level2">
+<h2>Search strategy and study selection</h2>
+<p>Five databases were searched (PubMed, Embase, Scopus, Cochrane Library, and Web of Science), with an original search and a May 2026 update [insert run dates and per-database record counts]. The searches yielded 4,605 records, with 3,196 unique records after de-duplication. CINAHL, trial registers, and preprint servers were not searched, and no reference-list searching or citation tracking was performed; these are deviations from the registered protocol. Candidate records were triaged for relevance [confirm the role of the Elicit semantic search tool and PubMed enrichment in this step, and reconcile Alvarez 2012 and Peri 2026, which project notes record as handsearch or snowball identifications], and 355 reports were sought for full-text review. Of these, 53 were not retrieved after pre-screening as ineligible (mainly conference abstracts, non-English papers, and methods-only papers), and 302 full-text reports were assessed (5 additional PDFs duplicated baseline studies). Under the strict criterion 43 reports were included, which added to the 57 baseline studies gave 100 studies; 259 were excluded (104 ineligible design, 65 no TTP measured, 54 no quantitative TTP-outcome association, 29 no clinical outcome, 5 duplicates, 2 not bloodstream infection). A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative association identified 40 further studies (sensitivity pool, 140 studies in total). Eligibility criteria and the full search strings are in the supplementary notebook (<a href="notebooks/methods.qmd">Methods and PRISMA</a>) and <code>search_strategies.md</code>. <a href="#fig-prisma" class="quarto-xref">Figure 1</a> shows study flow.</p>
+<div id="fig-prisma" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-prisma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="data/PRISMA_v4_update.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure 1: PRISMA 2020 flow diagram for the original search and the May 2026 update."><img src="data/PRISMA_v4_update.svg" class="img-fluid" style="width:100.0%" /></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prisma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 1: PRISMA 2020 flow diagram for the original search and the May 2026 update.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-extraction-and-risk-of-bias" class="level2">
+<h2>Data extraction and risk of bias</h2>
+<p>Data were extracted into a structured relational workbook with linked tables for study characteristics, population, TTP reporting (continuous, dichotomized, or categorical; units; cutpoints), and outcomes (events and totals by TTP group, reported effect estimates, adjustment status, and outcome definitions). TTP was recorded in hours. Where a study reported both 2×2 data and an effect estimate, the 2×2 data were preferred. The baseline 57 studies were extracted by the thesis author [confirm whether extraction was independently verified]. For the 2026 update, full-text screening and data extraction were performed by a large language model agent working from the full-text PDFs and the written eligibility criteria and extraction codebook. Each of the 43 strict-pool extractions was then independently verified field by field against the source PDF by a separate agent that had not performed the original extraction; this led to 7 corrections before analysis. Studies using TTP only as part of a catheter-related bloodstream infection case definition were excluded from effect-size pooling. The human contribution to screening and extraction decisions (spot-checking, adjudication, or second human review) is described in the AI-use statement below [confirm], and we did not perform dual independent human screening or report inter-rater agreement.</p>
+<p>Risk of bias was assessed for every included study with the Quality in Prognosis Studies (QUIPS) tool across six domains (participation, attrition, prognostic factor measurement, outcome measurement, confounding, and statistical analysis and reporting), each rated as low, moderate, or high, with an overall rating per study (<a href="notebooks/rob.qmd">notebook</a>). For the update these ratings were generated by the extraction agent and were not independently re-rated by a second human.</p>
+</section>
+<section id="statistical-analysis" class="level2">
+<h2>Statistical analysis</h2>
+<p>Log odds ratios for mortality (short versus long TTP) were computed with <code>metafor::escalc()</code> from 2×2 tables where available, otherwise back-calculated from reported OR, HR, or RR with 95% confidence intervals. Effect sizes were pooled with a Bayesian random-effects model (<code>brms</code>; study-level random intercepts) with weakly informative priors (<span class="math inline">\(\mu \sim \mathcal{N}(0,1)\)</span>, <span class="math inline">\(\tau \sim \text{Half-Cauchy}(0, 0.5)\)</span>). Four chains of 4,000 iterations (1,000 warm-up) were run with <code>adapt_delta = 0.99</code>. Convergence was assessed with <span class="math inline">\(\hat{R}\)</span> and effective sample sizes. Secondary analyses examined pathogen class, TTP cutpoint (meta-regression), publication bias, and a sensitivity pool that added studies meeting a more inclusive criterion. All code and data are available in the project repository.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<section id="study-selection-and-characteristics" class="level2">
+<h2>Study selection and characteristics</h2>
+<p>The primary (strict) pool comprised 100 studies, of which 58 reported mortality and contributed 72 mortality effect sizes. Overall risk of bias (QUIPS) was low in 24, moderate in 62, high in 13, and critical in 1 studies (<a href="notebooks/rob.qmd">notebook</a>).</p>
+</section>
+<section id="primary-analysis" class="level2">
+<h2>Primary analysis</h2>
+<p>Short TTP was associated with higher mortality (pooled OR 2.06 (95% CrI, 1.67 to 2.55); <a href="#fig-forest" class="quarto-xref">Figure 2</a>, <a href="#tbl-overall" class="quarto-xref">Table 1</a>). The posterior probability that short TTP increases mortality was 100.0%, and heterogeneity was substantial (median <span class="math inline">\(I^2\)</span> = 62%).</p>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-tbl-overall">
+<div class="cell">
+<div id="tbl-overall" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 1: Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful). Primary pool only (strict criterion).
+</figcaption>
+<div aria-describedby="tbl-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-fig-forest">
+<div id="cell-fig-forest" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-forest" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-forest-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure 2: Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in red."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-forest-output-2.png" class="img-fluid" /></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 2: Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in red.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pathogen-class" class="level2">
+<h2>Pathogen class</h2>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-fig-pathogen-posteriors">
+<div id="cell-fig-pathogen-posteriors" class="cell" data-fig-height="5">
+<div class="cell-output cell-output-display">
+<div id="fig-pathogen-posteriors" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-pathogen-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-pathogen-posteriors-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 3: Figure 1. Posterior distributions of the pooled odds ratio (OR) for all-cause mortality comparing short versus long time-to-positivity (TTP), stratified by pathogen class. Each density represents the full posterior from a Bayesian random-effects meta-analysis (72 mortality effect sizes; 100 studies). The filled point marks the posterior median; the horizontal bar spans the 95% credible interval (CrI). The vertical dashed line indicates OR = 1 (no effect). ‘Short’ and ‘long’ TTP were defined by individual studies using study-specific thresholds (median cutpoint 12 h; range 2–72 h). Outcome was predominantly 30-day mortality. Overall: OR = 2.06 (95% CrI 1.67–2.55); Gram-negative: OR = 2.66 (95% CrI 1.72–4.06); Gram-positive: OR = 1.48 (95% CrI 0.85–2.58). OR &gt; 1 indicates higher mortality with shorter TTP."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-pathogen-posteriors-output-2.png" class="img-fluid" /></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pathogen-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 3: <strong>Figure 1.</strong> Posterior distributions of the pooled odds ratio (OR) for all-cause mortality comparing short versus long time-to-positivity (TTP), stratified by pathogen class. Each density represents the full posterior from a Bayesian random-effects meta-analysis (72 mortality effect sizes; 100 studies). The filled point marks the posterior median; the horizontal bar spans the 95% credible interval (CrI). The vertical dashed line indicates OR = 1 (no effect). ‘Short’ and ‘long’ TTP were defined by individual studies using study-specific thresholds (median cutpoint 12 h; range 2–72 h). Outcome was predominantly 30-day mortality. Overall: OR = 2.06 (95% CrI 1.67–2.55); Gram-negative: OR = 2.66 (95% CrI 1.72–4.06); Gram-positive: OR = 1.48 (95% CrI 0.85–2.58). OR &gt; 1 indicates higher mortality with shorter TTP.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Pathogen class was available for 52 of 72 mortality effect sizes (Gram-negative, 26 effect sizes from 17 studies; Gram-positive, 13 from 11; fungal, 6 from 6; mixed or polymicrobial, 7 from 5). The remaining 20 effect sizes had no pathogen classification and were excluded from the stratified models. Short TTP was associated with higher mortality in Gram-negative bacteremia (OR 2.66 (95% CrI, 1.72 to 4.06)) and, with a smaller point estimate and a credible interval that included 1, in Gram-positive bacteremia (OR 1.48 (95% CrI, 0.85 to 2.58); <a href="#fig-pathogen-posteriors" class="quarto-xref">Figure 3</a>, <a href="#tbl-subgroup" class="quarto-xref">Table 2</a>). In a meta-regression with both classes, the odds ratio in Gram-positive studies was 0.61 times that in Gram-negative studies (95% CrI 0.36 to 1.02), with a posterior probability of 97% that the association is weaker in Gram-positive studies. This interval is wide and just includes 1, so the evidence for a difference between classes is suggestive rather than conclusive. For fungal bacteremia the pooled estimate was imprecise (OR 1.31 (95% CrI, 0.92 to 2.12), 6 studies). Heterogeneity remained considerable within both Gram-negative (median <span class="math inline">\(I^2\)</span> 61%) and Gram-positive (74%) strata.</p>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-tbl-subgroup">
+<div class="cell">
+<div id="tbl-subgroup" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-subgroup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 2: Pooled OR by pathogen subgroup.
+</figcaption>
+<div aria-describedby="tbl-subgroup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ttp-cutpoint" class="level2">
+<h2>TTP cutpoint</h2>
+<p>A TTP cutpoint was reported for 42 of 72 mortality effect sizes (29 studies); the remainder had no cutpoint recorded in the extraction database. Cutpoints ranged from 2 to 72 h (median 12 h). Across all effect sizes with a cutpoint, the log odds ratio changed by -0.035 (95% CrI, -0.056 to -0.015) per additional hour, so higher thresholds were associated with weaker associations (<a href="#fig-cutpoint" class="quarto-xref">Figure 4</a>). When the analysis was restricted to cutpoints of 24 h or less, the slope was attenuated and its interval included zero (-0.024 (95% CrI, -0.075 to 0.028)), so the gradient depends on the few studies using long thresholds.</p>
+<p>Within pathogen class the pattern differed. Among Gram-negative effect sizes (median cutpoint 10 h) the slope was positive (0.062 (95% CrI, -0.005 to 0.130); <a href="#tbl-gneg-cutpoint" class="quarto-xref">Table 3</a>), whereas among Gram-positive effect sizes it was negative with an interval that included zero (-0.029 (95% CrI, -0.058 to 0.004); <a href="#tbl-gpos-cutpoint" class="quarto-xref">Table 4</a>). The overall negative gradient therefore does not hold within Gram-negative bacteremia, and these class-specific analyses rest on small numbers of effect sizes.</p>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-fig-cutpoint">
+<div id="cell-fig-cutpoint" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-cutpoint" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-cutpoint-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure 4: TTP cutpoint meta-regression. The blue line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Red points are observed 2×2-derived effect sizes (size ∝ precision)."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-cutpoint-output-2.png" class="img-fluid" /></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 4: TTP cutpoint meta-regression. The blue line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Red points are observed 2×2-derived effect sizes (size ∝ precision).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-tbl-gneg-cutpoint">
+<div class="cell">
+<div id="tbl-gneg-cutpoint" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gneg-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 3: Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
+</figcaption>
+<div aria-describedby="tbl-gneg-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-tbl-gpos-cutpoint">
+<div class="cell">
+<div id="tbl-gpos-cutpoint" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gpos-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 4: Gram-positive cutpoint meta-regression: slope comparison between full model and sensitivity analysis excluding Minejima2019 (72 h).
+</figcaption>
+<div aria-describedby="tbl-gpos-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="publication-bias" class="level2">
+<h2>Publication bias</h2>
+<p>The funnel plot of mortality effect sizes was asymmetric (<a href="#fig-funnel" class="quarto-xref">Figure 5</a>). Egger’s regression test indicated small-study effects (t = 6.19, df = 70, p &lt; 0.0001; <a href="#tbl-egger" class="quarto-xref">Table 5</a>), and the regression-based estimate for a study with zero standard error was close to no association (OR 0.99; 95% CI 0.97 to 1.01). Begg’s rank correlation test did not detect asymmetry (p = 0.47). The trim-and-fill method imputed 19 missing studies and gave an adjusted pooled OR of 1.51 (95% CI, 1.23 to 1.86), lower than the unadjusted frequentist estimate (OR 2.05). These tests treat all effect sizes as independent, assume that asymmetry is due to selective reporting, and have limited reliability when heterogeneity is high, so they cannot distinguish publication bias from genuine heterogeneity, such as larger associations in smaller studies that used more extreme or optimized cutpoints. The evidence nevertheless suggests that the pooled association may be overestimated.</p>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-fig-funnel">
+<div id="cell-fig-funnel" class="cell" data-fig-height="6">
+<div class="cell-output cell-output-display">
+<div id="fig-funnel" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-funnel-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure 5: Contour-enhanced funnel plot (primary pool, mortality). Studies in white zones are not statistically significant at the labelled threshold; shaded outer zones indicate increasing levels of significance. Asymmetry toward the right (short TTP harmful) would suggest positive-result publication bias."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-funnel-output-1.png" class="img-fluid" /></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 5: Contour-enhanced funnel plot (primary pool, mortality). Studies in white zones are not statistically significant at the labelled threshold; shaded outer zones indicate increasing levels of significance. Asymmetry toward the right (short TTP harmful) would suggest positive-result publication bias.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-tbl-egger">
+<div class="cell">
+<div id="tbl-egger" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-egger-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 5: Egger’s regression test for funnel-plot asymmetry (primary pool, mortality; metafor::regtest, weighted regression on the standard error). The t-statistic tests asymmetry; the limit estimate is the predicted effect for a hypothetical study with zero standard error.
+</figcaption>
+<div aria-describedby="tbl-egger-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sensitivity-analyses" class="level2">
+<h2>Sensitivity analyses</h2>
+<p>Adding the studies that met only the inclusive criterion increased the number of studies reporting mortality to 67 (84 effect sizes) and gave a pooled OR of 1.92 (95% CrI, 1.58 to 2.35), similar to the primary estimate (<a href="#fig-sens-inc" class="quarto-xref">Figure 6</a>). Pooled estimates by data source were consistent in direction. Relative to 2×2-derived effect sizes (49 effect sizes), the log odds ratio for effect sizes back-calculated from adjusted reported estimates (15 effect sizes) was -0.26 (95% CrI, -0.68 to 0.16) and for unadjusted reported estimates (8 effect sizes) was -0.12 (95% CrI, -0.62 to 0.38). Both intervals included zero. Directly comparing unadjusted with adjusted reported estimates, the difference in log odds ratio was 0.12 (95% CrI, -0.39 to 0.62). Association strength tended to decrease with publication year (change in log odds ratio per year, -0.04 (95% CrI, -0.08 to 0.00)), with an interval that only just included zero. None of these moderator analyses showed a clear difference, but all were underpowered relative to the observed heterogeneity.</p>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd" data-notebook-title="Time-to-Positivity and Mortality in Bacteremia" data-notebook-cellId="cell-fig-sens-inc">
+<div id="cell-fig-sens-inc" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-sens-inc" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-sens-inc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-sens-inc-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure 6: Posterior densities of pooled OR — primary pool vs sensitivity pool (with inclusive-only studies added)."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-sens-inc-output-1.png" class="img-fluid" /></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sens-inc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 6: Posterior densities of pooled OR — primary pool vs sensitivity pool (with inclusive-only studies added).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="clinical-failure-outcomes" class="level2">
+<h2>Clinical failure outcomes</h2>
+<p>Outcomes other than mortality were reported far less often (<a href="#tbl-counts" class="quarto-xref">Table 6</a>). Persistent bacteremia was the most frequently reported, with 12 effect sizes from 12 studies, followed by microbiological clearance (4 effect sizes, 3 studies). No usable effect sizes were available for relapse (0).</p>
+<p>Short TTP was associated with higher odds of persistent bacteremia (pooled OR 1.74 (95% CrI, 1.09 to 2.80); <a href="#fig-pb" class="quarto-xref">Figure 7</a>), with substantial heterogeneity (median <span class="math inline">\(I^2\)</span> 69%). Outcome definitions were not uniform: on review of the outcome definitions, 6 effect sizes defined persistent bacteremia by duration of positive cultures, 3 defined it by endocarditis or valve involvement, and 3 used other definitions. In a meta-regression by definition group, endocarditis-based definitions had a log odds ratio 0.59 higher than duration-based definitions (95% CrI -0.19 to 1.24), which is compatible with no difference given the small number of effect sizes per group. The pooled persistent-bacteremia estimate should therefore be interpreted as an association with a heterogeneous composite of outcomes.</p>
+<p>For microbiological clearance, the pooled estimate was too imprecise to interpret (OR 1.63 (95% CrI, 0.24 to 9.47)), reflecting only 4 effect sizes with very large between-study heterogeneity (median <span class="math inline">\(I^2\)</span> 89%).</p>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/clinical_failure.qmd" data-notebook-title="TTP and Clinical Failure Outcomes" data-notebook-cellId="cell-tbl-counts">
+<div class="cell">
+<div id="tbl-counts" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 6: Available effect sizes per clinical-failure outcome (strict pool).
+</figcaption>
+<div aria-describedby="tbl-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-embed-nb-cell" data-notebook="/Users/russelllewis/ttp_meta_manuscript/notebooks/clinical_failure.qmd" data-notebook-title="TTP and Clinical Failure Outcomes" data-notebook-cellId="cell-fig-pb">
+<div id="cell-fig-pb" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-pb" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-pb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-clinical_failure-fig-pb-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure 7: Forest plot of OR (short vs long TTP) for persistent bacteremia. NB: many studies coded under ‘persistent_bacteremia’ actually report endocarditis (the Codebook’s outcome_type enum lacks ‘endocarditis’). Review outcome_definition in each row before interpretation."><img src="index_files/figure-html/notebooks-clinical_failure-fig-pb-output-2.png" class="img-fluid" /></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 7: Forest plot of OR (short vs long TTP) for persistent bacteremia. NB: many studies coded under ‘persistent_bacteremia’ actually report endocarditis (the Codebook’s outcome_type enum lacks ‘endocarditis’). Review outcome_definition in each row before interpretation.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>In this Bayesian random-effects meta-analysis, short TTP was associated with higher mortality in bacteremia (pooled OR 2.06 (95% CrI, 1.67 to 2.55); 58 studies, 72 effect sizes). The posterior probability that the association is in the direction of harm was 100.0%. Between-study heterogeneity was moderate to substantial (median <span class="math inline">\(I^2\)</span> 62%), and the 95% prediction interval for a new study (0.51 to 8.42) is wide and includes no association. The pooled estimate is therefore best read as an average association, not as the effect expected in any particular setting. Adding studies that met only a more inclusive criterion gave a similar estimate (OR 1.92 (95% CrI, 1.58 to 2.35)).</p>
+<p><strong>Pathogen class.</strong> The association was larger in Gram-negative bacteremia (OR 2.66 (95% CrI, 1.72 to 4.06)) than in Gram-positive bacteremia (OR 1.48 (95% CrI, 0.85 to 2.58)), for which the credible interval included 1. The two intervals overlap, so this contrast should be considered hypothesis-generating rather than confirmed. A plausible explanation is that TTP in Gram-positive infection, notably <em>S. aureus</em>, is influenced by factors other than burden of disease, such as the source of infection and the presence of endovascular foci, whereas in Gram-negative infection it may track inoculum and host response more directly. This explanation is speculative and was not tested directly here.</p>
+<p><strong>Study design and adjustment.</strong> Effect sizes derived from 2×2 tables (OR 2.28 (95% CrI, 1.74 to 3.05)) were larger than those back-calculated from reported effect estimates (OR 1.71 (95% CrI, 1.28 to 2.36)). Meta-regression by data source did not show a clear difference, and the intervals included zero, so the data are compatible with either similar or lower adjusted associations. Crude 2×2 comparisons may carry more confounding by severity of illness, source, or pathogen, in which case the pooled estimate could overstate the independent prognostic contribution of TTP, but the groups also differ in other respects.</p>
+<p><strong>TTP cutpoint.</strong> Studies defined “short” TTP using different thresholds (median cutpoint 12 h), and 30 of 72 mortality effect sizes did not have a reported cutpoint. In meta-regression among the remaining effect sizes, the log OR decreased by 0.036 per additional hour of cutpoint (95% CrI 0.015 to 0.056), meaning that stricter (shorter) thresholds were associated with larger odds ratios overall (<a href="#fig-cutpoint" class="quarto-xref">Figure 4</a>). This gradient was not robust: it was attenuated when cutpoints above 24 h were excluded, and it was reversed within Gram-negative studies. Because thresholds are often chosen post hoc to maximize discrimination in the study sample, the gradient may partly reflect optimistic cutpoint selection or differences in pathogen mix, and it should not be interpreted as validating any single clinical threshold.</p>
+<p><strong>Other outcomes.</strong> For persistent bacteremia, short TTP was associated with higher odds (OR 1.74 (95% CrI, 1.09 to 2.80)), but outcome definitions varied widely between studies. Evidence for microbiological clearance was too sparse and imprecise to interpret (OR 1.63 (95% CrI, 0.24 to 9.47)) (<a href="notebooks/clinical_failure.qmd">notebook</a>).</p>
+<p><strong>Strengths and limitations.</strong> Strengths include a multi-database search with a May 2026 update, a distinction between strict and inclusive study pools, a Bayesian framework that yields prediction intervals and direct probability statements, and a fully reproducible code base. Limitations are substantial. Most included studies were retrospective cohorts and risk of bias was rated moderate or worse in most (76 of 100 studies). Several studies contributed multiple effect sizes, which we handled with study-level random intercepts but which do not remove all dependence. The TTP threshold, outcome timing, and adjustment sets were not standardized, and adjustment status varied across estimates. Blood culture system, bottle type, transport delay, and prior antibiotic exposure affect TTP and were incompletely reported, so residual confounding by measurement conditions is likely. The funnel plot was asymmetric and Egger’s test indicated small-study effects (<a href="#fig-funnel" class="quarto-xref">Figure 5</a>, <a href="#tbl-egger" class="quarto-xref">Table 5</a>). Trim-and-fill reduced the pooled estimate to OR 1.51, so the primary estimate may overstate the association, although asymmetry can also arise from heterogeneity and cutpoint optimization, and these tests do not account for multiple effect sizes per study. Finally, the meta-analysis is based on aggregate data, which prevents examination of TTP as a continuous predictor within patients.</p>
+<p><strong>Implications.</strong> Short TTP is associated with higher mortality on average, but heterogeneity, the dependence on cutpoint, and probable confounding limit its use as a stand-alone prognostic tool. These results support using TTP as one contextual signal, particularly in Gram-negative bacteremia, alongside clinical severity and pathogen identification. Individual-patient-data analyses with standardized TTP measurement, and prospective validation of pathogen-specific thresholds, are needed before TTP can be used to guide treatment decisions.</p>
+</section>
+<section id="funding" class="level1 unnumbered">
+<h1 class="unnumbered">Funding</h1>
+<p>No specific funding was received for this study. The authors are supported by their institutional salaries (University of Padova). [Confirm.]</p>
+</section>
+<section id="conflicts-of-interest" class="level1 unnumbered">
+<h1 class="unnumbered">Conflicts of interest</h1>
+<p>R.E.L. serves as an Associate Editor at the Journal of Antimicrobial Chemotherapy. The other author declares no conflicts of interest. [Confirm with all co-authors.]</p>
+</section>
+<section id="data-and-code-availability" class="level1 unnumbered">
+<h1 class="unnumbered">Data and code availability</h1>
+<p>The extraction workbook, analysis code, and rendered notebooks are included in the manuscript project. [Insert repository and DOI, for example an OSF project, once deposited.]</p>
+</section>
+<section id="use-of-artificial-intelligence" class="level1 unnumbered">
+<h1 class="unnumbered">Use of artificial intelligence</h1>
+<p>A large language model agent was used to assist with full-text screening and data extraction for the 2026 update, and a second, independent agent verified the extractions against the source PDFs, as described in the Methods. [State the model name and version, how authors reviewed outputs, and who is responsible for the final data. Confirm the wording against ASM’s current policy on AI use.] Analysis code was written and run in R and Stan. The authors take responsibility for the content of the manuscript.</p>
+</section>
+<section id="acknowledgments" class="level1 unnumbered">
+<h1 class="unnumbered">Acknowledgments</h1>
+<p>[None to declare / add acknowledgments.]</p>
+</section>
+<section id="references" class="level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="1" data-line-spacing="2" role="list">
+<div id="ref-Sowden2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Sowden D, Anstey C, Faddy M. 2008. <a href="https://doi.org/10.1016/j.jinf.2008.01.005"><span class="nocase">Blood culture time to positivity as a predictor of mortality in community acquired Methicillin-susceptible Staphylococcus aureus bacteremia</span></a>. Journal of Infection 56:295–296.</div>
+</div>
+<div id="ref-Kahn2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Kahn F, Resman F, Bergmark S, Filiptsev P, Nilson B, Gilje P, Rasmussen M. 2021. <a href="https://doi.org/10.1016/j.cmi.2020.11.007"><span class="nocase">Time to blood culture positivity in Staphylococcus aureus bacteraemia to determine risk of infective endocarditis</span></a>. Clinical Microbiology and Infection 27:1345.e7–1345.e12.</div>
+</div>
+<div id="ref-Stromdahl2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Strömdahl M, Hagman K, Hedman K, Westman A, Hedenstierna M, Ursing J. 2025. <a href="https://doi.org/10.1093/cid/ciae628"><span class="nocase">Time to Staphylococcus aureus Blood Culture Positivity as a Risk Marker of Infective Endocarditis: A Retrospective Cohort Study</span></a>. Clinical Infectious Diseases 80:727–734.</div>
+</div>
+<div id="ref-Willmann2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Willmann M, Kuebart I, Vogel W, Flesch I, Markert U, Marschal M, Schröppel K, Autenrieth IB, Hölzl F, Peter S. 2013. <a href="https://doi.org/10.1016/j.jinf.2013.06.012"><span class="nocase">Time to positivity as prognostic tool in patients with Pseudomonas aeruginosa bloodstream infection</span></a>. Journal of Infection 67:416–423.</div>
+</div>
+<div id="ref-Tang2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Tang P-C, Lee C-C, Li C-W, Li M-C, Ko W-C, Lee N-Y. 2017. <a href="https://doi.org/10.1016/j.jmii.2015.08.014"><span class="nocase">Time-to-positivity of blood culture: An independent prognostic factor of monomicrobial Pseudomonas aeruginosa bacteremia</span></a>. Journal of Microbiology, Immunology and Infection 50:486–493.</div>
+</div>
+<div id="ref-Martinez2006" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Martínez JA, Soto S, Fabrega A, Almela M, Mensa J, Soriano A, Marco F, Jimenez De Anta MT, Vila J. 2006. <a href="https://doi.org/10.1128/JCM.44.4.1468-1474.2006"><span class="nocase">Relationship of phylogenetic background, biofilm production, and time to detection of growth in blood culture vials with clinical variables and prognosis associated with Escherichia coli bacteremia</span></a>. Journal of Clinical Microbiology 44:1468–1474.</div>
+</div>
+<div id="ref-Keighley2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Keighley C, Pope AL, Marriott D, Chen SC-A, Slavin MA. 2023. <a href="https://doi.org/10.1093/mmy/myad028"><span class="nocase">Time-to-positivity in bloodstream infection for Candida species as a prognostic marker for mortality</span></a>. Medical Mycology 61.</div>
+</div>
+<div id="ref-PuertaAlcalde2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Puerta-Alcalde P, Cardozo C, Suárez-Lledó M, Rodríguez-Núñez O, Morata L, Fehér C, Marco F, Del Río A, Martínez JA, Mensa J, Rovira M, Esteve J, Soriano A, Garcia-Vidal C. 2019. <a href="https://doi.org/10.1016/j.cmi.2018.07.026"><span class="nocase">Current time-to-positivity of blood cultures in febrile neutropenia: a tool to be used in stewardship de-escalation strategies</span></a>. Clinical Microbiology and Infection 25:447–453.</div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id = "quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+</body>
+
+</html>
