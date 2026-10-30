@@ -116,7 +116,7 @@ We therefore updated a systematic review of the association between blood cultur
 
 ## Protocol and registration
 
-The review is reported according to the PRISMA 2020 statement and the PRISMA-S extension for searches. A protocol was prepared for registration in PROSPERO (registration number: {{< meta prospero >}}). The review builds on a master's thesis at the University of Padova (F. Pangallo, 2025/2026; supervisor R. E. Lewis) that produced the original 57-study extraction database. Because that work was substantially complete before the protocol was registered, registration is retrospective for the baseline studies, and the 2026 update (additional search, screening, extraction, and the inclusive-criterion re-screen) was added afterwards. The analysis plan was developed during the thesis; deviations from the protocol are listed in the supplementary notebook ([Methods and PRISMA](notebooks/methods.qmd)).
+The review is reported according to the PRISMA 2020 statement and the PRISMA-S extension for searches. A protocol was prepared for registration in PROSPERO (registration number: {{< meta prospero >}}). Deviations from the protocol are listed in the supplementary notebook ([Methods and PRISMA](notebooks/methods.qmd)).
 
 ## Search strategy and study selection
 
