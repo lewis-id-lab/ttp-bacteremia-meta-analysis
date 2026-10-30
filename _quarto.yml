@@ -1,0 +1,53 @@
+project:
+  type: manuscript
+  # Notebooks use paths relative to the project root (R/, data/, _brms_cache/)
+  execute-dir: project
+
+manuscript:
+  article: index.qmd
+  notebooks:
+    - notebook: notebooks/mortality-analysis.qmd
+      title: "Mortality analysis (main)"
+    - notebook: notebooks/subgroups.qmd
+      title: "Subgroup analyses"
+    - notebook: notebooks/clinical_failure.qmd
+      title: "Clinical failure analysis"
+    - notebook: notebooks/rob.qmd
+      title: "Risk of bias (QUIPS)"
+    - notebook: notebooks/methods.qmd
+      title: "Methods and PRISMA flow"
+  resources:
+    - data/
+  meca-bundle: true
+
+format:
+  html:
+    comments:
+      hypothesis: true
+    code-fold: true
+    fig-dpi: 200
+  docx:
+    # Word is accepted for initial JCM submission; line numbers help reviewers
+    number-sections: false
+    fig-dpi: 300
+  jats: default
+  pdf:
+    documentclass: article
+    keep-tex: false
+    number-sections: false
+    linestretch: 2
+    fontsize: 11pt
+    geometry: margin=1in
+    include-in-header:
+      text: |
+        \usepackage{lineno}
+        \linenumbers
+
+bibliography: references.bib
+csl: asm.csl
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto

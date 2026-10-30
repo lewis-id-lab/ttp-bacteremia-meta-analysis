@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.posit/assistant
+/.quarto/
+**/*.quarto_ipynb
+/_manuscript/
+*_cache/
+*_files/
+_brms_cache/
+
+# Internal working drafts (not for the public repo)
+PROSPERO_TTP_protocol.md
+search_strategies.md
