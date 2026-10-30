@@ -25,6 +25,7 @@ suppressPackageStartupMessages({
 })
 
 source("R/01_prepare_data.R")
+source("R/theme_jama.R")
 source("R/02_fit_models.R")
 
 # -------- PRIMARY POOL: strict (n=100) ---------------------------------------
@@ -156,7 +157,7 @@ tibble(
 
 ```{r}
 #| label: fig-forest
-#| fig-cap: "Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in red."
+#| fig-cap: "Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in dark navy."
 
 fig_h <- max(6, nrow(es_mort) * 0.55 + 2)
 knitr::opts_current$set(fig.height = fig_h)
@@ -165,7 +166,7 @@ forest_data <- es_mort |>
   arrange(yi) |>
   mutate(
     lbl = paste0(study_id,
-                 ifelse(arm_id == "all", "", paste0(" [", arm_id, "]"))),
+                 ifelse(is.na(arm_id) | arm_id == "all", "", paste0(" [", arm_id, "]"))),
     lbl = make.unique(lbl, sep = " #"),
     lbl = factor(lbl, levels = lbl),
     or = exp(yi),
@@ -194,7 +195,7 @@ pi_row$lbl     <- factor(pi_row$lbl,     levels = levels(forest_data$lbl))
 
 ggplot(bind_rows(forest_data, pooled_row),
        aes(x = or, y = lbl, color = type)) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
   geom_point(size = 2.5) +
   geom_errorbar(aes(xmin = pmax(ci_low, 0.05),
                     xmax = pmin(ci_high, 50)),
@@ -205,15 +206,15 @@ ggplot(bind_rows(forest_data, pooled_row),
                     xmin = pmax(pi_low,  0.05),
                     xmax = pmin(pi_high, 50)),
                 width = 0.15, linewidth = 0.7, linetype = "dashed",
-                color = "darkred", inherit.aes = FALSE) +
-  scale_color_manual(values = c("Study" = "steelblue", "Pooled" = "darkred")) +
+                color = "#1F3447", inherit.aes = FALSE) +
+  scale_color_manual(values = c("Study" = "#7F9DB9", "Pooled" = "#1F3447")) +
   scale_x_log10(breaks = c(0.1, 0.25, 0.5, 1, 2, 4, 8, 16, 32),
                 limits = c(0.05, 50)) +
   labs(title = "Mortality forest plot — primary pool",
-       subtitle = "Red solid bar = 95% CrI of pooled OR; red dashed bar = 95% prediction interval",
+       subtitle = "Solid bar = 95% CrI of pooled OR; dashed bar = 95% prediction interval",
        x = "OR, short vs long TTP (log scale)",
        y = NULL, color = NULL) +
-  theme_minimal(base_size = 9) +
+  theme_jama(base_size = 9) +
   theme(legend.position = "bottom",
         axis.text.y = element_text(size = 7, lineheight = 0.85),
         panel.grid.major.y = element_line(color = "gray92"),
@@ -224,14 +225,14 @@ ggplot(bind_rows(forest_data, pooled_row),
 
 ```{r}
 #| label: fig-posterior
-#| fig-cap: "Posterior density of the pooled OR (short vs long TTP). The vertical red line marks no effect (OR = 1)."
+#| fig-cap: "Posterior density of the pooled OR (short vs long TTP). The vertical dashed line marks no effect (OR = 1)."
 post_df <- tibble(OR = base_post$OR_draws)
 ggplot(post_df, aes(x = OR)) +
-  stat_halfeye(fill = "#1f78b4", alpha = 0.6) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+  stat_halfeye(fill = "#5B7A99", alpha = 0.6) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
   scale_x_continuous(limits = c(0.5, 6), breaks = seq(0.5, 6, 0.5)) +
   labs(x = "Pooled OR (short vs long TTP)", y = "Posterior density") +
-  theme_minimal()
+  theme_jama()
 ```
 
 ## Diagnostics
@@ -265,7 +266,7 @@ bayesplot::mcmc_trace(
     sd_study_id__Intercept   = "τ (between-study SD)"
   )))
 ) +
-  theme_minimal(base_size = 11)
+  theme_jama(base_size = 11)
 ```
 
 ```{r}
@@ -276,7 +277,7 @@ bayesplot::mcmc_rank_overlay(
   fits$fit_base,
   pars = c("b_Intercept", "sd_study_id__Intercept")
 ) +
-  theme_minimal(base_size = 11)
+  theme_jama(base_size = 11)
 ```
 
 ```{r}
@@ -288,8 +289,8 @@ rhat_vals <- posterior::summarise_draws(fits$fit_base, rhat = posterior::rhat) |
   (\(d) setNames(d$rhat, d$variable))()
 
 bayesplot::mcmc_rhat(rhat_vals) +
-  geom_vline(xintercept = 1.01, linetype = "dashed", color = "red") +
-  theme_minimal(base_size = 11)
+  geom_vline(xintercept = 1.01, linetype = "dashed", color = jama_ref_line) +
+  theme_jama(base_size = 11)
 ```
 
 # Subgroup analysis — pathogen class
@@ -321,16 +322,16 @@ if (!is.null(fits$fit_gram_pos) && !is.null(fits$fit_gram_neg)) {
 
   ggplot(bind_rows(sub_df, pooled_sub),
          aes(x = or, y = reorder(study_id, or), color = pathogen_class, shape = type, size = type)) +
-    geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
+    geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
     geom_point() +
     geom_errorbar(aes(xmin = pmax(ci_low, 0.05), xmax = pmin(ci_high, 50)),
                   width = 0.25, orientation = "y") +
-    scale_color_manual(values = c("gram_positive" = "#377EB8", "gram_negative" = "#E41A1C")) +
+    scale_color_manual(values = c("gram_positive" = "#7F9DB9", "gram_negative" = "#1F3447")) +
     scale_shape_manual(values = c("Study" = 16, "Pooled" = 18), guide = "none") +
     scale_size_manual(values = c("Study" = 2.5, "Pooled" = 5), guide = "none") +
     scale_x_log10(breaks = c(0.1, 0.5, 1, 2, 5, 10, 20), limits = c(0.05, 50)) +
     labs(x = "OR, short vs long TTP (log scale)", y = NULL, color = "Pathogen class") +
-    theme_minimal(base_size = 9) +
+    theme_jama(base_size = 9) +
     theme(legend.position = "bottom")
 }
 ```
@@ -380,15 +381,15 @@ if (!is.null(fits$fit_gram_pos) && !is.null(fits$fit_gram_neg)) {
     geom_vline(xintercept = 1, linetype = "dashed",
                color = "gray40", linewidth = 0.8) +
     scale_fill_manual(
-      values = c("Gram-positive" = "#2196C4",
-                 "Overall"       = "#607D8B",
-                 "Gram-negative" = "#C75450"),
+      values = c("Gram-positive" = "#7F9DB9",
+                 "Overall"       = "#5B7A99",
+                 "Gram-negative" = "#1F3447"),
       guide = "none") +
     scale_x_continuous(limits = c(0.5, 6), breaks = 1:6,
                        name = "Pooled odds ratio (short vs long time-to-positivity)") +
     labs(y = NULL,
          subtitle = "Mixed follow-up (predominantly 30-day mortality); short vs long time-to-positivity.\nPoint, posterior median; bar, 95% credible interval. Dashed line, OR = 1 (no effect).") +
-    theme_minimal(base_size = 12) +
+    theme_jama(base_size = 12) +
     theme(panel.grid.major.y = element_blank(),
           panel.grid.minor   = element_blank(),
           axis.text.y        = element_text(size = 12))
@@ -399,7 +400,7 @@ if (!is.null(fits$fit_gram_pos) && !is.null(fits$fit_gram_neg)) {
 
 ```{r}
 #| label: fig-cutpoint
-#| fig-cap: "TTP cutpoint meta-regression. The blue line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Red points are observed 2×2-derived effect sizes (size ∝ precision)."
+#| fig-cap: "TTP cutpoint meta-regression. The line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Dark points are observed 2×2-derived effect sizes (size ∝ precision)."
 
 if (!is.null(fits$fit_cutpoint)) {
   draws <- as_draws_df(fits$fit_cutpoint)
@@ -422,12 +423,12 @@ if (!is.null(fits$fit_cutpoint)) {
   slope_med <- median(draws$b_cutpoint_c)
 
   ggplot(pred_df, aes(x = cutpoint, y = median_OR)) +
-    geom_ribbon(aes(ymin = lo, ymax = hi), fill = "steelblue", alpha = 0.2) +
-    geom_line(color = "darkblue", linewidth = 1.4) +
-    geom_hline(yintercept = 1, linetype = "dashed", color = "red") +
+    geom_ribbon(aes(ymin = lo, ymax = hi), fill = "#7F9DB9", alpha = 0.2) +
+    geom_line(color = "#1F3447", linewidth = 1.4) +
+    geom_hline(yintercept = 1, linetype = "dashed", color = jama_ref_line) +
     geom_point(data = obs_df,
                aes(x = ttp_cutpoint_hours, y = or, size = w),
-               alpha = 0.55, color = "darkred", inherit.aes = FALSE) +
+               alpha = 0.55, color = "#1F3447", inherit.aes = FALSE) +
     scale_size_continuous(range = c(2, 7), guide = "none") +
     scale_y_continuous(limits = c(0, max(5, max(pred_df$hi, na.rm = TRUE))),
                        breaks = seq(0, 10, 0.5)) +
@@ -435,7 +436,7 @@ if (!is.null(fits$fit_cutpoint)) {
                          slope_med, slope_p_neg),
          x = "TTP cutpoint (hours)",
          y = "Predicted OR (short vs long TTP)") +
-    theme_minimal()
+    theme_jama()
 }
 ```
 
@@ -481,29 +482,29 @@ pred_gneg <- map_dfr(seq(2, 30, by = 0.5), function(cp) {
 
 ```{r}
 #| label: fig-gneg-cutpoint
-#| fig-cap: "TTP cutpoint dose-response for Gram-negative bacteremia. The curve is the Bayesian posterior median predicted OR; ribbon is the 95% CrI. Red points are 2×2-derived effect sizes (size ∝ precision). Blue shaded zone spans the range of ROC-derived optimal cutpoints reported in individual Gram-negative studies (8–18 h). The median cutpoint across studies is 10 h."
+#| fig-cap: "TTP cutpoint dose-response for Gram-negative bacteremia. The curve is the Bayesian posterior median predicted OR; ribbon is the 95% CrI. Dark points are 2×2-derived effect sizes (size ∝ precision). Shaded zone spans the range of ROC-derived optimal cutpoints reported in individual Gram-negative studies (8–18 h). The median cutpoint across studies is 10 h."
 
 obs_gneg_cp <- es_gneg_cut |> mutate(or = exp(yi), w = 1 / sei)
 
 ggplot(pred_gneg, aes(x = cutpoint, y = median_OR)) +
   annotate("rect", xmin = min(roc_cuts_gneg), xmax = max(roc_cuts_gneg),
-           ymin = -Inf, ymax = Inf, fill = "#d4e8f7", alpha = 0.6) +
+           ymin = -Inf, ymax = Inf, fill = "#E3E9EF", alpha = 0.6) +
   annotate("text", x = mean(range(roc_cuts_gneg)), y = 13,
            label = "ROC-derived range\n(8–18 h)", size = 3,
-           color = "steelblue4", fontface = "italic") +
-  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "steelblue", alpha = 0.2) +
-  geom_line(color = "darkblue", linewidth = 1.3) +
-  geom_hline(yintercept = 1, linetype = "dashed", color = "red") +
+           color = "#3F5A75", fontface = "italic") +
+  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "#7F9DB9", alpha = 0.2) +
+  geom_line(color = "#1F3447", linewidth = 1.3) +
+  geom_hline(yintercept = 1, linetype = "dashed", color = jama_ref_line) +
   geom_point(data = obs_gneg_cp,
              aes(x = ttp_cutpoint_hours, y = or, size = w),
-             alpha = 0.6, color = "#E41A1C", inherit.aes = FALSE) +
+             alpha = 0.6, color = "#1F3447", inherit.aes = FALSE) +
   scale_size_continuous(range = c(2, 8), guide = "none") +
   scale_y_continuous(limits = c(0.4, 16), trans = "log10",
                      breaks = c(0.5, 1, 2, 3, 4, 6, 8, 12, 16)) +
   scale_x_continuous(breaks = seq(0, 30, 4)) +
   labs(x = "TTP cutpoint (hours)",
        y = "OR for mortality (short vs long TTP, log scale)") +
-  theme_minimal() +
+  theme_jama() +
   theme(panel.grid.minor = element_blank())
 ```
 
@@ -604,7 +605,7 @@ pred_gpos_sens_cp <- map_dfr(seq(6, 30, by = 0.5), function(cp) {
 
 ```{r}
 #| label: fig-gpos-cutpoint
-#| fig-cap: "TTP cutpoint dose-response for Gram-positive bacteremia. Red curve = full model (8–72 h); dashed gray = sensitivity excluding Minejima2019 (72 h), which uses a biologically distinct definition of prolonged bacteremia. Blue points are 2×2-derived effect sizes. Orange zone = range of ROC-derived cutpoints from Gram-positive studies (9–13 h). The negative slope in the full model is driven almost entirely by Minejima2019; after exclusion the slope becomes uncertain (P[slope < 0] = 75%)."
+#| fig-cap: "TTP cutpoint dose-response for Gram-positive bacteremia. Solid curve = full model (8–72 h); dashed gray = sensitivity excluding Minejima2019 (72 h), which uses a biologically distinct definition of prolonged bacteremia. Light points are 2×2-derived effect sizes. Shaded zone = range of ROC-derived cutpoints from Gram-positive studies (9–13 h). The negative slope in the full model is driven almost entirely by Minejima2019; after exclusion the slope becomes uncertain (P[slope < 0] = 75%)."
 
 obs_gpos_cp <- es_gpos_cut |>
   filter(ttp_cutpoint_hours <= 30) |>
@@ -612,24 +613,24 @@ obs_gpos_cp <- es_gpos_cut |>
 
 ggplot(pred_gpos_cp, aes(x = cutpoint, y = median_OR)) +
   annotate("rect", xmin = min(roc_cuts_gpos), xmax = max(roc_cuts_gpos),
-           ymin = -Inf, ymax = Inf, fill = "#f7e4d4", alpha = 0.65) +
+           ymin = -Inf, ymax = Inf, fill = "#E3E9EF", alpha = 0.65) +
   annotate("text", x = mean(range(roc_cuts_gpos)), y = 12,
            label = "ROC-derived range\n(9–13 h)", size = 3,
-           color = "#b35900", fontface = "italic") +
-  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "#E41A1C", alpha = 0.15, color = NA) +
-  geom_line(color = "#b22222", linewidth = 1.3) +
+           color = "#6B7680", fontface = "italic") +
+  geom_ribbon(aes(ymin = lo, ymax = hi), fill = "#1F3447", alpha = 0.15, color = NA) +
+  geom_line(color = "#1F3447", linewidth = 1.3) +
   geom_ribbon(data = pred_gpos_sens_cp,
-              aes(ymin = lo, ymax = hi), fill = "gray60", alpha = 0.12, color = NA) +
+              aes(ymin = lo, ymax = hi), fill = "#A9BBCB", alpha = 0.12, color = NA) +
   geom_line(data = pred_gpos_sens_cp,
             color = "gray40", linewidth = 0.9, linetype = "dashed") +
-  geom_hline(yintercept = 1, linetype = "dashed", color = "red") +
+  geom_hline(yintercept = 1, linetype = "dashed", color = jama_ref_line) +
   geom_point(data = obs_gpos_cp,
              aes(x = ttp_cutpoint_hours, y = or, size = w),
-             alpha = 0.65, color = "#1a7bbf", inherit.aes = FALSE) +
+             alpha = 0.65, color = "#7F9DB9", inherit.aes = FALSE) +
   # Flag truncated 72h outlier
   annotate("point", x = 30, y = exp(-1.06), size = 4, color = "gray50", shape = 17) +
   annotate("text", x = 29.5, y = 0.5,
-           label = "Minejima2019\n(72 h, truncated →)", size = 2.6,
+           label = "Minejima2019\n(72 h, off scale)", size = 2.6,
            color = "gray40", hjust = 1) +
   scale_size_continuous(range = c(2, 8), guide = "none") +
   scale_y_continuous(limits = c(0.3, 14), trans = "log10",
@@ -637,7 +638,7 @@ ggplot(pred_gpos_cp, aes(x = cutpoint, y = median_OR)) +
   scale_x_continuous(breaks = seq(0, 30, 4), limits = c(6, 30)) +
   labs(x = "TTP cutpoint (hours)",
        y = "OR for mortality (short vs long TTP, log scale)") +
-  theme_minimal() +
+  theme_jama() +
   theme(panel.grid.minor = element_blank())
 ```
 
@@ -799,7 +800,7 @@ make_or_panel <- function(curve_data, col, title_label) {
     scale_y_continuous(limits = c(0, 8.5), breaks = 0:8,
                        name   = "OR for mortality vs TTP = 24 h") +
     labs(title = title_label) +
-    theme_minimal(base_size = 10) +
+    theme_jama(base_size = 10) +
     theme(panel.grid.minor = element_blank(),
           plot.title = element_text(face = "bold", size = 10))
 }
@@ -829,7 +830,7 @@ make_prob_panel <- function(abs_data, obs_pts, col, anchor,
                        labels = function(x) paste0(x, "%"),
                        name   = "Predicted mortality probability") +
     labs(title = title_label) +
-    theme_minimal(base_size = 10) +
+    theme_jama(base_size = 10) +
     theme(panel.grid.minor = element_blank(),
           plot.title = element_text(face = "bold", size = 10))
 }
@@ -838,20 +839,20 @@ make_prob_panel <- function(abs_data, obs_pts, col, anchor,
 obs_pts_gneg <- dose_long_gneg |> mutate(mort = events / n)
 obs_pts_gpos <- dose_long_gpos |> mutate(mort = events / n)
 
-p_or_gneg   <- make_or_panel(curve_gneg, "#E41A1C",
+p_or_gneg   <- make_or_panel(curve_gneg, "#1F3447",
                               "A  Gram-negative: OR vs TTP = 24 h")
 p_prob_gneg <- make_prob_panel(
-  abs_gneg, obs_pts_gneg, "#E41A1C", anc_gneg,
+  abs_gneg, obs_pts_gneg, "#1F3447", anc_gneg,
   sprintf("Anchor: %.1f%% at %.1f h\n%d deaths / %s patients\n%d studies\n(patient-weighted mean TTP)",
           anc_gneg$mort * 100, anc_gneg$ref_ttp,
           anc_gneg$n_deaths, format(anc_gneg$n_pts, big.mark = ","),
           anc_gneg$n_studies),
   "B  Gram-negative: absolute mortality probability"
 )
-p_or_gpos   <- make_or_panel(curve_gpos, "#377EB8",
+p_or_gpos   <- make_or_panel(curve_gpos, "#7F9DB9",
                               "C  Gram-positive: OR vs TTP = 24 h")
 p_prob_gpos <- make_prob_panel(
-  abs_gpos, obs_pts_gpos, "#377EB8", anc_gpos,
+  abs_gpos, obs_pts_gpos, "#7F9DB9", anc_gpos,
   sprintf("Anchor: %.1f%% at %.1f h\n%d deaths / %s patients\n%d studies\n(patient-weighted mean TTP)",
           anc_gpos$mort * 100, anc_gpos$ref_ttp,
           anc_gpos$n_deaths, format(anc_gpos$n_pts, big.mark = ","),
@@ -865,7 +866,7 @@ p_prob_gpos <- make_prob_panel(
 ```{r}
 #| label: fig-dr-overlay
 #| fig-height: 5
-#| fig-cap: "Continuous TTP dose-response for mortality: Gram-negative (red) vs Gram-positive (blue) bacteremia. OR expressed relative to TTP = 24 h (dashed reference line). Shaded bands are 95% confidence intervals on the dose-response slope. Each doubling of TTP was associated with a 56% reduction in mortality odds in Gram-negative bacteremia (OR per 2× TTP = 0.44, 95% CI 0.38–0.51) and a 36% reduction in Gram-positive bacteremia (OR per 2× TTP = 0.64, 95% CI 0.51–0.80). Model: simulation-assisted mixed-effects logistic regression; representative TTP estimated from truncated log-normal distributions. Gram-negative: Prinsloo2023 excluded (anomalous group composition at 24 h cutpoint). Gram-positive: Minejima2019 excluded (72 h cutpoint reflects persistent bacteremia, a biologically distinct signal)."
+#| fig-cap: "Continuous TTP dose-response for mortality: Gram-negative (dark navy) vs Gram-positive (light blue-grey) bacteremia. OR expressed relative to TTP = 24 h (dashed reference line). Shaded bands are 95% confidence intervals on the dose-response slope. Each doubling of TTP was associated with a 56% reduction in mortality odds in Gram-negative bacteremia (OR per 2× TTP = 0.44, 95% CI 0.38–0.51) and a 36% reduction in Gram-positive bacteremia (OR per 2× TTP = 0.64, 95% CI 0.51–0.80). Model: simulation-assisted mixed-effects logistic regression; representative TTP estimated from truncated log-normal distributions. Gram-negative: Prinsloo2023 excluded (anomalous group composition at 24 h cutpoint). Gram-positive: Minejima2019 excluded (72 h cutpoint reflects persistent bacteremia, a biologically distinct signal)."
 
 bind_rows(curve_gneg, curve_gpos) |>
   ggplot(aes(x = ttp, y = median_OR, color = gram, fill = gram)) +
@@ -875,21 +876,21 @@ bind_rows(curve_gneg, curve_gpos) |>
              color = "gray40", linewidth = 0.7) +
   annotate("text", x = 35.5, y = 7.2,
            label = "Gram-negative\nOR×0.44 per 2× TTP\n(56% lower odds)",
-           size = 2.9, color = "#E41A1C", hjust = 1, fontface = "italic") +
+           size = 2.9, color = "#1F3447", hjust = 1, fontface = "italic") +
   annotate("text", x = 35.5, y = 4.5,
            label = "Gram-positive\nOR×0.64 per 2× TTP\n(36% lower odds)",
-           size = 2.9, color = "#377EB8", hjust = 1, fontface = "italic") +
-  scale_color_manual(values = c("Gram-negative" = "#E41A1C",
-                                "Gram-positive" = "#377EB8")) +
-  scale_fill_manual( values = c("Gram-negative" = "#E41A1C",
-                                "Gram-positive" = "#377EB8")) +
+           size = 2.9, color = "#7F9DB9", hjust = 1, fontface = "italic") +
+  scale_color_manual(values = c("Gram-negative" = "#1F3447",
+                                "Gram-positive" = "#7F9DB9")) +
+  scale_fill_manual( values = c("Gram-negative" = "#1F3447",
+                                "Gram-positive" = "#7F9DB9")) +
   scale_x_continuous(breaks = c(2, 4, 6, 8, 10, 12, 15, 18, 24, 30, 36),
                      limits = c(1.5, 37),
                      name   = "Time to positivity (hours)") +
   scale_y_continuous(limits = c(0, 8.5), breaks = 0:8,
                      name   = "Odds ratio for mortality vs TTP = 24 h") +
   labs(color = NULL, fill = NULL) +
-  theme_minimal(base_size = 11) +
+  theme_jama(base_size = 11) +
   theme(panel.grid.minor = element_blank(),
         legend.position  = "bottom",
         legend.key.width = unit(1.5, "cm"))
@@ -986,39 +987,39 @@ contours <- tibble(se = se_seq) |>
 ggplot() +
   # Shaded significance regions (draw outermost first, then overwrite inward)
   geom_ribbon(data = contours,
-              aes(y = se, xmin = x_lo,  xmax = lo01), fill = "gray55") +
+              aes(y = se, xmin = x_lo,  xmax = lo01), fill = "#6F8499") +
   geom_ribbon(data = contours,
-              aes(y = se, xmin = hi01,  xmax = x_hi), fill = "gray55") +
+              aes(y = se, xmin = hi01,  xmax = x_hi), fill = "#6F8499") +
   geom_ribbon(data = contours,
-              aes(y = se, xmin = lo01,  xmax = lo05), fill = "gray75") +
+              aes(y = se, xmin = lo01,  xmax = lo05), fill = "#A9BBCB") +
   geom_ribbon(data = contours,
-              aes(y = se, xmin = hi05,  xmax = hi01), fill = "gray75") +
+              aes(y = se, xmin = hi05,  xmax = hi01), fill = "#A9BBCB") +
   geom_ribbon(data = contours,
-              aes(y = se, xmin = lo05,  xmax = lo10), fill = "gray90") +
+              aes(y = se, xmin = lo05,  xmax = lo10), fill = "#DCE4EC") +
   geom_ribbon(data = contours,
-              aes(y = se, xmin = hi10,  xmax = hi05), fill = "gray90") +
+              aes(y = se, xmin = hi10,  xmax = hi05), fill = "#DCE4EC") +
   geom_ribbon(data = contours,
               aes(y = se, xmin = lo10,  xmax = hi10), fill = "white") +
   # Study points
   geom_point(data = es_mort, aes(x = yi, y = sei),
-             shape = 21, fill = "steelblue", color = "white",
+             shape = 21, fill = "#7F9DB9", color = "white",
              size = 2.2, alpha = 0.75) +
   # Pooled estimate (REML)
-  geom_vline(xintercept = mu_pool, linetype = "dashed", color = "darkred", linewidth = 0.8) +
+  geom_vline(xintercept = mu_pool, linetype = "dashed", color = "#1F3447", linewidth = 0.8) +
   # Null line
   geom_vline(xintercept = 0, linetype = "dotted", color = "gray30") +
   # Contour labels
   annotate("text", x = x_hi - 0.05, y = max_se * 0.12,
-           label = "p < 0.01", hjust = 1, size = 3, color = "gray30") +
+           label = "p < 0.01", hjust = 1, size = 3, color = "white") +
   annotate("text", x = x_hi - 0.05, y = max_se * 0.38,
-           label = "p < 0.05", hjust = 1, size = 3, color = "gray40") +
+           label = "p < 0.05", hjust = 1, size = 3, color = "#1A1F24") +
   annotate("text", x = x_hi - 0.05, y = max_se * 0.62,
-           label = "p < 0.10", hjust = 1, size = 3, color = "gray50") +
+           label = "p < 0.10", hjust = 1, size = 3, color = "#1A1F24") +
   scale_y_reverse(limits = c(max_se, 0),
                   name = "Standard error (SE)") +
   scale_x_continuous(limits = c(x_lo, x_hi),
                      name = "Log OR (short vs long TTP)") +
-  theme_minimal(base_size = 11) +
+  theme_jama(base_size = 11) +
   theme(panel.grid.minor = element_blank())
 ```
 
@@ -1060,11 +1061,11 @@ sens_df <- bind_rows(
 )
 ggplot(sens_df, aes(x = OR, fill = Pool)) +
   geom_density(alpha = 0.55) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
   scale_x_continuous(limits = c(0.5, 5)) +
-  scale_fill_brewer(palette = "Set1") +
+  scale_fill_jama() +
   labs(x = "OR (short vs long TTP)", y = "Posterior density") +
-  theme_minimal() + theme(legend.position = "bottom")
+  theme_jama() + theme(legend.position = "bottom")
 ```
 
 ## Data source (es_source)
@@ -1142,11 +1143,11 @@ if (!is.null(fits$fit_2x2) && !is.null(fits$fit_reported)) {
   ) |>
     ggplot(aes(x = OR, fill = Source)) +
     geom_density(alpha = 0.45) +
-    geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+    geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
     scale_x_continuous(limits = c(0.5, 5)) +
     scale_fill_brewer(palette = "Dark2") +
     labs(x = "Pooled OR (short vs long TTP)", y = "Posterior density") +
-    theme_minimal() +
+    theme_jama() +
     theme(legend.position = "bottom")
 }
 ```
@@ -1186,7 +1187,7 @@ bayesplot::mcmc_trace(
     sd_study_id__Intercept   = "τ (between-study SD)"
   )))
 ) +
-  theme_minimal(base_size = 11)
+  theme_jama(base_size = 11)
 ```
 
 ```{r}
@@ -1197,7 +1198,7 @@ bayesplot::mcmc_rank_overlay(
   fits_inc$fit_base,
   pars = c("b_Intercept", "sd_study_id__Intercept")
 ) +
-  theme_minimal(base_size = 11)
+  theme_jama(base_size = 11)
 ```
 
 ```{r}
@@ -1209,8 +1210,8 @@ rhat_vals_sens <- posterior::summarise_draws(fits_inc$fit_base, rhat = posterior
   (\(d) setNames(d$rhat, d$variable))()
 
 bayesplot::mcmc_rhat(rhat_vals_sens) +
-  geom_vline(xintercept = 1.01, linetype = "dashed", color = "red") +
-  theme_minimal(base_size = 11)
+  geom_vline(xintercept = 1.01, linetype = "dashed", color = jama_ref_line) +
+  theme_jama(base_size = 11)
 ```
 
 ## Other moderators

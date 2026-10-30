@@ -23,6 +23,7 @@ suppressPackageStartupMessages({
   library(gt)
 })
 source("R/01_prepare_data.R")
+source("R/theme_jama.R")
 source("R/02_fit_models.R")
 
 es_all  <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
@@ -143,7 +144,7 @@ Short TTP is consistently associated with increased mortality risk in bacteremia
 
 ```{r fig-forest-abstract}
 #| label: fig-forest-abstract
-#| fig-cap: "Forest plot of OR (short vs long TTP) on mortality — primary pool (n=100 studies). Each row is a single effect size. Pooled Bayesian estimate in red; solid bar = 95% CrI, dashed bar = 95% prediction interval."
+#| fig-cap: "Forest plot of OR (short vs long TTP) on mortality — primary pool (n=100 studies). Each row is a single effect size. Pooled Bayesian estimate in dark navy; solid bar = 95% CrI, dashed bar = 95% prediction interval."
 
 fig_h <- max(6, nrow(es_mort) * 0.55 + 2)
 knitr::opts_current$set(fig.height = fig_h)
@@ -152,7 +153,7 @@ forest_data <- es_mort |>
   arrange(yi) |>
   mutate(
     lbl = paste0(study_id,
-                 ifelse(arm_id == "all", "", paste0(" [", arm_id, "]"))),
+                 ifelse(is.na(arm_id) | arm_id == "all", "", paste0(" [", arm_id, "]"))),
     lbl = make.unique(lbl, sep = " #"),
     lbl = factor(lbl, levels = lbl),
     or      = exp(yi),
@@ -177,20 +178,20 @@ pooled_row$lbl  <- factor(pooled_row$lbl, levels = levels(forest_data$lbl))
 pi_row$lbl      <- factor(pi_row$lbl,     levels = levels(forest_data$lbl))
 
 ggplot(bind_rows(forest_data, pooled_row), aes(x = or, y = lbl, color = type)) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
   geom_point(size = 2.5) +
   geom_errorbar(aes(xmin = pmax(ci_low, 0.05), xmax = pmin(ci_high, 50)),
                 width = 0.25, linewidth = 0.7, orientation = "y") +
   geom_errorbar(data = pi_row,
                 aes(y = lbl, xmin = pmax(pi_low, 0.05), xmax = pmin(pi_high, 50)),
                 width = 0.15, linewidth = 0.7, linetype = "dashed",
-                color = "darkred", inherit.aes = FALSE) +
-  scale_color_manual(values = c("Study" = "steelblue", "Pooled" = "darkred")) +
+                color = "#1F3447", inherit.aes = FALSE) +
+  scale_color_manual(values = c("Study" = "#7F9DB9", "Pooled" = "#1F3447")) +
   scale_x_log10(breaks = c(0.1, 0.25, 0.5, 1, 2, 4, 8, 16, 32),
                 limits  = c(0.05, 50)) +
-  labs(subtitle = "Solid red bar = 95% CrI; dashed red bar = 95% prediction interval",
+  labs(subtitle = "Solid bar = 95% CrI; dashed bar = 95% prediction interval",
        x = "OR, short vs long TTP (log scale)", y = NULL, color = NULL) +
-  theme_minimal(base_size = 9) +
+  theme_jama(base_size = 9) +
   theme(legend.position  = "bottom",
         axis.text.y      = element_text(size = 7, lineheight = 0.85),
         panel.grid.major.y = element_line(color = "gray92"),
@@ -205,9 +206,9 @@ ggplot(bind_rows(forest_data, pooled_row), aes(x = or, y = lbl, color = type)) +
 #| fig-height: 4
 tibble(OR = base_post$OR_draws) |>
   ggplot(aes(x = OR)) +
-  stat_halfeye(fill = "#1f78b4", alpha = 0.6) +
-  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+  stat_halfeye(fill = "#5B7A99", alpha = 0.6) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
   scale_x_continuous(limits = c(0.5, 6), breaks = seq(0.5, 6, 0.5)) +
   labs(x = "Pooled OR (short vs long TTP)", y = "Posterior density") +
-  theme_minimal()
+  theme_jama()
 ```

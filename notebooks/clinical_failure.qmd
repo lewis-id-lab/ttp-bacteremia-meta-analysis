@@ -11,6 +11,7 @@ suppressPackageStartupMessages({
   library(posterior); library(ggdist); library(gt); library(patchwork)
 })
 source("R/01_prepare_data.R")
+source("R/theme_jama.R")
 source("R/02_fit_models.R")
 
 es_all  <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
@@ -73,22 +74,22 @@ if (nrow(es_pb) >= 3) {
 
   forest_pb <- es_pb |>
     mutate(or = exp(yi), ci_low = exp(yi - 1.96*sei), ci_high = exp(yi + 1.96*sei),
-           lbl = paste0(study_id, ifelse(arm_id == "all", "", paste0(" [", arm_id, "]"))),
+           lbl = paste0(study_id, ifelse(is.na(arm_id) | arm_id == "all", "", paste0(" [", arm_id, "]"))),
            type = "Study") |>
     bind_rows(tibble(lbl = "POOLED", or = pb_post$median_OR,
                      ci_low = pb_post$ci_OR[1], ci_high = pb_post$ci_OR[2], type = "Pooled"))
 
   ggplot(forest_pb, aes(x = or, y = reorder(lbl, or), color = type)) +
-    geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
+    geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
     geom_point(size = 2.5) +
     geom_errorbar(aes(xmin = pmax(ci_low, 0.05), xmax = pmin(ci_high, 50)),
                   width = 0.25, orientation = "y") +
-    scale_color_manual(values = c("Study" = "#2c7fb8", "Pooled" = "darkred")) +
+    scale_color_manual(values = c("Study" = "#7F9DB9", "Pooled" = "#1F3447")) +
     scale_x_log10(breaks = c(0.1, 0.5, 1, 2, 5, 10, 25), limits = c(0.05, 50)) +
     labs(x = "OR (short vs long TTP)", y = NULL, color = NULL,
          title = sprintf("Persistent bacteremia / IE — pooled OR %.2f [%.2f, %.2f]",
                          pb_post$median_OR, pb_post$ci_OR[1], pb_post$ci_OR[2])) +
-    theme_minimal(base_size = 10) + theme(legend.position = "bottom")
+    theme_jama(base_size = 10) + theme(legend.position = "bottom")
 } else {
   cat("Fewer than 3 effect sizes available — cannot fit pooled model.")
 }
@@ -132,15 +133,15 @@ if (nrow(es_pb) >= 3 && n_distinct(es_pb$def_group) >= 2) {
            def_group_lbl = str_replace_all(def_group, "_", " ") |> str_to_title())
 
   ggplot(forest_bydef, aes(x = or, y = reorder(lbl, or))) +
-    geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
-    geom_point(size = 2.5, color = "#2c7fb8") +
+    geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
+    geom_point(size = 2.5, color = "#7F9DB9") +
     geom_errorbar(aes(xmin = pmax(ci_low, 0.05), xmax = pmin(ci_high, 50)),
-                  width = 0.25, color = "#2c7fb8") +
+                  width = 0.25, color = "#7F9DB9") +
     scale_x_log10(breaks = c(0.1, 0.5, 1, 2, 5, 10, 25), limits = c(0.05, 50)) +
     facet_wrap(~ def_group_lbl, scales = "free_y", ncol = 1) +
     labs(x = "OR (short vs long TTP)", y = NULL,
          title = "Persistent bacteremia — by outcome definition group") +
-    theme_minimal(base_size = 10)
+    theme_jama(base_size = 10)
 
 } else {
   cat("Too few effect sizes or definition groups to fit subset model.")

@@ -2,10 +2,9 @@
 title: "Blood culture time to positivity and mortality in bacteremia: a systematic review and Bayesian meta-analysis"
 running-title: "Time to positivity and mortality in bacteremia"
 author:
-  - name: "Francesco Pangallo"
+  - name: "Monica Basso"
     affiliations:
       - name: "University of Padova"
-        department: "School of Medicine and Surgery"
         city: "Padova"
         country: "Italy"
   - name: "Russell E. Lewis"
@@ -235,3 +234,63 @@ A large language model agent was used to assist with full-text screening and dat
 
 ::: {#refs}
 :::
+
+# Supplementary appendix: model specification and diagnostics {.appendix .unnumbered}
+
+## Model specification {.unnumbered}
+
+All pooled and moderator models were Bayesian random-effects models fitted with `brms`: $y_i \mid \mathrm{SE}_i \sim \mathcal{N}(\mu + u_s,\ \mathrm{SE}_i^2)$ with study-level random intercepts $u_s \sim \mathcal{N}(0, \tau^2)$, where $y_i$ is the log odds ratio for effect size $i$ and $\mathrm{SE}_i$ its standard error. Priors were $\mu \sim \mathcal{N}(0, 1)$, $\tau \sim \text{Half-Cauchy}(0, 0.5)$, and $\mathcal{N}(0, 0.5)$ for moderator coefficients. Each model used 4 chains of 4,000 iterations (1,000 warm-up; 12,000 post-warm-up draws), `adapt_delta = 0.99`, and `max_treedepth = 12`. The persistent bacteremia and microbiological clearance models were fitted with the CmdStan backend and all others with rstan. Convergence was judged by $\hat{R} < 1.01$, bulk and tail effective sample sizes, divergent transitions, and visual inspection of trace and rank plots. Code is in `R/02_fit_models.R` and the notebooks.
+
+## Convergence across all fitted models {.unnumbered}
+
+```{r}
+#| label: tbl-conv-all
+#| tbl-cap: "Convergence diagnostics for every fitted model. Parameters are population-level effects and the between-study SD; study-level random effects are not summarized."
+conv_row <- function(path) {
+  fit <- readRDS(path)
+  d <- posterior::summarise_draws(posterior::as_draws_df(fit), rhat = posterior::rhat,
+                                  ess_bulk = posterior::ess_bulk, ess_tail = posterior::ess_tail) |>
+    filter(!grepl("^lp__|^lprior|^Intercept$|^r_study_id|^z_", variable))
+  np <- brms::nuts_params(fit)
+  tibble(Model = sub("\\.rds$", "", basename(path)),
+         `Max R-hat` = sprintf("%.3f", max(d$rhat, na.rm = TRUE)),
+         `Min bulk ESS` = sprintf("%.0f", min(d$ess_bulk, na.rm = TRUE)),
+         `Min tail ESS` = sprintf("%.0f", min(d$ess_tail, na.rm = TRUE)),
+         `Divergent transitions` = sum(np$Value[np$Parameter == "divergent__"]),
+         `Treedepth limit hits` = sum(np$Value[np$Parameter == "treedepth__"] >= 12))
+}
+conv_files <- c(list.files("_brms_cache/primary", full.names = TRUE, pattern = "rds$"),
+                "_brms_cache/sensitivity/fit_base.rds")
+conv_tbl <- bind_rows(lapply(conv_files, conv_row)) |>
+  mutate(Model = c(rep("", 0), Model)) 
+conv_tbl$Model[nrow(conv_tbl)] <- "fit_base (sensitivity pool)"
+knitr::kable(conv_tbl)
+n_div <- sum(conv_tbl$`Divergent transitions`)
+max_rhat <- max(as.numeric(conv_tbl$`Max R-hat`))
+min_ess  <- min(as.numeric(conv_tbl$`Min bulk ESS`))
+div_models <- paste(conv_tbl$Model[conv_tbl$`Divergent transitions` > 0], collapse = ", ")
+```
+
+The maximum $\hat{R}$ across models was `{r} sprintf("%.3f", max_rhat)` and the minimum bulk ESS was `{r} fmt_n(min_ess)`. Divergent transitions occurred in `{r} n_div` post-warm-up draws in total, confined to these models: `{r} div_models`. Estimates from models with divergent transitions, which have few effect sizes, should be interpreted cautiously.
+
+## Primary pool: pooled model {.unnumbered}
+
+{{< embed notebooks/mortality-analysis.qmd#tbl-diag >}}
+
+{{< embed notebooks/mortality-analysis.qmd#fig-trace >}}
+
+{{< embed notebooks/mortality-analysis.qmd#fig-rank >}}
+
+{{< embed notebooks/mortality-analysis.qmd#fig-rhat >}}
+
+## Sensitivity pool: pooled model {.unnumbered}
+
+{{< embed notebooks/mortality-analysis.qmd#fig-trace-sens >}}
+
+{{< embed notebooks/mortality-analysis.qmd#fig-rank-sens >}}
+
+{{< embed notebooks/mortality-analysis.qmd#fig-rhat-sens >}}
+
+## Moderator and sensitivity analyses {.unnumbered}
+
+{{< embed notebooks/mortality-analysis.qmd#tbl-mods >}}
