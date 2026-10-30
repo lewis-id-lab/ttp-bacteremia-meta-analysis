@@ -30,7 +30,6 @@ format:
     # Word is accepted for initial JCM submission; line numbers help reviewers
     number-sections: false
     fig-dpi: 300
-  jats: default
   pdf:
     documentclass: article
     keep-tex: false
