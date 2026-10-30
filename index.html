@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.35">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Francesco Pangallo">
+<meta name="author" content="Russell E. Lewis">
+<meta name="dcterms.date" content="2026-10-30">
+<meta name="keywords" content="time to positivity, blood culture, bacteremia, mortality, meta-analysis">
+
+<title>Blood culture time to positivity and mortality in bacteremia: a systematic review and Bayesian meta-analysis</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 1em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-8ffd5f67044e5306d9846f29df41dda5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="citation_title" content="Blood culture time to positivity and mortality in bacteremia: a systematic review and Bayesian meta-analysis">
+<meta name="citation_abstract" content="**Background.** Blood culture time to positivity (TTP) has been proposed as a prognostic marker in bacteremia, but studies use different thresholds, pathogens, and outcomes. We synthesized the association between short versus long TTP and clinical outcomes.
+
+**Methods.** We searched PubMed, Embase, Scopus, the Cochrane Library, and Web of Science (updated May 2026) and extracted effect sizes from 100 studies meeting strict eligibility criteria. Log odds ratios for all-cause mortality (short versus long TTP) were pooled with a Bayesian random-effects model. We examined pathogen class, TTP cutpoint, publication bias, and a sensitivity analysis adding studies meeting more inclusive criteria. Persistent bacteremia and microbiological clearance were analyzed as secondary outcomes.
+
+**Results.** Fifty-eight studies (72 effect sizes) reported mortality. Short TTP was associated with higher mortality (pooled OR 2.06; 95% credible interval [CrI], 1.67 to 2.55), with substantial heterogeneity (median I² 62%; 95% prediction interval, 0.5 to 8.6). The association was larger in Gram-negative (OR 2.66; 95% CrI, 1.72 to 4.06) than Gram-positive bacteremia (OR 1.48; 95% CrI, 0.85 to 2.58), although the credible intervals overlapped. Higher TTP cutpoints were associated with weaker associations overall, but this was not consistent across subgroups. The funnel plot was asymmetric, and trim-and-fill gave an adjusted OR of 1.51 (95% CI, 1.23 to 1.86). Short TTP was also associated with persistent bacteremia (OR 1.74; 95% CrI, 1.09 to 2.80); data on clearance were sparse.
+
+**Conclusions.** Short TTP is associated with higher mortality, particularly in Gram-negative bacteremia, but heterogeneity, cutpoint dependence, probable confounding, and small-study effects limit its use as a stand-alone prognostic tool. Standardized thresholds and adjusted, individual-patient analyses are needed.
+">
+<meta name="citation_keywords" content="time to positivity,blood culture,bacteremia,mortality,meta-analysis">
+<meta name="citation_author" content="Francesco Pangallo">
+<meta name="citation_author" content="Russell E. Lewis">
+<meta name="citation_publication_date" content="2026-10-30">
+<meta name="citation_cover_date" content="2026-10-30">
+<meta name="citation_year" content="2026">
+<meta name="citation_online_date" content="2026-10-30">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Incidence and short-term outcomes of central line-related bloodstream infection in patients admitted to the emergency department: a single-center retrospective study;,citation_author=H. M. Ahn;,citation_author=J.-S. Kim;,citation_author=M. G. Park;,citation_author=J. Hwang;,citation_author=W. Y. Kim;,citation_author=D.-W. Seo;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=1;,citation_doi=10.1038/s41598-023-31100-1;,citation_volume=13;,citation_journal_title=Scientific Reports;">
+<meta name="citation_reference" content="citation_title=Blood Culture Time to Positivity in Adults: Pathogen Type Prediction and Contamination Discrimination;,citation_author=Ö. Aldemir;,citation_author=M. Öz;,citation_author=F. Çubuk;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_doi=10.1016/j.mimet.2026.107434;,citation_volume=243;,citation_journal_title=Journal of Microbiological Methods;">
+<meta name="citation_reference" content="citation_title=Catheter‑related bloodstream infections and risk factors in infants hospitalized in neonatal intensive care units at Mogadishu, Somalia: two years of experience;,citation_author=T. A. Ali;,citation_author=A. Doğan;,citation_author=A. K. Çelik;,citation_author=S. A. Isse;,citation_author=F. N. Adan;,citation_author=F. H. Ahmed;,citation_author=M. D. Omar;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_issue=1;,citation_doi=10.1186/s12887-025-06252-w;,citation_volume=26;,citation_journal_title=BMC Pediatrics;">
+<meta name="citation_reference" content="citation_title=Time to positivity of blood culture association with clinical presentation, prognosis and ESBL-production in Escherichia coli bacteremia;,citation_author=R. Álvarez;,citation_author=L. Viñas-Castillo;,citation_author=J. A. Lepe-Jiménez;,citation_author=E. García-Cabrera;,citation_author=J. M. Cisneros-Herreros;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=9;,citation_doi=10.1007/s10096-012-1554-5;,citation_volume=31;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Diagnostic issues, clinical characteristics, and outcomes for patients with fungemia;,citation_author=M. C. Arendrup;,citation_author=S. Sulim;,citation_author=A. Holm;,citation_author=L. Nielsen;,citation_author=S. D. Nielsen;,citation_author=J. D. Knudsen;,citation_author=N. E. Drenck;,citation_author=J. J. Christensen;,citation_author=H. K. Johansen;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_issue=9;,citation_doi=10.1128/JCM.00179-11;,citation_volume=49;,citation_journal_title=Journal of Clinical Microbiology;">
+<meta name="citation_reference" content="citation_title=Prognostic Value of the Time-to-Positivity in Blood Cultures from Septic Shock Patients with Bacteremia Receiving Protocol-Driven Resuscitation Bundle Therapy: A Retrospective Cohort Study;,citation_author=Hong-Jun Bae;,citation_author=June-sung Kim;,citation_author=Muyeol Kim;,citation_author=Youn-Jung Kim;,citation_author=Won Young Kim;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=6;,citation_doi=10.3390/antibiotics10060683;,citation_volume=10;,citation_journal_title=Antibiotics;">
+<meta name="citation_reference" content="citation_title=Time-to-Positivity for Candida in Bloodstream Infections: Prognostic Implications for Mortality;,citation_author=L Balaji;,citation_author=H Manoharan;,citation_author=N Prabhakaran;,citation_author=N Manivannan;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=8;,citation_doi=10.7759/cureus.66364;,citation_volume=16;,citation_journal_title=CUREUS JOURNAL OF MEDICAL SCIENCE;">
+<meta name="citation_reference" content="citation_title=Serial measurement of M. tuberculosis in blood from critically-ill patients with HIV-associated tuberculosis;,citation_author=D. A. Barr;,citation_author=C. Schutz;,citation_author=A. Balfour;,citation_author=M. Shey;,citation_author=M. Kamariza;,citation_author=C. R. Bertozzi;,citation_author=T. J. Wet;,citation_author=R. Dinkele;,citation_author=A. Ward;,citation_author=K. A. Haigh;,citation_author=J.-P. Kanyik;,citation_author=V. Mizrahi;,citation_author=M. P. Nicol;,citation_author=R. J. Wilkinson;,citation_author=D. G. Lalloo;,citation_author=D. F. Warner;,citation_author=G. Meintjes;,citation_author=G. Davies;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.1016/j.ebiom.2022.103949;,citation_volume=78;,citation_journal_title=eBioMedicine;">
+<meta name="citation_reference" content="citation_title=S taphylococcus aureus bacteraemia, cardiac implantable electronic device, and the risk of endocarditis: a retrospective population–based cohort study;,citation_author=A. Berge;,citation_author=C. Carlsén;,citation_author=A. Petropoulos;,citation_author=F. Gadler;,citation_author=M. Rasmussen;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=5;,citation_doi=10.1007/s10096-023-04585-x;,citation_volume=42;,citation_journal_title=European Journal of Clinical Microbiology and Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to Blood Culture Positivity: An Independent Predictor of Mortality in &amp;amp;amp;lt;i&amp;gt;Streptococcus Pyogenes&amp;lt;/i&amp;gt; Bacteremia;,citation_author=Anna Bläckberg;,citation_author=Stina Svedevall;,citation_author=Katrina Lundberg;,citation_author=Bo Nilson;,citation_author=Fredrik Kahn;,citation_author=Magnus Rasmussen;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=6;,citation_doi=10.1093/ofid/ofac163;,citation_volume=9;,citation_journal_title=Open Forum Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to positivity of blood cultures in bloodstream infections with &amp;amp;amp;lt;i&amp;gt;Streptococcus dysgalactiae&amp;lt;/i&amp;gt; and association with outcome;,citation_author=Anna Bläckberg;,citation_author=Katrina Lundberg;,citation_author=Stina Svedevall;,citation_author=Bo Nilson;,citation_author=Magnus Rasmussen;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=5;,citation_doi=10.1080/23744235.2023.2182910;,citation_volume=55;,citation_journal_title=Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Relationship between time to positivity of blood culture with clinical characteristics and hospital mortality in patients with Escherichia coli bacteremia;,citation_author=S.-N. Bo;,citation_author=J. Bo;,citation_author=Y.-Z. Ning;,citation_author=Y. Zhao;,citation_author=X.-L. Lu;,citation_author=J.-Y. Yang;,citation_author=X. Zhu;,citation_author=G.-Q. Yao;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_issue=3;,citation_doi=10.3760/cma.j.issn.0366-6999.2011.03.002;,citation_volume=124;,citation_journal_title=Chinese Medical Journal;">
+<meta name="citation_reference" content="citation_title=Prospective assessment of blood cultures which were sent to the clinical microbiology laboratory;,citation_author=S. Bolukçu;,citation_author=S. Başaran;,citation_author=A. Çağatay;,citation_author=H. Özsüt;,citation_author=H. Eraksoy;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=2;,citation_doi=10.5152/kd.2018.29;,citation_volume=31;,citation_journal_title=Klimik Dergisi;">
+<meta name="citation_reference" content="citation_title=Catheter-related bloodstream infections caused by Gram-negative bacteria;,citation_author=E. Bouza;,citation_author=A. Eworo;,citation_author=A. Fernández Cruz;,citation_author=E. Reigadas;,citation_author=M. Rodríguez-Créixems;,citation_author=P. Muñoz;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=4;,citation_doi=10.1016/j.jhin.2013.08.008;,citation_volume=85;,citation_journal_title=Journal of Hospital Infection;">
+<meta name="citation_reference" content="citation_title=Shortening identification times: comparative observational study of three early blood culture testing protocols;,citation_author=P.-A. Chatelard;,citation_author=N. Rousseau;,citation_author=L. Parmeland;,citation_author=P. Metral;,citation_author=C. Pariset;,citation_author=E. Vivier;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_doi=10.3389/fcimb.2023.1192002;,citation_volume=13;,citation_journal_title=Frontiers in Cellular and Infection Microbiology;">
+<meta name="citation_reference" content="citation_title=The Impact of Implementing the Virtuo Blood Culture System on the Characteristics and Management of Patients with Staphylococcus aureus Bacteremia;,citation_author=M. A. Chavez;,citation_author=S. Munigala;,citation_author=C.-A.D. Burnham;,citation_author=M. L. Yarbrough;,citation_author=D. K. Warren;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=4;,citation_doi=10.1128/jcm.02261-21;,citation_volume=60;,citation_journal_title=Journal of Clinical Microbiology;">
+<meta name="citation_reference" content="citation_title=Associated clinical characteristics of patients with candidemia among different Candida species;,citation_author=L.-Y. Chen;,citation_author=S.-C. Kuo;,citation_author=H.-S. Wu;,citation_author=S.-P. Yang;,citation_author=Y.-J. Chan;,citation_author=L.-K. Chen;,citation_author=F.-D. Wang;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=6;,citation_doi=10.1016/j.jmii.2012.08.001;,citation_volume=46;,citation_journal_title=Journal of Microbiology, Immunology and Infection;">
+<meta name="citation_reference" content="citation_title=Clinical significance of time to positivity for yeast in candidemia;,citation_author=Liang-Yu Chen;,citation_author=Su-Pen Yang;,citation_author=Te-Li Chen;,citation_author=Shu-Yuan Liao;,citation_author=Yin-Yin Chen;,citation_author=Yu-Jiun Chan;,citation_author=Liang-Kung Chen;,citation_author=Fu-Der Wang;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_issue=4;,citation_doi=10.1016/j.jmii.2013.11.002;,citation_volume=48;,citation_journal_title=Journal of Microbiology, Immunology and Infection;">
+<meta name="citation_reference" content="citation_title=Value of blood culture time to positivity in identifying complicated nontyphoidal Salmonella bacteremia;,citation_author=Shang-Yu Chen;,citation_author=Tzu-Hua Weng;,citation_author=Wen-Pin Tseng;,citation_author=Chia-Ming Fu;,citation_author=Hui-Wen Lin;,citation_author=Chun-Hsing Liao;,citation_author=Tai-Fen Lee;,citation_author=Po-Ren Hsueh;,citation_author=Cheng-Chung Fang;,citation_author=Shey-Ying Chen;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=3;,citation_doi=10.1016/j.diagmicrobio.2018.02.005;,citation_volume=91;,citation_journal_title=Diagnostic Microbiology and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=Prognostic roles of time to positivity of blood cultures in patients with Escherichia coli bacteremia;,citation_author=Y. Chen;,citation_author=X. Huang;,citation_author=A. Wu;,citation_author=X. Lin;,citation_author=P. Zhou;,citation_author=Y. Liu;,citation_author=Y. Wu;,citation_author=C. Fu;,citation_author=Q. Dou;,citation_author=H. Jiang;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_doi=10.1017/S0950268820000941;,citation_volume=148;,citation_journal_title=Epidemiology and Infection;">
+<meta name="citation_reference" content="citation_title=The Prognostic Value of Time to Positivity of Klebsiella Pneumoniae in Blood Cultures of Elderly Patients With Intra-Abdominal Infection;,citation_author=C.-P. Chen;,citation_author=Y.-Y. Yang;,citation_author=I.-T. Tsai;,citation_author=Y.-C. Hsu;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=4;,citation_doi=10.6705/j.jacme.202312_13(4).0001;,citation_volume=13;,citation_journal_title=Journal of Acute Medicine;">
+<meta name="citation_reference" content="citation_title=Time to appropriate antimicrobial therapy serves an independent prognostic indicator in children with nosocomial Klebsiella pneumoniae bloodstream infection;,citation_author=J. Cheng;,citation_author=Q. Li;,citation_author=G. Zhang;,citation_author=H. Xu;,citation_author=Y. Li;,citation_author=X. Tian;,citation_author=D. Chen;,citation_author=Z. Luo;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=1;,citation_doi=10.1186/s12887-022-03622-6;,citation_volume=22;,citation_journal_title=BMC Pediatrics;">
+<meta name="citation_reference" content="citation_title=Time to positivity of follow-up blood cultures in patients with persistent Staphylococcus aureus bacteremia;,citation_author=S. H. Choi;,citation_author=J. W. Chung;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=11;,citation_doi=10.1007/s10096-012-1648-0;,citation_volume=31;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to blood culture positivity as a predictor of clinical outcomes and severity in adults with bacteremic pneumococcal pneumonia;,citation_author=Catia Cillóniz;,citation_author=Adrian Ceccato;,citation_author=Cristina Calle;,citation_author=Albert Gabarrús;,citation_author=Carolina Garcia-Vidal;,citation_author=Manel Almela;,citation_author=Alex Soriano;,citation_author=José Antonio Martinez;,citation_author=Francesc Marco;,citation_author=Jordi Vila;,citation_author=Antoni Torres;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=8;,citation_doi=10.1371/journal.pone.0182436;,citation_volume=12;,citation_journal_title=PLOS ONE;">
+<meta name="citation_reference" content="citation_title=Sequential Time to Positivity as a Prognostic Indicator in &amp;amp;amp;lt;i&amp;gt;Staphylococcus aureus&amp;lt;/i&amp;gt; Bacteremia;,citation_author=Isin Y Comba;,citation_author=John Raymond Go;,citation_author=James Vaillant;,citation_author=John C O’Horo;,citation_author=Ryan W Stevens;,citation_author=Raj Palraj;,citation_author=Omar Abu Saleh;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=4;,citation_doi=10.1093/ofid/ofae173;,citation_volume=11;,citation_journal_title=Open Forum Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Impact of HbA1c levels on time to blood culture positivity in bacterial bloodstream infections;,citation_author=F. Çubuk;,citation_author=M. Öz;,citation_author=C. Öksüz;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_issue=2;,citation_doi=10.1016/j.diagmicrobio.2026.117343;,citation_volume=115;,citation_journal_title=Diagnostic Microbiology and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=An assessment of the downstream implications of blood culture collection and transit;,citation_author=Peter J. B. Davies;,citation_author=Timothy P. W. Jones;,citation_author=Mairi Macleod;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=7;,citation_doi=10.1007/s10096-023-04610-z;,citation_volume=42;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Blood culture time-to-positivity can identify S aureus, but not Enterococcal or Streptococcal endocarditis.;,citation_author=Gavin Deas;,citation_author=Jennifer Shuttleworth;,citation_author=Amy Carson;,citation_author=Francesca Knapper;,citation_author=Paul North;,citation_author=Philip Williams;,citation_author=Rajeka Lazarus;,citation_author=Maha Albur;,citation_author=Fergus Hamilton;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_doi=10.3310/nihropenres.14018.1;,citation_volume=5;,citation_journal_title=NIHR Open Research;">
+<meta name="citation_reference" content="citation_title=Relationship between blood culture time to positivity, mortality rate, and severity of bacteremia;,citation_author=N. Deguchi;,citation_author=K. Ishikawa;,citation_author=S. Tokioka;,citation_author=D. Kobayashi;,citation_author=N. Mori;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=2;,citation_doi=10.1016/j.idnow.2023.104843;,citation_volume=54;,citation_journal_title=Infectious Diseases Now;">
+<meta name="citation_reference" content="citation_title=Catheter related bloodstream infection (CR-BSI) in ICU patients: Making the decision to remove or not to remove the central venous catheter;,citation_author=R. O. Deliberato;,citation_author=A. R. Marra;,citation_author=T. D. Corrêa;,citation_author=M. D. V. Martino;,citation_author=L. Correa;,citation_author=O. F. P. Santos;,citation_author=M. B. Edmond;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=3;,citation_doi=10.1371/journal.pone.0032687;,citation_volume=7;,citation_journal_title=PLoS ONE;">
+<meta name="citation_reference" content="citation_title=Staphylococcus lugdunensis bacteremia: clinical implications of single set positive blood cultures;,citation_author=T. Sasaki;,citation_author=Y. Doi;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=1;,citation_doi=10.1016/j.diagmicrobio.2022.115835;,citation_volume=105;,citation_journal_title=Diagnostic Microbiology and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=Safety and efficacy of the Seraph® 100 Microbind® Affinity Blood Filter to remove bacteria from the blood stream: results of the first in human study;,citation_author=G. Eden;,citation_author=J. J. Schmidt;,citation_author=S. Büttner;,citation_author=P. Kümpers;,citation_author=C. Hafer;,citation_author=A. Rovas;,citation_author=B. F. Koch;,citation_author=B. M. W. Schmidt;,citation_author=J. T. Kielstein;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=1;,citation_doi=10.1186/s13054-022-04044-7;,citation_volume=26;,citation_journal_title=Critical Care;">
+<meta name="citation_reference" content="citation_title=Determinants of time to positivity in bloodstream infections: an analysis of a population-based cohort in Queensland, Australia;,citation_author=Felicity Edwards;,citation_author=Michael Waller;,citation_author=Kevin B. Laupland;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=5;,citation_doi=10.1007/s10096-025-05096-7;,citation_volume=44;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Clinical characteristics and prognosis of Staphylococcus aureus bacteremia;,citation_author=Rosa García Fenoll;,citation_author=María Espinosa Pérez;,citation_author=Saray Mormeneo Bayo;,citation_author=Violeta Frutos Millán;,citation_author=María Carmen Martínez Jiménez;,citation_author=Rosa María Martínez Álvarez;,citation_author=María Pilar Palacián Ruiz;,citation_author=María Cruz Villuendas Usón;,citation_author=Carlos Ramos Paesa;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.37201/req/035.2022;,citation_journal_title=Revista Española de Quimioterapia;">
+<meta name="citation_reference" content="citation_title=Time to positive culture and identification for Candida blood stream infections;,citation_author=J. Fernandez;,citation_author=B. L. Erstad;,citation_author=W. Petty;,citation_author=D. E. Nix;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_issue=4;,citation_doi=10.1016/j.diagmicrobio.2009.04.002;,citation_volume=64;,citation_journal_title=Diagnostic Microbiology and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=Risk factors, outcomes and time to detect positive blood culture among cases with acute brucellosis;,citation_author=Z. Gaifer;,citation_author=M. E. M. Ali;,citation_author=B. H. Aljehani;,citation_author=H. A. Shaikh;,citation_author=S. B. Hussein;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=2;,citation_doi=10.1093/trstmh/trab093;,citation_volume=116;,citation_journal_title=Transactions of the Royal Society of Tropical Medicine and Hygiene;">
+<meta name="citation_reference" content="citation_title=When is coagulase-negative Staphylococcus bacteraemia clinically significant?;,citation_author=E. García-Vázquez;,citation_author=A. Fernández-Rufete;,citation_author=A. Hernández-Torres;,citation_author=M. Canteras;,citation_author=J. Ruiz;,citation_author=J. Gómez;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=9;,citation_doi=10.3109/00365548.2013.797599;,citation_volume=45;,citation_journal_title=Scandinavian Journal of Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to positivity: a useful parameter to evaluate intensive care unit blood stream infections?;,citation_author=Suellen Gavronski;,citation_author=Keite da Silva Nogueira;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=2;,citation_doi=10.5935/0103-507x.20200049;,citation_volume=32;,citation_journal_title=Revista Brasileira de Terapia Intensiva;">
+<meta name="citation_reference" content="citation_title=Candidemia in critically ill immunocompromised patients: report of a retrospective multicenter cohort study;,citation_author=E. Ghrenassia;,citation_author=D. Mokart;,citation_author=J. Mayaux;,citation_author=A. Demoule;,citation_author=I. Rezine;,citation_author=L. Kerhuel;,citation_author=L. Calvet;,citation_author=A. De Jong;,citation_author=E. Azoulay;,citation_author=M. Darmon;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=1;,citation_doi=10.1186/s13613-019-0539-2;,citation_volume=9;,citation_journal_title=Annals of Intensive Care;">
+<meta name="citation_reference" content="citation_title=Comparison of bloodstream infections due to Corynebacterium striatum, MRSA, and MRSE;,citation_author=S.-H. He;,citation_author=Y. Chen;,citation_author=H.-L. Sun;,citation_author=S. Li;,citation_author=S.-T. Diao;,citation_author=Y.-F. Wang;,citation_author=Z.-X. He;,citation_author=L. Weng;,citation_author=J.-M. Peng;,citation_author=B. Du;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_doi=10.1186/s12879-024-09883-z;,citation_volume=24;,citation_journal_title=BMC Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Clinical significance of coagulase-negative staphylococci other than S. epidermidis blood stream isolates at a tertiary care hospital;,citation_author=F. Hitzenbichler;,citation_author=M. Simon;,citation_author=B. Salzberger;,citation_author=F. Hanses;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=2;,citation_doi=10.1007/s15010-016-0945-4;,citation_volume=45;,citation_journal_title=Infection;">
+<meta name="citation_reference" content="citation_title=Is early time to positivity of blood culture associated with clinical prognosis in patients with &amp;amp;amp;lt;i&amp;gt;Klebsiella pneumoniae&amp;lt;/i&amp;gt; bloodstream infection?;,citation_author=Weiwei Hou;,citation_author=Tiantian Han;,citation_author=Guangbo Qu;,citation_author=Yehuan Sun;,citation_author=Dianyu Yang;,citation_author=Yan Lin;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_doi=10.1017/s0950268823000262;,citation_volume=151;,citation_journal_title=Epidemiology and Infection;">
+<meta name="citation_reference" content="citation_title=Short time to positivity of blood culture predicts mortality and septic shock in bacteremic patients: a systematic review and meta-analysis;,citation_author=Ya-Chu Hsieh;,citation_author=Hsiao-Ling Chen;,citation_author=Shang-Yi Lin;,citation_author=Tun-Chieh Chen;,citation_author=Po-Liang Lu;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=1;,citation_doi=10.1186/s12879-022-07098-8;,citation_volume=22;,citation_journal_title=BMC Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Sequential time to positivity of blood cultures can be a predictor of prognosis of patients with persistent Staphylococcus aureus bacteraemia;,citation_author=M.-S. Hsu;,citation_author=Y.-T. Huang;,citation_author=H.-S. Hsu;,citation_author=C.-H. Liao;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_issue=9;,citation_doi=10.1111/1469-0691.12608;,citation_volume=20;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=Time to positivity of blood culture can predict different Candida species instead of pathogen concentration in candidemia;,citation_author=L. Huang;,citation_author=Y. Y. Zhang;,citation_author=L. Y. Sun;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=7;,citation_doi=10.1007/s10096-013-1826-8;,citation_volume=32;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Coccidioides Fungemia in Central California: A 10-Years Experience;,citation_author=S. J. Hwang;,citation_author=M. Fayed;,citation_author=M. Mitchell;,citation_author=G. Sivasubramanian;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=4;,citation_doi=10.1007/s11046-025-00961-7;,citation_volume=190;,citation_journal_title=Mycopathologia;">
+<meta name="citation_reference" content="citation_title=Clinical Outcome of Patients with Escherichia coli Isolated from Catheter Lumens and/or Peripheral Blood Cultures: A Retrospective Analysis;,citation_author=Á. Irigoyen-von-Sierakowski;,citation_author=M. Díaz-Navarro;,citation_author=A. Visedo;,citation_author=M. J. Pérez-Granda;,citation_author=P. Martín-Rabadán;,citation_author=P. Muñoz;,citation_author=M. Guembe;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=6;,citation_doi=10.3390/pathogens13060446;,citation_volume=13;,citation_journal_title=Pathogens;">
+<meta name="citation_reference" content="citation_title=Exploring the correlation between time to positivity and positive culture bottle count in Staphylococcus aureus bacteremia: Implications for metastatic lesion development;,citation_author=Kazuhiro Ishikawa;,citation_author=Satoru Sekiya;,citation_author=Nobuyoshi Mori;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=9;,citation_doi=10.1016/j.jiac.2025.102773;,citation_volume=31;,citation_journal_title=Journal of Infection and Chemotherapy;">
+<meta name="citation_reference" content="citation_title=Time to positivity of blood culture as a prognostic marker in predicting the clinical outcome of blood stream infection;,citation_author=N. Jayabalakrishnan;,citation_author=K. S. Bhat;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=1;,citation_doi=10.18231/j.ijmr.2022.010;,citation_volume=9;,citation_journal_title=Indian Journal of Microbiology Research;">
+<meta name="citation_reference" content="citation_title=A pilot clinical trial to evaluate a novel time-to-positivity assay to measure the effectiveness of antibiotic therapy for septic patients in intensive care;,citation_author=Susannah Jerwood;,citation_author=Matthew Hankins;,citation_author=Jon Cohen;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=3;,citation_doi=10.1016/j.jcrc.2011.06.009;,citation_volume=27;,citation_journal_title=Journal of Critical Care;">
+<meta name="citation_reference" content="citation_title=Bloodstream Infections and Delayed Antibiotic Coverage Are Associated With Negative Hospital Outcomes in Hematopoietic Stem Cell Transplant Recipients;,citation_author=Joyce Ji;,citation_author=Jeff Klaus;,citation_author=Jason P. Burnham;,citation_author=Andrew Michelson;,citation_author=Colleen A. McEvoy;,citation_author=Marin H. Kollef;,citation_author=Patrick G. Lyons;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=4;,citation_doi=10.1016/j.chest.2020.06.011;,citation_volume=158;,citation_journal_title=Chest;">
+<meta name="citation_reference" content="citation_title=Time to blood culture positivity in Staphylococcus aureus bacteraemia to determine risk of infective endocarditis;,citation_author=Fredrik Kahn;,citation_author=Fredrik Resman;,citation_author=Sissela Bergmark;,citation_author=Peter Filiptsev;,citation_author=Bo Nilson;,citation_author=Patrik Gilje;,citation_author=Magnus Rasmussen;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=9;,citation_doi=10.1016/j.cmi.2020.11.007;,citation_volume=27;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=Differentiating Culture Samples Representing Coagulase-Negative Staphylococcal Bacteremia from Those Representing Contamination by Use of Time-to-Positivity and Quantitative Blood Culture Methods;,citation_author=Christelle Kassis;,citation_author=Gopi Rangaraj;,citation_author=Ying Jiang;,citation_author=Ray Y. Hachem;,citation_author=Issam Raad;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_issue=10;,citation_doi=10.1128/jcm.01045-09;,citation_volume=47;,citation_journal_title=Journal of Clinical Microbiology;">
+<meta name="citation_reference" content="citation_title=Time-to-positivity in bloodstream infection for Candida species as a prognostic marker for mortality;,citation_author=C. Keighley;,citation_author=A. L. Pope;,citation_author=D. Marriott;,citation_author=S. C.-A. Chen;,citation_author=M. A. Slavin;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=4;,citation_doi=10.1093/mmy/myad028;,citation_volume=61;,citation_journal_title=Medical Mycology;">
+<meta name="citation_reference" content="citation_title=Time to Positivity in Staphylococcus aureus Bacteremia: Possible Correlation with the Source and Outcome of Infection;,citation_author=R. Khatib;,citation_author=K. Riederer;,citation_author=S. Saeed;,citation_author=L. B. Johnson;,citation_author=M. G. Fakih;,citation_author=M. Sharma;,citation_author=M. S. Tabriz;,citation_author=A. Khosrovaneh;,citation_publication_date=2005;,citation_cover_date=2005;,citation_year=2005;,citation_issue=5;,citation_doi=10.1086/432472;,citation_volume=41;,citation_journal_title=Clinical Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to blood culture positivity in Staphylococcus aureus bacteremia: Association with 30-day mortality;,citation_author=Joseph Kim;,citation_author=Daniel B. Gregson;,citation_author=Terry Ross;,citation_author=Kevin B. Laupland;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_issue=3;,citation_doi=10.1016/j.jinf.2010.06.001;,citation_volume=61;,citation_journal_title=Journal of Infection;">
+<meta name="citation_reference" content="citation_title=Clinical impact of time to positivity for Candida species on mortality in patients with candidaemia;,citation_author=S.-H. Kim;,citation_author=Y. K. Yoon;,citation_author=M. J. Kim;,citation_author=J. W. Sohn;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=12;,citation_doi=10.1093/jac/dkt256;,citation_volume=68;,citation_journal_title=Journal of Antimicrobial Chemotherapy;">
+<meta name="citation_reference" content="citation_title=Characteristics and clinical outcomes of culture-negative and culture-positive septic shock: a single-center retrospective cohort study;,citation_author=J.-S. Kim;,citation_author=Y.-J. Kim;,citation_author=W. Y. Kim;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=1;,citation_doi=10.1186/s13054-020-03421-4;,citation_volume=25;,citation_journal_title=Critical Care;">
+<meta name="citation_reference" content="citation_title=Clinical diagnostic performance of droplet digital PCR for pathogen detection in patients with Escherichia coli bloodstream infection: a prospective observational study;,citation_author=H. Kitagawa;,citation_author=M. Kojima;,citation_author=K. Tadera;,citation_author=S. Kogasaki;,citation_author=K. Omori;,citation_author=T. Nomura;,citation_author=N. Shigemoto;,citation_author=E. Hiyama;,citation_author=H. Ohge;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=1;,citation_doi=10.1186/s12879-024-10396-y;,citation_volume=25;,citation_journal_title=BMC Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Blood culture time to positivity in non-β-hemolytic streptococcal bacteremia as a predictor of infective endocarditis—a retrospective cohort study;,citation_author=David Krus;,citation_author=Fredrik Kahn;,citation_author=Bo Nilson;,citation_author=Torgny Sunnerhagen;,citation_author=Magnus Rasmussen;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=2;,citation_doi=10.1007/s10096-021-04339-7;,citation_volume=41;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Distribution and clinical determinants of time‐to‐positivity of blood cultures in patients with neutropenia;,citation_author=Merel M. C. Lambregts;,citation_author=Eva B. Warreman;,citation_author=Alexandra T. Bernards;,citation_author=Hendrik Veelken;,citation_author=Peter A. Borne;,citation_author=Olaf M. Dekkers;,citation_author=Leo G. Visser;,citation_author=Mark G. Boer;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=2;,citation_doi=10.1111/ejh.13001;,citation_volume=100;,citation_journal_title=European Journal of Haematology;">
+<meta name="citation_reference" content="citation_title=Time to positivity of blood cultures supports early re-evaluation of empiric broad-spectrum antimicrobial therapy;,citation_author=Merel M. C. Lambregts;,citation_author=Alexandra T. Bernards;,citation_author=Martha T. Beek;,citation_author=Leo G. Visser;,citation_author=Mark G. Boer;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=1;,citation_doi=10.1371/journal.pone.0208819;,citation_volume=14;,citation_journal_title=PLOS ONE;">
+<meta name="citation_reference" content="citation_title=Culture-based determinants and outcome of Staphylococcus aureus bloodstream infections;,citation_author=Kevin B. Laupland;,citation_author=Patrick N. A. Harris;,citation_author=Adam G. Stewart;,citation_author=Felicity Edwards;,citation_author=David L. Paterson;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=3;,citation_doi=10.1016/j.diagmicrobio.2022.115772;,citation_volume=104;,citation_journal_title=Diagnostic Microbiology and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=Time to positivity is a risk factor for death among patients with bloodstream infections: a population-based cohort;,citation_author=Kevin B. Laupland;,citation_author=Felicity Edwards;,citation_author=Zoe Dettrick;,citation_author=Patrick N. A. Harris;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=7;,citation_doi=10.1016/j.cmi.2024.03.032;,citation_volume=30;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=Correlation between time to positivity of blood cultures with clinical presentation and outcomes in patients with Klebsiella pneumoniae bacteraemia: prospective cohort study;,citation_author=C.-H. Liao;,citation_author=C.-C. Lai;,citation_author=M.-S. Hsu;,citation_author=Y.-T. Huang;,citation_author=F.-Y. Chu;,citation_author=H.-S. Hsu;,citation_author=P.-R. Hsueh;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_issue=12;,citation_doi=10.1111/j.1469-0691.2009.02720.x;,citation_volume=15;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=Time to positivity in blood cultures of adults with nontyphoidal Salmonella bacteremia;,citation_author=Hui-Wen Lin;,citation_author=Hsin-Sui Hsu;,citation_author=Yu-Tsung Huang;,citation_author=Chia-Jui Yang;,citation_author=Meng-Shiuan Hsu;,citation_author=Chun-Hsing Liao;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=3;,citation_doi=10.1016/j.jmii.2014.08.004;,citation_volume=49;,citation_journal_title=Journal of Microbiology, Immunology and Infection;">
+<meta name="citation_reference" content="citation_title=Utility of a blood culture time to positivity-incorporated scoring model in predicting vascular infections in adults with nontyphoid Salmonella bacteremia;,citation_author=Jr-Jiun Lin;,citation_author=Tzu-Hua Weng;,citation_author=Wen-Pin Tseng;,citation_author=Shang-Yu Chen;,citation_author=Chia-Ming Fu;,citation_author=Hui-Wen Lin;,citation_author=Chun-Hsing Liao;,citation_author=Tai-Fen Lee;,citation_author=Po-Ren Hsueh;,citation_author=Shey-Ying Chen;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=5;,citation_doi=10.1016/j.jmii.2018.01.004;,citation_volume=51;,citation_journal_title=Journal of Microbiology, Immunology and Infection;">
+<meta name="citation_reference" content="citation_title=Association of time to positivity with disease severity in bloodstream infections—a population-based cohort study;,citation_author=Oskar Ljungquist;,citation_author=Jonas Tverring;,citation_author=Karl Oldberg;,citation_author=Torgny Sunnerhagen;,citation_author=Gustav Torisson;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=9;,citation_doi=10.1016/j.cmi.2025.05.027;,citation_volume=31;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=Integrating rapid diagnostics and antimicrobial stewardship in two community hospitals improved process measures and antibiotic adjustment time;,citation_author=A. M. Lockwood;,citation_author=K. K. Perez;,citation_author=W. L. Musick;,citation_author=J. O. Ikwuagwu;,citation_author=E. Attia;,citation_author=O. O. Fasoranti;,citation_author=P. L. Cernoch;,citation_author=R. J. Olsen;,citation_author=J. M. Musser;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=4;,citation_doi=10.1017/ice.2015.313;,citation_volume=37;,citation_journal_title=Infection Control and Hospital Epidemiology;">
+<meta name="citation_reference" content="citation_title=Impact of a rapid multiplex polymerase chain reaction blood culture identification technology on outcomes in patients with vancomycin-resistant Enterococcal bacteremia;,citation_author=S. H. MacVane;,citation_author=J. M. Hurst;,citation_author=M. S. Boger;,citation_author=J. W. Gnann;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=10;,citation_doi=10.1080/23744235.2016.1185533;,citation_volume=48;,citation_journal_title=Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=High success rate in salvage of catheter-related bloodstream infections due to Staphylococcus aureus, on behalf of project group of Italian society of nephrology;,citation_author=S. Mandolfo;,citation_author=A. Anesi;,citation_author=M. Maggio;,citation_author=V. Rognoni;,citation_author=F. Galli;,citation_author=G. Forneris;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=3;,citation_doi=10.1177/1129729819875323;,citation_volume=21;,citation_journal_title=Journal of Vascular Access;">
+<meta name="citation_reference" content="citation_title=Time to positivity as a predictor of catheter-related bacteremia and mortality in adults with Pseudomonas aeruginosa bloodstream infection;,citation_author=Daniel N. Marco;,citation_author=Maria Brey;,citation_author=Sergi Anguera;,citation_author=Cristina Pitart;,citation_author=Ignacio Grafia;,citation_author=Marta Bodro;,citation_author=Jose Antonio Martínez;,citation_author=Ana Río;,citation_author=Carolina Garcia-Vidal;,citation_author=Abiu Sempere;,citation_author=Celia Cardozo;,citation_author=Pedro Puerta-Alcalde;,citation_author=Mariana Chumbita;,citation_author=Marta Hernández-Meneses;,citation_author=Guillermo Cuervo;,citation_author=Patricia Monzo-Gallo;,citation_author=Miguel Ángel Verdejo;,citation_author=Tommaso Francesco Aiello;,citation_author=Mateu Espasa;,citation_author=Climent Casals-Pascual;,citation_author=Laura Morata;,citation_author=Felipe García;,citation_author=Josep Mensa;,citation_author=Àlex Soriano;,citation_author=Sabina Herrera;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=1;,citation_doi=10.1186/s13054-025-05292-z;,citation_volume=29;,citation_journal_title=Critical Care;">
+<meta name="citation_reference" content="citation_title=Time to Blood Culture Positivity as a Predictor of Clinical Outcome of &amp;amp;amp;lt;i&amp;gt;Staphylococcus aureus&amp;lt;/i&amp;gt; Bloodstream Infection;,citation_author=Alexandre R. Marra;,citation_author=Michael B. Edmond;,citation_author=Betty A. Forbes;,citation_author=Richard P. Wenzel;,citation_author=Gonzalo M. L. Bearman;,citation_publication_date=2006;,citation_cover_date=2006;,citation_year=2006;,citation_issue=4;,citation_doi=10.1128/jcm.44.4.1342-1346.2006;,citation_volume=44;,citation_journal_title=Journal of Clinical Microbiology;">
+<meta name="citation_reference" content="citation_title=Time to positivity of blood cultures in patients with bloodstream infections: A useful prognostic tool;,citation_author=Guillermo Martín-Gutiérrez;,citation_author=Carlos Martín-Pérez;,citation_author=Antonio Gutiérrez-Pizarraya;,citation_author=José A. Lepe;,citation_author=José M. Cisneros;,citation_author=Javier Aznar;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=10;,citation_doi=10.1016/j.eimc.2016.10.003;,citation_volume=35;,citation_journal_title=Enfermedades Infecciosas y Microbiología Clínica;">
+<meta name="citation_reference" content="citation_title=Relationship of phylogenetic background, biofilm production, and time to detection of growth in blood culture vials with clinical variables and prognosis associated with Escherichia coli bacteremia;,citation_author=J. A. Martínez;,citation_author=S. Soto;,citation_author=A. Fabrega;,citation_author=M. Almela;,citation_author=J. Mensa;,citation_author=A. Soriano;,citation_author=F. Marco;,citation_author=M. T. Jimenez De Anta;,citation_author=J. Vila;,citation_publication_date=2006;,citation_cover_date=2006;,citation_year=2006;,citation_issue=4;,citation_doi=10.1128/JCM.44.4.1468-1474.2006;,citation_volume=44;,citation_journal_title=Journal of Clinical Microbiology;">
+<meta name="citation_reference" content="citation_title=Time to First Culture Positivity Among Critically Ill Adults With Methicillin-Resistant &amp;amp;amp;lt;i&amp;gt;Staphylococcus aureus&amp;lt;/i&amp;gt; Growth in Respiratory or Blood Cultures;,citation_author=Paige A. Melling;,citation_author=Michael J. Noto;,citation_author=Todd W. Rice;,citation_author=Matthew W. Semler;,citation_author=Joanna L. Stollings;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=2;,citation_doi=10.1177/1060028019877937;,citation_volume=54;,citation_journal_title=Annals of Pharmacotherapy;">
+<meta name="citation_reference" content="citation_title=Time to positivity as a prognostic factor in bloodstream infections with Enterococcus spp.;,citation_author=Katharina Michelson;,citation_author=Bettina Löffler;,citation_author=Steffen Höring;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=3;,citation_doi=10.1016/j.diagmicrobio.2021.115396;,citation_volume=101;,citation_journal_title=Diagnostic Microbiology and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=Defining the Breakpoint Duration of &amp;amp;amp;lt;i&amp;gt;Staphylococcus aureus&amp;lt;/i&amp;gt; Bacteremia Predictive of Poor Outcomes;,citation_author=Emi Minejima;,citation_author=Nikki Mai;,citation_author=Nancy Bui;,citation_author=Melissa Mert;,citation_author=Wendy J Mack;,citation_author=Rosemary C She;,citation_author=Paul Nieberg;,citation_author=Brad Spellberg;,citation_author=Annie Wong-Beringer;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=4;,citation_doi=10.1093/cid/ciz257;,citation_volume=70;,citation_journal_title=Clinical Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to Grow Positive Blood Cultures and Its Impact on Clinical Outcomes in Patients with Bacteremia Admitted to Intensive Care Unit;,citation_author=Rashid Nadeem;,citation_author=Ashraf M. Elhoufi;,citation_author=Lamiaa Salama;,citation_author=Mayada Mahmoud;,citation_author=Islam Bon;,citation_author=Sahish Kamat;,citation_author=Ahmed Elsousi;,citation_author=Rami M. Abdalla;,citation_author=Zainab Abdulameer Obaida;,citation_author=Moatz Elzeiny;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=1;,citation_doi=10.1159/000513429;,citation_volume=4;,citation_journal_title=Dubai Medical Journal;">
+<meta name="citation_reference" content="citation_title=Optimization of antimicrobial therapy in vancomycin-resistant enterococcal bacteraemia using a rapid detection Gram-positive blood culture assay;,citation_author=R. Nakagawa;,citation_author=R. Jain;,citation_author=A. B. Bryan;,citation_author=J. D. Chan;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=2;,citation_doi=10.1016/j.jhin.2017.12.012;,citation_volume=99;,citation_journal_title=Journal of Hospital Infection;">
+<meta name="citation_reference" content="citation_title=Time to positivity of blood culture and its prognostic value in bloodstream infection;,citation_author=Y. Ning;,citation_author=R. Hu;,citation_author=G. Yao;,citation_author=S. Bo;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=4;,citation_doi=10.1007/s10096-016-2580-5;,citation_volume=35;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to blood culture positivity as a predictor of clinical outcome in patients with Candida albicansbloodstream infection;,citation_author=Cintia Zoya Nunes;,citation_author=Alexandre R Marra;,citation_author=Michael B Edmond;,citation_author=Elivane Silva Victor;,citation_author=Carlos Alberto Pires Pereira;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=1;,citation_doi=10.1186/1471-2334-13-486;,citation_volume=13;,citation_journal_title=BMC Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Predictors and clinical outcomes of persistent methicillin-resistant&amp;amp;amp;lt;i&amp;gt;Staphylococcus aureus&amp;lt;/i&amp;gt;bacteremia: a prospective observational study;,citation_author=Hea Sung Ok;,citation_author=Hyoun Soo Lee;,citation_author=Man Je Park;,citation_author=Ki Hoon Kim;,citation_author=Byeong Ki Kim;,citation_author=Yu Mi Wi;,citation_author=June Myung Kim;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=6;,citation_doi=10.3904/kjim.2013.28.6.678;,citation_volume=28;,citation_journal_title=The Korean Journal of Internal Medicine;">
+<meta name="citation_reference" content="citation_title=Short time to blood culture positivity in Enterococcus faecalis infective endocarditis;,citation_author=Karl Oldberg;,citation_author=Rebecca Thorén;,citation_author=Bo Nilson;,citation_author=Patrik Gilje;,citation_author=Malin Inghammar;,citation_author=Magnus Rasmussen;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=8;,citation_doi=10.1007/s10096-021-04210-9;,citation_volume=40;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Distinguishing coagulase-negative Staphylococcus bacteremia from contamination using blood-culture positive bottle detection pattern and time to positivity;,citation_author=Sayuri Osaki;,citation_author=Kentaro Kikuchi;,citation_author=Yuki Moritoki;,citation_author=Chiyoko Motegi;,citation_author=Sho Ohyatsu;,citation_author=Tomoyuki Nariyama;,citation_author=Kotaro Matsumoto;,citation_author=Hiromichi Tsunashima;,citation_author=Tomohiro Kikuyama;,citation_author=Juri Kubota;,citation_author=Kozue Nagumo;,citation_author=Hikari Fujioka;,citation_author=Ryoko Kato;,citation_author=Yuji Murakawa;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=7;,citation_doi=10.1016/j.jiac.2020.02.004;,citation_volume=26;,citation_journal_title=Journal of Infection and Chemotherapy;">
+<meta name="citation_reference" content="citation_title=Characteristics and risk factors for 28-day mortality of hospital acquired fungemias in ICUs: Data from the EUROBACT study;,citation_author=J.-A. Paiva;,citation_author=J. M. Pereira;,citation_author=A. Tabah;,citation_author=A. Mikstacki;,citation_author=F. B. Carvalho;,citation_author=D. Koulenti;,citation_author=S. Ruckly;,citation_author=N. Çakar;,citation_author=B. Misset;,citation_author=G. Dimopoulos;,citation_author=M. Antonelli;,citation_author=J. Rello;,citation_author=X. Ma;,citation_author=B. Tamowicz;,citation_author=J.-F. Timsit;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=1;,citation_doi=10.1186/s13054-016-1229-1;,citation_volume=20;,citation_journal_title=Critical Care;">
+<meta name="citation_reference" content="citation_title=Clinical and microbiological implications of time-to-positivity of blood cultures in patients with Gram-negative bacilli bacteremia;,citation_author=H. R. Palmer;,citation_author=E. L. Palavecino;,citation_author=J. W. Johnson;,citation_author=C. A. Ohl;,citation_author=J. C. Williamson;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=7;,citation_doi=10.1007/s10096-013-1833-9;,citation_volume=32;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Predictors of mortality of Staphylococcus aureus bacteremia among patients hospitalized in a Swiss University Hospital and the role of early source control; a retrospective cohort study;,citation_author=Matthaios Papadimitriou-Olivgeris;,citation_author=Giorgia Caruana;,citation_author=Laurence Senn;,citation_author=Benoit Guery;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=3;,citation_doi=10.1007/s10096-023-04557-1;,citation_volume=42;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Neither Blood Culture Positivity nor Time to Positivity Is Associated With Mortality Among Patients Presenting With Severe Manifestations of Sepsis: The FABLED Cohort Study;,citation_author=Katryn Paquette;,citation_author=David Sweet;,citation_author=Robert Stenstrom;,citation_author=Sarah N Stabler;,citation_author=Alexander Lawandi;,citation_author=Murtaza Akhter;,citation_author=Adam C Davidson;,citation_author=Marko Gavric;,citation_author=Rehman Jinah;,citation_author=Zahid Saeed;,citation_author=Koray Demir;,citation_author=Sassan Sangsari;,citation_author=Kelly Huang;,citation_author=Amirali Mahpour;,citation_author=Chris Shamatutu;,citation_author=Chelsea Caya;,citation_author=Jean-Marc Troquet;,citation_author=Greg Clark;,citation_author=Titus Wong;,citation_author=Cedric P Yansouni;,citation_author=Matthew P Cheng;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=7;,citation_doi=10.1093/ofid/ofab321;,citation_volume=8;,citation_journal_title=Open Forum Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to positivity in blood cultures of adults with Streptococcus pneumoniaebacteremia;,citation_author=Galo Peralta;,citation_author=María José Rodríguez-Lera;,citation_author=Jose Carlos Garrido;,citation_author=Luis Ansorena;,citation_author=María Pía Roiz;,citation_publication_date=2006;,citation_cover_date=2006;,citation_year=2006;,citation_issue=1;,citation_doi=10.1186/1471-2334-6-79;,citation_volume=6;,citation_journal_title=BMC Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time-to-positivity in patients with Escherichia coli bacteraemia;,citation_author=G. Peralta;,citation_author=M. P. Roiz;,citation_author=M. B. Sánchez;,citation_author=J. C. Garrido;,citation_author=B. Ceballos;,citation_author=M. J. Rodríguez-Lera;,citation_author=F. Mateos;,citation_author=I. De Benito;,citation_publication_date=2007;,citation_cover_date=2007;,citation_year=2007;,citation_issue=11;,citation_doi=10.1111/j.1469-0691.2007.01817.x;,citation_volume=13;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=The role of time to positive blood cultures in enhancing the predictive capability of DENOVA score for diagnosing infective endocarditis in patients with Enterococcus faecalis bacteremia;,citation_author=M. T. Pérez-Rodríguez;,citation_author=O. Lima;,citation_author=M. Garrido;,citation_author=A. Rincón;,citation_author=L. Martínez-Lamas;,citation_author=A. Pérez-González;,citation_author=A. Araújo;,citation_author=A. Amoedo;,citation_author=A. Sousa;,citation_author=A. López;,citation_author=X. Cabrera;,citation_author=M. Rubianes;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=7;,citation_doi=10.1007/s10096-024-04843-6;,citation_volume=43;,citation_journal_title=European Journal of Clinical Microbiology and Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to blood culture positivity predicts metastatic infection in patients with bloodstream infection and correlates with persistence of detectable pathogens in the bloodstream by culture independent systems;,citation_author=A. M. Peri;,citation_author=K. O’Callaghan;,citation_author=N. Rafiei;,citation_author=M. D. Chatfield;,citation_author=A. Manesh;,citation_author=D. L. Paterson;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_doi=10.1016/j.cmi.2026.01.024;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=The Epidemiological, Clinical, and Microbiological Features of Patients with Burkholderia pseudomallei Bacteraemia—Implications for Clinical Management;,citation_author=C. Prinsloo;,citation_author=S. Smith;,citation_author=M. Law;,citation_author=J. Hanson;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=11;,citation_doi=10.3390/tropicalmed8110481;,citation_volume=8;,citation_journal_title=Tropical Medicine and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=Current time-to-positivity of blood cultures in febrile neutropenia: a tool to be used in stewardship de-escalation strategies;,citation_author=P. Puerta-Alcalde;,citation_author=C. Cardozo;,citation_author=M. Suárez-Lledó;,citation_author=O. Rodríguez-Núñez;,citation_author=L. Morata;,citation_author=C. Fehér;,citation_author=F. Marco;,citation_author=A. Del Río;,citation_author=J. A. Martínez;,citation_author=J. Mensa;,citation_author=M. Rovira;,citation_author=J. Esteve;,citation_author=A. Soriano;,citation_author=C. Garcia-Vidal;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=4;,citation_doi=10.1016/j.cmi.2018.07.026;,citation_volume=25;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=Management of the catheter in documented catheter-related coagulase-negative staphylococcal bacteremia: Remove or retain?;,citation_author=I. Raad;,citation_author=R. Kassar;,citation_author=D. Ghannam;,citation_author=A. M. Chaftari;,citation_author=R. Hachem;,citation_author=Y. Jiang;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_issue=8;,citation_doi=10.1086/605694;,citation_volume=49;,citation_journal_title=Clinical Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Predictors of mortality in bloodstream infections caused by pseudomonas aeruginosa and impact of antimicrobial resistance and bacterial virulence;,citation_author=R. Recio;,citation_author=M. Mancheño;,citation_author=E. Viedma;,citation_author=J. Villa;,citation_author=M. A. Orellana;,citation_author=J. Lora-Tamayo;,citation_author=F. Chaves;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=2;,citation_doi=10.1128/AAC.01759-19;,citation_volume=64;,citation_journal_title=Antimicrobial Agents and Chemotherapy;">
+<meta name="citation_reference" content="citation_title=Transient staphylococcus aureus bacteremia in an urban teaching hospital;,citation_author=G. Rojas;,citation_author=D. P. Levine;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=1;,citation_doi=10.1097/IPC.0b013e318276927b;,citation_volume=21;,citation_journal_title=Infectious Diseases in Clinical Practice;">
+<meta name="citation_reference" content="citation_title=Clinical impact of time-to-positivity of blood cultures on mortality in patients with Pseudomonas aeruginosa bacteremia;,citation_author=Marta Rolo;,citation_author=María Carmen Martín-Higuera;,citation_author=Esther Viedma;,citation_author=Jennifer Villa;,citation_author=Mikel Mancheño-Losa;,citation_author=Jaime Lora-Tamayo;,citation_author=Fernando Chaves;,citation_author=María Ángeles Orellana;,citation_author=Raúl Recio;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.1016/j.jgar.2022.06.026;,citation_volume=30;,citation_journal_title=Journal of Global Antimicrobial Resistance;">
+<meta name="citation_reference" content="citation_title=Blood culture differential time to positivity enables safe catheter retention in suspected catheter-related bloodstream infection: a randomized controlled trial;,citation_author=Caroline Sabatier;,citation_author=Xaime García;,citation_author=Ricard Ferrer;,citation_author=Montserrat Duarte;,citation_author=Montserrat Colomina;,citation_author=Dolores Alcaráz;,citation_author=Dionisia Fontanals;,citation_author=Jordi Vallés;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_issue=3;,citation_doi=10.1016/j.medin.2013.12.012;,citation_volume=39;,citation_journal_title=Medicina Intensiva;">
+<meta name="citation_reference" content="citation_title=Time to positivity of blood cultures causing candidemia and its relation to mortality;,citation_author=A. Sachu;,citation_author=S. Sunny;,citation_author=P. Mathew;,citation_author=A. Kumar;,citation_author=A. David;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=2;,citation_doi=10.18502/ijm.v16i2.15361;,citation_volume=16;,citation_journal_title=Iranian Journal of Microbiology;">
+<meta name="citation_reference" content="citation_title=Correlation Between Blood Culture Time to Positivity and Vegetation Size in Staphylococcus aureus Infective Endocarditis;,citation_author=Sebastian D. Santos-Patarroyo;,citation_author=Juan A. Quintero-Martinez;,citation_author=Brian D. Lahr;,citation_author=Supavit Chesdachai;,citation_author=Omar Abu Saleh;,citation_author=Hector I. Michelena;,citation_author=Hector R. Villarraga;,citation_author=Daniel C. DeSimone;,citation_author=Larry M. Baddour;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=5;,citation_doi=10.3390/antibiotics14050456;,citation_volume=14;,citation_journal_title=Antibiotics;">
+<meta name="citation_reference" content="citation_title=Epidemiology and significance of coagulase-negative staphylococci isolated in blood cultures from critically ill adult patients;,citation_author=Mahesh B. Savithri;,citation_author=Vikram Iyer;,citation_author=Mark Jones;,citation_author=Trent Yarwood;,citation_author=David Looke;,citation_author=Peter S. Kruger;,citation_author=Joan Faogali;,citation_author=Bala Venkatesh;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_issue=2;,citation_doi=10.1016/s1441-2772(23)01840-9;,citation_volume=13;,citation_journal_title=Critical Care and Resuscitation;">
+<meta name="citation_reference" content="citation_title=Rapid Detection of Bacterial and Fungal Pathogens Using the T2MR versus Blood Culture in Patients with Severe COVID-19;,citation_author=T. Seitz;,citation_author=J. Holbik;,citation_author=J. Hind;,citation_author=G. Gibas;,citation_author=M. Karolyi;,citation_author=E. Pawelka;,citation_author=M. Traugott;,citation_author=C. Wenisch;,citation_author=A. Zoufaly;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=3;,citation_doi=10.1128/spectrum.00140-22;,citation_volume=10;,citation_journal_title=Microbiology Spectrum;">
+<meta name="citation_reference" content="citation_title=Bartonella quintana Infection in People Experiencing Homelessness in the Denver Metropolitan Area;,citation_author=Z. Shepard;,citation_author=L. V. Barahona;,citation_author=G. Montalbano;,citation_author=S. E. Rowan;,citation_author=C. Franco-Paredes;,citation_author=N. Madinger;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.1093/infdis/jiac238;,citation_volume=226;,citation_journal_title=Journal of Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Catheter-related bloodstream infections in hemodialysis: microbiology, antimicrobial resistance, complications and predictors of mortality;,citation_author=E. G. Şibar;,citation_author=İ Şencan;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_issue=1;,citation_doi=10.1186/s12879-026-13225-6;,citation_volume=26;,citation_journal_title=BMC Infect Dis;">
+<meta name="citation_reference" content="citation_title=Time to blood culture positivity: An independent predictor of infective endocarditis and mortality in patients with Staphylococcus aureus bacteraemia;,citation_author=S. Siméon;,citation_author=V. Le Moing;,citation_author=S. Tubiana;,citation_author=X. Duval;,citation_author=D. Fournier;,citation_author=J.-P. Lavigne;,citation_author=M.-L. Erpelding;,citation_author=C.-A. Gustave;,citation_author=S. Desage;,citation_author=C. Chirouze;,citation_author=F. Vandenesch;,citation_author=P. Tattevin;,citation_author=Catherine Chirouze;,citation_author=Elodie Curlier;,citation_author=Cécile Descottes-Genon;,citation_author=Bruno Hoen;,citation_author=Isabelle Patry;,citation_author=Lucie Vettoretti;,citation_author=Pascal Chavanet;,citation_author=Jean-Christophe Eicher;,citation_author=Sandrine Gohier-Treuvelot;,citation_author=Marie-Christine Greusard;,citation_author=Catherine Neuwirth;,citation_author=André Péchinot;,citation_author=Lionel Piroth;,citation_author=Marie Célard;,citation_author=Catherine Cornu;,citation_author=François Delahaye;,citation_author=Malika Hadid;,citation_author=Pascale Rausch;,citation_author=Audrey Coma;,citation_author=Florence Galtier;,citation_author=Philippe Géraud;,citation_author=Hélène Jean-Pierre;,citation_author=Vincent Le Moing;,citation_author=Catherine Sportouch;,citation_author=Jacques Reynes;,citation_author=Nejla Aissa;,citation_author=Thanh Doco-Lecompte;,citation_author=François Goehringer;,citation_author=Nathalie Keil;,citation_author=Lorraine Letranchant;,citation_author=Hepher Malela;,citation_author=Thierry May;,citation_author=Christine Selton-Suty;,citation_author=Nathalie Bedos;,citation_author=Jean-Philippe Lavigne;,citation_author=Catherine Lechiche;,citation_author=Albert Sotto;,citation_author=Xavier Duval;,citation_author=Emila Ilic Habensus;,citation_author=Bernard Iung;,citation_author=Catherine Leport;,citation_author=Pascale Longuet;,citation_author=Raymond Ruimy;,citation_author=Eric Bellissant;,citation_author=Pierre-Yves Donnio;,citation_author=Fabienne Le Gac;,citation_author=Christian Michelet;,citation_author=Matthieu Revest;,citation_author=Pierre Tattevin;,citation_author=Elise Thebault;,citation_author=François Alla;,citation_author=Pierre Braquet;,citation_author=Marie-Line Erpelding;,citation_author=Laetitia Minary;,citation_author=Sarah Tubiana;,citation_author=Michèle Bès;,citation_author=Jérôme Etienne;,citation_author=Taissia Lelekov-Boissard;,citation_author=Anne Tristan;,citation_author=François Vandenesch;,citation_author=Alex Van Belkum;,citation_author=Fernando Rivadeneira;,citation_author=Willem Vanwamel;,citation_author=Sandrine Barbas;,citation_author=Christine Delonca;,citation_author=Virginie Sussmuth;,citation_author=Anne Verchère;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=4;,citation_doi=10.1016/j.cmi.2018.07.015;,citation_volume=25;,citation_journal_title=Clinical Microbiology and Infection;">
+<meta name="citation_reference" content="citation_title=Clinical prediction scores and the utility of time to blood culture positivity in stratifying the risk of infective endocarditis in &amp;amp;amp;lt;i&amp;gt;Staphylococcus aureus&amp;lt;/i&amp;gt; bacteraemia;,citation_author=Peter A Simos;,citation_author=David J Holland;,citation_author=Adam Stewart;,citation_author=Burcu Isler;,citation_author=Ian Hughes;,citation_author=Nathan Price;,citation_author=Andrew Henderson;,citation_author=Kylie Alcorn;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=7;,citation_doi=10.1093/jac/dkac129;,citation_volume=77;,citation_journal_title=Journal of Antimicrobial Chemotherapy;">
+<meta name="citation_reference" content="citation_title=A comparison of lysis centrifugation, pour plate, and conventional blood culture methods in the diagnosis of septicaemic melioidosis;,citation_author=A. J. H. Simpson;,citation_author=P. A. Howe;,citation_author=V. Wuthiekanun;,citation_author=N. J. White;,citation_publication_date=1999;,citation_cover_date=1999;,citation_year=1999;,citation_issue=8;,citation_doi=10.1136/jcp.52.8.616;,citation_volume=52;,citation_journal_title=Journal of Clinical Pathology;">
+<meta name="citation_reference" content="citation_title=Asymptomatic central line-associated bloodstream infections in children implanted with long term indwelling central venous catheters in a teaching hospital, Sri Lanka;,citation_author=J. A. A. S. Jayaweera;,citation_author=D. Sivakumar;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=1;,citation_doi=10.1186/s12879-020-05190-5;,citation_volume=20;,citation_journal_title=BMC Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=A Measurement Model to Quantify Systemic Bacilli Load in Severe HIV-Associated Tuberculosis;,citation_author=B. Sossen;,citation_author=C. Schutz;,citation_author=L. Boloko;,citation_author=T. Broger;,citation_author=A. Ward;,citation_author=A. Bekiswa;,citation_author=A. Balfour;,citation_author=M. Shey;,citation_author=G. Meintjes;,citation_author=D. A. Barr;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_issue=3;,citation_doi=10.1093/ofid/ofag117;,citation_volume=13;,citation_journal_title=Open Forum Infect Dis;">
+<meta name="citation_reference" content="citation_title=Blood culture time to positivity as a predictor of mortality in community acquired Methicillin-susceptible Staphylococcus aureus bacteremia;,citation_author=D. Sowden;,citation_author=C. Anstey;,citation_author=M. Faddy;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_issue=4;,citation_doi=10.1016/j.jinf.2008.01.005;,citation_volume=56;,citation_journal_title=Journal of Infection;">
+<meta name="citation_reference" content="citation_title=Comparison of blood cultures versus T2 Candida Panel in management of candidemia at a large community hospital;,citation_author=T. D. Steuber;,citation_author=L. Butler;,citation_author=A. Sawyer;,citation_author=R. Chappell;,citation_author=J. Edwards;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=5;,citation_doi=10.1007/s10096-020-04144-8;,citation_volume=40;,citation_journal_title=European Journal of Clinical Microbiology and Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to Staphylococcus aureus Blood Culture Positivity as a Risk Marker of Infective Endocarditis: A Retrospective Cohort Study;,citation_author=M. Strömdahl;,citation_author=K. Hagman;,citation_author=K. Hedman;,citation_author=A. Westman;,citation_author=M. Hedenstierna;,citation_author=J. Ursing;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=4;,citation_doi=10.1093/cid/ciae628;,citation_volume=80;,citation_journal_title=Clinical Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Bacteraemia with Streptococcus agalactiae – an observational study on clinical aspects and time to blood culture positivity;,citation_author=Mnajed Sunnerhagen;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_doi=10.1007/s10096-026-05411-w;,citation_journal_title=European Journal of Clinical Microbiology and Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Analysis of Time to Blood Culture Positivity as a Predictor of Clinical Outcomes in Patients with &amp;amp;amp;lt;i&amp;gt;Enterobacteriaceae&amp;lt;/i&amp;gt; Bloodstream Infection;,citation_author=Hiroyasu TAKAHASHI;,citation_author=Yoshimasa TAKASHIMA;,citation_author=Sakiko FUJIMOTO;,citation_author=Kazumasa WATANABE;,citation_author=Akihiko OKUMURA;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=2;,citation_doi=10.4058/jsei.37.48;,citation_volume=37;,citation_journal_title=Japanese Journal of Infection Prevention and Control;">
+<meta name="citation_reference" content="citation_title=Epidemiology and Prognostic Factors Associated With Mold-Positive Blood Cultures: 10-Year Data From a French Prospective Surveillance Program (2012–2022);,citation_author=T. Tala-Ighil;,citation_author=D. Garcia-Hermoso;,citation_author=F. Dalle;,citation_author=S. Cassaing;,citation_author=J. Guitard;,citation_author=K. Boukris-Sitbon;,citation_author=T. Obadia;,citation_author=O. Lortholary;,citation_author=V. Letscher-Bru;,citation_author=M.-P. Ledoux;,citation_author=T. Chouaki;,citation_author=A. P. Bellanger;,citation_author=C. Rouges;,citation_author=M. E. Bougnoux;,citation_author=M. Moniot;,citation_author=M. Pihet;,citation_author=V. Dubée;,citation_author=F. Gabriel;,citation_author=F. Morio;,citation_author=L. Hasseine;,citation_author=C. Bonnal;,citation_author=M. Gits-Muselli;,citation_author=E. Perraud-Cateau;,citation_author=C. Mahinc;,citation_author=M. Nicolas;,citation_author=E. Chachaty;,citation_author=C. Cordier;,citation_author=L. Lachaud;,citation_author=L. Courtellemont;,citation_author=B. Henry;,citation_author=C. Angebault;,citation_author=G. Gargala;,citation_author=A. Chesnay;,citation_author=M. L. Pacreau;,citation_author=L. Kamus;,citation_author=N. Desbois-Nogard;,citation_author=M. Demar;,citation_author=L. Epelboin;,citation_author=A. Alanio;,citation_author=E. Dannaoui;,citation_author=F. Lanternier;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=3;,citation_doi=10.1093/cid/ciae594;,citation_volume=80;,citation_journal_title=Clinical Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time-to-positivity of blood culture: An independent prognostic factor of monomicrobial Pseudomonas aeruginosa bacteremia;,citation_author=Poh-Chang Tang;,citation_author=Ching-Chi Lee;,citation_author=Chia-Wen Li;,citation_author=Ming-Chi Li;,citation_author=Wen-Chien Ko;,citation_author=Nan-Yao Lee;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=4;,citation_doi=10.1016/j.jmii.2015.08.014;,citation_volume=50;,citation_journal_title=Journal of Microbiology, Immunology and Infection;">
+<meta name="citation_reference" content="citation_title=Effect of antifungal therapy timing on mortality in cancer patients with candidemia;,citation_author=Y. Taur;,citation_author=N. Cohen;,citation_author=S. Dubnow;,citation_author=A. Paskovaty;,citation_author=S. K. Seo;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_issue=1;,citation_doi=10.1128/AAC.00945-09;,citation_volume=54;,citation_journal_title=Antimicrobial Agents and Chemotherapy;">
+<meta name="citation_reference" content="citation_title=Predictors of early line removal and successful line retention in potential central line-associated bloodstream infections in haematology patients: a retrospective cohort study;,citation_author=S. Thorburn;,citation_author=S. Vogrin;,citation_author=S. Garner;,citation_author=O. Smibert;,citation_author=G. Reynolds;,citation_author=J. Kwong;,citation_author=J. A. Trubiano;,citation_author=A. P. Douglas;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_doi=10.1016/j.jhin.2025.04.019;,citation_volume=162;,citation_journal_title=Journal of Hospital Infection;">
+<meta name="citation_reference" content="citation_title=Risk Factors for Persistent Staphylococcus aureus Bacteremia in Children;,citation_author=E. M. Thornley;,citation_author=R. Alexander;,citation_author=J. Popelka;,citation_author=C. P. Montgomery;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=11;,citation_doi=10.1097/INF.0000000000004439;,citation_volume=43;,citation_journal_title=Pediatric Infectious Disease Journal;">
+<meta name="citation_reference" content="citation_title=Modified time-to-positivity as a crucial determinant of short-term mortality among adults with community-onset monomicrobial bloodstream infections;,citation_author=Pei-Fang Tsai;,citation_author=Ming-Yuan Hong;,citation_author=Chung-Hsun Lee;,citation_author=Chih-Hsien Chi;,citation_author=Ching-Chi Lee;,citation_author=Wen-Chien Ko;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_issue=4;,citation_doi=10.1016/j.diagmicrobio.2025.116738;,citation_volume=111;,citation_journal_title=Diagnostic Microbiology and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=Estimating bacterial load in S. aureus and E. coli bacteremia using bacterial growth graph from the continuous monitoring blood culture system;,citation_author=Leehe Turkeltaub;,citation_author=Livnat Kashat;,citation_author=Marc V. Assous;,citation_author=Karen Adler;,citation_author=Maskit Bar-Meir;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=10;,citation_doi=10.1007/s10096-024-04893-w;,citation_volume=43;,citation_journal_title=European Journal of Clinical Microbiology &amp;amp;amp;amp; Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Time to positivity as prognostic tool in patients with Pseudomonas aeruginosa bloodstream infection;,citation_author=Matthias Willmann;,citation_author=Ines Kuebart;,citation_author=Wichard Vogel;,citation_author=Ingo Flesch;,citation_author=Uwe Markert;,citation_author=Matthias Marschal;,citation_author=Klaus Schröppel;,citation_author=Ingo B. Autenrieth;,citation_author=Florian Hölzl;,citation_author=Silke Peter;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_issue=5;,citation_doi=10.1016/j.jinf.2013.06.012;,citation_volume=67;,citation_journal_title=Journal of Infection;">
+<meta name="citation_reference" content="citation_title=Comparative effectiveness of beta-lactam versus vancomycin empiric therapy in patients with methicillin-susceptible Staphylococcus aureus (MSSA) bacteremia;,citation_author=D. Wong;,citation_author=T. Wong;,citation_author=M. Romney;,citation_author=V. Leung;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_doi=https://dx.doi.org/10.1186/s12941-016-0143-3;,citation_volume=15(1) (no pagination);,citation_journal_title=Annals of Clinical Microbiology and Antimicrobials;">
+<meta name="citation_reference" content="citation_title=Comparative effectiveness of beta-lactam versus vancomycin empiric therapy in patients with methicillin-susceptible Staphylococcus aureus (MSSA) bacteremia;,citation_author=D. Wong;,citation_author=T. Wong;,citation_author=M. Romney;,citation_author=V. Leung;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_doi=https://dx.doi.org/10.1186/s12941-016-0143-3;,citation_volume=15(1) (no pagination);,citation_journal_title=Annals of Clinical Microbiology and Antimicrobials;">
+<meta name="citation_reference" content="citation_title=Retrospective analysis of the epidemiological characteristics, risk factors, survival rate, and drug resistance of candidemia and construction of a logistic regression prediction model (2013-2024);,citation_author=Wang Xu;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_doi=10.1186/s12879-026-13510-4;,citation_journal_title=BMC Infect Dis;">
+<meta name="citation_reference" content="citation_title=Retrospective evaluation of the clinical characteristics associated with Corynebacterium species bacteremia;,citation_author=M. Yanai;,citation_author=M. Ogasawasa;,citation_author=Y. Hayashi;,citation_author=K. Suzuki;,citation_author=H. Takahashi;,citation_author=A. Satomura;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=1;,citation_doi=10.1016/j.bjid.2017.12.002;,citation_volume=22;,citation_journal_title=Brazilian Journal of Infectious Diseases;">
+<meta name="citation_reference" content="citation_title=Clinical and microbiological characteristics of persistent Staphylococcus aureus bacteremia, risk factors for mortality, and the role of CD4+ T cells;,citation_author=Eunmi Yang;,citation_author=Yeong Geon Cho;,citation_author=Eunsil Kim;,citation_author=Euijin Chang;,citation_author=Seongman Bae;,citation_author=Jiwon Jung;,citation_author=Min Jae Kim;,citation_author=Yong Pil Chong;,citation_author=Sung-Han Kim;,citation_author=Sang-Ho Choi;,citation_author=Sang-Oh Lee;,citation_author=Yun Shin Chung;,citation_author=Yang Soo Kim;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_doi=10.1038/s41598-024-66520-0;,citation_volume=14;,citation_journal_title=Scientific Reports;">
+<meta name="citation_reference" content="citation_title=Clinical prognostic factors for time to positivity in cancer patients with bloodstream infections;,citation_author=Qing Zhang;,citation_author=Ding Li;,citation_author=Changsen Bai;,citation_author=Wenfang Zhang;,citation_author=Shan Zheng;,citation_author=Peng Zhang;,citation_author=Sihe Zhang;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=5;,citation_doi=10.1007/s15010-016-0890-2;,citation_volume=44;,citation_journal_title=Infection;">
+<meta name="citation_reference" content="citation_title=Bacteraemia due to AmpC beta-lactamase-producing Escherichia coli in hospitalized cancer patients: risk factors, antibiotic therapy, and outcomes;,citation_author=Q. Zhang;,citation_author=W. Zhang;,citation_author=Z. Li;,citation_author=C. Bai;,citation_author=D. Li;,citation_author=S. Zheng;,citation_author=P. Zhang;,citation_author=S. Zhang;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_doi=https://dx.doi.org/10.1016/j.diagmicrobio.2017.04.006;,citation_volume=88(3);,citation_journal_title=Diagnostic Microbiology and Infectious Disease;">
+<meta name="citation_reference" content="citation_title=Development of a Mortality Prediction Model Combined With time to Positivity for Solid Tumor Patients with Escherichia Coli Bacteremia;,citation_author=Qing Zhang;,citation_author=Haoyang Gao;,citation_author=Ding Li;,citation_author=Changsen Bai;,citation_author=Zheng Li;,citation_author=Shan Zheng;,citation_author=Wenfang Zhang;,citation_author=Yunli Zhou;,citation_author=Sihe Zhang;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_doi=10.21203/rs.3.rs-42504/v1;">
+<meta name="citation_reference" content="citation_title=A TTP-incorporated scoring model for predicting mortality of solid tumor patients with bloodstream infection caused by Escherichia coli;,citation_author=Qing Zhang;,citation_author=Hao-Yang Gao;,citation_author=Ding Li;,citation_author=Chang-Sen Bai;,citation_author=Zheng Li;,citation_author=Shan Zheng;,citation_author=Wen-Fang Zhang;,citation_author=Yun-Li Zhou;,citation_author=Si-He Zhang;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=1;,citation_doi=10.1007/s00520-021-06442-z;,citation_volume=30;,citation_journal_title=Supportive Care in Cancer;">
+<meta name="citation_reference" content="citation_title=Clinical manifestations and treatment of candidemia caused by different Candida species: a retrospective study;,citation_author=C. Zhang;,citation_author=S. Wu;,citation_author=X. Chen;,citation_author=H. Yang;,citation_author=W. Feng;,citation_author=T. Yuan;,citation_author=Y. Wang;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_doi=10.1186/s12879-024-10128-2;,citation_volume=24;,citation_journal_title=BMC Infect Dis;">
+<meta name="citation_reference" content="citation_title=Epidemiology and outcome of anaerobic bacteremia in a tertiary hospital;,citation_author=Y. Zouggari;,citation_author=C. Lelubre;,citation_author=S. E. Lali;,citation_author=S. Cherifi;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.1016/j.ejim.2022.08.024;,citation_volume=105;,citation_journal_title=European Journal of Internal Medicine;">
+</head>
+
+<body class="quarto-light">
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Blood culture time to positivity and mortality in bacteremia: a systematic review and Bayesian meta-analysis</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Authors</div>
+          <div class="quarto-title-meta-heading">Affiliations</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">Francesco Pangallo </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Padova
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Russell E. Lewis </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Padova
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta">
+
+                      
+                <div>
+            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date">October 30, 2026</p>
+            </div>
+          </div>
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></p></div><div class="quarto-title-meta-contents"><p><a href="index-meca.zip" data-meca-link="true"><i class="bi bi-archive"></i>MECA Bundle</a></p></div></div></div>
+    </div>
+
+    <div>
+      <div class="abstract">
+        <div class="block-title">Abstract</div>
+        <p><strong>Background.</strong> Blood culture time to positivity (TTP) has been proposed as a prognostic marker in bacteremia, but studies use different thresholds, pathogens, and outcomes. We synthesized the association between short versus long TTP and clinical outcomes.</p>
+        <p><strong>Methods.</strong> We searched PubMed, Embase, Scopus, the Cochrane Library, and Web of Science (updated May 2026) and extracted effect sizes from 100 studies meeting strict eligibility criteria. Log odds ratios for all-cause mortality (short versus long TTP) were pooled with a Bayesian random-effects model. We examined pathogen class, TTP cutpoint, publication bias, and a sensitivity analysis adding studies meeting more inclusive criteria. Persistent bacteremia and microbiological clearance were analyzed as secondary outcomes.</p>
+        <p><strong>Results.</strong> Fifty-eight studies (72 effect sizes) reported mortality. Short TTP was associated with higher mortality (pooled OR 2.06; 95% credible interval [CrI], 1.67 to 2.55), with substantial heterogeneity (median I² 62%; 95% prediction interval, 0.5 to 8.6). The association was larger in Gram-negative (OR 2.66; 95% CrI, 1.72 to 4.06) than Gram-positive bacteremia (OR 1.48; 95% CrI, 0.85 to 2.58), although the credible intervals overlapped. Higher TTP cutpoints were associated with weaker associations overall, but this was not consistent across subgroups. The funnel plot was asymmetric, and trim-and-fill gave an adjusted OR of 1.51 (95% CI, 1.23 to 1.86). Short TTP was also associated with persistent bacteremia (OR 1.74; 95% CrI, 1.09 to 2.80); data on clearance were sparse.</p>
+        <p><strong>Conclusions.</strong> Short TTP is associated with higher mortality, particularly in Gram-negative bacteremia, but heterogeneity, cutpoint dependence, probable confounding, and small-study effects limit its use as a stand-alone prognostic tool. Standardized thresholds and adjusted, individual-patient analyses are needed.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="keywords">
+        <div class="block-title">Keywords</div>
+        <p>time to positivity, blood culture, bacteremia, mortality, meta-analysis</p>
+      </div>
+    </div>
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#materials-and-methods" id="toc-materials-and-methods" class="nav-link" data-scroll-target="#materials-and-methods">Materials and Methods</a>
+  <ul class="collapse">
+  <li><a href="#protocol-and-registration" id="toc-protocol-and-registration" class="nav-link" data-scroll-target="#protocol-and-registration">Protocol and registration</a></li>
+  <li><a href="#search-strategy-and-study-selection" id="toc-search-strategy-and-study-selection" class="nav-link" data-scroll-target="#search-strategy-and-study-selection">Search strategy and study selection</a></li>
+  <li><a href="#data-extraction-and-risk-of-bias" id="toc-data-extraction-and-risk-of-bias" class="nav-link" data-scroll-target="#data-extraction-and-risk-of-bias">Data extraction and risk of bias</a></li>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical analysis</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#study-selection-and-characteristics" id="toc-study-selection-and-characteristics" class="nav-link" data-scroll-target="#study-selection-and-characteristics">Study selection and characteristics</a></li>
+  <li><a href="#primary-analysis" id="toc-primary-analysis" class="nav-link" data-scroll-target="#primary-analysis">Primary analysis</a></li>
+  <li><a href="#pathogen-class" id="toc-pathogen-class" class="nav-link" data-scroll-target="#pathogen-class">Pathogen class</a></li>
+  <li><a href="#ttp-cutpoint" id="toc-ttp-cutpoint" class="nav-link" data-scroll-target="#ttp-cutpoint">TTP cutpoint</a></li>
+  <li><a href="#publication-bias" id="toc-publication-bias" class="nav-link" data-scroll-target="#publication-bias">Publication bias</a></li>
+  <li><a href="#sensitivity-analyses" id="toc-sensitivity-analyses" class="nav-link" data-scroll-target="#sensitivity-analyses">Sensitivity analyses</a></li>
+  <li><a href="#clinical-failure-outcomes" id="toc-clinical-failure-outcomes" class="nav-link" data-scroll-target="#clinical-failure-outcomes">Clinical failure outcomes</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
+  <li><a href="#conflicts-of-interest" id="toc-conflicts-of-interest" class="nav-link" data-scroll-target="#conflicts-of-interest">Conflicts of interest</a></li>
+  <li><a href="#data-and-code-availability" id="toc-data-and-code-availability" class="nav-link" data-scroll-target="#data-and-code-availability">Data and code availability</a></li>
+  <li><a href="#use-of-artificial-intelligence" id="toc-use-of-artificial-intelligence" class="nav-link" data-scroll-target="#use-of-artificial-intelligence">Use of artificial intelligence</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li><li><a href="notebooks/clinical_failure-preview.html"><i class="bi bi-journal-code"></i>Clinical failure analysis</a></li><li><a href="notebooks/methods-preview.html"><i class="bi bi-journal-code"></i>Methods and PRISMA flow</a></li><li><a href="notebooks/mortality-analysis-preview.html"><i class="bi bi-journal-code"></i>Mortality analysis (main)</a></li><li><a href="notebooks/rob-preview.html"><i class="bi bi-journal-code"></i>Risk of bias (QUIPS)</a></li><li><a href="notebooks/subgroups-preview.html"><i class="bi bi-journal-code"></i>Subgroup analyses</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+  
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Bloodstream infection is a major cause of morbidity and mortality, and early risk stratification remains a practical clinical problem. Automated continuous-monitoring blood culture systems record the time to positivity (TTP), the interval from the start of incubation to the instrument’s detection of microbial growth. Because growth kinetics depend on the starting inoculum and on organism-specific factors, shorter TTP has been proposed as a readily available, laboratory-generated marker of high bacterial burden and severe infection.</p>
+<p>Individual cohorts have examined whether TTP carries prognostic information in specific settings, including <em>Staphylococcus aureus</em> bacteremia, where TTP has been explored as a marker of endocarditis and poor outcome <span class="citation" data-cites="Sowden2008 Kahn2021 Stromdahl2025">(<a href="#ref-Sowden2008" role="doc-biblioref">1</a>–<a href="#ref-Stromdahl2025" role="doc-biblioref">3</a>)</span>; Gram-negative bacteremia, including <em>Pseudomonas aeruginosa</em> <span class="citation" data-cites="Willmann2013 Tang2017">(<a href="#ref-Willmann2013" role="doc-biblioref">4</a>, <a href="#ref-Tang2017" role="doc-biblioref">5</a>)</span> and <em>Escherichia coli</em> <span class="citation" data-cites="Martinez2006">(<a href="#ref-Martinez2006" role="doc-biblioref">6</a>)</span>; candidemia <span class="citation" data-cites="Keighley2023">(<a href="#ref-Keighley2023" role="doc-biblioref">7</a>)</span>; and bacteremia in neutropenic patients, where TTP has been suggested as a stewardship tool <span class="citation" data-cites="PuertaAlcalde2019">(<a href="#ref-PuertaAlcalde2019" role="doc-biblioref">8</a>)</span>. These studies differ in organism mix, patient population, outcome definition, and, importantly, the TTP threshold used to define “short” versus “long” TTP. Whether the association is consistent across pathogens, whether it varies with the chosen cutpoint, and how large it is once adjusted estimates are considered remain unclear.</p>
+<p>We therefore updated a systematic review of the association between blood culture TTP and clinical outcomes in bacteremia. Our primary objective was to estimate the association between short versus long TTP and all-cause mortality using a Bayesian random-effects meta-analysis. Secondary objectives were to examine heterogeneity by pathogen class and by TTP cutpoint, to assess publication bias and the robustness of the findings to study inclusion criteria, and to summarize associations with persistent bacteremia and other markers of clinical failure.</p>
+</section>
+<section id="materials-and-methods" class="level1">
+<h1>Materials and Methods</h1>
+<section id="protocol-and-registration" class="level2">
+<h2 class="anchored" data-anchor-id="protocol-and-registration">Protocol and registration</h2>
+<p>The review is reported according to the PRISMA 2020 statement and the PRISMA-S extension for searches. A protocol was prepared for registration in PROSPERO (registration number: [PROSPERO registration number to be inserted]). The review builds on a master’s thesis at the University of Padova (F. Pangallo, 2025/2026; supervisor R. E. Lewis) that produced the original 57-study extraction database. Because that work was substantially complete before the protocol was registered, registration is retrospective for the baseline studies, and the 2026 update (additional search, screening, extraction, and the inclusive-criterion re-screen) was added afterwards. The analysis plan was developed during the thesis; deviations from the protocol are listed in the supplementary notebook (<a href="./notebooks/methods-preview.html">Methods and PRISMA</a>).</p>
+</section>
+<section id="search-strategy-and-study-selection" class="level2">
+<h2 class="anchored" data-anchor-id="search-strategy-and-study-selection">Search strategy and study selection</h2>
+<p>Five databases were searched (PubMed, Embase, Scopus, Cochrane Library, and Web of Science), with an original search and a May 2026 update [insert run dates and per-database record counts]. The searches yielded 4,605 records, with 3,196 unique records after de-duplication. CINAHL, trial registers, and preprint servers were not searched, and no reference-list searching or citation tracking was performed; these are deviations from the registered protocol. Candidate records were triaged for relevance [confirm the role of the Elicit semantic search tool and PubMed enrichment in this step, and reconcile Alvarez 2012 and Peri 2026, which project notes record as handsearch or snowball identifications], and 355 reports were sought for full-text review. Of these, 53 were not retrieved after pre-screening as ineligible (mainly conference abstracts, non-English papers, and methods-only papers), and 302 full-text reports were assessed (5 additional PDFs duplicated baseline studies). Under the strict criterion 43 reports were included, which added to the 57 baseline studies gave 100 studies; 259 were excluded (104 ineligible design, 65 no TTP measured, 54 no quantitative TTP-outcome association, 29 no clinical outcome, 5 duplicates, 2 not bloodstream infection). A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative association identified 40 further studies (sensitivity pool, 140 studies in total). Eligibility criteria and the full search strings are in the supplementary notebook (<a href="./notebooks/methods-preview.html">Methods and PRISMA</a>) and <code>search_strategies.md</code>. <a href="#fig-prisma" class="quarto-xref">Figure&nbsp;1</a> shows study flow.</p>
+<div id="fig-prisma" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prisma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="data/PRISMA_v4_update.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: PRISMA 2020 flow diagram for the original search and the May 2026 update."><img src="data/PRISMA_v4_update.png" class="img-fluid figure-img" style="width:100.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prisma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: PRISMA 2020 flow diagram for the original search and the May 2026 update.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-extraction-and-risk-of-bias" class="level2">
+<h2 class="anchored" data-anchor-id="data-extraction-and-risk-of-bias">Data extraction and risk of bias</h2>
+<p>Data were extracted into a structured relational workbook with linked tables for study characteristics, population, TTP reporting (continuous, dichotomized, or categorical; units; cutpoints), and outcomes (events and totals by TTP group, reported effect estimates, adjustment status, and outcome definitions). TTP was recorded in hours. Where a study reported both 2×2 data and an effect estimate, the 2×2 data were preferred. The baseline 57 studies were extracted by the thesis author [confirm whether extraction was independently verified]. For the 2026 update, full-text screening and data extraction were performed by a large language model agent working from the full-text PDFs and the written eligibility criteria and extraction codebook. Each of the 43 strict-pool extractions was then independently verified field by field against the source PDF by a separate agent that had not performed the original extraction; this led to 7 corrections before analysis. Studies using TTP only as part of a catheter-related bloodstream infection case definition were excluded from effect-size pooling. The human contribution to screening and extraction decisions (spot-checking, adjudication, or second human review) is described in the AI-use statement below [confirm], and we did not perform dual independent human screening or report inter-rater agreement.</p>
+<p>Risk of bias was assessed for every included study with the Quality in Prognosis Studies (QUIPS) tool across six domains (participation, attrition, prognostic factor measurement, outcome measurement, confounding, and statistical analysis and reporting), each rated as low, moderate, or high, with an overall rating per study (<a href="./notebooks/rob-preview.html">notebook</a>). For the update these ratings were generated by the extraction agent and were not independently re-rated by a second human.</p>
+</section>
+<section id="statistical-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-analysis">Statistical analysis</h2>
+<p>Log odds ratios for mortality (short versus long TTP) were computed with <code>metafor::escalc()</code> from 2×2 tables where available, otherwise back-calculated from reported OR, HR, or RR with 95% confidence intervals. Effect sizes were pooled with a Bayesian random-effects model (<code>brms</code>; study-level random intercepts) with weakly informative priors (<span class="math inline">\(\mu \sim \mathcal{N}(0,1)\)</span>, <span class="math inline">\(\tau \sim \text{Half-Cauchy}(0, 0.5)\)</span>). Four chains of 4,000 iterations (1,000 warm-up) were run with <code>adapt_delta = 0.99</code>. Convergence was assessed with <span class="math inline">\(\hat{R}\)</span> and effective sample sizes. Secondary analyses examined pathogen class, TTP cutpoint (meta-regression), publication bias, and a sensitivity pool that added studies meeting a more inclusive criterion. All code and data are available in the project repository.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<section id="study-selection-and-characteristics" class="level2">
+<h2 class="anchored" data-anchor-id="study-selection-and-characteristics">Study selection and characteristics</h2>
+<p>The primary (strict) pool comprised 100 studies, of which 58 reported mortality and contributed 72 mortality effect sizes. Overall risk of bias (QUIPS) was low in 24, moderate in 62, high in 13, and critical in 1 studies (<a href="./notebooks/rob-preview.html">notebook</a>).</p>
+</section>
+<section id="primary-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="primary-analysis">Primary analysis</h2>
+<p>Short TTP was associated with higher mortality (pooled OR 2.06 (95% CrI, 1.67 to 2.55); <a href="#fig-forest" class="quarto-xref">Figure&nbsp;2</a>, <a href="#tbl-overall" class="quarto-xref">Table&nbsp;1</a>). The posterior probability that short TTP increases mortality was 100.0%, and heterogeneity was substantial (median <span class="math inline">\(I^2\)</span> = 62%).</p>
+<div class="quarto-embed-nb-cell">
+<div class="cell">
+<div id="tbl-overall" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Pooled effect of short vs long TTP on mortality (OR &gt; 1 = short TTP harmful). Primary pool only (strict criterion).
+</figcaption>
+<div aria-describedby="tbl-overall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</figure></div>
+
+</div>
+</div>
+</section></section></main></div>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-forest" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-forest" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-forest-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in red."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-forest-output-2.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in red.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+
+<section id="pathogen-class" class="level2">
+<h2 data-anchor-id="pathogen-class">Pathogen class</h2>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-pathogen-posteriors" class="cell" data-fig-height="5">
+<div class="cell-output cell-output-display">
+<div id="fig-pathogen-posteriors" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pathogen-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-pathogen-posteriors-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Figure 1. Posterior distributions of the pooled odds ratio (OR) for all-cause mortality comparing short versus long time-to-positivity (TTP), stratified by pathogen class. Each density represents the full posterior from a Bayesian random-effects meta-analysis (72 mortality effect sizes; 100 studies). The filled point marks the posterior median; the horizontal bar spans the 95% credible interval (CrI). The vertical dashed line indicates OR = 1 (no effect). ‘Short’ and ‘long’ TTP were defined by individual studies using study-specific thresholds (median cutpoint 12 h; range 2–72 h). Outcome was predominantly 30-day mortality. Overall: OR = 2.06 (95% CrI 1.67–2.55); Gram-negative: OR = 2.66 (95% CrI 1.72–4.06); Gram-positive: OR = 1.48 (95% CrI 0.85–2.58). OR > 1 indicates higher mortality with shorter TTP."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-pathogen-posteriors-output-2.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pathogen-posteriors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: <strong>Figure 1.</strong> Posterior distributions of the pooled odds ratio (OR) for all-cause mortality comparing short versus long time-to-positivity (TTP), stratified by pathogen class. Each density represents the full posterior from a Bayesian random-effects meta-analysis (72 mortality effect sizes; 100 studies). The filled point marks the posterior median; the horizontal bar spans the 95% credible interval (CrI). The vertical dashed line indicates OR = 1 (no effect). ‘Short’ and ‘long’ TTP were defined by individual studies using study-specific thresholds (median cutpoint 12 h; range 2–72 h). Outcome was predominantly 30-day mortality. Overall: OR = 2.06 (95% CrI 1.67–2.55); Gram-negative: OR = 2.66 (95% CrI 1.72–4.06); Gram-positive: OR = 1.48 (95% CrI 0.85–2.58). OR &gt; 1 indicates higher mortality with shorter TTP.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Pathogen class was available for 52 of 72 mortality effect sizes (Gram-negative, 26 effect sizes from 17 studies; Gram-positive, 13 from 11; fungal, 6 from 6; mixed or polymicrobial, 7 from 5). The remaining 20 effect sizes had no pathogen classification and were excluded from the stratified models. Short TTP was associated with higher mortality in Gram-negative bacteremia (OR 2.66 (95% CrI, 1.72 to 4.06)) and, with a smaller point estimate and a credible interval that included 1, in Gram-positive bacteremia (OR 1.48 (95% CrI, 0.85 to 2.58); <a href="#fig-pathogen-posteriors" class="quarto-xref">Figure&nbsp;3</a>, <a href="#tbl-subgroup" class="quarto-xref">Table&nbsp;2</a>). In a meta-regression with both classes, the odds ratio in Gram-positive studies was 0.61 times that in Gram-negative studies (95% CrI 0.36 to 1.02), with a posterior probability of 97% that the association is weaker in Gram-positive studies. This interval is wide and just includes 1, so the evidence for a difference between classes is suggestive rather than conclusive. For fungal bacteremia the pooled estimate was imprecise (OR 1.31 (95% CrI, 0.92 to 2.12), 6 studies). Heterogeneity remained considerable within both Gram-negative (median <span class="math inline">\(I^2\)</span> 61%) and Gram-positive (74%) strata.</p>
+<div class="quarto-embed-nb-cell">
+<div class="cell">
+<div id="tbl-subgroup" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-subgroup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Pooled OR by pathogen subgroup.
+</figcaption>
+<div aria-describedby="tbl-subgroup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</figure></div>
+
+</div>
+</div>
+
+</section>
+<section id="ttp-cutpoint" class="level2">
+<h2 data-anchor-id="ttp-cutpoint">TTP cutpoint</h2>
+<p>A TTP cutpoint was reported for 42 of 72 mortality effect sizes (29 studies); the remainder had no cutpoint recorded in the extraction database. Cutpoints ranged from 2 to 72 h (median 12 h). Across all effect sizes with a cutpoint, the log odds ratio changed by -0.035 (95% CrI, -0.056 to -0.015) per additional hour, so higher thresholds were associated with weaker associations (<a href="#fig-cutpoint" class="quarto-xref">Figure&nbsp;4</a>). When the analysis was restricted to cutpoints of 24 h or less, the slope was attenuated and its interval included zero (-0.024 (95% CrI, -0.075 to 0.028)), so the gradient depends on the few studies using long thresholds.</p>
+<p>Within pathogen class the pattern differed. Among Gram-negative effect sizes (median cutpoint 10 h) the slope was positive (0.062 (95% CrI, -0.005 to 0.130); <a href="#tbl-gneg-cutpoint" class="quarto-xref">Table&nbsp;3</a>), whereas among Gram-positive effect sizes it was negative with an interval that included zero (-0.029 (95% CrI, -0.058 to 0.004); <a href="#tbl-gpos-cutpoint" class="quarto-xref">Table&nbsp;4</a>). The overall negative gradient therefore does not hold within Gram-negative bacteremia, and these class-specific analyses rest on small numbers of effect sizes.</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-cutpoint" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-cutpoint" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-cutpoint-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: TTP cutpoint meta-regression. The blue line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Red points are observed 2×2-derived effect sizes (size ∝ precision)."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-cutpoint-output-2.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: TTP cutpoint meta-regression. The blue line is the Bayesian posterior median predicted OR by cutpoint; ribbon is the 95% CrI. Red points are observed 2×2-derived effect sizes (size ∝ precision).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-embed-nb-cell">
+<div class="cell">
+<div id="tbl-gneg-cutpoint" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gneg-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Gram-negative cutpoint meta-regression slope and predicted OR at key thresholds.
+</figcaption>
+<div aria-describedby="tbl-gneg-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</figure></div>
+
+</div>
+</div>
+
+<div class="quarto-embed-nb-cell">
+<div class="cell">
+<div id="tbl-gpos-cutpoint" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gpos-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Gram-positive cutpoint meta-regression: slope comparison between full model and sensitivity analysis excluding Minejima2019 (72 h).
+</figcaption>
+<div aria-describedby="tbl-gpos-cutpoint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</figure></div>
+
+</div>
+</div>
+
+</section>
+<section id="publication-bias" class="level2">
+<h2 data-anchor-id="publication-bias">Publication bias</h2>
+<p>The funnel plot of mortality effect sizes was asymmetric (<a href="#fig-funnel" class="quarto-xref">Figure&nbsp;5</a>). Egger’s regression test indicated small-study effects (t = 6.19, df = 70, p &lt; 0.0001; <a href="#tbl-egger" class="quarto-xref">Table&nbsp;5</a>), and the regression-based estimate for a study with zero standard error was close to no association (OR 0.99; 95% CI 0.97 to 1.01). Begg’s rank correlation test did not detect asymmetry (p = 0.47). The trim-and-fill method imputed 19 missing studies and gave an adjusted pooled OR of 1.51 (95% CI, 1.23 to 1.86), lower than the unadjusted frequentist estimate (OR 2.05). These tests treat all effect sizes as independent, assume that asymmetry is due to selective reporting, and have limited reliability when heterogeneity is high, so they cannot distinguish publication bias from genuine heterogeneity, such as larger associations in smaller studies that used more extreme or optimized cutpoints. The evidence nevertheless suggests that the pooled association may be overestimated.</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-funnel" class="cell" data-fig-height="6">
+<div class="cell-output cell-output-display">
+<div id="fig-funnel" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-funnel-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Contour-enhanced funnel plot (primary pool, mortality). Studies in white zones are not statistically significant at the labelled threshold; shaded outer zones indicate increasing levels of significance. Asymmetry toward the right (short TTP harmful) would suggest positive-result publication bias."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-funnel-output-1.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-funnel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Contour-enhanced funnel plot (primary pool, mortality). Studies in white zones are not statistically significant at the labelled threshold; shaded outer zones indicate increasing levels of significance. Asymmetry toward the right (short TTP harmful) would suggest positive-result publication bias.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-embed-nb-cell">
+<div class="cell">
+<div id="tbl-egger" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-egger-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Egger’s regression test for funnel-plot asymmetry (primary pool, mortality; metafor::regtest, weighted regression on the standard error). The t-statistic tests asymmetry; the limit estimate is the predicted effect for a hypothetical study with zero standard error.
+</figcaption>
+<div aria-describedby="tbl-egger-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</figure></div>
+
+</div>
+</div>
+
+</section>
+<section id="sensitivity-analyses" class="level2">
+<h2 data-anchor-id="sensitivity-analyses">Sensitivity analyses</h2>
+<p>Adding the studies that met only the inclusive criterion increased the number of studies reporting mortality to 67 (84 effect sizes) and gave a pooled OR of 1.92 (95% CrI, 1.58 to 2.35), similar to the primary estimate (<a href="#fig-sens-inc" class="quarto-xref">Figure&nbsp;6</a>). Pooled estimates by data source were consistent in direction. Relative to 2×2-derived effect sizes (49 effect sizes), the log odds ratio for effect sizes back-calculated from adjusted reported estimates (15 effect sizes) was -0.26 (95% CrI, -0.68 to 0.16) and for unadjusted reported estimates (8 effect sizes) was -0.12 (95% CrI, -0.62 to 0.38). Both intervals included zero. Directly comparing unadjusted with adjusted reported estimates, the difference in log odds ratio was 0.12 (95% CrI, -0.39 to 0.62). Association strength tended to decrease with publication year (change in log odds ratio per year, -0.04 (95% CrI, -0.08 to 0.00)), with an interval that only just included zero. None of these moderator analyses showed a clear difference, but all were underpowered relative to the observed heterogeneity.</p>
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-sens-inc" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-sens-inc" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sens-inc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-mortality-analysis-fig-sens-inc-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Posterior densities of pooled OR — primary pool vs sensitivity pool (with inclusive-only studies added)."><img src="index_files/figure-html/notebooks-mortality-analysis-fig-sens-inc-output-1.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sens-inc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Posterior densities of pooled OR — primary pool vs sensitivity pool (with inclusive-only studies added).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="clinical-failure-outcomes" class="level2">
+<h2 data-anchor-id="clinical-failure-outcomes">Clinical failure outcomes</h2>
+<p>Outcomes other than mortality were reported far less often (<a href="#tbl-counts" class="quarto-xref">Table&nbsp;6</a>). Persistent bacteremia was the most frequently reported, with 12 effect sizes from 12 studies, followed by microbiological clearance (4 effect sizes, 3 studies). No usable effect sizes were available for relapse (0).</p>
+<p>Short TTP was associated with higher odds of persistent bacteremia (pooled OR 1.74 (95% CrI, 1.09 to 2.80); <a href="#fig-pb" class="quarto-xref">Figure&nbsp;7</a>), with substantial heterogeneity (median <span class="math inline">\(I^2\)</span> 69%). Outcome definitions were not uniform: on review of the outcome definitions, 6 effect sizes defined persistent bacteremia by duration of positive cultures, 3 defined it by endocarditis or valve involvement, and 3 used other definitions. In a meta-regression by definition group, endocarditis-based definitions had a log odds ratio 0.59 higher than duration-based definitions (95% CrI -0.19 to 1.24), which is compatible with no difference given the small number of effect sizes per group. The pooled persistent-bacteremia estimate should therefore be interpreted as an association with a heterogeneous composite of outcomes.</p>
+<p>For microbiological clearance, the pooled estimate was too imprecise to interpret (OR 1.63 (95% CrI, 0.24 to 9.47)), reflecting only 4 effect sizes with very large between-study heterogeneity (median <span class="math inline">\(I^2\)</span> 89%).</p>
+<div class="quarto-embed-nb-cell">
+<div class="cell">
+<div id="tbl-counts" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Available effect sizes per clinical-failure outcome (strict pool).
+</figcaption>
+<div aria-describedby="tbl-counts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+</figure></div>
+
+</div>
+</div>
+
+<div class="quarto-embed-nb-cell">
+<div id="cell-fig-pb" class="cell">
+<div class="cell-output cell-output-display">
+<div id="fig-pb" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/notebooks-clinical_failure-fig-pb-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Forest plot of OR (short vs long TTP) for persistent bacteremia. NB: many studies coded under ‘persistent_bacteremia’ actually report endocarditis (the Codebook’s outcome_type enum lacks ‘endocarditis’). Review outcome_definition in each row before interpretation."><img src="index_files/figure-html/notebooks-clinical_failure-fig-pb-output-2.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Forest plot of OR (short vs long TTP) for persistent bacteremia. NB: many studies coded under ‘persistent_bacteremia’ actually report endocarditis (the Codebook’s outcome_type enum lacks ‘endocarditis’). Review outcome_definition in each row before interpretation.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>In this Bayesian random-effects meta-analysis, short TTP was associated with higher mortality in bacteremia (pooled OR 2.06 (95% CrI, 1.67 to 2.55); 58 studies, 72 effect sizes). The posterior probability that the association is in the direction of harm was 100.0%. Between-study heterogeneity was moderate to substantial (median <span class="math inline">\(I^2\)</span> 62%), and the 95% prediction interval for a new study (0.52 to 8.60) is wide and includes no association. The pooled estimate is therefore best read as an average association, not as the effect expected in any particular setting. Adding studies that met only a more inclusive criterion gave a similar estimate (OR 1.92 (95% CrI, 1.58 to 2.35)).</p>
+<p><strong>Pathogen class.</strong> The association was larger in Gram-negative bacteremia (OR 2.66 (95% CrI, 1.72 to 4.06)) than in Gram-positive bacteremia (OR 1.48 (95% CrI, 0.85 to 2.58)), for which the credible interval included 1. The two intervals overlap, so this contrast should be considered hypothesis-generating rather than confirmed. A plausible explanation is that TTP in Gram-positive infection, notably <em>S. aureus</em>, is influenced by factors other than burden of disease, such as the source of infection and the presence of endovascular foci, whereas in Gram-negative infection it may track inoculum and host response more directly. This explanation is speculative and was not tested directly here.</p>
+<p><strong>Study design and adjustment.</strong> Effect sizes derived from 2×2 tables (OR 2.28 (95% CrI, 1.74 to 3.05)) were larger than those back-calculated from reported effect estimates (OR 1.71 (95% CrI, 1.28 to 2.36)). Meta-regression by data source did not show a clear difference, and the intervals included zero, so the data are compatible with either similar or lower adjusted associations. Crude 2×2 comparisons may carry more confounding by severity of illness, source, or pathogen, in which case the pooled estimate could overstate the independent prognostic contribution of TTP, but the groups also differ in other respects.</p>
+<p><strong>TTP cutpoint.</strong> Studies defined “short” TTP using different thresholds (median cutpoint 12 h), and 30 of 72 mortality effect sizes did not have a reported cutpoint. In meta-regression among the remaining effect sizes, the log OR decreased by 0.036 per additional hour of cutpoint (95% CrI 0.015 to 0.056), meaning that stricter (shorter) thresholds were associated with larger odds ratios overall (<a href="#fig-cutpoint" class="quarto-xref">Figure&nbsp;4</a>). This gradient was not robust: it was attenuated when cutpoints above 24 h were excluded, and it was reversed within Gram-negative studies. Because thresholds are often chosen post hoc to maximize discrimination in the study sample, the gradient may partly reflect optimistic cutpoint selection or differences in pathogen mix, and it should not be interpreted as validating any single clinical threshold.</p>
+<p><strong>Other outcomes.</strong> For persistent bacteremia, short TTP was associated with higher odds (OR 1.74 (95% CrI, 1.09 to 2.80)), but outcome definitions varied widely between studies. Evidence for microbiological clearance was too sparse and imprecise to interpret (OR 1.63 (95% CrI, 0.24 to 9.47)) (<a href="./notebooks/clinical_failure-preview.html">notebook</a>).</p>
+<p><strong>Strengths and limitations.</strong> Strengths include a multi-database search with a May 2026 update, a distinction between strict and inclusive study pools, a Bayesian framework that yields prediction intervals and direct probability statements, and a fully reproducible code base. Limitations are substantial. Most included studies were retrospective cohorts and risk of bias was rated moderate or worse in most (76 of 100 studies). Several studies contributed multiple effect sizes, which we handled with study-level random intercepts but which do not remove all dependence. The TTP threshold, outcome timing, and adjustment sets were not standardized, and adjustment status varied across estimates. Blood culture system, bottle type, transport delay, and prior antibiotic exposure affect TTP and were incompletely reported, so residual confounding by measurement conditions is likely. The funnel plot was asymmetric and Egger’s test indicated small-study effects (<a href="#fig-funnel" class="quarto-xref">Figure&nbsp;5</a>, <a href="#tbl-egger" class="quarto-xref">Table&nbsp;5</a>). Trim-and-fill reduced the pooled estimate to OR 1.51, so the primary estimate may overstate the association, although asymmetry can also arise from heterogeneity and cutpoint optimization, and these tests do not account for multiple effect sizes per study. Finally, the meta-analysis is based on aggregate data, which prevents examination of TTP as a continuous predictor within patients.</p>
+<p><strong>Implications.</strong> Short TTP is associated with higher mortality on average, but heterogeneity, the dependence on cutpoint, and probable confounding limit its use as a stand-alone prognostic tool. These results support using TTP as one contextual signal, particularly in Gram-negative bacteremia, alongside clinical severity and pathogen identification. Individual-patient-data analyses with standardized TTP measurement, and prospective validation of pathogen-specific thresholds, are needed before TTP can be used to guide treatment decisions.</p>
+</section>
+<section id="funding" class="level1 unnumbered">
+<h1 class="unnumbered">Funding</h1>
+<p>No specific funding was received for this study. The authors are supported by their institutional salaries (University of Padova). [Confirm.]</p>
+</section>
+<section id="conflicts-of-interest" class="level1 unnumbered">
+<h1 class="unnumbered">Conflicts of interest</h1>
+<p>R.E.L. serves as an Associate Editor at the Journal of Antimicrobial Chemotherapy. The other author declares no conflicts of interest. [Confirm with all co-authors.]</p>
+</section>
+<section id="data-and-code-availability" class="level1 unnumbered">
+<h1 class="unnumbered">Data and code availability</h1>
+<p>The extraction workbook, analysis code, and rendered notebooks are included in the manuscript project. [Insert repository and DOI, for example an OSF project, once deposited.]</p>
+</section>
+<section id="use-of-artificial-intelligence" class="level1 unnumbered">
+<h1 class="unnumbered">Use of artificial intelligence</h1>
+<p>A large language model agent was used to assist with full-text screening and data extraction for the 2026 update, and a second, independent agent verified the extractions against the source PDFs, as described in the Methods. [State the model name and version, how authors reviewed outputs, and who is responsible for the final data. Confirm the wording against ASM’s current policy on AI use.] Analysis code was written and run in R and Stan. The authors take responsibility for the content of the manuscript.</p>
+</section>
+<section id="acknowledgments" class="level1 unnumbered">
+<h1 class="unnumbered">Acknowledgments</h1>
+<p>[None to declare / add acknowledgments.]</p>
+</section>
+<section id="references" class="level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="1" data-line-spacing="2" role="list">
+<div id="ref-Sowden2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Sowden D, Anstey C, Faddy M. 2008. <a href="https://doi.org/10.1016/j.jinf.2008.01.005"><span class="nocase">Blood culture time to positivity as a predictor of mortality in community acquired Methicillin-susceptible Staphylococcus aureus bacteremia</span></a>. Journal of Infection 56:295–296.</div>
+</div>
+<div id="ref-Kahn2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Kahn F, Resman F, Bergmark S, Filiptsev P, Nilson B, Gilje P, Rasmussen M. 2021. <a href="https://doi.org/10.1016/j.cmi.2020.11.007"><span class="nocase">Time to blood culture positivity in Staphylococcus aureus bacteraemia to determine risk of infective endocarditis</span></a>. Clinical Microbiology and Infection 27:1345.e7–1345.e12.</div>
+</div>
+<div id="ref-Stromdahl2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Strömdahl M, Hagman K, Hedman K, Westman A, Hedenstierna M, Ursing J. 2025. <a href="https://doi.org/10.1093/cid/ciae628"><span class="nocase">Time to Staphylococcus aureus Blood Culture Positivity as a Risk Marker of Infective Endocarditis: A Retrospective Cohort Study</span></a>. Clinical Infectious Diseases 80:727–734.</div>
+</div>
+<div id="ref-Willmann2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Willmann M, Kuebart I, Vogel W, Flesch I, Markert U, Marschal M, Schröppel K, Autenrieth IB, Hölzl F, Peter S. 2013. <a href="https://doi.org/10.1016/j.jinf.2013.06.012"><span class="nocase">Time to positivity as prognostic tool in patients with Pseudomonas aeruginosa bloodstream infection</span></a>. Journal of Infection 67:416–423.</div>
+</div>
+<div id="ref-Tang2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Tang P-C, Lee C-C, Li C-W, Li M-C, Ko W-C, Lee N-Y. 2017. <a href="https://doi.org/10.1016/j.jmii.2015.08.014"><span class="nocase">Time-to-positivity of blood culture: An independent prognostic factor of monomicrobial Pseudomonas aeruginosa bacteremia</span></a>. Journal of Microbiology, Immunology and Infection 50:486–493.</div>
+</div>
+<div id="ref-Martinez2006" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Martínez JA, Soto S, Fabrega A, Almela M, Mensa J, Soriano A, Marco F, Jimenez De Anta MT, Vila J. 2006. <a href="https://doi.org/10.1128/JCM.44.4.1468-1474.2006"><span class="nocase">Relationship of phylogenetic background, biofilm production, and time to detection of growth in blood culture vials with clinical variables and prognosis associated with Escherichia coli bacteremia</span></a>. Journal of Clinical Microbiology 44:1468–1474.</div>
+</div>
+<div id="ref-Keighley2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Keighley C, Pope AL, Marriott D, Chen SC-A, Slavin MA. 2023. <a href="https://doi.org/10.1093/mmy/myad028"><span class="nocase">Time-to-positivity in bloodstream infection for Candida species as a prognostic marker for mortality</span></a>. Medical Mycology 61.</div>
+</div>
+<div id="ref-PuertaAlcalde2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Puerta-Alcalde P, Cardozo C, Suárez-Lledó M, Rodríguez-Núñez O, Morata L, Fehér C, Marco F, Del Río A, Martínez JA, Mensa J, Rovira M, Esteve J, Soriano A, Garcia-Vidal C. 2019. <a href="https://doi.org/10.1016/j.cmi.2018.07.026"><span class="nocase">Current time-to-positivity of blood cultures in febrile neutropenia: a tool to be used in stewardship de-escalation strategies</span></a>. Clinical Microbiology and Infection 25:447–453.</div>
+</div>
+</div>
+</section>
+
+
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+ <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

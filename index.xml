@@ -1,0 +1,4026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving
+and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
+  <front>
+    <article-meta>
+      <title-group>
+        <article-title>Blood culture time to positivity and mortality in
+bacteremia: a systematic review and Bayesian
+meta-analysis</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Pangallo</surname>
+            <given-names>Francesco</given-names>
+          </name>
+          <string-name>Francesco Pangallo</string-name>
+          <xref ref-type="aff" rid="aff-1">a</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="yes">
+          <name>
+            <surname>Lewis</surname>
+            <given-names>Russell E.</given-names>
+          </name>
+          <string-name>Russell E. Lewis</string-name>
+          <xref ref-type="aff" rid="aff-2">b</xref>
+          <xref ref-type="corresp" rid="cor-2">*</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff-1">
+        <institution content-type="dept">School of Medicine and
+Surgery</institution>
+        <institution-wrap>
+          <institution>University of Padova</institution>
+        </institution-wrap>
+        <city>Padova</city>
+        <country>Italy</country>
+      </aff>
+      <aff id="aff-2">
+        <institution content-type="dept">Department of Molecular
+Medicine</institution>
+        <institution-wrap>
+          <institution>University of Padova</institution>
+        </institution-wrap>
+        <city>Padova</city>
+        <country>Italy</country>
+      </aff>
+      <author-notes>
+        <corresp id="cor-2"/>
+      </author-notes>
+      <history/>
+      <abstract>
+        <p><bold>Background.</bold> Blood culture time to positivity (TTP) has
+been proposed as a prognostic marker in bacteremia, but studies use
+different thresholds, pathogens, and outcomes. We synthesized the
+association between short versus long TTP and clinical outcomes.</p>
+        <p><bold>Methods.</bold> We searched PubMed, Embase, Scopus, the
+Cochrane Library, and Web of Science (updated May 2026) and extracted
+effect sizes from 100 studies meeting strict eligibility criteria. Log
+odds ratios for all-cause mortality (short versus long TTP) were pooled
+with a Bayesian random-effects model. We examined pathogen class, TTP
+cutpoint, publication bias, and a sensitivity analysis adding studies
+meeting more inclusive criteria. Persistent bacteremia and
+microbiological clearance were analyzed as secondary outcomes.</p>
+        <p><bold>Results.</bold> Fifty-eight studies (72 effect sizes) reported
+mortality. Short TTP was associated with higher mortality (pooled OR
+2.06; 95% credible interval [CrI], 1.67 to 2.55), with substantial
+heterogeneity (median I² 62%; 95% prediction interval, 0.5 to 8.6). The
+association was larger in Gram-negative (OR 2.66; 95% CrI, 1.72 to 4.06)
+than Gram-positive bacteremia (OR 1.48; 95% CrI, 0.85 to 2.58), although
+the credible intervals overlapped. Higher TTP cutpoints were associated
+with weaker associations overall, but this was not consistent across
+subgroups. The funnel plot was asymmetric, and trim-and-fill gave an
+adjusted OR of 1.51 (95% CI, 1.23 to 1.86). Short TTP was also
+associated with persistent bacteremia (OR 1.74; 95% CrI, 1.09 to 2.80);
+data on clearance were sparse.</p>
+        <p><bold>Conclusions.</bold> Short TTP is associated with higher
+mortality, particularly in Gram-negative bacteremia, but heterogeneity,
+cutpoint dependence, probable confounding, and small-study effects limit
+its use as a stand-alone prognostic tool. Standardized thresholds and
+adjusted, individual-patient analyses are needed.</p>
+      </abstract>
+      <kwd-group kwd-group-type="author">
+        <kwd>time to positivity</kwd>
+        <kwd>blood culture</kwd>
+        <kwd>bacteremia</kwd>
+        <kwd>mortality</kwd>
+        <kwd>meta-analysis</kwd>
+      </kwd-group>
+      <funding-group>
+        <funding-statement>No specific funding was received for this
+study.</funding-statement>
+      </funding-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="introduction">
+      <title>Introduction</title>
+      <p>Bloodstream infection is a major cause of morbidity and mortality,
+  and early risk stratification remains a practical clinical problem.
+  Automated continuous-monitoring blood culture systems record the time
+  to positivity (TTP), the interval from the start of incubation to the
+  instrument’s detection of microbial growth. Because growth kinetics
+  depend on the starting inoculum and on organism-specific factors,
+  shorter TTP has been proposed as a readily available,
+  laboratory-generated marker of high bacterial burden and severe
+  infection.</p>
+      <p>Individual cohorts have examined whether TTP carries prognostic
+  information in specific settings, including <italic>Staphylococcus
+  aureus</italic> bacteremia, where TTP has been explored as a marker of
+  endocarditis and poor outcome
+  (<xref alt="1" rid="ref-Sowden2008" ref-type="bibr">1</xref>–<xref alt="3" rid="ref-Stromdahl2025" ref-type="bibr">3</xref>);
+  Gram-negative bacteremia, including <italic>Pseudomonas
+  aeruginosa</italic>
+  (<xref alt="4" rid="ref-Willmann2013" ref-type="bibr">4</xref>,
+  <xref alt="5" rid="ref-Tang2017" ref-type="bibr">5</xref>) and
+  <italic>Escherichia coli</italic>
+  (<xref alt="6" rid="ref-Martinez2006" ref-type="bibr">6</xref>);
+  candidemia
+  (<xref alt="7" rid="ref-Keighley2023" ref-type="bibr">7</xref>); and
+  bacteremia in neutropenic patients, where TTP has been suggested as a
+  stewardship tool
+  (<xref alt="8" rid="ref-PuertaAlcalde2019" ref-type="bibr">8</xref>).
+  These studies differ in organism mix, patient population, outcome
+  definition, and, importantly, the TTP threshold used to define “short”
+  versus “long” TTP. Whether the association is consistent across
+  pathogens, whether it varies with the chosen cutpoint, and how large
+  it is once adjusted estimates are considered remain unclear.</p>
+      <p>We therefore updated a systematic review of the association between
+  blood culture TTP and clinical outcomes in bacteremia. Our primary
+  objective was to estimate the association between short versus long
+  TTP and all-cause mortality using a Bayesian random-effects
+  meta-analysis. Secondary objectives were to examine heterogeneity by
+  pathogen class and by TTP cutpoint, to assess publication bias and the
+  robustness of the findings to study inclusion criteria, and to
+  summarize associations with persistent bacteremia and other markers of
+  clinical failure.</p>
+    </sec>
+    <sec id="materials-and-methods">
+      <title>Materials and Methods</title>
+      <sec id="protocol-and-registration">
+        <title>Protocol and registration</title>
+        <p>The review is reported according to the PRISMA 2020 statement and
+    the PRISMA-S extension for searches. A protocol was prepared for
+    registration in PROSPERO (registration number: [PROSPERO
+    registration number to be inserted]). The review builds on a
+    master’s thesis at the University of Padova (F. Pangallo, 2025/2026;
+    supervisor R. E. Lewis) that produced the original 57-study
+    extraction database. Because that work was substantially complete
+    before the protocol was registered, registration is retrospective
+    for the baseline studies, and the 2026 update (additional search,
+    screening, extraction, and the inclusive-criterion re-screen) was
+    added afterwards. The analysis plan was developed during the thesis;
+    deviations from the protocol are listed in the supplementary
+    notebook
+    (<ext-link ext-link-type="uri" xlink:href="notebooks/methods.qmd">Methods
+    and PRISMA</ext-link>).</p>
+      </sec>
+      <sec id="search-strategy-and-study-selection">
+        <title>Search strategy and study selection</title>
+        <p>Five databases were searched (PubMed, Embase, Scopus, Cochrane
+    Library, and Web of Science), with an original search and a May 2026
+    update [insert run dates and per-database record counts]. The
+    searches yielded 4,605 records, with 3,196 unique records after
+    de-duplication. CINAHL, trial registers, and preprint servers were
+    not searched, and no reference-list searching or citation tracking
+    was performed; these are deviations from the registered protocol.
+    Candidate records were triaged for relevance [confirm the role of
+    the Elicit semantic search tool and PubMed enrichment in this step,
+    and reconcile Alvarez 2012 and Peri 2026, which project notes record
+    as handsearch or snowball identifications], and 355 reports were
+    sought for full-text review. Of these, 53 were not retrieved after
+    pre-screening as ineligible (mainly conference abstracts,
+    non-English papers, and methods-only papers), and 302 full-text
+    reports were assessed (5 additional PDFs duplicated baseline
+    studies). Under the strict criterion 43 reports were included, which
+    added to the 57 baseline studies gave 100 studies; 259 were excluded
+    (104 ineligible design, 65 no TTP measured, 54 no quantitative
+    TTP-outcome association, 29 no clinical outcome, 5 duplicates, 2 not
+    bloodstream infection). A second, inclusive re-screen of the 54
+    reports excluded only for lacking a quantitative association
+    identified 40 further studies (sensitivity pool, 140 studies in
+    total). Eligibility criteria and the full search strings are in the
+    supplementary notebook
+    (<ext-link ext-link-type="uri" xlink:href="notebooks/methods.qmd">Methods
+    and PRISMA</ext-link>) and
+    <monospace>search_strategies.md</monospace>.
+    <xref alt="Figure 1" rid="fig-prisma">Figure 1</xref> shows study
+    flow.</p>
+        <fig id="fig-prisma">
+          <caption>
+            <p>Figure 1: PRISMA 2020 flow diagram for the original
+      search and the May 2026 update.</p>
+          </caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="data/PRISMA_v4_update.png"/>
+        </fig>
+      </sec>
+      <sec id="data-extraction-and-risk-of-bias">
+        <title>Data extraction and risk of bias</title>
+        <p>Data were extracted into a structured relational workbook with
+    linked tables for study characteristics, population, TTP reporting
+    (continuous, dichotomized, or categorical; units; cutpoints), and
+    outcomes (events and totals by TTP group, reported effect estimates,
+    adjustment status, and outcome definitions). TTP was recorded in
+    hours. Where a study reported both 2×2 data and an effect estimate,
+    the 2×2 data were preferred. The baseline 57 studies were extracted
+    by the thesis author [confirm whether extraction was independently
+    verified]. For the 2026 update, full-text screening and data
+    extraction were performed by a large language model agent working
+    from the full-text PDFs and the written eligibility criteria and
+    extraction codebook. Each of the 43 strict-pool extractions was then
+    independently verified field by field against the source PDF by a
+    separate agent that had not performed the original extraction; this
+    led to 7 corrections before analysis. Studies using TTP only as part
+    of a catheter-related bloodstream infection case definition were
+    excluded from effect-size pooling. The human contribution to
+    screening and extraction decisions (spot-checking, adjudication, or
+    second human review) is described in the AI-use statement below
+    [confirm], and we did not perform dual independent human screening
+    or report inter-rater agreement.</p>
+        <p>Risk of bias was assessed for every included study with the
+    Quality in Prognosis Studies (QUIPS) tool across six domains
+    (participation, attrition, prognostic factor measurement, outcome
+    measurement, confounding, and statistical analysis and reporting),
+    each rated as low, moderate, or high, with an overall rating per
+    study
+    (<ext-link ext-link-type="uri" xlink:href="notebooks/rob.qmd">notebook</ext-link>).
+    For the update these ratings were generated by the extraction agent
+    and were not independently re-rated by a second human.</p>
+      </sec>
+      <sec id="statistical-analysis">
+        <title>Statistical analysis</title>
+        <p>Log odds ratios for mortality (short versus long TTP) were
+    computed with <monospace>metafor::escalc()</monospace> from 2×2
+    tables where available, otherwise back-calculated from reported OR,
+    HR, or RR with 95% confidence intervals. Effect sizes were pooled
+    with a Bayesian random-effects model (<monospace>brms</monospace>;
+    study-level random intercepts) with weakly informative priors
+    (<inline-formula><alternatives><tex-math><![CDATA[\mu \sim \mathcal{N}(0,1)]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi>μ</mml:mi><mml:mo>∼</mml:mo><mml:mi>𝒩</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>,
+    <inline-formula><alternatives><tex-math><![CDATA[\tau \sim \text{Half-Cauchy}(0, 0.5)]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi>τ</mml:mi><mml:mo>∼</mml:mo><mml:mtext mathvariant="normal">Half-Cauchy</mml:mtext><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>0.5</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>).
+    Four chains of 4,000 iterations (1,000 warm-up) were run with
+    <monospace>adapt_delta = 0.99</monospace>. Convergence was assessed
+    with <inline-formula><alternatives><tex-math><![CDATA[\hat{R}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mover><mml:mi>R</mml:mi><mml:mo accent="true">̂</mml:mo></mml:mover></mml:math></alternatives></inline-formula>
+    and effective sample sizes. Secondary analyses examined pathogen
+    class, TTP cutpoint (meta-regression), publication bias, and a
+    sensitivity pool that added studies meeting a more inclusive
+    criterion. All code and data are available in the project
+    repository.</p>
+      </sec>
+    </sec>
+    <sec id="results">
+      <title>Results</title>
+      <sec id="study-selection-and-characteristics">
+        <title>Study selection and characteristics</title>
+        <p>The primary (strict) pool comprised 100 studies, of which 58
+    reported mortality and contributed 72 mortality effect sizes.
+    Overall risk of bias (QUIPS) was low in 24, moderate in 62, high in
+    13, and critical in 1 studies
+    (<ext-link ext-link-type="uri" xlink:href="notebooks/rob.qmd">notebook</ext-link>).</p>
+      </sec>
+      <sec id="primary-analysis">
+        <title>Primary analysis</title>
+        <p>Short TTP was associated with higher mortality (pooled OR 2.06
+    (95% CrI, 1.67 to 2.55);
+    <xref alt="Figure 2" rid="fig-forest">Figure 2</xref>,
+    <xref alt="Table 1" rid="tbl-overall">Table 1</xref>). The posterior
+    probability that short TTP increases mortality was 100.0%, and
+    heterogeneity was substantial (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+    = 62%).</p>
+        <fig id="tbl-overall">
+          <caption>
+            <p>Table 1: Pooled effect of short vs long TTP on
+      mortality (OR &gt; 1 = short TTP harmful). Primary pool only
+      (strict criterion).</p>
+          </caption>
+          <table-wrap>
+            <table>
+              <thead>
+                <tr>
+                  <th align="left">Parameter</th>
+                  <th align="left">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left">Median OR (short vs long TTP)</td>
+                  <td align="left">2.06</td>
+                </tr>
+                <tr>
+                  <td align="left">95% credible interval</td>
+                  <td align="left">[1.67, 2.55]</td>
+                </tr>
+                <tr>
+                  <td align="left">95% prediction interval (new study)</td>
+                  <td align="left">[0.49, 8.41]</td>
+                </tr>
+                <tr>
+                  <td align="left">P(short TTP harmful)</td>
+                  <td align="left">100.0%</td>
+                </tr>
+                <tr>
+                  <td align="left">Between-study SD (τ)</td>
+                  <td align="left">0.69</td>
+                </tr>
+                <tr>
+                  <td align="left">Heterogeneity (I²)</td>
+                  <td align="left">62%</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+        </fig>
+        <fig id="fig-forest">
+          <caption>
+            <p>Figure 2: Forest plot of OR (short vs long TTP) on
+      mortality — primary pool. Each row is a single effect size;
+      multi-arm studies appear multiple times. Pooled estimate from the
+      Bayesian model in red.</p>
+          </caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-forest-output-2.png"/>
+        </fig>
+      </sec>
+      <sec id="pathogen-class">
+        <title>Pathogen class</title>
+        <fig id="fig-pathogen-posteriors">
+          <caption>
+            <p>Figure 3: <bold>Figure 1.</bold> Posterior
+      distributions of the pooled odds ratio (OR) for all-cause
+      mortality comparing short versus long time-to-positivity (TTP),
+      stratified by pathogen class. Each density represents the full
+      posterior from a Bayesian random-effects meta-analysis (72
+      mortality effect sizes; 100 studies). The filled point marks the
+      posterior median; the horizontal bar spans the 95% credible
+      interval (CrI). The vertical dashed line indicates OR = 1 (no
+      effect). ‘Short’ and ‘long’ TTP were defined by individual studies
+      using study-specific thresholds (median cutpoint 12 h; range 2–72
+      h). Outcome was predominantly 30-day mortality. Overall: OR = 2.06
+      (95% CrI 1.67–2.55); Gram-negative: OR = 2.66 (95% CrI 1.72–4.06);
+      Gram-positive: OR = 1.48 (95% CrI 0.85–2.58). OR &gt; 1 indicates
+      higher mortality with shorter TTP.</p>
+          </caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-pathogen-posteriors-output-2.png"/>
+        </fig>
+        <p>Pathogen class was available for 52 of 72 mortality effect sizes
+    (Gram-negative, 26 effect sizes from 17 studies; Gram-positive, 13
+    from 11; fungal, 6 from 6; mixed or polymicrobial, 7 from 5). The
+    remaining 20 effect sizes had no pathogen classification and were
+    excluded from the stratified models. Short TTP was associated with
+    higher mortality in Gram-negative bacteremia (OR 2.66 (95% CrI, 1.72
+    to 4.06)) and, with a smaller point estimate and a credible interval
+    that included 1, in Gram-positive bacteremia (OR 1.48 (95% CrI, 0.85
+    to 2.58);
+    <xref alt="Figure 3" rid="fig-pathogen-posteriors">Figure 3</xref>,
+    <xref alt="Table 2" rid="tbl-subgroup">Table 2</xref>). In a
+    meta-regression with both classes, the odds ratio in Gram-positive
+    studies was 0.61 times that in Gram-negative studies (95% CrI 0.36
+    to 1.02), with a posterior probability of 97% that the association
+    is weaker in Gram-positive studies. This interval is wide and just
+    includes 1, so the evidence for a difference between classes is
+    suggestive rather than conclusive. For fungal bacteremia the pooled
+    estimate was imprecise (OR 1.31 (95% CrI, 0.92 to 2.12), 6 studies).
+    Heterogeneity remained considerable within both Gram-negative
+    (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+    61%) and Gram-positive (74%) strata.</p>
+        <fig id="tbl-subgroup">
+          <caption>
+            <p>Table 2: Pooled OR by pathogen subgroup.</p>
+          </caption>
+          <table-wrap>
+            <table>
+              <thead>
+                <tr>
+                  <th align="left">Subgroup</th>
+                  <th align="left">N effect sizes</th>
+                  <th align="left">Median OR</th>
+                  <th align="left">95% CrI</th>
+                  <th align="left">P(short TTP harmful)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left">Gram-positive</td>
+                  <td align="left">13</td>
+                  <td align="left">1.48</td>
+                  <td align="left">[0.85, 2.58]</td>
+                  <td align="left">92.7%</td>
+                </tr>
+                <tr>
+                  <td align="left">Gram-negative</td>
+                  <td align="left">26</td>
+                  <td align="left">2.66</td>
+                  <td align="left">[1.72, 4.06]</td>
+                  <td align="left">100.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+        </fig>
+      </sec>
+      <sec id="ttp-cutpoint">
+        <title>TTP cutpoint</title>
+        <p>A TTP cutpoint was reported for 42 of 72 mortality effect sizes
+    (29 studies); the remainder had no cutpoint recorded in the
+    extraction database. Cutpoints ranged from 2 to 72 h (median 12 h).
+    Across all effect sizes with a cutpoint, the log odds ratio changed
+    by -0.035 (95% CrI, -0.056 to -0.015) per additional hour, so higher
+    thresholds were associated with weaker associations
+    (<xref alt="Figure 4" rid="fig-cutpoint">Figure 4</xref>). When the
+    analysis was restricted to cutpoints of 24 h or less, the slope was
+    attenuated and its interval included zero (-0.024 (95% CrI, -0.075
+    to 0.028)), so the gradient depends on the few studies using long
+    thresholds.</p>
+        <p>Within pathogen class the pattern differed. Among Gram-negative
+    effect sizes (median cutpoint 10 h) the slope was positive (0.062
+    (95% CrI, -0.005 to 0.130);
+    <xref alt="Table 3" rid="tbl-gneg-cutpoint">Table 3</xref>), whereas
+    among Gram-positive effect sizes it was negative with an interval
+    that included zero (-0.029 (95% CrI, -0.058 to 0.004);
+    <xref alt="Table 4" rid="tbl-gpos-cutpoint">Table 4</xref>). The
+    overall negative gradient therefore does not hold within
+    Gram-negative bacteremia, and these class-specific analyses rest on
+    small numbers of effect sizes.</p>
+        <fig id="fig-cutpoint">
+          <caption>
+            <p>Figure 4: TTP cutpoint meta-regression. The blue line
+      is the Bayesian posterior median predicted OR by cutpoint; ribbon
+      is the 95% CrI. Red points are observed 2×2-derived effect sizes
+      (size ∝ precision).</p>
+          </caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-cutpoint-output-2.png"/>
+        </fig>
+        <fig id="tbl-gneg-cutpoint">
+          <caption>
+            <p>Table 3: Gram-negative cutpoint meta-regression slope
+      and predicted OR at key thresholds.</p>
+          </caption>
+          <table-wrap>
+            <table>
+              <thead>
+                <tr>
+                  <th align="left">Parameter</th>
+                  <th align="left">Estimate</th>
+                  <th align="left">95% CrI</th>
+                  <th align="left">P(direction)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left">Slope (log-OR per hour above median)</td>
+                  <td align="left">0.062</td>
+                  <td align="left">[-0.005, 0.130]</td>
+                  <td align="left">96.8%</td>
+                </tr>
+                <tr>
+                  <td align="left">Predicted OR at cutpoint 8 h</td>
+                  <td align="left">3.03</td>
+                  <td align="left">[2.02, 4.52]</td>
+                  <td align="left">100.0%</td>
+                </tr>
+                <tr>
+                  <td align="left">Predicted OR at cutpoint 10 h</td>
+                  <td align="left">3.43</td>
+                  <td align="left">[2.40, 4.87]</td>
+                  <td align="left">100.0%</td>
+                </tr>
+                <tr>
+                  <td align="left">Predicted OR at cutpoint 13 h</td>
+                  <td align="left">4.14</td>
+                  <td align="left">[2.84, 5.93]</td>
+                  <td align="left">100.0%</td>
+                </tr>
+                <tr>
+                  <td align="left">Predicted OR at cutpoint 18 h</td>
+                  <td align="left">5.65</td>
+                  <td align="left">[3.17, 9.95]</td>
+                  <td align="left">100.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+        </fig>
+        <fig id="tbl-gpos-cutpoint">
+          <caption>
+            <p>Table 4: Gram-positive cutpoint meta-regression: slope
+      comparison between full model and sensitivity analysis excluding
+      Minejima2019 (72 h).</p>
+          </caption>
+          <table-wrap>
+            <table>
+              <thead>
+                <tr>
+                  <th align="left">Model</th>
+                  <th align="left">N studies</th>
+                  <th align="left">Slope (log-OR/h)</th>
+                  <th align="left">P(slope &lt; 0)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left">Full (8–72 h)</td>
+                  <td align="left">7</td>
+                  <td align="left">-0.029 [-0.058, 0.004]</td>
+                  <td align="left">96.5%</td>
+                </tr>
+                <tr>
+                  <td align="left">Sensitivity (excl. Minejima2019)</td>
+                  <td align="left">6</td>
+                  <td align="left">-0.081 [-0.323, 0.214]</td>
+                  <td align="left">75.4%</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+        </fig>
+      </sec>
+      <sec id="publication-bias">
+        <title>Publication bias</title>
+        <p>The funnel plot of mortality effect sizes was asymmetric
+    (<xref alt="Figure 5" rid="fig-funnel">Figure 5</xref>). Egger’s
+    regression test indicated small-study effects (t = 6.19, df = 70, p
+    &lt; 0.0001; <xref alt="Table 5" rid="tbl-egger">Table 5</xref>),
+    and the regression-based estimate for a study with zero standard
+    error was close to no association (OR 0.99; 95% CI 0.97 to 1.01).
+    Begg’s rank correlation test did not detect asymmetry (p = 0.47).
+    The trim-and-fill method imputed 19 missing studies and gave an
+    adjusted pooled OR of 1.51 (95% CI, 1.23 to 1.86), lower than the
+    unadjusted frequentist estimate (OR 2.05). These tests treat all
+    effect sizes as independent, assume that asymmetry is due to
+    selective reporting, and have limited reliability when heterogeneity
+    is high, so they cannot distinguish publication bias from genuine
+    heterogeneity, such as larger associations in smaller studies that
+    used more extreme or optimized cutpoints. The evidence nevertheless
+    suggests that the pooled association may be overestimated.</p>
+        <fig id="fig-funnel">
+          <caption>
+            <p>Figure 5: Contour-enhanced funnel plot (primary pool,
+      mortality). Studies in white zones are not statistically
+      significant at the labelled threshold; shaded outer zones indicate
+      increasing levels of significance. Asymmetry toward the right
+      (short TTP harmful) would suggest positive-result publication
+      bias.</p>
+          </caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-funnel-output-1.png"/>
+        </fig>
+        <fig id="tbl-egger">
+          <caption>
+            <p>Table 5: Egger’s regression test for funnel-plot
+      asymmetry (primary pool, mortality; metafor::regtest, weighted
+      regression on the standard error). The t-statistic tests
+      asymmetry; the limit estimate is the predicted effect for a
+      hypothetical study with zero standard error.</p>
+          </caption>
+          <table-wrap>
+            <table>
+              <thead>
+                <tr>
+                  <th align="left">Statistic</th>
+                  <th align="left">Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left">Asymmetry test t-statistic</td>
+                  <td align="left">6.19</td>
+                </tr>
+                <tr>
+                  <td align="left">df</td>
+                  <td align="left">70</td>
+                </tr>
+                <tr>
+                  <td align="left">p-value</td>
+                  <td align="left">&lt;1e-04</td>
+                </tr>
+                <tr>
+                  <td align="left">Limit estimate as SE -&gt; 0 (log
+              OR)</td>
+                  <td align="left">-0.010</td>
+                </tr>
+                <tr>
+                  <td align="left">95% CI (log OR)</td>
+                  <td align="left">[-0.034, 0.014]</td>
+                </tr>
+                <tr>
+                  <td align="left">Limit estimate as SE -&gt; 0 (OR)</td>
+                  <td align="left">0.99</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+        </fig>
+      </sec>
+      <sec id="sensitivity-analyses">
+        <title>Sensitivity analyses</title>
+        <p>Adding the studies that met only the inclusive criterion
+    increased the number of studies reporting mortality to 67 (84 effect
+    sizes) and gave a pooled OR of 1.92 (95% CrI, 1.58 to 2.35), similar
+    to the primary estimate
+    (<xref alt="Figure 6" rid="fig-sens-inc">Figure 6</xref>). Pooled
+    estimates by data source were consistent in direction. Relative to
+    2×2-derived effect sizes (49 effect sizes), the log odds ratio for
+    effect sizes back-calculated from adjusted reported estimates (15
+    effect sizes) was -0.26 (95% CrI, -0.68 to 0.16) and for unadjusted
+    reported estimates (8 effect sizes) was -0.12 (95% CrI, -0.62 to
+    0.38). Both intervals included zero. Directly comparing unadjusted
+    with adjusted reported estimates, the difference in log odds ratio
+    was 0.12 (95% CrI, -0.39 to 0.62). Association strength tended to
+    decrease with publication year (change in log odds ratio per year,
+    -0.04 (95% CrI, -0.08 to 0.00)), with an interval that only just
+    included zero. None of these moderator analyses showed a clear
+    difference, but all were underpowered relative to the observed
+    heterogeneity.</p>
+        <fig id="fig-sens-inc">
+          <caption>
+            <p>Figure 6: Posterior densities of pooled OR — primary
+      pool vs sensitivity pool (with inclusive-only studies
+      added).</p>
+          </caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-sens-inc-output-1.png"/>
+        </fig>
+      </sec>
+      <sec id="clinical-failure-outcomes">
+        <title>Clinical failure outcomes</title>
+        <p>Outcomes other than mortality were reported far less often
+    (<xref alt="Table 6" rid="tbl-counts">Table 6</xref>). Persistent
+    bacteremia was the most frequently reported, with 12 effect sizes
+    from 12 studies, followed by microbiological clearance (4 effect
+    sizes, 3 studies). No usable effect sizes were available for relapse
+    (0).</p>
+        <p>Short TTP was associated with higher odds of persistent
+    bacteremia (pooled OR 1.74 (95% CrI, 1.09 to 2.80);
+    <xref alt="Figure 7" rid="fig-pb">Figure 7</xref>), with substantial
+    heterogeneity (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+    69%). Outcome definitions were not uniform: on review of the outcome
+    definitions, 6 effect sizes defined persistent bacteremia by
+    duration of positive cultures, 3 defined it by endocarditis or valve
+    involvement, and 3 used other definitions. In a meta-regression by
+    definition group, endocarditis-based definitions had a log odds
+    ratio 0.59 higher than duration-based definitions (95% CrI -0.19 to
+    1.24), which is compatible with no difference given the small number
+    of effect sizes per group. The pooled persistent-bacteremia estimate
+    should therefore be interpreted as an association with a
+    heterogeneous composite of outcomes.</p>
+        <p>For microbiological clearance, the pooled estimate was too
+    imprecise to interpret (OR 1.63 (95% CrI, 0.24 to 9.47)), reflecting
+    only 4 effect sizes with very large between-study heterogeneity
+    (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+    89%).</p>
+        <fig id="tbl-counts">
+          <caption>
+            <p>Table 6: Available effect sizes per clinical-failure
+      outcome (strict pool).</p>
+          </caption>
+          <table-wrap>
+            <table>
+              <thead>
+                <tr>
+                  <th align="left">Outcome</th>
+                  <th align="left">Effect sizes</th>
+                  <th align="left">Unique studies</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left">Persistent bacteremia</td>
+                  <td align="left">12</td>
+                  <td align="left">12</td>
+                </tr>
+                <tr>
+                  <td align="left">Microbiological clearance</td>
+                  <td align="left">4</td>
+                  <td align="left">3</td>
+                </tr>
+                <tr>
+                  <td align="left">Relapse</td>
+                  <td align="left">0</td>
+                  <td align="left">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+        </fig>
+        <fig id="fig-pb">
+          <caption>
+            <p>Figure 7: Forest plot of OR (short vs long TTP) for
+      persistent bacteremia. NB: many studies coded under
+      ‘persistent_bacteremia’ actually report endocarditis (the
+      Codebook’s outcome_type enum lacks ‘endocarditis’). Review
+      outcome_definition in each row before
+      interpretation.</p>
+          </caption>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-clinical_failure-fig-pb-output-2.png"/>
+        </fig>
+      </sec>
+    </sec>
+    <sec id="discussion">
+      <title>Discussion</title>
+      <p>In this Bayesian random-effects meta-analysis, short TTP was
+  associated with higher mortality in bacteremia (pooled OR 2.06 (95%
+  CrI, 1.67 to 2.55); 58 studies, 72 effect sizes). The posterior
+  probability that the association is in the direction of harm was
+  100.0%. Between-study heterogeneity was moderate to substantial
+  (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+  62%), and the 95% prediction interval for a new study (0.50 to 8.57)
+  is wide and includes no association. The pooled estimate is therefore
+  best read as an average association, not as the effect expected in any
+  particular setting. Adding studies that met only a more inclusive
+  criterion gave a similar estimate (OR 1.92 (95% CrI, 1.58 to
+  2.35)).</p>
+      <p><bold>Pathogen class.</bold> The association was larger in
+  Gram-negative bacteremia (OR 2.66 (95% CrI, 1.72 to 4.06)) than in
+  Gram-positive bacteremia (OR 1.48 (95% CrI, 0.85 to 2.58)), for which
+  the credible interval included 1. The two intervals overlap, so this
+  contrast should be considered hypothesis-generating rather than
+  confirmed. A plausible explanation is that TTP in Gram-positive
+  infection, notably <italic>S. aureus</italic>, is influenced by
+  factors other than burden of disease, such as the source of infection
+  and the presence of endovascular foci, whereas in Gram-negative
+  infection it may track inoculum and host response more directly. This
+  explanation is speculative and was not tested directly here.</p>
+      <p><bold>Study design and adjustment.</bold> Effect sizes derived from
+  2×2 tables (OR 2.28 (95% CrI, 1.74 to 3.05)) were larger than those
+  back-calculated from reported effect estimates (OR 1.71 (95% CrI, 1.28
+  to 2.36)). Meta-regression by data source did not show a clear
+  difference, and the intervals included zero, so the data are
+  compatible with either similar or lower adjusted associations. Crude
+  2×2 comparisons may carry more confounding by severity of illness,
+  source, or pathogen, in which case the pooled estimate could overstate
+  the independent prognostic contribution of TTP, but the groups also
+  differ in other respects.</p>
+      <p><bold>TTP cutpoint.</bold> Studies defined “short” TTP using
+  different thresholds (median cutpoint 12 h), and 30 of 72 mortality
+  effect sizes did not have a reported cutpoint. In meta-regression
+  among the remaining effect sizes, the log OR decreased by 0.036 per
+  additional hour of cutpoint (95% CrI 0.015 to 0.056), meaning that
+  stricter (shorter) thresholds were associated with larger odds ratios
+  overall (<xref alt="Figure 4" rid="fig-cutpoint">Figure 4</xref>).
+  This gradient was not robust: it was attenuated when cutpoints above
+  24 h were excluded, and it was reversed within Gram-negative studies.
+  Because thresholds are often chosen post hoc to maximize
+  discrimination in the study sample, the gradient may partly reflect
+  optimistic cutpoint selection or differences in pathogen mix, and it
+  should not be interpreted as validating any single clinical
+  threshold.</p>
+      <p><bold>Other outcomes.</bold> For persistent bacteremia, short TTP
+  was associated with higher odds (OR 1.74 (95% CrI, 1.09 to 2.80)), but
+  outcome definitions varied widely between studies. Evidence for
+  microbiological clearance was too sparse and imprecise to interpret
+  (OR 1.63 (95% CrI, 0.24 to 9.47))
+  (<ext-link ext-link-type="uri" xlink:href="notebooks/clinical_failure.qmd">notebook</ext-link>).</p>
+      <p><bold>Strengths and limitations.</bold> Strengths include a
+  multi-database search with a May 2026 update, a distinction between
+  strict and inclusive study pools, a Bayesian framework that yields
+  prediction intervals and direct probability statements, and a fully
+  reproducible code base. Limitations are substantial. Most included
+  studies were retrospective cohorts and risk of bias was rated moderate
+  or worse in most (76 of 100 studies). Several studies contributed
+  multiple effect sizes, which we handled with study-level random
+  intercepts but which do not remove all dependence. The TTP threshold,
+  outcome timing, and adjustment sets were not standardized, and
+  adjustment status varied across estimates. Blood culture system,
+  bottle type, transport delay, and prior antibiotic exposure affect TTP
+  and were incompletely reported, so residual confounding by measurement
+  conditions is likely. The funnel plot was asymmetric and Egger’s test
+  indicated small-study effects
+  (<xref alt="Figure 5" rid="fig-funnel">Figure 5</xref>,
+  <xref alt="Table 5" rid="tbl-egger">Table 5</xref>). Trim-and-fill
+  reduced the pooled estimate to OR 1.51, so the primary estimate may
+  overstate the association, although asymmetry can also arise from
+  heterogeneity and cutpoint optimization, and these tests do not
+  account for multiple effect sizes per study. Finally, the
+  meta-analysis is based on aggregate data, which prevents examination
+  of TTP as a continuous predictor within patients.</p>
+      <p><bold>Implications.</bold> Short TTP is associated with higher
+  mortality on average, but heterogeneity, the dependence on cutpoint,
+  and probable confounding limit its use as a stand-alone prognostic
+  tool. These results support using TTP as one contextual signal,
+  particularly in Gram-negative bacteremia, alongside clinical severity
+  and pathogen identification. Individual-patient-data analyses with
+  standardized TTP measurement, and prospective validation of
+  pathogen-specific thresholds, are needed before TTP can be used to
+  guide treatment decisions.</p>
+    </sec>
+    <sec id="funding">
+      <title>Funding</title>
+      <p>No specific funding was received for this study. The authors are
+  supported by their institutional salaries (University of Padova).
+  [Confirm.]</p>
+    </sec>
+    <sec id="conflicts-of-interest">
+      <title>Conflicts of interest</title>
+      <p>R.E.L. serves as an Associate Editor at the Journal of
+  Antimicrobial Chemotherapy. The other author declares no conflicts of
+  interest. [Confirm with all co-authors.]</p>
+    </sec>
+    <sec id="data-and-code-availability">
+      <title>Data and code availability</title>
+      <p>The extraction workbook, analysis code, and rendered notebooks are
+  included in the manuscript project. [Insert repository and DOI, for
+  example an OSF project, once deposited.]</p>
+    </sec>
+    <sec id="use-of-artificial-intelligence">
+      <title>Use of artificial intelligence</title>
+      <p>A large language model agent was used to assist with full-text
+  screening and data extraction for the 2026 update, and a second,
+  independent agent verified the extractions against the source PDFs, as
+  described in the Methods. [State the model name and version, how
+  authors reviewed outputs, and who is responsible for the final data.
+  Confirm the wording against ASM’s current policy on AI use.] Analysis
+  code was written and run in R and Stan. The authors take
+  responsibility for the content of the manuscript.</p>
+    </sec>
+    <sec id="acknowledgments">
+      <title>Acknowledgments</title>
+      <p>[None to declare / add acknowledgments.]</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <title>References</title>
+      <ref id="ref-Kahn2021">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kahn</surname>
+              <given-names>Fredrik</given-names>
+            </name>
+            <name>
+              <surname>Resman</surname>
+              <given-names>Fredrik</given-names>
+            </name>
+            <name>
+              <surname>Bergmark</surname>
+              <given-names>Sissela</given-names>
+            </name>
+            <name>
+              <surname>Filiptsev</surname>
+              <given-names>Peter</given-names>
+            </name>
+            <name>
+              <surname>Nilson</surname>
+              <given-names>Bo</given-names>
+            </name>
+            <name>
+              <surname>Gilje</surname>
+              <given-names>Patrik</given-names>
+            </name>
+            <name>
+              <surname>Rasmussen</surname>
+              <given-names>Magnus</given-names>
+            </name>
+          </person-group>
+          <article-title>Time to blood culture positivity in Staphylococcus aureus bacteraemia to determine risk of infective endocarditis</article-title>
+          <source>Clinical Microbiology and Infection</source>
+          <year iso-8601-date="2021">2021</year>
+          <volume>27</volume>
+          <issue>9</issue>
+          <pub-id pub-id-type="doi">10.1016/j.cmi.2020.11.007</pub-id>
+          <fpage>1345.e7</fpage>
+          <lpage>1345.e12</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref-Keighley2023">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Keighley</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Pope</surname>
+              <given-names>A. L.</given-names>
+            </name>
+            <name>
+              <surname>Marriott</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Chen</surname>
+              <given-names>S. C.-A.</given-names>
+            </name>
+            <name>
+              <surname>Slavin</surname>
+              <given-names>M. A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Time-to-positivity in bloodstream infection for Candida species as a prognostic marker for mortality</article-title>
+          <source>Medical Mycology</source>
+          <year iso-8601-date="2023">2023</year>
+          <volume>61</volume>
+          <issue>4</issue>
+          <pub-id pub-id-type="doi">10.1093/mmy/myad028</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref-Martinez2006">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Martínez</surname>
+              <given-names>J. A.</given-names>
+            </name>
+            <name>
+              <surname>Soto</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Fabrega</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Almela</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Mensa</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Soriano</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Marco</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Jimenez De Anta</surname>
+              <given-names>M. T.</given-names>
+            </name>
+            <name>
+              <surname>Vila</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Relationship of phylogenetic background, biofilm production, and time to detection of growth in blood culture vials with clinical variables and prognosis associated with Escherichia coli bacteremia</article-title>
+          <source>Journal of Clinical Microbiology</source>
+          <year iso-8601-date="2006">2006</year>
+          <volume>44</volume>
+          <issue>4</issue>
+          <pub-id pub-id-type="doi">10.1128/JCM.44.4.1468-1474.2006</pub-id>
+          <fpage>1468</fpage>
+          <lpage>1474</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref-PuertaAlcalde2019">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Puerta-Alcalde</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Cardozo</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Suárez-Lledó</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Rodríguez-Núñez</surname>
+              <given-names>O.</given-names>
+            </name>
+            <name>
+              <surname>Morata</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Fehér</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Marco</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Del Río</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Martínez</surname>
+              <given-names>J. A.</given-names>
+            </name>
+            <name>
+              <surname>Mensa</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Rovira</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Esteve</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Soriano</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Garcia-Vidal</surname>
+              <given-names>C.</given-names>
+            </name>
+          </person-group>
+          <article-title>Current time-to-positivity of blood cultures in febrile neutropenia: a tool to be used in stewardship de-escalation strategies</article-title>
+          <source>Clinical Microbiology and Infection</source>
+          <year iso-8601-date="2019">2019</year>
+          <volume>25</volume>
+          <issue>4</issue>
+          <pub-id pub-id-type="doi">10.1016/j.cmi.2018.07.026</pub-id>
+          <fpage>447</fpage>
+          <lpage>453</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref-Sowden2008">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sowden</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Anstey</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Faddy</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Blood culture time to positivity as a predictor of mortality in community acquired Methicillin-susceptible Staphylococcus aureus bacteremia</article-title>
+          <source>Journal of Infection</source>
+          <year iso-8601-date="2008">2008</year>
+          <volume>56</volume>
+          <issue>4</issue>
+          <pub-id pub-id-type="doi">10.1016/j.jinf.2008.01.005</pub-id>
+          <fpage>295</fpage>
+          <lpage>296</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref-Stromdahl2025">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Strömdahl</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Hagman</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Hedman</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Westman</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Hedenstierna</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Ursing</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Time to Staphylococcus aureus Blood Culture Positivity as a Risk Marker of Infective Endocarditis: A Retrospective Cohort Study</article-title>
+          <source>Clinical Infectious Diseases</source>
+          <year iso-8601-date="2025">2025</year>
+          <volume>80</volume>
+          <issue>4</issue>
+          <pub-id pub-id-type="doi">10.1093/cid/ciae628</pub-id>
+          <fpage>727</fpage>
+          <lpage>734</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref-Tang2017">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tang</surname>
+              <given-names>Poh-Chang</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>Ching-Chi</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>Chia-Wen</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>Ming-Chi</given-names>
+            </name>
+            <name>
+              <surname>Ko</surname>
+              <given-names>Wen-Chien</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>Nan-Yao</given-names>
+            </name>
+          </person-group>
+          <article-title>Time-to-positivity of blood culture: An independent prognostic factor of monomicrobial Pseudomonas aeruginosa bacteremia</article-title>
+          <source>Journal of Microbiology, Immunology and Infection</source>
+          <year iso-8601-date="2017">2017</year>
+          <volume>50</volume>
+          <issue>4</issue>
+          <pub-id pub-id-type="doi">10.1016/j.jmii.2015.08.014</pub-id>
+          <fpage>486</fpage>
+          <lpage>493</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref-Willmann2013">
+        <element-citation publication-type="article-journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Willmann</surname>
+              <given-names>Matthias</given-names>
+            </name>
+            <name>
+              <surname>Kuebart</surname>
+              <given-names>Ines</given-names>
+            </name>
+            <name>
+              <surname>Vogel</surname>
+              <given-names>Wichard</given-names>
+            </name>
+            <name>
+              <surname>Flesch</surname>
+              <given-names>Ingo</given-names>
+            </name>
+            <name>
+              <surname>Markert</surname>
+              <given-names>Uwe</given-names>
+            </name>
+            <name>
+              <surname>Marschal</surname>
+              <given-names>Matthias</given-names>
+            </name>
+            <name>
+              <surname>Schröppel</surname>
+              <given-names>Klaus</given-names>
+            </name>
+            <name>
+              <surname>Autenrieth</surname>
+              <given-names>Ingo B.</given-names>
+            </name>
+            <name>
+              <surname>Hölzl</surname>
+              <given-names>Florian</given-names>
+            </name>
+            <name>
+              <surname>Peter</surname>
+              <given-names>Silke</given-names>
+            </name>
+          </person-group>
+          <article-title>Time to positivity as prognostic tool in patients with Pseudomonas aeruginosa bloodstream infection</article-title>
+          <source>Journal of Infection</source>
+          <year iso-8601-date="2013">2013</year>
+          <volume>67</volume>
+          <issue>5</issue>
+          <pub-id pub-id-type="doi">10.1016/j.jinf.2013.06.012</pub-id>
+          <fpage>416</fpage>
+          <lpage>423</lpage>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+  <sub-article article-type="notebook" id="nb-12-nb-article">
+    <front-stub>
+      <title-group>
+        <article-title>Blood culture time to positivity and mortality in
+bacteremia: a systematic review and Bayesian
+meta-analysis</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Pangallo</surname>
+            <given-names>Francesco</given-names>
+          </name>
+          <string-name>Francesco Pangallo</string-name>
+          <xref ref-type="aff" rid="aff-1-nb-article">a</xref>
+        </contrib>
+        <contrib contrib-type="author" corresp="yes">
+          <name>
+            <surname>Lewis</surname>
+            <given-names>Russell E.</given-names>
+          </name>
+          <string-name>Russell E. Lewis</string-name>
+          <xref ref-type="aff" rid="aff-2-nb-article">b</xref>
+          <xref ref-type="corresp" rid="cor-2-nb-article">*</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff-1-nb-article">
+        <institution content-type="dept">School of Medicine and
+Surgery</institution>
+        <institution-wrap>
+          <institution>University of Padova</institution>
+        </institution-wrap>
+        <city>Padova</city>
+        <country>Italy</country>
+      </aff>
+      <aff id="aff-2-nb-article">
+        <institution content-type="dept">Department of Molecular
+Medicine</institution>
+        <institution-wrap>
+          <institution>University of Padova</institution>
+        </institution-wrap>
+        <city>Padova</city>
+        <country>Italy</country>
+      </aff>
+      <author-notes>
+        <corresp id="cor-2-nb-article"/>
+      </author-notes>
+      <abstract>
+        <p><bold>Background.</bold> Blood culture time to positivity (TTP) has
+been proposed as a prognostic marker in bacteremia, but studies use
+different thresholds, pathogens, and outcomes. We synthesized the
+association between short versus long TTP and clinical outcomes.</p>
+        <p><bold>Methods.</bold> We searched PubMed, Embase, Scopus, the
+Cochrane Library, and Web of Science (updated May 2026) and extracted
+effect sizes from 100 studies meeting strict eligibility criteria. Log
+odds ratios for all-cause mortality (short versus long TTP) were pooled
+with a Bayesian random-effects model. We examined pathogen class, TTP
+cutpoint, publication bias, and a sensitivity analysis adding studies
+meeting more inclusive criteria. Persistent bacteremia and
+microbiological clearance were analyzed as secondary outcomes.</p>
+        <p><bold>Results.</bold> Fifty-eight studies (72 effect sizes) reported
+mortality. Short TTP was associated with higher mortality (pooled OR
+2.06; 95% credible interval [CrI], 1.67 to 2.55), with substantial
+heterogeneity (median I² 62%; 95% prediction interval, 0.5 to 8.6). The
+association was larger in Gram-negative (OR 2.66; 95% CrI, 1.72 to 4.06)
+than Gram-positive bacteremia (OR 1.48; 95% CrI, 0.85 to 2.58), although
+the credible intervals overlapped. Higher TTP cutpoints were associated
+with weaker associations overall, but this was not consistent across
+subgroups. The funnel plot was asymmetric, and trim-and-fill gave an
+adjusted OR of 1.51 (95% CI, 1.23 to 1.86). Short TTP was also
+associated with persistent bacteremia (OR 1.74; 95% CrI, 1.09 to 2.80);
+data on clearance were sparse.</p>
+        <p><bold>Conclusions.</bold> Short TTP is associated with higher
+mortality, particularly in Gram-negative bacteremia, but heterogeneity,
+cutpoint dependence, probable confounding, and small-study effects limit
+its use as a stand-alone prognostic tool. Standardized thresholds and
+adjusted, individual-patient analyses are needed.</p>
+      </abstract>
+    </front-stub>
+    <body>
+      <sec specific-use="notebook-content">
+        <code language="r script">suppressPackageStartupMessages({
+  library(tidyverse)
+  library(brms)
+  library(posterior)
+})</code>
+        <boxed-text>
+          <preformat>Warning: package 'ggplot2' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'tidyr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'readr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'purrr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'dplyr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'lubridate' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'Rcpp' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'posterior' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <code language="r script">source("R/01_prepare_data.R")</code>
+        <boxed-text>
+          <preformat>Warning: package 'readxl' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'metafor' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'Matrix' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'metadat' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <code language="r script">source("R/02_fit_models.R")
+
+xlsx &lt;- "data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"
+es_all  &lt;- prepare_effect_sizes(xlsx, include_inclusive_pool = FALSE, drop_contaminated_ttp = TRUE)</code>
+        <boxed-text>
+          <preformat>Pool: 100 studies (inclusive_pool=FALSE, drop_contaminated=TRUE)</preformat>
+        </boxed-text>
+        <code language="r script">es_mort &lt;- es_for_outcome(es_all, "mortality")
+fits    &lt;- fit_all_models(es_mort, cache_dir = "_brms_cache/primary")
+base_post &lt;- pooled_summary(fits$fit_base)
+
+n_studies      &lt;- attr(es_all, "n_studies")
+n_mort_studies &lt;- n_distinct(es_mort$study_id)
+n_es           &lt;- nrow(es_mort)
+fmt_or &lt;- function(p) sprintf("%.2f (95%% CrI, %.2f to %.2f)", p$median_OR, p$ci_OR[1], p$ci_OR[2])
+
+load_post &lt;- function(name, dir = "_brms_cache/primary") pooled_summary(readRDS(file.path(dir, paste0(name, ".rds"))))
+post_neg  &lt;- load_post("fit_gram_neg")
+post_pos  &lt;- load_post("fit_gram_pos")
+post_2x2  &lt;- load_post("fit_2x2")
+post_rep  &lt;- load_post("fit_reported")
+post_inc  &lt;- load_post("fit_base", "_brms_cache/sensitivity")
+post_pb   &lt;- load_post("fit_pb")
+post_clr  &lt;- load_post("fit_clr")
+
+cut_fit &lt;- summary(readRDS("_brms_cache/primary/fit_cutpoint.rds"))$fixed["cutpoint_c", ]
+n_cut_missing &lt;- sum(is.na(es_mort$ttp_cutpoint_hours))
+rob &lt;- table(attr(es_all, "tbl_study")$rob_overall)
+
+path_n &lt;- es_mort |&gt; group_by(pathogen_class) |&gt;
+  summarise(k = n(), studies = n_distinct(study_id)) |&gt; tidyr::complete(pathogen_class, fill = list(k = 0, studies = 0))
+pn &lt;- function(cls, col) path_n[[col]][path_n$pathogen_class %in% cls]
+n_unclass &lt;- sum(is.na(es_mort$pathogen_class))
+post_fun &lt;- load_post("fit_fungal")
+b_gp &lt;- as_draws_df(readRDS("_brms_cache/primary/fit_metareg.rds"))$b_pathogen_classgram_positive
+ratio_gp &lt;- c(median(exp(b_gp)), quantile(exp(b_gp), c(.025, .975)))
+p_gn_gt_gp &lt;- mean(b_gp &lt; 0)
+
+es_pb  &lt;- es_for_outcome(es_all, "persistent_bacteremia")
+es_clr &lt;- es_for_outcome(es_all, "microbiological_clearance")
+es_rel &lt;- es_for_outcome(es_all, "relapse")
+def_fit &lt;- summary(readRDS("_brms_cache/primary/fit_pb_defgroup.rds"))$fixed
+fmt_n &lt;- function(x) format(x, big.mark = ",")
+
+slope_draws &lt;- function(name, par = "b_cutpoint_c")
+  as_draws_df(readRDS(file.path("_brms_cache/primary", paste0(name, ".rds"))))[[par]]
+fmt_slope &lt;- function(x) sprintf("%.3f (95%% CrI, %.3f to %.3f)", median(x), quantile(x, .025), quantile(x, .975))
+sl_all &lt;- slope_draws("fit_cutpoint"); sl_le24 &lt;- slope_draws("fit_cutpoint_le24")
+sl_gn  &lt;- slope_draws("fit_gneg_cutpoint"); sl_gp &lt;- slope_draws("fit_gpos_cutpoint")
+n_cut &lt;- sum(!is.na(es_mort$ttp_cutpoint_hours))
+n_cut_studies &lt;- n_distinct(es_mort$study_id[!is.na(es_mort$ttp_cutpoint_hours)])
+cut_med &lt;- median(es_mort$ttp_cutpoint_hours, na.rm = TRUE)
+cut_rng &lt;- range(es_mort$ttp_cutpoint_hours, na.rm = TRUE)
+cut_med_gn &lt;- median(es_mort$ttp_cutpoint_hours[es_mort$pathogen_class %in% "gram_negative"], na.rm = TRUE)
+
+rma_mort &lt;- metafor::rma(yi = yi, sei = sei, data = es_mort, method = "REML")
+egger &lt;- metafor::regtest(rma_mort, model = "lm")
+rank_p &lt;- metafor::ranktest(rma_mort)$pval
+tf &lt;- metafor::trimfill(rma_mort)
+
+es_inc &lt;- es_for_outcome(prepare_effect_sizes(xlsx, include_inclusive_pool = TRUE, drop_contaminated_ttp = TRUE), "mortality")</code>
+        <boxed-text>
+          <preformat>Pool: 140 studies (inclusive_pool=TRUE, drop_contaminated=TRUE)</preformat>
+        </boxed-text>
+        <code language="r script">n_inc_studies &lt;- n_distinct(es_inc$study_id); n_inc_es &lt;- nrow(es_inc)
+cf &lt;- function(name, par) { m &lt;- summary(readRDS(file.path("_brms_cache/primary", paste0(name, ".rds"))))$fixed[par, ]
+  sprintf("%.2f (95%% CrI, %.2f to %.2f)", m$Estimate, m[["l-95% CI"]], m[["u-95% CI"]]) }</code>
+      </sec>
+      <sec id="introduction-nb-article">
+        <title>Introduction</title>
+        <p>Bloodstream infection is a major cause of morbidity and mortality,
+  and early risk stratification remains a practical clinical problem.
+  Automated continuous-monitoring blood culture systems record the time
+  to positivity (TTP), the interval from the start of incubation to the
+  instrument’s detection of microbial growth. Because growth kinetics
+  depend on the starting inoculum and on organism-specific factors,
+  shorter TTP has been proposed as a readily available,
+  laboratory-generated marker of high bacterial burden and severe
+  infection.</p>
+        <p>Individual cohorts have examined whether TTP carries prognostic
+  information in specific settings, including <italic>Staphylococcus
+  aureus</italic> bacteremia, where TTP has been explored as a marker of
+  endocarditis and poor outcome
+  (<xref alt="1" rid="ref-Sowden2008-nb-article" ref-type="bibr">1</xref>–<xref alt="3" rid="ref-Stromdahl2025-nb-article" ref-type="bibr">3</xref>);
+  Gram-negative bacteremia, including <italic>Pseudomonas
+  aeruginosa</italic>
+  (<xref alt="4" rid="ref-Willmann2013-nb-article" ref-type="bibr">4</xref>,
+  <xref alt="5" rid="ref-Tang2017-nb-article" ref-type="bibr">5</xref>) and
+  <italic>Escherichia coli</italic>
+  (<xref alt="6" rid="ref-Martinez2006-nb-article" ref-type="bibr">6</xref>);
+  candidemia
+  (<xref alt="7" rid="ref-Keighley2023-nb-article" ref-type="bibr">7</xref>); and
+  bacteremia in neutropenic patients, where TTP has been suggested as a
+  stewardship tool
+  (<xref alt="8" rid="ref-PuertaAlcalde2019-nb-article" ref-type="bibr">8</xref>).
+  These studies differ in organism mix, patient population, outcome
+  definition, and, importantly, the TTP threshold used to define “short”
+  versus “long” TTP. Whether the association is consistent across
+  pathogens, whether it varies with the chosen cutpoint, and how large
+  it is once adjusted estimates are considered remain unclear.</p>
+        <p>We therefore updated a systematic review of the association between
+  blood culture TTP and clinical outcomes in bacteremia. Our primary
+  objective was to estimate the association between short versus long
+  TTP and all-cause mortality using a Bayesian random-effects
+  meta-analysis. Secondary objectives were to examine heterogeneity by
+  pathogen class and by TTP cutpoint, to assess publication bias and the
+  robustness of the findings to study inclusion criteria, and to
+  summarize associations with persistent bacteremia and other markers of
+  clinical failure.</p>
+      </sec>
+      <sec id="materials-and-methods-nb-article">
+        <title>Materials and Methods</title>
+        <sec id="protocol-and-registration-nb-article">
+          <title>Protocol and registration</title>
+          <p>The review is reported according to the PRISMA 2020 statement and
+    the PRISMA-S extension for searches. A protocol was prepared for
+    registration in PROSPERO (registration number: [PROSPERO
+    registration number to be inserted]). The review builds on a
+    master’s thesis at the University of Padova (F. Pangallo, 2025/2026;
+    supervisor R. E. Lewis) that produced the original 57-study
+    extraction database. Because that work was substantially complete
+    before the protocol was registered, registration is retrospective
+    for the baseline studies, and the 2026 update (additional search,
+    screening, extraction, and the inclusive-criterion re-screen) was
+    added afterwards. The analysis plan was developed during the thesis;
+    deviations from the protocol are listed in the supplementary
+    notebook
+    (<ext-link ext-link-type="uri" xlink:href="notebooks/methods.qmd">Methods
+    and PRISMA</ext-link>).</p>
+        </sec>
+        <sec id="search-strategy-and-study-selection-nb-article">
+          <title>Search strategy and study selection</title>
+          <p>Five databases were searched (PubMed, Embase, Scopus, Cochrane
+    Library, and Web of Science), with an original search and a May 2026
+    update [insert run dates and per-database record counts]. The
+    searches yielded 4,605 records, with 3,196 unique records after
+    de-duplication. CINAHL, trial registers, and preprint servers were
+    not searched, and no reference-list searching or citation tracking
+    was performed; these are deviations from the registered protocol.
+    Candidate records were triaged for relevance [confirm the role of
+    the Elicit semantic search tool and PubMed enrichment in this step,
+    and reconcile Alvarez 2012 and Peri 2026, which project notes record
+    as handsearch or snowball identifications], and 355 reports were
+    sought for full-text review. Of these, 53 were not retrieved after
+    pre-screening as ineligible (mainly conference abstracts,
+    non-English papers, and methods-only papers), and 302 full-text
+    reports were assessed (5 additional PDFs duplicated baseline
+    studies). Under the strict criterion 43 reports were included, which
+    added to the 57 baseline studies gave 100 studies; 259 were excluded
+    (104 ineligible design, 65 no TTP measured, 54 no quantitative
+    TTP-outcome association, 29 no clinical outcome, 5 duplicates, 2 not
+    bloodstream infection). A second, inclusive re-screen of the 54
+    reports excluded only for lacking a quantitative association
+    identified 40 further studies (sensitivity pool, 140 studies in
+    total). Eligibility criteria and the full search strings are in the
+    supplementary notebook
+    (<ext-link ext-link-type="uri" xlink:href="notebooks/methods.qmd">Methods
+    and PRISMA</ext-link>) and
+    <monospace>search_strategies.md</monospace>.
+    <xref alt="Figure 1" rid="fig-prisma-nb-article">Figure 1</xref> shows study
+    flow.</p>
+          <fig id="fig-prisma-nb-article">
+            <caption>
+              <p>Figure 1: PRISMA 2020 flow diagram for the original
+      search and the May 2026 update.</p>
+            </caption>
+            <graphic mimetype="image" mime-subtype="png" xlink:href="data/PRISMA_v4_update.png"/>
+          </fig>
+        </sec>
+        <sec id="data-extraction-and-risk-of-bias-nb-article">
+          <title>Data extraction and risk of bias</title>
+          <p>Data were extracted into a structured relational workbook with
+    linked tables for study characteristics, population, TTP reporting
+    (continuous, dichotomized, or categorical; units; cutpoints), and
+    outcomes (events and totals by TTP group, reported effect estimates,
+    adjustment status, and outcome definitions). TTP was recorded in
+    hours. Where a study reported both 2×2 data and an effect estimate,
+    the 2×2 data were preferred. The baseline 57 studies were extracted
+    by the thesis author [confirm whether extraction was independently
+    verified]. For the 2026 update, full-text screening and data
+    extraction were performed by a large language model agent working
+    from the full-text PDFs and the written eligibility criteria and
+    extraction codebook. Each of the 43 strict-pool extractions was then
+    independently verified field by field against the source PDF by a
+    separate agent that had not performed the original extraction; this
+    led to 7 corrections before analysis. Studies using TTP only as part
+    of a catheter-related bloodstream infection case definition were
+    excluded from effect-size pooling. The human contribution to
+    screening and extraction decisions (spot-checking, adjudication, or
+    second human review) is described in the AI-use statement below
+    [confirm], and we did not perform dual independent human screening
+    or report inter-rater agreement.</p>
+          <p>Risk of bias was assessed for every included study with the
+    Quality in Prognosis Studies (QUIPS) tool across six domains
+    (participation, attrition, prognostic factor measurement, outcome
+    measurement, confounding, and statistical analysis and reporting),
+    each rated as low, moderate, or high, with an overall rating per
+    study
+    (<ext-link ext-link-type="uri" xlink:href="notebooks/rob.qmd">notebook</ext-link>).
+    For the update these ratings were generated by the extraction agent
+    and were not independently re-rated by a second human.</p>
+        </sec>
+        <sec id="statistical-analysis-nb-article">
+          <title>Statistical analysis</title>
+          <p>Log odds ratios for mortality (short versus long TTP) were
+    computed with <monospace>metafor::escalc()</monospace> from 2×2
+    tables where available, otherwise back-calculated from reported OR,
+    HR, or RR with 95% confidence intervals. Effect sizes were pooled
+    with a Bayesian random-effects model (<monospace>brms</monospace>;
+    study-level random intercepts) with weakly informative priors
+    (<inline-formula><alternatives><tex-math><![CDATA[\mu \sim \mathcal{N}(0,1)]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi>μ</mml:mi><mml:mo>∼</mml:mo><mml:mi>𝒩</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>,
+    <inline-formula><alternatives><tex-math><![CDATA[\tau \sim \text{Half-Cauchy}(0, 0.5)]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi>τ</mml:mi><mml:mo>∼</mml:mo><mml:mtext mathvariant="normal">Half-Cauchy</mml:mtext><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>0.5</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>).
+    Four chains of 4,000 iterations (1,000 warm-up) were run with
+    <monospace>adapt_delta = 0.99</monospace>. Convergence was assessed
+    with <inline-formula><alternatives><tex-math><![CDATA[\hat{R}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mover><mml:mi>R</mml:mi><mml:mo accent="true">̂</mml:mo></mml:mover></mml:math></alternatives></inline-formula>
+    and effective sample sizes. Secondary analyses examined pathogen
+    class, TTP cutpoint (meta-regression), publication bias, and a
+    sensitivity pool that added studies meeting a more inclusive
+    criterion. All code and data are available in the project
+    repository.</p>
+        </sec>
+      </sec>
+      <sec id="results-nb-article">
+        <title>Results</title>
+        <sec id="study-selection-and-characteristics-nb-article">
+          <title>Study selection and characteristics</title>
+          <p>The primary (strict) pool comprised 100 studies, of which 58
+    reported mortality and contributed 72 mortality effect sizes.
+    Overall risk of bias (QUIPS) was low in 24, moderate in 62, high in
+    13, and critical in 1 studies
+    (<ext-link ext-link-type="uri" xlink:href="notebooks/rob.qmd">notebook</ext-link>).</p>
+        </sec>
+        <sec id="primary-analysis-nb-article">
+          <title>Primary analysis</title>
+          <p>Short TTP was associated with higher mortality (pooled OR 2.06
+    (95% CrI, 1.67 to 2.55);
+    <xref alt="Figure 2" rid="fig-forest-nb-article">Figure 2</xref>,
+    <xref alt="Table 1" rid="tbl-overall-nb-article">Table 1</xref>). The posterior
+    probability that short TTP increases mortality was 100.0%, and
+    heterogeneity was substantial (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+    = 62%).</p>
+          <sec specific-use="notebook-content">
+            <code language="python">tibble(
+  Parameter = c("Median OR (short vs long TTP)",
+                "95% credible interval",
+                "95% prediction interval (new study)",
+                "P(short TTP harmful)",
+                "Between-study SD (τ)",
+                "Heterogeneity (I²)"),
+  Value = c(
+    sprintf("%.2f", base_post$median_OR),
+    sprintf("[%.2f, %.2f]", base_post$ci_OR[1], base_post$ci_OR[2]),
+    sprintf("[%.2f, %.2f]", base_post$pi_OR[1], base_post$pi_OR[2]),
+    sprintf("%.1f%%", base_post$p_harm * 100),
+    sprintf("%.2f", base_post$median_tau),
+    sprintf("%.0f%%", base_post$median_i2)
+  )
+) |&gt; gt() |&gt;
+  tab_style(style = cell_text(weight = "bold"),
+            locations = cells_body(rows = 1)) |&gt;
+  tab_style(style = cell_text(style = "italic", color = "gray40"),
+            locations = cells_body(rows = 3))</code>
+            <fig id="tbl-overall-nb-article">
+              <caption>
+                <p>Table 1: Pooled effect of short vs long TTP on
+      mortality (OR &gt; 1 = short TTP harmful). Primary pool only
+      (strict criterion).</p>
+              </caption>
+              <boxed-text>
+                <table-wrap>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th align="left">Parameter</th>
+                        <th align="left">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="left">Median OR (short vs long TTP)</td>
+                        <td align="left">2.06</td>
+                      </tr>
+                      <tr>
+                        <td align="left">95% credible interval</td>
+                        <td align="left">[1.67, 2.55]</td>
+                      </tr>
+                      <tr>
+                        <td align="left">95% prediction interval (new
+                study)</td>
+                        <td align="left">[0.49, 8.41]</td>
+                      </tr>
+                      <tr>
+                        <td align="left">P(short TTP harmful)</td>
+                        <td align="left">100.0%</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Between-study SD (τ)</td>
+                        <td align="left">0.69</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Heterogeneity (I²)</td>
+                        <td align="left">62%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </boxed-text>
+            </fig>
+          </sec>
+          <sec id="cell-fig-forest-nb-article" specific-use="notebook-content">
+            <code language="python">fig_h &lt;- max(6, nrow(es_mort) * 0.55 + 2)
+knitr::opts_current$set(fig.height = fig_h)</code>
+            <boxed-text>
+              <preformat>Warning in set2(resolve(...)): The object is read-only and cannot be modified.
+If you have to modify it for a legitimate reason, call the method $lock(FALSE)
+on the object before $set(). Using $lock(FALSE) to modify the object will be
+enforced in future versions of knitr and this warning will become an error.</preformat>
+            </boxed-text>
+            <boxed-text>
+              <fig id="fig-forest-nb-article">
+                <caption>
+                  <p>Figure 2: Forest plot of OR (short vs long TTP) on
+        mortality — primary pool. Each row is a single effect size;
+        multi-arm studies appear multiple times. Pooled estimate from
+        the Bayesian model in red.</p>
+                </caption>
+                <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-forest-output-2.png"/>
+              </fig>
+            </boxed-text>
+          </sec>
+        </sec>
+        <sec id="pathogen-class-nb-article">
+          <title>Pathogen class</title>
+          <sec id="cell-fig-pathogen-posteriors-nb-article" specific-use="notebook-content">
+            <code language="python">if (!is.null(fits$fit_gram_pos) &amp;&amp; !is.null(fits$fit_gram_neg)) {
+  gpos_post &lt;- pooled_summary(fits$fit_gram_pos)
+  gneg_post &lt;- pooled_summary(fits$fit_gram_neg)
+
+  density_df &lt;- bind_rows(
+    tibble(OR = base_post$OR_draws, group = "Overall"),
+    tibble(OR = gneg_post$OR_draws, group = "Gram-negative"),
+    tibble(OR = gpos_post$OR_draws, group = "Gram-positive")
+  ) |&gt;
+    mutate(group = factor(group,
+                          levels = c("Gram-positive", "Overall", "Gram-negative")))
+
+  ggplot(density_df, aes(x = OR, y = group, fill = group)) +
+    stat_halfeye(alpha = 0.75, point_color = "black", point_size = 3,
+                 interval_color = "black", interval_size = 2,
+                 .width = 0.95, normalize = "xy") +
+    geom_vline(xintercept = 1, linetype = "dashed",
+               color = "gray40", linewidth = 0.8) +
+    scale_fill_manual(
+      values = c("Gram-positive" = "#2196C4",
+                 "Overall"       = "#607D8B",
+                 "Gram-negative" = "#C75450"),
+      guide = "none") +
+    scale_x_continuous(limits = c(0.5, 6), breaks = 1:6,
+                       name = "Pooled odds ratio (short vs long time-to-positivity)") +
+    labs(y = NULL,
+         subtitle = "Mixed follow-up (predominantly 30-day mortality); short vs long time-to-positivity.\nPoint, posterior median; bar, 95% credible interval. Dashed line, OR = 1 (no effect).") +
+    theme_minimal(base_size = 12) +
+    theme(panel.grid.major.y = element_blank(),
+          panel.grid.minor   = element_blank(),
+          axis.text.y        = element_text(size = 12))
+}</code>
+            <boxed-text>
+              <preformat>Warning: Removed 10 rows containing missing values or values outside the scale range
+(`stat_slabinterval()`).</preformat>
+            </boxed-text>
+            <boxed-text>
+              <fig id="fig-pathogen-posteriors-nb-article">
+                <caption>
+                  <p>Figure 3: <bold>Figure 1.</bold> Posterior
+        distributions of the pooled odds ratio (OR) for all-cause
+        mortality comparing short versus long time-to-positivity (TTP),
+        stratified by pathogen class. Each density represents the full
+        posterior from a Bayesian random-effects meta-analysis (72
+        mortality effect sizes; 100 studies). The filled point marks the
+        posterior median; the horizontal bar spans the 95% credible
+        interval (CrI). The vertical dashed line indicates OR = 1 (no
+        effect). ‘Short’ and ‘long’ TTP were defined by individual
+        studies using study-specific thresholds (median cutpoint 12 h;
+        range 2–72 h). Outcome was predominantly 30-day mortality.
+        Overall: OR = 2.06 (95% CrI 1.67–2.55); Gram-negative: OR = 2.66
+        (95% CrI 1.72–4.06); Gram-positive: OR = 1.48 (95% CrI
+        0.85–2.58). OR &gt; 1 indicates higher mortality with shorter
+        TTP.</p>
+                </caption>
+                <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-pathogen-posteriors-output-2.png"/>
+              </fig>
+            </boxed-text>
+          </sec>
+          <p>Pathogen class was available for 52 of 72 mortality effect sizes
+    (Gram-negative, 26 effect sizes from 17 studies; Gram-positive, 13
+    from 11; fungal, 6 from 6; mixed or polymicrobial, 7 from 5). The
+    remaining 20 effect sizes had no pathogen classification and were
+    excluded from the stratified models. Short TTP was associated with
+    higher mortality in Gram-negative bacteremia (OR 2.66 (95% CrI, 1.72
+    to 4.06)) and, with a smaller point estimate and a credible interval
+    that included 1, in Gram-positive bacteremia (OR 1.48 (95% CrI, 0.85
+    to 2.58);
+    <xref alt="Figure 3" rid="fig-pathogen-posteriors-nb-article">Figure 3</xref>,
+    <xref alt="Table 2" rid="tbl-subgroup-nb-article">Table 2</xref>). In a
+    meta-regression with both classes, the odds ratio in Gram-positive
+    studies was 0.61 times that in Gram-negative studies (95% CrI 0.36
+    to 1.02), with a posterior probability of 97% that the association
+    is weaker in Gram-positive studies. This interval is wide and just
+    includes 1, so the evidence for a difference between classes is
+    suggestive rather than conclusive. For fungal bacteremia the pooled
+    estimate was imprecise (OR 1.31 (95% CrI, 0.92 to 2.12), 6 studies).
+    Heterogeneity remained considerable within both Gram-negative
+    (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+    61%) and Gram-positive (74%) strata.</p>
+          <sec specific-use="notebook-content">
+            <code language="python">if (!is.null(fits$fit_gram_pos) &amp;&amp; !is.null(fits$fit_gram_neg)) {
+  gpos_post &lt;- pooled_summary(fits$fit_gram_pos)
+  gneg_post &lt;- pooled_summary(fits$fit_gram_neg)
+  tibble(
+    Subgroup = c("Gram-positive", "Gram-negative"),
+    `N effect sizes` = c(nrow(filter(es_mort, pathogen_class == "gram_positive")),
+                         nrow(filter(es_mort, pathogen_class == "gram_negative"))),
+    `Median OR` = sprintf("%.2f", c(gpos_post$median_OR, gneg_post$median_OR)),
+    `95% CrI`   = sprintf("[%.2f, %.2f]",
+                          c(gpos_post$ci_OR[1], gneg_post$ci_OR[1]),
+                          c(gpos_post$ci_OR[2], gneg_post$ci_OR[2])),
+    `P(short TTP harmful)` = sprintf("%.1f%%",
+                                     c(gpos_post$p_harm, gneg_post$p_harm) * 100)
+  ) |&gt; gt()
+}</code>
+            <fig id="tbl-subgroup-nb-article">
+              <caption>
+                <p>Table 2: Pooled OR by pathogen subgroup.</p>
+              </caption>
+              <boxed-text>
+                <table-wrap>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th align="left">Subgroup</th>
+                        <th align="left">N effect sizes</th>
+                        <th align="left">Median OR</th>
+                        <th align="left">95% CrI</th>
+                        <th align="left">P(short TTP harmful)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="left">Gram-positive</td>
+                        <td align="left">13</td>
+                        <td align="left">1.48</td>
+                        <td align="left">[0.85, 2.58]</td>
+                        <td align="left">92.7%</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Gram-negative</td>
+                        <td align="left">26</td>
+                        <td align="left">2.66</td>
+                        <td align="left">[1.72, 4.06]</td>
+                        <td align="left">100.0%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </boxed-text>
+            </fig>
+          </sec>
+        </sec>
+        <sec id="ttp-cutpoint-nb-article">
+          <title>TTP cutpoint</title>
+          <p>A TTP cutpoint was reported for 42 of 72 mortality effect sizes
+    (29 studies); the remainder had no cutpoint recorded in the
+    extraction database. Cutpoints ranged from 2 to 72 h (median 12 h).
+    Across all effect sizes with a cutpoint, the log odds ratio changed
+    by -0.035 (95% CrI, -0.056 to -0.015) per additional hour, so higher
+    thresholds were associated with weaker associations
+    (<xref alt="Figure 4" rid="fig-cutpoint-nb-article">Figure 4</xref>). When the
+    analysis was restricted to cutpoints of 24 h or less, the slope was
+    attenuated and its interval included zero (-0.024 (95% CrI, -0.075
+    to 0.028)), so the gradient depends on the few studies using long
+    thresholds.</p>
+          <p>Within pathogen class the pattern differed. Among Gram-negative
+    effect sizes (median cutpoint 10 h) the slope was positive (0.062
+    (95% CrI, -0.005 to 0.130);
+    <xref alt="Table 3" rid="tbl-gneg-cutpoint-nb-article">Table 3</xref>), whereas
+    among Gram-positive effect sizes it was negative with an interval
+    that included zero (-0.029 (95% CrI, -0.058 to 0.004);
+    <xref alt="Table 4" rid="tbl-gpos-cutpoint-nb-article">Table 4</xref>). The
+    overall negative gradient therefore does not hold within
+    Gram-negative bacteremia, and these class-specific analyses rest on
+    small numbers of effect sizes.</p>
+          <sec id="cell-fig-cutpoint-nb-article" specific-use="notebook-content">
+            <code language="python">if (!is.null(fits$fit_cutpoint)) {
+  draws &lt;- as_draws_df(fits$fit_cutpoint)
+  med_cp &lt;- median(es_mort$ttp_cutpoint_hours[es_mort$es_source == "two_by_two"], na.rm = TRUE)
+  range_cp &lt;- seq(6, 96, by = 1)
+  pred_df &lt;- map_dfr(range_cp, function(cp) {
+    centered &lt;- cp - med_cp
+    logOR &lt;- draws$b_Intercept + draws$b_cutpoint_c * centered
+    tibble(cutpoint = cp,
+           median_OR = median(exp(logOR)),
+           lo = quantile(exp(logOR), 0.025),
+           hi = quantile(exp(logOR), 0.975))
+  })
+
+  obs_df &lt;- es_mort |&gt;
+    filter(es_source == "two_by_two", !is.na(ttp_cutpoint_hours)) |&gt;
+    mutate(or = exp(yi), w = 1/sei)
+
+  slope_p_neg &lt;- mean(draws$b_cutpoint_c &lt; 0) * 100
+  slope_med &lt;- median(draws$b_cutpoint_c)
+
+  ggplot(pred_df, aes(x = cutpoint, y = median_OR)) +
+    geom_ribbon(aes(ymin = lo, ymax = hi), fill = "steelblue", alpha = 0.2) +
+    geom_line(color = "darkblue", linewidth = 1.4) +
+    geom_hline(yintercept = 1, linetype = "dashed", color = "red") +
+    geom_point(data = obs_df,
+               aes(x = ttp_cutpoint_hours, y = or, size = w),
+               alpha = 0.55, color = "darkred", inherit.aes = FALSE) +
+    scale_size_continuous(range = c(2, 7), guide = "none") +
+    scale_y_continuous(limits = c(0, max(5, max(pred_df$hi, na.rm = TRUE))),
+                       breaks = seq(0, 10, 0.5)) +
+    labs(title = sprintf("TTP cutpoint meta-regression (slope = %.3f log-OR/h, P&lt;0 = %.1f%%)",
+                         slope_med, slope_p_neg),
+         x = "TTP cutpoint (hours)",
+         y = "Predicted OR (short vs long TTP)") +
+    theme_minimal()
+}</code>
+            <boxed-text>
+              <preformat>Warning: Removed 8 rows containing missing values or values outside the scale range
+(`geom_point()`).</preformat>
+            </boxed-text>
+            <boxed-text>
+              <fig id="fig-cutpoint-nb-article">
+                <caption>
+                  <p>Figure 4: TTP cutpoint meta-regression. The blue
+        line is the Bayesian posterior median predicted OR by cutpoint;
+        ribbon is the 95% CrI. Red points are observed 2×2-derived
+        effect sizes (size ∝ precision).</p>
+                </caption>
+                <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-cutpoint-output-2.png"/>
+              </fig>
+            </boxed-text>
+          </sec>
+          <sec specific-use="notebook-content">
+            <code language="python">d_gneg &lt;- as_draws_df(fit_gneg_cut)
+bind_rows(
+  tibble(
+    Parameter   = "Slope (log-OR per hour above median)",
+    Estimate    = sprintf("%.3f", median(d_gneg$b_cutpoint_c)),
+    `95% CrI`   = sprintf("[%.3f, %.3f]",
+                           quantile(d_gneg$b_cutpoint_c, 0.025),
+                           quantile(d_gneg$b_cutpoint_c, 0.975)),
+    `P(direction)` = sprintf("%.1f%%", mean(d_gneg$b_cutpoint_c &gt; 0) * 100)
+  ),
+  map_dfr(c(8, 10, 13, 18), function(cp) {
+    logOR &lt;- d_gneg$b_Intercept + d_gneg$b_cutpoint_c * (cp - med_cp_gneg)
+    tibble(
+      Parameter      = sprintf("Predicted OR at cutpoint %d h", cp),
+      Estimate       = sprintf("%.2f", median(exp(logOR))),
+      `95% CrI`      = sprintf("[%.2f, %.2f]",
+                                quantile(exp(logOR), 0.025),
+                                quantile(exp(logOR), 0.975)),
+      `P(direction)` = sprintf("%.1f%%", mean(exp(logOR) &gt; 1) * 100)
+    )
+  })
+) |&gt; gt()</code>
+            <fig id="tbl-gneg-cutpoint-nb-article">
+              <caption>
+                <p>Table 3: Gram-negative cutpoint meta-regression slope
+      and predicted OR at key thresholds.</p>
+              </caption>
+              <boxed-text>
+                <table-wrap>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th align="left">Parameter</th>
+                        <th align="left">Estimate</th>
+                        <th align="left">95% CrI</th>
+                        <th align="left">P(direction)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="left">Slope (log-OR per hour above
+                median)</td>
+                        <td align="left">0.062</td>
+                        <td align="left">[-0.005, 0.130]</td>
+                        <td align="left">96.8%</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Predicted OR at cutpoint 8 h</td>
+                        <td align="left">3.03</td>
+                        <td align="left">[2.02, 4.52]</td>
+                        <td align="left">100.0%</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Predicted OR at cutpoint 10 h</td>
+                        <td align="left">3.43</td>
+                        <td align="left">[2.40, 4.87]</td>
+                        <td align="left">100.0%</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Predicted OR at cutpoint 13 h</td>
+                        <td align="left">4.14</td>
+                        <td align="left">[2.84, 5.93]</td>
+                        <td align="left">100.0%</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Predicted OR at cutpoint 18 h</td>
+                        <td align="left">5.65</td>
+                        <td align="left">[3.17, 9.95]</td>
+                        <td align="left">100.0%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </boxed-text>
+            </fig>
+          </sec>
+          <sec specific-use="notebook-content">
+            <code language="python">tibble(
+  Model       = c("Full (8–72 h)", "Sensitivity (excl. Minejima2019)"),
+  `N studies` = c(n_distinct(es_gpos_cut$study_id),
+                  n_distinct(es_gpos_cut_sens$study_id)),
+  `Slope (log-OR/h)` = c(
+    sprintf("%.3f [%.3f, %.3f]",
+            median(draws_gpos_cut$b_cutpoint_c),
+            quantile(draws_gpos_cut$b_cutpoint_c, 0.025),
+            quantile(draws_gpos_cut$b_cutpoint_c, 0.975)),
+    sprintf("%.3f [%.3f, %.3f]",
+            median(d_sens_gpos$b_cutpoint_c),
+            quantile(d_sens_gpos$b_cutpoint_c, 0.025),
+            quantile(d_sens_gpos$b_cutpoint_c, 0.975))
+  ),
+  `P(slope &lt; 0)` = c(
+    sprintf("%.1f%%", mean(draws_gpos_cut$b_cutpoint_c  &lt; 0) * 100),
+    sprintf("%.1f%%", mean(d_sens_gpos$b_cutpoint_c &lt; 0) * 100)
+  )
+) |&gt; gt()</code>
+            <fig id="tbl-gpos-cutpoint-nb-article">
+              <caption>
+                <p>Table 4: Gram-positive cutpoint meta-regression: slope
+      comparison between full model and sensitivity analysis excluding
+      Minejima2019 (72 h).</p>
+              </caption>
+              <boxed-text>
+                <table-wrap>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th align="left">Model</th>
+                        <th align="left">N studies</th>
+                        <th align="left">Slope (log-OR/h)</th>
+                        <th align="left">P(slope &lt; 0)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="left">Full (8–72 h)</td>
+                        <td align="left">7</td>
+                        <td align="left">-0.029 [-0.058, 0.004]</td>
+                        <td align="left">96.5%</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Sensitivity (excl. Minejima2019)</td>
+                        <td align="left">6</td>
+                        <td align="left">-0.081 [-0.323, 0.214]</td>
+                        <td align="left">75.4%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </boxed-text>
+            </fig>
+          </sec>
+        </sec>
+        <sec id="publication-bias-nb-article">
+          <title>Publication bias</title>
+          <p>The funnel plot of mortality effect sizes was asymmetric
+    (<xref alt="Figure 5" rid="fig-funnel-nb-article">Figure 5</xref>). Egger’s
+    regression test indicated small-study effects (t = 6.19, df = 70, p
+    &lt; 0.0001; <xref alt="Table 5" rid="tbl-egger-nb-article">Table 5</xref>),
+    and the regression-based estimate for a study with zero standard
+    error was close to no association (OR 0.99; 95% CI 0.97 to 1.01).
+    Begg’s rank correlation test did not detect asymmetry (p = 0.47).
+    The trim-and-fill method imputed 19 missing studies and gave an
+    adjusted pooled OR of 1.51 (95% CI, 1.23 to 1.86), lower than the
+    unadjusted frequentist estimate (OR 2.05). These tests treat all
+    effect sizes as independent, assume that asymmetry is due to
+    selective reporting, and have limited reliability when heterogeneity
+    is high, so they cannot distinguish publication bias from genuine
+    heterogeneity, such as larger associations in smaller studies that
+    used more extreme or optimized cutpoints. The evidence nevertheless
+    suggests that the pooled association may be overestimated.</p>
+          <sec id="cell-fig-funnel-nb-article" specific-use="notebook-content">
+            <code language="python">max_se  &lt;- max(es_mort$sei, na.rm = TRUE) * 1.08
+se_seq  &lt;- seq(0, max_se, length.out = 400)
+x_lo    &lt;- mu_pool - 3.1 * max_se
+x_hi    &lt;- mu_pool + 3.1 * max_se
+
+contours &lt;- tibble(se = se_seq) |&gt;
+  mutate(
+    lo01 = mu_pool - 2.576 * se,  hi01 = mu_pool + 2.576 * se,
+    lo05 = mu_pool - 1.96  * se,  hi05 = mu_pool + 1.96  * se,
+    lo10 = mu_pool - 1.645 * se,  hi10 = mu_pool + 1.645 * se
+  )
+
+ggplot() +
+  # Shaded significance regions (draw outermost first, then overwrite inward)
+  geom_ribbon(data = contours,
+              aes(y = se, xmin = x_lo,  xmax = lo01), fill = "gray55") +
+  geom_ribbon(data = contours,
+              aes(y = se, xmin = hi01,  xmax = x_hi), fill = "gray55") +
+  geom_ribbon(data = contours,
+              aes(y = se, xmin = lo01,  xmax = lo05), fill = "gray75") +
+  geom_ribbon(data = contours,
+              aes(y = se, xmin = hi05,  xmax = hi01), fill = "gray75") +
+  geom_ribbon(data = contours,
+              aes(y = se, xmin = lo05,  xmax = lo10), fill = "gray90") +
+  geom_ribbon(data = contours,
+              aes(y = se, xmin = hi10,  xmax = hi05), fill = "gray90") +
+  geom_ribbon(data = contours,
+              aes(y = se, xmin = lo10,  xmax = hi10), fill = "white") +
+  # Study points
+  geom_point(data = es_mort, aes(x = yi, y = sei),
+             shape = 21, fill = "steelblue", color = "white",
+             size = 2.2, alpha = 0.75) +
+  # Pooled estimate (REML)
+  geom_vline(xintercept = mu_pool, linetype = "dashed", color = "darkred", linewidth = 0.8) +
+  # Null line
+  geom_vline(xintercept = 0, linetype = "dotted", color = "gray30") +
+  # Contour labels
+  annotate("text", x = x_hi - 0.05, y = max_se * 0.12,
+           label = "p &lt; 0.01", hjust = 1, size = 3, color = "gray30") +
+  annotate("text", x = x_hi - 0.05, y = max_se * 0.38,
+           label = "p &lt; 0.05", hjust = 1, size = 3, color = "gray40") +
+  annotate("text", x = x_hi - 0.05, y = max_se * 0.62,
+           label = "p &lt; 0.10", hjust = 1, size = 3, color = "gray50") +
+  scale_y_reverse(limits = c(max_se, 0),
+                  name = "Standard error (SE)") +
+  scale_x_continuous(limits = c(x_lo, x_hi),
+                     name = "Log OR (short vs long TTP)") +
+  theme_minimal(base_size = 11) +
+  theme(panel.grid.minor = element_blank())</code>
+            <boxed-text>
+              <fig id="fig-funnel-nb-article">
+                <caption>
+                  <p>Figure 5: Contour-enhanced funnel plot (primary
+        pool, mortality). Studies in white zones are not statistically
+        significant at the labelled threshold; shaded outer zones
+        indicate increasing levels of significance. Asymmetry toward the
+        right (short TTP harmful) would suggest positive-result
+        publication bias.</p>
+                </caption>
+                <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-funnel-output-1.png"/>
+              </fig>
+            </boxed-text>
+          </sec>
+          <sec specific-use="notebook-content">
+            <code language="python">tibble(
+  Statistic = c("Asymmetry test t-statistic", "df", "p-value",
+                "Limit estimate as SE -&gt; 0 (log OR)", "95% CI (log OR)",
+                "Limit estimate as SE -&gt; 0 (OR)"),
+  Value = c(
+    sprintf("%.2f", egger$zval),
+    sprintf("%.0f", egger$ddf),
+    format.pval(egger$pval, digits = 2, eps = 1e-4),
+    sprintf("%.3f", egger$est),
+    sprintf("[%.3f, %.3f]", egger$ci.lb, egger$ci.ub),
+    sprintf("%.2f", exp(egger$est))
+  )
+) |&gt; gt()</code>
+            <fig id="tbl-egger-nb-article">
+              <caption>
+                <p>Table 5: Egger’s regression test for funnel-plot
+      asymmetry (primary pool, mortality; metafor::regtest, weighted
+      regression on the standard error). The t-statistic tests
+      asymmetry; the limit estimate is the predicted effect for a
+      hypothetical study with zero standard error.</p>
+              </caption>
+              <boxed-text>
+                <table-wrap>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th align="left">Statistic</th>
+                        <th align="left">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="left">Asymmetry test t-statistic</td>
+                        <td align="left">6.19</td>
+                      </tr>
+                      <tr>
+                        <td align="left">df</td>
+                        <td align="left">70</td>
+                      </tr>
+                      <tr>
+                        <td align="left">p-value</td>
+                        <td align="left">&lt;1e-04</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Limit estimate as SE -&gt; 0 (log
+                OR)</td>
+                        <td align="left">-0.010</td>
+                      </tr>
+                      <tr>
+                        <td align="left">95% CI (log OR)</td>
+                        <td align="left">[-0.034, 0.014]</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Limit estimate as SE -&gt; 0 (OR)</td>
+                        <td align="left">0.99</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </boxed-text>
+            </fig>
+          </sec>
+        </sec>
+        <sec id="sensitivity-analyses-nb-article">
+          <title>Sensitivity analyses</title>
+          <p>Adding the studies that met only the inclusive criterion
+    increased the number of studies reporting mortality to 67 (84 effect
+    sizes) and gave a pooled OR of 1.92 (95% CrI, 1.58 to 2.35), similar
+    to the primary estimate
+    (<xref alt="Figure 6" rid="fig-sens-inc-nb-article">Figure 6</xref>). Pooled
+    estimates by data source were consistent in direction. Relative to
+    2×2-derived effect sizes (49 effect sizes), the log odds ratio for
+    effect sizes back-calculated from adjusted reported estimates (15
+    effect sizes) was -0.26 (95% CrI, -0.68 to 0.16) and for unadjusted
+    reported estimates (8 effect sizes) was -0.12 (95% CrI, -0.62 to
+    0.38). Both intervals included zero. Directly comparing unadjusted
+    with adjusted reported estimates, the difference in log odds ratio
+    was 0.12 (95% CrI, -0.39 to 0.62). Association strength tended to
+    decrease with publication year (change in log odds ratio per year,
+    -0.04 (95% CrI, -0.08 to 0.00)), with an interval that only just
+    included zero. None of these moderator analyses showed a clear
+    difference, but all were underpowered relative to the observed
+    heterogeneity.</p>
+          <sec id="cell-fig-sens-inc-nb-article" specific-use="notebook-content">
+            <code language="python">sens_df &lt;- bind_rows(
+  tibble(OR = base_post$OR_draws, Pool = sprintf("Primary (n=%d)", attr(es_all, "n_studies"))),
+  tibble(OR = inc_post$OR_draws,  Pool = sprintf("Sensitivity (n=%d)", attr(es_all_inc, "n_studies")))
+)
+ggplot(sens_df, aes(x = OR, fill = Pool)) +
+  geom_density(alpha = 0.55) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+  scale_x_continuous(limits = c(0.5, 5)) +
+  scale_fill_brewer(palette = "Set1") +
+  labs(x = "OR (short vs long TTP)", y = "Posterior density") +
+  theme_minimal() + theme(legend.position = "bottom")</code>
+            <boxed-text>
+              <fig id="fig-sens-inc-nb-article">
+                <caption>
+                  <p>Figure 6: Posterior densities of pooled OR — primary
+        pool vs sensitivity pool (with inclusive-only studies
+        added).</p>
+                </caption>
+                <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-mortality-analysis-fig-sens-inc-output-1.png"/>
+              </fig>
+            </boxed-text>
+          </sec>
+        </sec>
+        <sec id="clinical-failure-outcomes-nb-article">
+          <title>Clinical failure outcomes</title>
+          <p>Outcomes other than mortality were reported far less often
+    (<xref alt="Table 6" rid="tbl-counts-nb-article">Table 6</xref>). Persistent
+    bacteremia was the most frequently reported, with 12 effect sizes
+    from 12 studies, followed by microbiological clearance (4 effect
+    sizes, 3 studies). No usable effect sizes were available for relapse
+    (0).</p>
+          <p>Short TTP was associated with higher odds of persistent
+    bacteremia (pooled OR 1.74 (95% CrI, 1.09 to 2.80);
+    <xref alt="Figure 7" rid="fig-pb-nb-article">Figure 7</xref>), with substantial
+    heterogeneity (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+    69%). Outcome definitions were not uniform: on review of the outcome
+    definitions, 6 effect sizes defined persistent bacteremia by
+    duration of positive cultures, 3 defined it by endocarditis or valve
+    involvement, and 3 used other definitions. In a meta-regression by
+    definition group, endocarditis-based definitions had a log odds
+    ratio 0.59 higher than duration-based definitions (95% CrI -0.19 to
+    1.24), which is compatible with no difference given the small number
+    of effect sizes per group. The pooled persistent-bacteremia estimate
+    should therefore be interpreted as an association with a
+    heterogeneous composite of outcomes.</p>
+          <p>For microbiological clearance, the pooled estimate was too
+    imprecise to interpret (OR 1.63 (95% CrI, 0.24 to 9.47)), reflecting
+    only 4 effect sizes with very large between-study heterogeneity
+    (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+    89%).</p>
+          <sec specific-use="notebook-content">
+            <code language="python">counts |&gt; gt() |&gt;
+  tab_style(style = cell_fill(color = "#FEF9C3"),
+            locations = cells_body(rows = `Effect sizes` &gt;= 5))</code>
+            <fig id="tbl-counts-nb-article">
+              <caption>
+                <p>Table 6: Available effect sizes per clinical-failure
+      outcome (strict pool).</p>
+              </caption>
+              <boxed-text>
+                <table-wrap>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th align="left">Outcome</th>
+                        <th align="left">Effect sizes</th>
+                        <th align="left">Unique studies</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="left">Persistent bacteremia</td>
+                        <td align="left">12</td>
+                        <td align="left">12</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Microbiological clearance</td>
+                        <td align="left">4</td>
+                        <td align="left">3</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Relapse</td>
+                        <td align="left">0</td>
+                        <td align="left">0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </boxed-text>
+            </fig>
+          </sec>
+          <sec id="cell-fig-pb-nb-article" specific-use="notebook-content">
+            <code language="python">if (nrow(es_pb) &gt;= 3) {
+  fit_pb &lt;- brm(
+    bf(yi | se(sei) ~ 1 + (1 | study_id)),
+    data = es_pb,
+    prior = c(prior(normal(0, 1),   class = "Intercept"),
+              prior(cauchy(0, 0.5), class = "sd")),
+    chains = 4, iter = 4000, warmup = 1000, cores = 4, backend = "cmdstanr",
+    control = list(adapt_delta = 0.99),
+    file = "_brms_cache/primary/fit_pb", file_refit = "on_change",
+    silent = 2, refresh = 0
+  )
+  pb_post &lt;- pooled_summary(fit_pb)
+
+  forest_pb &lt;- es_pb |&gt;
+    mutate(or = exp(yi), ci_low = exp(yi - 1.96*sei), ci_high = exp(yi + 1.96*sei),
+           lbl = paste0(study_id, ifelse(arm_id == "all", "", paste0(" [", arm_id, "]"))),
+           type = "Study") |&gt;
+    bind_rows(tibble(lbl = "POOLED", or = pb_post$median_OR,
+                     ci_low = pb_post$ci_OR[1], ci_high = pb_post$ci_OR[2], type = "Pooled"))
+
+  ggplot(forest_pb, aes(x = or, y = reorder(lbl, or), color = type)) +
+    geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
+    geom_point(size = 2.5) +
+    geom_errorbar(aes(xmin = pmax(ci_low, 0.05), xmax = pmin(ci_high, 50)),
+                  width = 0.25, orientation = "y") +
+    scale_color_manual(values = c("Study" = "#2c7fb8", "Pooled" = "darkred")) +
+    scale_x_log10(breaks = c(0.1, 0.5, 1, 2, 5, 10, 25), limits = c(0.05, 50)) +
+    labs(x = "OR (short vs long TTP)", y = NULL, color = NULL,
+         title = sprintf("Persistent bacteremia / IE — pooled OR %.2f [%.2f, %.2f]",
+                         pb_post$median_OR, pb_post$ci_OR[1], pb_post$ci_OR[2])) +
+    theme_minimal(base_size = 10) + theme(legend.position = "bottom")
+} else {
+  cat("Fewer than 3 effect sizes available — cannot fit pooled model.")
+}</code>
+            <boxed-text>
+              <preformat>Loading required namespace: rstan</preformat>
+            </boxed-text>
+            <boxed-text>
+              <fig id="fig-pb-nb-article">
+                <caption>
+                  <p>Figure 7: Forest plot of OR (short vs long TTP) for
+        persistent bacteremia. NB: many studies coded under
+        ‘persistent_bacteremia’ actually report endocarditis (the
+        Codebook’s outcome_type enum lacks ‘endocarditis’). Review
+        outcome_definition in each row before
+        interpretation.</p>
+                </caption>
+                <graphic mimetype="image" mime-subtype="png" xlink:href="index_files/figure-jats/notebooks-clinical_failure-fig-pb-output-2.png"/>
+              </fig>
+            </boxed-text>
+          </sec>
+        </sec>
+      </sec>
+      <sec id="discussion-nb-article">
+        <title>Discussion</title>
+        <p>In this Bayesian random-effects meta-analysis, short TTP was
+  associated with higher mortality in bacteremia (pooled OR 2.06 (95%
+  CrI, 1.67 to 2.55); 58 studies, 72 effect sizes). The posterior
+  probability that the association is in the direction of harm was
+  100.0%. Between-study heterogeneity was moderate to substantial
+  (median <inline-formula><alternatives><tex-math><![CDATA[I^2]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msup><mml:mi>I</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:math></alternatives></inline-formula>
+  62%), and the 95% prediction interval for a new study (0.50 to 8.57)
+  is wide and includes no association. The pooled estimate is therefore
+  best read as an average association, not as the effect expected in any
+  particular setting. Adding studies that met only a more inclusive
+  criterion gave a similar estimate (OR 1.92 (95% CrI, 1.58 to
+  2.35)).</p>
+        <p><bold>Pathogen class.</bold> The association was larger in
+  Gram-negative bacteremia (OR 2.66 (95% CrI, 1.72 to 4.06)) than in
+  Gram-positive bacteremia (OR 1.48 (95% CrI, 0.85 to 2.58)), for which
+  the credible interval included 1. The two intervals overlap, so this
+  contrast should be considered hypothesis-generating rather than
+  confirmed. A plausible explanation is that TTP in Gram-positive
+  infection, notably <italic>S. aureus</italic>, is influenced by
+  factors other than burden of disease, such as the source of infection
+  and the presence of endovascular foci, whereas in Gram-negative
+  infection it may track inoculum and host response more directly. This
+  explanation is speculative and was not tested directly here.</p>
+        <p><bold>Study design and adjustment.</bold> Effect sizes derived from
+  2×2 tables (OR 2.28 (95% CrI, 1.74 to 3.05)) were larger than those
+  back-calculated from reported effect estimates (OR 1.71 (95% CrI, 1.28
+  to 2.36)). Meta-regression by data source did not show a clear
+  difference, and the intervals included zero, so the data are
+  compatible with either similar or lower adjusted associations. Crude
+  2×2 comparisons may carry more confounding by severity of illness,
+  source, or pathogen, in which case the pooled estimate could overstate
+  the independent prognostic contribution of TTP, but the groups also
+  differ in other respects.</p>
+        <p><bold>TTP cutpoint.</bold> Studies defined “short” TTP using
+  different thresholds (median cutpoint 12 h), and 30 of 72 mortality
+  effect sizes did not have a reported cutpoint. In meta-regression
+  among the remaining effect sizes, the log OR decreased by 0.036 per
+  additional hour of cutpoint (95% CrI 0.015 to 0.056), meaning that
+  stricter (shorter) thresholds were associated with larger odds ratios
+  overall (<xref alt="Figure 4" rid="fig-cutpoint-nb-article">Figure 4</xref>).
+  This gradient was not robust: it was attenuated when cutpoints above
+  24 h were excluded, and it was reversed within Gram-negative studies.
+  Because thresholds are often chosen post hoc to maximize
+  discrimination in the study sample, the gradient may partly reflect
+  optimistic cutpoint selection or differences in pathogen mix, and it
+  should not be interpreted as validating any single clinical
+  threshold.</p>
+        <p><bold>Other outcomes.</bold> For persistent bacteremia, short TTP
+  was associated with higher odds (OR 1.74 (95% CrI, 1.09 to 2.80)), but
+  outcome definitions varied widely between studies. Evidence for
+  microbiological clearance was too sparse and imprecise to interpret
+  (OR 1.63 (95% CrI, 0.24 to 9.47))
+  (<ext-link ext-link-type="uri" xlink:href="notebooks/clinical_failure.qmd">notebook</ext-link>).</p>
+        <p><bold>Strengths and limitations.</bold> Strengths include a
+  multi-database search with a May 2026 update, a distinction between
+  strict and inclusive study pools, a Bayesian framework that yields
+  prediction intervals and direct probability statements, and a fully
+  reproducible code base. Limitations are substantial. Most included
+  studies were retrospective cohorts and risk of bias was rated moderate
+  or worse in most (76 of 100 studies). Several studies contributed
+  multiple effect sizes, which we handled with study-level random
+  intercepts but which do not remove all dependence. The TTP threshold,
+  outcome timing, and adjustment sets were not standardized, and
+  adjustment status varied across estimates. Blood culture system,
+  bottle type, transport delay, and prior antibiotic exposure affect TTP
+  and were incompletely reported, so residual confounding by measurement
+  conditions is likely. The funnel plot was asymmetric and Egger’s test
+  indicated small-study effects
+  (<xref alt="Figure 5" rid="fig-funnel-nb-article">Figure 5</xref>,
+  <xref alt="Table 5" rid="tbl-egger-nb-article">Table 5</xref>). Trim-and-fill
+  reduced the pooled estimate to OR 1.51, so the primary estimate may
+  overstate the association, although asymmetry can also arise from
+  heterogeneity and cutpoint optimization, and these tests do not
+  account for multiple effect sizes per study. Finally, the
+  meta-analysis is based on aggregate data, which prevents examination
+  of TTP as a continuous predictor within patients.</p>
+        <p><bold>Implications.</bold> Short TTP is associated with higher
+  mortality on average, but heterogeneity, the dependence on cutpoint,
+  and probable confounding limit its use as a stand-alone prognostic
+  tool. These results support using TTP as one contextual signal,
+  particularly in Gram-negative bacteremia, alongside clinical severity
+  and pathogen identification. Individual-patient-data analyses with
+  standardized TTP measurement, and prospective validation of
+  pathogen-specific thresholds, are needed before TTP can be used to
+  guide treatment decisions.</p>
+      </sec>
+      <sec id="funding-nb-article">
+        <title>Funding</title>
+        <p>No specific funding was received for this study. The authors are
+  supported by their institutional salaries (University of Padova).
+  [Confirm.]</p>
+      </sec>
+      <sec id="conflicts-of-interest-nb-article">
+        <title>Conflicts of interest</title>
+        <p>R.E.L. serves as an Associate Editor at the Journal of
+  Antimicrobial Chemotherapy. The other author declares no conflicts of
+  interest. [Confirm with all co-authors.]</p>
+      </sec>
+      <sec id="data-and-code-availability-nb-article">
+        <title>Data and code availability</title>
+        <p>The extraction workbook, analysis code, and rendered notebooks are
+  included in the manuscript project. [Insert repository and DOI, for
+  example an OSF project, once deposited.]</p>
+      </sec>
+      <sec id="use-of-artificial-intelligence-nb-article">
+        <title>Use of artificial intelligence</title>
+        <p>A large language model agent was used to assist with full-text
+  screening and data extraction for the 2026 update, and a second,
+  independent agent verified the extractions against the source PDFs, as
+  described in the Methods. [State the model name and version, how
+  authors reviewed outputs, and who is responsible for the final data.
+  Confirm the wording against ASM’s current policy on AI use.] Analysis
+  code was written and run in R and Stan. The authors take
+  responsibility for the content of the manuscript.</p>
+      </sec>
+      <sec id="acknowledgments-nb-article">
+        <title>Acknowledgments</title>
+        <p>[None to declare / add acknowledgments.]</p>
+      </sec>
+    </body>
+    <back>
+      <ref-list>
+        <title>References</title>
+        <ref id="ref-Kahn2021-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Kahn</surname>
+                <given-names>Fredrik</given-names>
+              </name>
+              <name>
+                <surname>Resman</surname>
+                <given-names>Fredrik</given-names>
+              </name>
+              <name>
+                <surname>Bergmark</surname>
+                <given-names>Sissela</given-names>
+              </name>
+              <name>
+                <surname>Filiptsev</surname>
+                <given-names>Peter</given-names>
+              </name>
+              <name>
+                <surname>Nilson</surname>
+                <given-names>Bo</given-names>
+              </name>
+              <name>
+                <surname>Gilje</surname>
+                <given-names>Patrik</given-names>
+              </name>
+              <name>
+                <surname>Rasmussen</surname>
+                <given-names>Magnus</given-names>
+              </name>
+            </person-group>
+            <article-title>Time to blood culture positivity in Staphylococcus aureus bacteraemia to determine risk of infective endocarditis</article-title>
+            <source>Clinical Microbiology and Infection</source>
+            <year iso-8601-date="2021">2021</year>
+            <volume>27</volume>
+            <issue>9</issue>
+            <pub-id pub-id-type="doi">10.1016/j.cmi.2020.11.007</pub-id>
+            <fpage>1345.e7</fpage>
+            <lpage>1345.e12</lpage>
+          </element-citation>
+        </ref>
+        <ref id="ref-Keighley2023-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Keighley</surname>
+                <given-names>C.</given-names>
+              </name>
+              <name>
+                <surname>Pope</surname>
+                <given-names>A. L.</given-names>
+              </name>
+              <name>
+                <surname>Marriott</surname>
+                <given-names>D.</given-names>
+              </name>
+              <name>
+                <surname>Chen</surname>
+                <given-names>S. C.-A.</given-names>
+              </name>
+              <name>
+                <surname>Slavin</surname>
+                <given-names>M. A.</given-names>
+              </name>
+            </person-group>
+            <article-title>Time-to-positivity in bloodstream infection for Candida species as a prognostic marker for mortality</article-title>
+            <source>Medical Mycology</source>
+            <year iso-8601-date="2023">2023</year>
+            <volume>61</volume>
+            <issue>4</issue>
+            <pub-id pub-id-type="doi">10.1093/mmy/myad028</pub-id>
+          </element-citation>
+        </ref>
+        <ref id="ref-Martinez2006-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Martínez</surname>
+                <given-names>J. A.</given-names>
+              </name>
+              <name>
+                <surname>Soto</surname>
+                <given-names>S.</given-names>
+              </name>
+              <name>
+                <surname>Fabrega</surname>
+                <given-names>A.</given-names>
+              </name>
+              <name>
+                <surname>Almela</surname>
+                <given-names>M.</given-names>
+              </name>
+              <name>
+                <surname>Mensa</surname>
+                <given-names>J.</given-names>
+              </name>
+              <name>
+                <surname>Soriano</surname>
+                <given-names>A.</given-names>
+              </name>
+              <name>
+                <surname>Marco</surname>
+                <given-names>F.</given-names>
+              </name>
+              <name>
+                <surname>Jimenez De Anta</surname>
+                <given-names>M. T.</given-names>
+              </name>
+              <name>
+                <surname>Vila</surname>
+                <given-names>J.</given-names>
+              </name>
+            </person-group>
+            <article-title>Relationship of phylogenetic background, biofilm production, and time to detection of growth in blood culture vials with clinical variables and prognosis associated with Escherichia coli bacteremia</article-title>
+            <source>Journal of Clinical Microbiology</source>
+            <year iso-8601-date="2006">2006</year>
+            <volume>44</volume>
+            <issue>4</issue>
+            <pub-id pub-id-type="doi">10.1128/JCM.44.4.1468-1474.2006</pub-id>
+            <fpage>1468</fpage>
+            <lpage>1474</lpage>
+          </element-citation>
+        </ref>
+        <ref id="ref-PuertaAlcalde2019-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Puerta-Alcalde</surname>
+                <given-names>P.</given-names>
+              </name>
+              <name>
+                <surname>Cardozo</surname>
+                <given-names>C.</given-names>
+              </name>
+              <name>
+                <surname>Suárez-Lledó</surname>
+                <given-names>M.</given-names>
+              </name>
+              <name>
+                <surname>Rodríguez-Núñez</surname>
+                <given-names>O.</given-names>
+              </name>
+              <name>
+                <surname>Morata</surname>
+                <given-names>L.</given-names>
+              </name>
+              <name>
+                <surname>Fehér</surname>
+                <given-names>C.</given-names>
+              </name>
+              <name>
+                <surname>Marco</surname>
+                <given-names>F.</given-names>
+              </name>
+              <name>
+                <surname>Del Río</surname>
+                <given-names>A.</given-names>
+              </name>
+              <name>
+                <surname>Martínez</surname>
+                <given-names>J. A.</given-names>
+              </name>
+              <name>
+                <surname>Mensa</surname>
+                <given-names>J.</given-names>
+              </name>
+              <name>
+                <surname>Rovira</surname>
+                <given-names>M.</given-names>
+              </name>
+              <name>
+                <surname>Esteve</surname>
+                <given-names>J.</given-names>
+              </name>
+              <name>
+                <surname>Soriano</surname>
+                <given-names>A.</given-names>
+              </name>
+              <name>
+                <surname>Garcia-Vidal</surname>
+                <given-names>C.</given-names>
+              </name>
+            </person-group>
+            <article-title>Current time-to-positivity of blood cultures in febrile neutropenia: a tool to be used in stewardship de-escalation strategies</article-title>
+            <source>Clinical Microbiology and Infection</source>
+            <year iso-8601-date="2019">2019</year>
+            <volume>25</volume>
+            <issue>4</issue>
+            <pub-id pub-id-type="doi">10.1016/j.cmi.2018.07.026</pub-id>
+            <fpage>447</fpage>
+            <lpage>453</lpage>
+          </element-citation>
+        </ref>
+        <ref id="ref-Sowden2008-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Sowden</surname>
+                <given-names>D.</given-names>
+              </name>
+              <name>
+                <surname>Anstey</surname>
+                <given-names>C.</given-names>
+              </name>
+              <name>
+                <surname>Faddy</surname>
+                <given-names>M.</given-names>
+              </name>
+            </person-group>
+            <article-title>Blood culture time to positivity as a predictor of mortality in community acquired Methicillin-susceptible Staphylococcus aureus bacteremia</article-title>
+            <source>Journal of Infection</source>
+            <year iso-8601-date="2008">2008</year>
+            <volume>56</volume>
+            <issue>4</issue>
+            <pub-id pub-id-type="doi">10.1016/j.jinf.2008.01.005</pub-id>
+            <fpage>295</fpage>
+            <lpage>296</lpage>
+          </element-citation>
+        </ref>
+        <ref id="ref-Stromdahl2025-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Strömdahl</surname>
+                <given-names>M.</given-names>
+              </name>
+              <name>
+                <surname>Hagman</surname>
+                <given-names>K.</given-names>
+              </name>
+              <name>
+                <surname>Hedman</surname>
+                <given-names>K.</given-names>
+              </name>
+              <name>
+                <surname>Westman</surname>
+                <given-names>A.</given-names>
+              </name>
+              <name>
+                <surname>Hedenstierna</surname>
+                <given-names>M.</given-names>
+              </name>
+              <name>
+                <surname>Ursing</surname>
+                <given-names>J.</given-names>
+              </name>
+            </person-group>
+            <article-title>Time to Staphylococcus aureus Blood Culture Positivity as a Risk Marker of Infective Endocarditis: A Retrospective Cohort Study</article-title>
+            <source>Clinical Infectious Diseases</source>
+            <year iso-8601-date="2025">2025</year>
+            <volume>80</volume>
+            <issue>4</issue>
+            <pub-id pub-id-type="doi">10.1093/cid/ciae628</pub-id>
+            <fpage>727</fpage>
+            <lpage>734</lpage>
+          </element-citation>
+        </ref>
+        <ref id="ref-Tang2017-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Tang</surname>
+                <given-names>Poh-Chang</given-names>
+              </name>
+              <name>
+                <surname>Lee</surname>
+                <given-names>Ching-Chi</given-names>
+              </name>
+              <name>
+                <surname>Li</surname>
+                <given-names>Chia-Wen</given-names>
+              </name>
+              <name>
+                <surname>Li</surname>
+                <given-names>Ming-Chi</given-names>
+              </name>
+              <name>
+                <surname>Ko</surname>
+                <given-names>Wen-Chien</given-names>
+              </name>
+              <name>
+                <surname>Lee</surname>
+                <given-names>Nan-Yao</given-names>
+              </name>
+            </person-group>
+            <article-title>Time-to-positivity of blood culture: An independent prognostic factor of monomicrobial Pseudomonas aeruginosa bacteremia</article-title>
+            <source>Journal of Microbiology, Immunology and Infection</source>
+            <year iso-8601-date="2017">2017</year>
+            <volume>50</volume>
+            <issue>4</issue>
+            <pub-id pub-id-type="doi">10.1016/j.jmii.2015.08.014</pub-id>
+            <fpage>486</fpage>
+            <lpage>493</lpage>
+          </element-citation>
+        </ref>
+        <ref id="ref-Willmann2013-nb-article">
+          <element-citation publication-type="article-journal">
+            <person-group person-group-type="author">
+              <name>
+                <surname>Willmann</surname>
+                <given-names>Matthias</given-names>
+              </name>
+              <name>
+                <surname>Kuebart</surname>
+                <given-names>Ines</given-names>
+              </name>
+              <name>
+                <surname>Vogel</surname>
+                <given-names>Wichard</given-names>
+              </name>
+              <name>
+                <surname>Flesch</surname>
+                <given-names>Ingo</given-names>
+              </name>
+              <name>
+                <surname>Markert</surname>
+                <given-names>Uwe</given-names>
+              </name>
+              <name>
+                <surname>Marschal</surname>
+                <given-names>Matthias</given-names>
+              </name>
+              <name>
+                <surname>Schröppel</surname>
+                <given-names>Klaus</given-names>
+              </name>
+              <name>
+                <surname>Autenrieth</surname>
+                <given-names>Ingo B.</given-names>
+              </name>
+              <name>
+                <surname>Hölzl</surname>
+                <given-names>Florian</given-names>
+              </name>
+              <name>
+                <surname>Peter</surname>
+                <given-names>Silke</given-names>
+              </name>
+            </person-group>
+            <article-title>Time to positivity as prognostic tool in patients with Pseudomonas aeruginosa bloodstream infection</article-title>
+            <source>Journal of Infection</source>
+            <year iso-8601-date="2013">2013</year>
+            <volume>67</volume>
+            <issue>5</issue>
+            <pub-id pub-id-type="doi">10.1016/j.jinf.2013.06.012</pub-id>
+            <fpage>416</fpage>
+            <lpage>423</lpage>
+          </element-citation>
+        </ref>
+      </ref-list>
+    </back>
+  </sub-article>
+  <!-- (F2ED4C6E)[nb-1]:/Users/russelllewis/ttp_meta_manuscript/notebooks/mortality-analysis.qmd -->
+  <!-- (F2ED4C6E)[nb-2]:/Users/russelllewis/ttp_meta_manuscript/notebooks/subgroups.qmd -->
+  <sub-article article-type="notebook" id="nb-4-nb-3">
+    <front-stub>
+      <title-group>
+        <article-title>TTP and Clinical Failure Outcomes</article-title>
+        <subtitle>Persistent bacteremia / microbiological clearance / relapse
+(v4 update)</subtitle>
+      </title-group>
+    </front-stub>
+    <body>
+      <sec specific-use="notebook-content">
+        <code language="r script">suppressPackageStartupMessages({
+  library(tidyverse); library(brms); library(metafor)
+  library(posterior); library(ggdist); library(gt); library(patchwork)
+})
+</code>
+        <boxed-text>
+          <preformat>Warning: package 'ggplot2' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'tidyr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'readr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'purrr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'dplyr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'lubridate' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'Rcpp' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'metafor' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'Matrix' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'metadat' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'posterior' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'gt' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <code language="r script">source("R/01_prepare_data.R")
+</code>
+        <boxed-text>
+          <preformat>Warning: package 'readxl' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <code language="r script">source("R/02_fit_models.R")
+
+es_all  &lt;- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
+                                include_inclusive_pool = FALSE,
+                                drop_contaminated_ttp  = TRUE)
+</code>
+        <boxed-text>
+          <preformat>Pool: 100 studies (inclusive_pool=FALSE, drop_contaminated=TRUE)</preformat>
+        </boxed-text>
+        <code language="r script">es_pb   &lt;- es_for_outcome(es_all, "persistent_bacteremia") |&gt;
+  mutate(
+    def_group = case_when(
+      str_detect(outcome_definition, regex("endocarditis|infective endo|\\bIE\\b|valve", ignore_case = TRUE)) ~ "endocarditis_IE",
+      str_detect(outcome_definition, regex("persist|extended bacterem", ignore_case = TRUE)) ~ "persistent_bacteremia",
+      TRUE ~ "other"
+    )
+  )
+es_clr  &lt;- es_for_outcome(es_all, "microbiological_clearance")
+es_rel  &lt;- es_for_outcome(es_all, "relapse")
+
+# Counts before fitting
+counts &lt;- tibble(
+  Outcome = c("Persistent bacteremia", "Microbiological clearance", "Relapse"),
+  `Effect sizes` = c(nrow(es_pb), nrow(es_clr), nrow(es_rel)),
+  `Unique studies` = c(n_distinct(es_pb$study_id),
+                        n_distinct(es_clr$study_id),
+                        n_distinct(es_rel$study_id))
+)
+</code>
+      </sec>
+      <sec id="pre-analysis-feasibility-check-nb-3">
+        <title>Pre-analysis feasibility check</title>
+        <p>In the v1 analysis (n=57 studies, Feb 2026), the clinical failure
+  analysis was deemed <italic>not feasible</italic>: only 4 studies had
+  usable data, with severe directionality contradictions and one extreme
+  outlier (OR≈1115 in Melling 2019). The v4 update adds 43 new
+  strict-pool studies, several of which report persistent bacteremia,
+  microbiological clearance, or relapse outcomes. This page revisits
+  feasibility.</p>
+        <sec id="available-data-strict-pool-n100-studies-nb-3">
+          <title>Available data (strict pool, n=100 studies)</title>
+          <sec specific-use="notebook-content">
+            <code language="r script">counts |&gt; gt() |&gt;
+  tab_style(style = cell_fill(color = "#FEF9C3"),
+            locations = cells_body(rows = `Effect sizes` &gt;= 5))
+    </code>
+            <fig id="tbl-counts-nb-3">
+              <caption>
+                <p>Available effect sizes per clinical-failure outcome
+      (strict pool).</p>
+              </caption>
+              <table-wrap>
+                <table>
+                  <thead>
+                    <tr>
+                      <th id="Outcome-nb-3" scope="col">Outcome</th>
+                      <th id="Effect-sizes-nb-3" scope="col">Effect sizes</th>
+                      <th id="Unique-studies-nb-3" scope="col">Unique studies</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td headers="Outcome" style="background-color: #FEF9C3">Persistent
+              bacteremia</td>
+                      <td headers="Effect sizes" style="background-color: #FEF9C3">12</td>
+                      <td headers="Unique studies" style="background-color: #FEF9C3">12</td>
+                    </tr>
+                    <tr>
+                      <td headers="Outcome">Microbiological clearance</td>
+                      <td headers="Effect sizes">4</td>
+                      <td headers="Unique studies">3</td>
+                    </tr>
+                    <tr>
+                      <td headers="Outcome">Relapse</td>
+                      <td headers="Effect sizes">0</td>
+                      <td headers="Unique studies">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </table-wrap>
+            </fig>
+          </sec>
+        </sec>
+        <sec id="persistent-bacteremia-most-reported-clinical-failure-outcome-nb-3">
+          <title>Persistent bacteremia (most-reported clinical failure
+    outcome)</title>
+          <sec id="cell-fig-pb-nb-3" specific-use="notebook-content">
+            <code language="r script">
+if (nrow(es_pb) &gt;= 3) {
+  fit_pb &lt;- brm(
+    bf(yi | se(sei) ~ 1 + (1 | study_id)),
+    data = es_pb,
+    prior = c(prior(normal(0, 1),   class = "Intercept"),
+              prior(cauchy(0, 0.5), class = "sd")),
+    chains = 4, iter = 4000, warmup = 1000, cores = 4, backend = "cmdstanr",
+    control = list(adapt_delta = 0.99),
+    file = "_brms_cache/primary/fit_pb", file_refit = "on_change",
+    silent = 2, refresh = 0
+  )
+  pb_post &lt;- pooled_summary(fit_pb)
+
+  forest_pb &lt;- es_pb |&gt;
+    mutate(or = exp(yi), ci_low = exp(yi - 1.96*sei), ci_high = exp(yi + 1.96*sei),
+           lbl = paste0(study_id, ifelse(arm_id == "all", "", paste0(" [", arm_id, "]"))),
+           type = "Study") |&gt;
+    bind_rows(tibble(lbl = "POOLED", or = pb_post$median_OR,
+                     ci_low = pb_post$ci_OR[1], ci_high = pb_post$ci_OR[2], type = "Pooled"))
+
+  ggplot(forest_pb, aes(x = or, y = reorder(lbl, or), color = type)) +
+    geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
+    geom_point(size = 2.5) +
+    geom_errorbar(aes(xmin = pmax(ci_low, 0.05), xmax = pmin(ci_high, 50)),
+                  width = 0.25, orientation = "y") +
+    scale_color_manual(values = c("Study" = "#2c7fb8", "Pooled" = "darkred")) +
+    scale_x_log10(breaks = c(0.1, 0.5, 1, 2, 5, 10, 25), limits = c(0.05, 50)) +
+    labs(x = "OR (short vs long TTP)", y = NULL, color = NULL,
+         title = sprintf("Persistent bacteremia / IE — pooled OR %.2f [%.2f, %.2f]",
+                         pb_post$median_OR, pb_post$ci_OR[1], pb_post$ci_OR[2])) +
+    theme_minimal(base_size = 10) + theme(legend.position = "bottom")
+} else {
+  cat("Fewer than 3 effect sizes available — cannot fit pooled model.")
+}
+    </code>
+            <boxed-text>
+              <preformat>Loading required namespace: rstan</preformat>
+            </boxed-text>
+            <fig id="fig-pb-nb-3">
+              <caption>
+                <p>Forest plot of OR (short vs long TTP) for persistent
+      bacteremia. NB: many studies coded under ‘persistent_bacteremia’
+      actually report endocarditis (the Codebook’s outcome_type enum
+      lacks ‘endocarditis’). Review outcome_definition in each row
+      before interpretation.</p>
+              </caption>
+              <graphic mimetype="image" mime-subtype="png" xlink:href="clinical_failure_files/figure-jats/fig-pb-1.png"/>
+            </fig>
+          </sec>
+        </sec>
+        <sec id="subset-analysis-persistent-bacteremia-by-outcome-definition-nb-3">
+          <title>Subset analysis: persistent bacteremia by outcome
+    definition</title>
+          <p>The persistent bacteremia pool mixes genuinely different
+    endpoints — true persistent/extended bacteremia, endocarditis/IE
+    diagnoses, and other outcomes (e.g. line removal failure,
+    mortality). We examine whether the definition group moderates the
+    pooled effect.</p>
+          <sec id="cell-fig-pb-bydef-nb-3" specific-use="notebook-content">
+            <code language="r script">
+if (nrow(es_pb) &gt;= 3 &amp;&amp; n_distinct(es_pb$def_group) &gt;= 2) {
+
+  # -- Meta-regression with def_group moderator --
+  es_pb_mr &lt;- es_pb |&gt;
+    mutate(def_group = factor(def_group, levels = c("persistent_bacteremia",
+                                                     "endocarditis_IE", "other")))
+  fit_pb_def &lt;- brm(
+    bf(yi | se(sei) ~ 1 + def_group + (1 | study_id)),
+    data = es_pb_mr,
+    prior = c(prior(normal(0, 1),   class = "Intercept"),
+              prior(cauchy(0, 0.5), class = "sd"),
+              prior(normal(0, 0.5), class = "b")),
+    chains = 4, iter = 4000, warmup = 1000, cores = 4, backend = "cmdstanr",
+    control = list(adapt_delta = 0.99),
+    file = "_brms_cache/primary/fit_pb_defgroup", file_refit = "on_change",
+    silent = 2, refresh = 0
+  )
+
+  cat("Meta-regression: def_group moderator on persistent bacteremia\n\n")
+  fixef(fit_pb_def) |&gt; round(3) |&gt; print()
+  cat("\n")
+
+  # -- Faceted forest plot --
+  forest_bydef &lt;- es_pb |&gt;
+    mutate(or = exp(yi), ci_low = exp(yi - 1.96*sei), ci_high = exp(yi + 1.96*sei),
+           lbl = paste0(study_id, ifelse(is.na(arm_id) | arm_id == "all", "",
+                                          paste0(" [", arm_id, "]"))),
+           def_group_lbl = str_replace_all(def_group, "_", " ") |&gt; str_to_title())
+
+  ggplot(forest_bydef, aes(x = or, y = reorder(lbl, or))) +
+    geom_vline(xintercept = 1, linetype = "dashed", color = "gray50") +
+    geom_point(size = 2.5, color = "#2c7fb8") +
+    geom_errorbar(aes(xmin = pmax(ci_low, 0.05), xmax = pmin(ci_high, 50)),
+                  width = 0.25, color = "#2c7fb8") +
+    scale_x_log10(breaks = c(0.1, 0.5, 1, 2, 5, 10, 25), limits = c(0.05, 50)) +
+    facet_wrap(~ def_group_lbl, scales = "free_y", ncol = 1) +
+    labs(x = "OR (short vs long TTP)", y = NULL,
+         title = "Persistent bacteremia — by outcome definition group") +
+    theme_minimal(base_size = 10)
+
+} else {
+  cat("Too few effect sizes or definition groups to fit subset model.")
+}
+    </code>
+            <boxed-text>
+              <preformat>Meta-regression: def_group moderator on persistent bacteremia
+
+                         Estimate Est.Error   Q2.5 Q97.5
+Intercept                   0.367     0.223 -0.052 0.857
+def_groupendocarditis_IE    0.595     0.363 -0.192 1.242
+def_groupother              0.259     0.373 -0.483 0.984</preformat>
+            </boxed-text>
+            <fig id="fig-pb-bydef-nb-3">
+              <caption>
+                <p>Forest plot of persistent bacteremia OR, faceted by
+      outcome-definition group.</p>
+              </caption>
+              <graphic mimetype="image" mime-subtype="png" xlink:href="clinical_failure_files/figure-jats/fig-pb-bydef-1.png"/>
+            </fig>
+          </sec>
+          <boxed-text>
+            <disp-quote>
+              <p>
+                <bold>Low-power caveat</bold>
+              </p>
+              <p>The meta-regression has very few observations per group (≤6),
+        so the moderator estimates are imprecise and should be treated
+        as exploratory. The faceted forest plot is intended to highlight
+        definitional heterogeneity, not to provide reliable
+        subgroup-specific pooled effects.</p>
+            </disp-quote>
+          </boxed-text>
+        </sec>
+        <sec id="microbiological-clearance-nb-3">
+          <title>Microbiological clearance</title>
+          <sec specific-use="notebook-content">
+            <code language="r script">if (nrow(es_clr) &gt;= 3) {
+  fit_clr &lt;- brm(
+    bf(yi | se(sei) ~ 1 + (1 | study_id)),
+    data = es_clr,
+    prior = c(prior(normal(0, 1),   class = "Intercept"),
+              prior(cauchy(0, 0.5), class = "sd")),
+    chains = 4, iter = 4000, warmup = 1000, cores = 4, backend = "cmdstanr",
+    control = list(adapt_delta = 0.99),
+    file = "_brms_cache/primary/fit_clr", file_refit = "on_change",
+    silent = 2, refresh = 0
+  )
+  clr_post &lt;- pooled_summary(fit_clr)
+  cat(sprintf("Microbiological clearance — pooled OR %.2f [%.2f, %.2f] from %d effect sizes (%d studies).\n",
+              clr_post$median_OR, clr_post$ci_OR[1], clr_post$ci_OR[2],
+              nrow(es_clr), n_distinct(es_clr$study_id)))
+} else {
+  cat(sprintf("Microbiological clearance: only %d effect sizes — insufficient for meta-analysis.\n", nrow(es_clr)))
+}
+    </code>
+            <boxed-text>
+              <preformat>Microbiological clearance — pooled OR 1.63 [0.24, 9.47] from 4 effect sizes (3 studies).</preformat>
+            </boxed-text>
+          </sec>
+        </sec>
+        <sec id="relapse-nb-3">
+          <title>Relapse</title>
+          <sec specific-use="notebook-content">
+            <code language="r script">if (nrow(es_rel) &gt;= 3) {
+  fit_rel &lt;- brm(
+    bf(yi | se(sei) ~ 1 + (1 | study_id)),
+    data = es_rel,
+    prior = c(prior(normal(0, 1),   class = "Intercept"),
+              prior(cauchy(0, 0.5), class = "sd")),
+    chains = 4, iter = 4000, warmup = 1000, cores = 4, backend = "cmdstanr",
+    file = "_brms_cache/primary/fit_rel", file_refit = "on_change",
+    silent = 2, refresh = 0
+  )
+  rel_post &lt;- pooled_summary(fit_rel)
+  cat(sprintf("Relapse — pooled OR %.2f [%.2f, %.2f] from %d effect sizes (%d studies).\n",
+              rel_post$median_OR, rel_post$ci_OR[1], rel_post$ci_OR[2],
+              nrow(es_rel), n_distinct(es_rel$study_id)))
+} else {
+  cat(sprintf("Relapse: only %d effect sizes — insufficient for meta-analysis.\n", nrow(es_rel)))
+}
+    </code>
+            <boxed-text>
+              <preformat>Relapse: only 0 effect sizes — insufficient for meta-analysis.</preformat>
+            </boxed-text>
+          </sec>
+        </sec>
+      </sec>
+      <sec id="interpretation-caveats-carried-forward-from-v1-nb-3">
+        <title>Interpretation caveats carried forward from v1</title>
+        <boxed-text>
+          <disp-quote>
+            <p>
+              <bold>Use with caution</bold>
+            </p>
+            <list list-type="order">
+              <list-item>
+                <p><bold>Outcome heterogeneity persists.</bold> The Codebook’s
+          <monospace>outcome_type</monospace> enum
+          (<monospace>mortality | persistent_bacteremia | microbiological_clearance | relapse</monospace>)
+          has been applied liberally for v4 — endocarditis, septic
+          shock, IE-positive ECHO, and metastatic-infection outcomes are
+          mapped to the nearest enum value with the actual outcome
+          described in <monospace>outcome_definition</monospace>. Pool
+          only after grouping rows whose
+          <monospace>outcome_definition</monospace> is genuinely
+          comparable.</p>
+              </list-item>
+              <list-item>
+                <p><bold>Direction of association may flip across
+          studies.</bold> In v1, Ok2013 reported the
+          <italic>opposite</italic> direction (short TTP → less
+          persistent bacteremia) to the other studies — a real-world
+          finding, not an extraction error. Look for similar directional
+          outliers in v4.</p>
+              </list-item>
+              <list-item>
+                <p><bold>Outcome definitions vary widely.</bold> Persistent
+          bacteremia at 48h, 72h, or 7 days; clearance defined as “first
+          negative culture” vs “two consecutive negatives”; relapse
+          within 30d vs 90d. These are <italic>not</italic>
+          interchangeable. A subset analysis by definition group is
+          included above
+          ((<xref alt="fig-pb-bydef?" rid="ref-fig-pb-bydef-nb-3" ref-type="bibr"><bold>fig-pb-bydef?</bold></xref>)),
+          but power is very low (≤6 effects per group).</p>
+              </list-item>
+              <list-item>
+                <p><bold>Inclusive-pool studies (n=40) are excluded</bold>
+          from this page since their outcome data is largely descriptive
+          (no TTP↔outcome model). If you want to add them, re-run with
+          <monospace>include_inclusive_pool = TRUE</monospace> in the
+          setup chunk.</p>
+              </list-item>
+            </list>
+          </disp-quote>
+        </boxed-text>
+      </sec>
+      <sec id="outcome-definition-table-nb-3">
+        <title>Outcome-definition table</title>
+        <sec specific-use="notebook-content">
+          <code language="r script">bind_rows(
+  es_pb  |&gt; mutate(outcome_family = "persistent_bacteremia"),
+  es_clr |&gt; mutate(outcome_family = "microbiological_clearance", def_group = NA_character_),
+  es_rel |&gt; mutate(outcome_family = "relapse", def_group = NA_character_)
+) |&gt;
+  select(study_id, arm_id, outcome_family, def_group,
+         outcome_definition, outcome_timepoint_days) |&gt;
+  arrange(outcome_family, study_id) |&gt;
+  head(30) |&gt; gt() |&gt;
+  tab_options(table.font.size = px(11))
+  </code>
+          <fig id="tbl-defs-nb-3">
+            <caption>
+              <p>Outcome definitions used by each contributing study (top
+    30 rows by study_id).</p>
+            </caption>
+            <table-wrap>
+              <table>
+                <thead>
+                  <tr>
+                    <th id="study_id-nb-3" scope="col">study_id</th>
+                    <th id="arm_id-nb-3" scope="col">arm_id</th>
+                    <th id="outcome_family-nb-3" scope="col">outcome_family</th>
+                    <th id="def_group-nb-3" scope="col">def_group</th>
+                    <th id="outcome_definition-nb-3" scope="col">outcome_definition</th>
+                    <th id="outcome_timepoint_days-nb-3" scope="col">outcome_timepoint_days</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td headers="study_id">IrigoyenSierakowski2024</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">microbiological_clearance</td>
+                    <td headers="def_group">NA</td>
+                    <td headers="outcome_definition">Treatment success defined
+            as catheter maintenance and sterile control blood
+            cultures</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Mandolfo2020</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">microbiological_clearance</td>
+                    <td headers="def_group">NA</td>
+                    <td headers="outcome_definition">Catheter salvage success
+            (clearance of CRBSI without need to replace tCVC) vs failure
+            (tCVC removed/replaced)</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Melling2019</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">microbiological_clearance</td>
+                    <td headers="def_group">NA</td>
+                    <td headers="outcome_definition">Time to growth of MRSA on
+            sputum cultures</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Melling2019</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">microbiological_clearance</td>
+                    <td headers="def_group">NA</td>
+                    <td headers="outcome_definition">Time to identification of
+            Gram-positive cocci on Gram stain of blood cultures</td>
+                    <td headers="outcome_timepoint_days">2</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Berge2023</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">endocarditis_IE</td>
+                    <td headers="outcome_definition">Definite infective
+            endocarditis (modified Duke criteria) in SAB+CIED
+            patients</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Chavez2022</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">persistent_bacteremia</td>
+                    <td headers="outcome_definition">persistent SAB &gt;=3 days
+            of positive blood cultures</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Choi2012</td>
+                    <td headers="arm_id">NA</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">other</td>
+                    <td headers="outcome_definition">30_day_mortality_or_secondary_foci</td>
+                    <td headers="outcome_timepoint_days">30</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Comba2024</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">endocarditis_IE</td>
+                    <td headers="outcome_definition">native valve infective
+            endocarditis (modified Duke criteria)</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Khatib2005</td>
+                    <td headers="arm_id">extended_bacteremia</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">persistent_bacteremia</td>
+                    <td headers="outcome_definition">extended bacteremia
+            (duration &gt;=3 days)</td>
+                    <td headers="outcome_timepoint_days">3</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Lin2018</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">other</td>
+                    <td headers="outcome_definition">Imaging-confirmed vascular
+            infection (saccular/fusiform aneurysm, adjacent mass,
+            irregular arterial wall, or pathology); diagnosed during
+            hospital discharge</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Minejima2019</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">persistent_bacteremia</td>
+                    <td headers="outcome_definition">Bacteremia persistent for 3
+            or more days</td>
+                    <td headers="outcome_timepoint_days">3</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Ok2013</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">persistent_bacteremia</td>
+                    <td headers="outcome_definition">Bacteremia persistent for 7
+            or more days</td>
+                    <td headers="outcome_timepoint_days">7</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">PapadimitriouOlivgeris2023</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">persistent_bacteremia</td>
+                    <td headers="outcome_definition">Bacteremia persistent for
+            2.48 hours or more (continuous variable)</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Peri2026</td>
+                    <td headers="arm_id">persistent_mrdnaemia</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">persistent_bacteremia</td>
+                    <td headers="outcome_definition">persistent MR-DNAemia
+            (positive T2MR sample over 4 days)</td>
+                    <td headers="outcome_timepoint_days">4</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Stromdahl2025</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">endocarditis_IE</td>
+                    <td headers="outcome_definition">Endocarditis (modified Duke
+            criteria) - PRIMARY outcome of paper, but reported as a
+            complication of bacteremia</td>
+                    <td headers="outcome_timepoint_days">NA</td>
+                  </tr>
+                  <tr>
+                    <td headers="study_id">Thorburn2025</td>
+                    <td headers="arm_id">all</td>
+                    <td headers="outcome_family">persistent_bacteremia</td>
+                    <td headers="def_group">other</td>
+                    <td headers="outcome_definition">failure of line retention:
+            line removal &gt;72h after effective antibiotics or
+            recurrent BSI with same organism within 3 months
+            (composite)</td>
+                    <td headers="outcome_timepoint_days">90</td>
+                  </tr>
+                </tbody>
+              </table>
+            </table-wrap>
+          </fig>
+        </sec>
+      </sec>
+    </body>
+    <back>
+</back>
+  </sub-article>
+  <sub-article article-type="notebook" id="nb-6-nb-4">
+    <front-stub>
+      <title-group>
+        <article-title>Risk of bias (QUIPS)</article-title>
+      </title-group>
+    </front-stub>
+    <body>
+      <sec specific-use="notebook-content">
+        <code language="r script">suppressPackageStartupMessages({
+  library(tidyverse); library(gt); library(scales); library(patchwork)
+})
+</code>
+        <boxed-text>
+          <preformat>Warning: package 'ggplot2' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'tibble' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'tidyr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'readr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'purrr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'dplyr' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'lubridate' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'gt' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <code language="r script">source("R/01_prepare_data.R")
+</code>
+        <boxed-text>
+          <preformat>Warning: package 'readxl' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'metafor' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'Matrix' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <boxed-text>
+          <preformat>Warning: package 'metadat' was built under R version 4.5.2</preformat>
+        </boxed-text>
+        <code language="r script">es_all  &lt;- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
+                                include_inclusive_pool = FALSE,
+                                drop_contaminated_ttp  = TRUE)
+</code>
+        <boxed-text>
+          <preformat>Pool: 100 studies (inclusive_pool=FALSE, drop_contaminated=TRUE)</preformat>
+        </boxed-text>
+        <code language="r script">tbl_study &lt;- attr(es_all, "tbl_study")
+</code>
+      </sec>
+      <sec id="quips-framework-nb-4">
+        <title>QUIPS framework</title>
+        <p>Risk of bias was assessed with the QUIPS tool (Hayden et al. 2013),
+  scoring six domains 1 (low), 2 (moderate), 3 (high):</p>
+        <list list-type="order">
+          <list-item>
+            <p><bold>Study participation</bold> (selection bias)</p>
+          </list-item>
+          <list-item>
+            <p><bold>Study confounding</bold> (multivariable adjustment for
+      key confounders)</p>
+          </list-item>
+          <list-item>
+            <p><bold>Outcome measurement</bold> (ascertainment /
+      objectivity)</p>
+          </list-item>
+          <list-item>
+            <p><bold>Statistical analysis</bold> (appropriateness, reporting
+      completeness)</p>
+          </list-item>
+          <list-item>
+            <p><bold>Attrition</bold> (loss to follow-up, missing data)</p>
+          </list-item>
+          <list-item>
+            <p><bold>Prognostic factor measurement</bold> (TTP measurement
+      quality)</p>
+          </list-item>
+        </list>
+        <p>Overall rating follows QUIPS guidance — worst-domain-dominates, not
+  arithmetic mean. See
+  <monospace>references/QUIPS_scoring_guide.md</monospace> in the
+  extraction skill for the project-specific rubric.</p>
+      </sec>
+      <sec id="domain-level-scores-nb-4">
+        <title>Domain-level scores</title>
+        <sec specific-use="notebook-content">
+          <code language="r script">rob_long &lt;- tbl_study |&gt;
+  select(study_id, pub_year,
+         starts_with("rob_")) |&gt;
+  pivot_longer(starts_with("rob_") &amp; !ends_with("overall"),
+               names_to = "domain", values_to = "score") |&gt;
+  mutate(
+    domain = recode(domain,
+      rob_selection = "Selection",
+      rob_comparability = "Comparability",
+      rob_outcome = "Outcome",
+      rob_stat_analysis = "Stat. analysis",
+      rob_attrition = "Attrition",
+      rob_prognostic_measurement = "Prognostic measurement"
+    ),
+    score_lbl = factor(case_when(
+      score == 1 ~ "Low",
+      score == 2 ~ "Moderate",
+      score == 3 ~ "High",
+      TRUE ~ "NR"
+    ), levels = c("Low", "Moderate", "High", "NR"))
+  )
+  </code>
+        </sec>
+        <sec id="traffic-light-plot-nb-4">
+          <title>Traffic-light plot</title>
+          <sec id="cell-fig-rob-traffic-nb-4" specific-use="notebook-content">
+            <code language="r script">
+knitr::opts_current$set(fig.height = max(8, nrow(tbl_study) * 0.15 + 2))
+    </code>
+            <boxed-text>
+              <preformat>Warning in set2(resolve(...)): The object is read-only and cannot be modified.
+If you have to modify it for a legitimate reason, call the method $lock(FALSE)
+on the object before $set(). Using $lock(FALSE) to modify the object will be
+enforced in future versions of knitr and this warning will become an error.</preformat>
+            </boxed-text>
+            <code language="r script">
+ggplot(rob_long, aes(x = domain, y = reorder(study_id, pub_year), fill = score_lbl)) +
+  geom_tile(color = "white", linewidth = 0.6) +
+  geom_text(aes(label = score), color = "white", size = 2.7, fontface = "bold") +
+  scale_fill_manual(values = c("Low" = "#2ca02c", "Moderate" = "#ff9f1c",
+                                "High" = "#d62728", "NR" = "gray70"),
+                    name = "Risk of bias") +
+  scale_x_discrete(position = "top") +
+  labs(x = NULL, y = NULL) +
+  theme_minimal(base_size = 9) +
+  theme(axis.text.x.top = element_text(angle = 35, hjust = 0, size = 9),
+        axis.text.y = element_text(size = 7),
+        panel.grid = element_blank(),
+        legend.position = "bottom")
+    </code>
+            <fig id="fig-rob-traffic-nb-4">
+              <caption>
+                <p>QUIPS traffic-light plot. Each row is a study; columns
+      are domains. Green = low, amber = moderate, red = high risk of
+      bias.</p>
+              </caption>
+              <graphic mimetype="image" mime-subtype="png" xlink:href="rob_files/figure-jats/fig-rob-traffic-1.png"/>
+            </fig>
+          </sec>
+        </sec>
+        <sec id="summary-plot-domain-by-rating-nb-4">
+          <title>Summary plot (domain-by-rating)</title>
+          <sec id="cell-fig-rob-bars-nb-4" specific-use="notebook-content">
+            <code language="r script">rob_long |&gt;
+  count(domain, score_lbl) |&gt;
+  group_by(domain) |&gt;
+  mutate(pct = n / sum(n)) |&gt;
+  ggplot(aes(y = domain, x = pct, fill = score_lbl)) +
+  geom_col(width = 0.7) +
+  geom_text(aes(label = scales::percent(pct, accuracy = 1)),
+            position = position_stack(vjust = 0.5),
+            color = "white", size = 3, fontface = "bold") +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_fill_manual(values = c("Low" = "#2ca02c", "Moderate" = "#ff9f1c",
+                                "High" = "#d62728", "NR" = "gray70"),
+                    name = "Risk of bias") +
+  labs(x = NULL, y = NULL) +
+  theme_minimal()
+    </code>
+            <fig id="fig-rob-bars-nb-4">
+              <caption>
+                <p>Distribution of QUIPS judgments across studies, per
+      domain.</p>
+              </caption>
+              <graphic mimetype="image" mime-subtype="png" xlink:href="rob_files/figure-jats/fig-rob-bars-1.png"/>
+            </fig>
+          </sec>
+        </sec>
+      </sec>
+      <sec id="overall-rob-by-study-nb-4">
+        <title>Overall RoB by study</title>
+        <sec specific-use="notebook-content">
+          <code language="r script">tbl_study |&gt;
+  count(rob_overall) |&gt;
+  mutate(`%` = scales::percent(n / sum(n), 1)) |&gt;
+  arrange(factor(rob_overall, levels = c("low", "moderate", "high", "critical"))) |&gt;
+  gt() |&gt;
+  cols_label(rob_overall = "Overall rating", n = "Studies")
+  </code>
+          <fig id="tbl-rob-nb-4">
+            <caption>
+              <p>Overall QUIPS rating per study (primary pool,
+    n=100).</p>
+            </caption>
+            <table-wrap>
+              <table>
+                <thead>
+                  <tr>
+                    <th id="rob_overall-nb-4" scope="col">Overall rating</th>
+                    <th id="n-nb-4" scope="col">Studies</th>
+                    <th id="aU0025-nb-4" scope="col">%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td headers="rob_overall">low</td>
+                    <td headers="n">24</td>
+                    <td headers="%">24%</td>
+                  </tr>
+                  <tr>
+                    <td headers="rob_overall">moderate</td>
+                    <td headers="n">62</td>
+                    <td headers="%">62%</td>
+                  </tr>
+                  <tr>
+                    <td headers="rob_overall">high</td>
+                    <td headers="n">13</td>
+                    <td headers="%">13%</td>
+                  </tr>
+                  <tr>
+                    <td headers="rob_overall">critical</td>
+                    <td headers="n">1</td>
+                    <td headers="%">1%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </table-wrap>
+          </fig>
+        </sec>
+      </sec>
+      <sec id="effect-size-weighted-rob-nb-4">
+        <title>Effect-size weighted RoB</title>
+        <p>Studies with higher overall RoB carry more potential to distort the
+  pooled effect. The chart below weights each contribution by
+  inverse-variance:</p>
+        <sec specific-use="notebook-content">
+          <code language="r script">es_with_rob &lt;- es_all |&gt;
+  filter(outcome_type == "mortality")
+
+es_with_rob |&gt;
+  mutate(w = 1/vi) |&gt;
+  group_by(rob_overall) |&gt;
+  summarise(weight = sum(w, na.rm = TRUE), n = n(), .groups = "drop") |&gt;
+  mutate(pct_weight = weight / sum(weight),
+         pct_n      = n / sum(n)) |&gt;
+  pivot_longer(c(pct_weight, pct_n), names_to = "metric", values_to = "pct") |&gt;
+  mutate(metric = recode(metric,
+                         pct_n = "% of effect sizes",
+                         pct_weight = "% of inverse-variance weight")) |&gt;
+  ggplot(aes(x = metric, y = pct,
+             fill = factor(rob_overall, levels = c("low", "moderate", "high", "critical")))) +
+  geom_col(width = 0.6) +
+  scale_y_continuous(labels = scales::percent_format(1)) +
+  scale_fill_manual(values = c("low" = "#2ca02c", "moderate" = "#ff9f1c",
+                                "high" = "#d62728", "critical" = "#7a0019"),
+                    name = "QUIPS overall") +
+  labs(x = NULL, y = NULL,
+       title = "RoB representation by raw count vs by analytic weight") +
+  theme_minimal()
+  </code>
+          <graphic mimetype="image" mime-subtype="png" xlink:href="rob_files/figure-jats/rob-weighted-1.png"/>
+        </sec>
+      </sec>
+    </body>
+    <back>
+</back>
+  </sub-article>
+  <sub-article article-type="notebook" id="nb-8-nb-5">
+    <front-stub>
+      <title-group>
+        <article-title>Methods &amp; PRISMA flow</article-title>
+      </title-group>
+    </front-stub>
+    <body>
+      <sec id="prisma-2020-flow-nb-5">
+        <title>PRISMA 2020 flow</title>
+        <fig id="fig-prisma-nb-5">
+          <caption>
+            <p>Updated PRISMA flow for v4 database</p>
+          </caption>
+          <graphic mimetype="image" mime-subtype="svg+xml" xlink:href="../data/PRISMA_v4_update.svg"/>
+        </fig>
+      </sec>
+      <sec id="search-strategy-nb-5">
+        <title>Search strategy</title>
+        <p>Records were identified from five electronic databases on the
+  original search date plus the May 2026 update:</p>
+        <list list-type="bullet">
+          <list-item>
+            <p>
+              <bold>PubMed</bold>
+            </p>
+          </list-item>
+          <list-item>
+            <p>
+              <bold>Embase</bold>
+            </p>
+          </list-item>
+          <list-item>
+            <p>
+              <bold>Scopus</bold>
+            </p>
+          </list-item>
+          <list-item>
+            <p>
+              <bold>Cochrane Library</bold>
+            </p>
+          </list-item>
+          <list-item>
+            <p>
+              <bold>Web of Science</bold>
+            </p>
+          </list-item>
+        </list>
+        <p>Combined yield: 4,605 records → 1,409 duplicates removed → 3,196
+  unique records after deduplication.</p>
+        <p>Search strings, date ranges, and per-database counts are in
+  <monospace>PROSPERO_TTP_protocol.md</monospace> in the project
+  root.</p>
+      </sec>
+      <sec id="eligibility-criteria-nb-5">
+        <title>Eligibility criteria</title>
+        <sec id="strict-primary-pool-n100-studies-nb-5">
+          <title>Strict (primary pool, n=100 studies)</title>
+          <p>A study qualifies if <bold>all</bold> of the following hold:</p>
+          <list list-type="order">
+            <list-item>
+              <p><bold>Population</bold>: adult bacteremia, candidemia, or
+        other bloodstream infection confirmed by blood culture</p>
+            </list-item>
+            <list-item>
+              <p><bold>Exposure</bold>: TTP (time to blood culture positivity)
+        measured by an automated continuous-monitoring system</p>
+            </list-item>
+            <list-item>
+              <p><bold>Outcome</bold>: at least one clinical outcome reported
+        — mortality, persistent bacteremia, microbiological clearance,
+        or relapse</p>
+            </list-item>
+            <list-item>
+              <p><bold>Quantitative TTP↔outcome association</bold>: 2×2 table
+        by TTP category, OR/HR/RR with CI, or β-per-hour with SE</p>
+            </list-item>
+          </list>
+          <p>Studies that report TTP and outcomes only descriptively (without
+    a quantitative TTP↔outcome model) are excluded under the strict
+    criterion.</p>
+        </sec>
+        <sec id="inclusive-sensitivity-pool-n140-studies-nb-5">
+          <title>Inclusive (sensitivity pool, n=140 studies)</title>
+          <p>Loosens criterion (4): a paper qualifies if TTP and a clinical
+    outcome are both reported in the same cohort, <bold>even if not
+    cross-tabulated</bold>. Inclusive-only studies are flagged with
+    <monospace>[INCLUSIVE_ONLY]</monospace> in
+    <monospace>tbl_study.notes</monospace> and are used only in
+    sensitivity analyses.</p>
+        </sec>
+        <sec id="standing-exclusions-both-pools-nb-5">
+          <title>Standing exclusions (both pools)</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>Narrative review, case report (n&lt;10), editorial,
+        conference abstract only, study protocol</p>
+            </list-item>
+            <list-item>
+              <p>TTP not measured (e.g., duration-of-bacteremia in days,
+        time-to-antibiotic, transit time)</p>
+            </list-item>
+            <list-item>
+              <p>TTP used solely as part of a CRBSI case definition
+        (<monospace>[CONTAMINATED_TTP]</monospace> flag)</p>
+            </list-item>
+            <list-item>
+              <p>Population not BSI</p>
+            </list-item>
+            <list-item>
+              <p>Full text not in English and not extractable</p>
+            </list-item>
+          </list>
+        </sec>
+      </sec>
+      <sec id="data-extraction-nb-5">
+        <title>Data extraction</title>
+        <p>Two-table extraction into the project’s master workbook
+  <monospace>TTP_MetaAnalysis_Extraction_Complete_v4.xlsx</monospace>,
+  with sheets:</p>
+        <list list-type="bullet">
+          <list-item>
+            <p><monospace>tbl_study</monospace> — study-level (design,
+      country, dates, single/multi-center, funding, 6-domain QUIPS risk
+      of bias)</p>
+          </list-item>
+          <list-item>
+            <p><monospace>tbl_population</monospace> — arm-level demographics,
+      pathogen class/species, infection source, severity, empiric Rx</p>
+          </list-item>
+          <list-item>
+            <p><monospace>tbl_ttp</monospace> — arm-level TTP reporting
+      (continuous/dichotomized/categorical), unit, mean/median/IQR,
+      cutpoint</p>
+          </list-item>
+          <list-item>
+            <p><monospace>tbl_outcomes</monospace> — outcome rows (one or more
+      per arm) — events, totals, effect estimates, adjustment</p>
+          </list-item>
+        </list>
+        <p>Independent second-pass QC was performed on the 43 new strict-pool
+  extractions; 7 factual corrections were applied prior to analysis (see
+  <monospace>QC_Verification_Report.md</monospace>).</p>
+      </sec>
+      <sec id="effect-size-computation-nb-5">
+        <title>Effect-size computation</title>
+        <p>Computed in <monospace>R/01_prepare_data.R</monospace> using
+  <monospace>metafor::escalc()</monospace>:</p>
+        <table-wrap>
+          <table>
+            <colgroup>
+              <col width="25%"/>
+              <col width="25%"/>
+              <col width="25%"/>
+              <col width="25%"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Preference</th>
+                <th>Method</th>
+                <th>metafor measure</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1st</td>
+                <td>2×2 events by TTP category</td>
+                <td>
+                  <monospace>OR</monospace>
+                </td>
+                <td><monospace>add = 0.5, to = "only0"</monospace>
+          zero-cell correction</td>
+              </tr>
+              <tr>
+                <td>2nd</td>
+                <td>Reported effect estimate + 95% CI</td>
+                <td>back-calc</td>
+                <td>log(OR/HR/RR); SE = (log(CI_hi) − log(CI_lo)) / 3.92</td>
+              </tr>
+              <tr>
+                <td>3rd</td>
+                <td>Continuous per-hour</td>
+                <td>β or log(OR_per_hour)</td>
+                <td>Kept separate from 2×2/back-calc pool by
+          <monospace>es_source</monospace> flag</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+      </sec>
+      <sec id="bayesian-random-effects-meta-analysis-nb-5">
+        <title>Bayesian random-effects meta-analysis</title>
+        <sec id="model-nb-5">
+          <title>Model</title>
+          <p>
+            <disp-formula>
+              <alternatives>
+                <tex-math><![CDATA[y_i \mid \text{SE}_i \sim \mathcal{N}(\mu + u_s,\, \text{SE}_i^2), \quad u_s \sim \mathcal{N}(0, \tau^2)]]></tex-math>
+                <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="block">
+                  <mml:mrow>
+                    <mml:msub>
+                      <mml:mi>y</mml:mi>
+                      <mml:mi>i</mml:mi>
+                    </mml:msub>
+                    <mml:mo>∣</mml:mo>
+                    <mml:msub>
+                      <mml:mtext mathvariant="normal">SE</mml:mtext>
+                      <mml:mi>i</mml:mi>
+                    </mml:msub>
+                    <mml:mo>∼</mml:mo>
+                    <mml:mi>𝒩</mml:mi>
+                    <mml:mo stretchy="false" form="prefix">(</mml:mo>
+                    <mml:mi>μ</mml:mi>
+                    <mml:mo>+</mml:mo>
+                    <mml:msub>
+                      <mml:mi>u</mml:mi>
+                      <mml:mi>s</mml:mi>
+                    </mml:msub>
+                    <mml:mo>,</mml:mo>
+                    <mml:mspace width="0.167em"/>
+                    <mml:msubsup>
+                      <mml:mtext mathvariant="normal">SE</mml:mtext>
+                      <mml:mi>i</mml:mi>
+                      <mml:mn>2</mml:mn>
+                    </mml:msubsup>
+                    <mml:mo stretchy="false" form="postfix">)</mml:mo>
+                    <mml:mo>,</mml:mo>
+                    <mml:mspace width="1.0em"/>
+                    <mml:msub>
+                      <mml:mi>u</mml:mi>
+                      <mml:mi>s</mml:mi>
+                    </mml:msub>
+                    <mml:mo>∼</mml:mo>
+                    <mml:mi>𝒩</mml:mi>
+                    <mml:mo stretchy="false" form="prefix">(</mml:mo>
+                    <mml:mn>0</mml:mn>
+                    <mml:mo>,</mml:mo>
+                    <mml:msup>
+                      <mml:mi>τ</mml:mi>
+                      <mml:mn>2</mml:mn>
+                    </mml:msup>
+                    <mml:mo stretchy="false" form="postfix">)</mml:mo>
+                  </mml:mrow>
+                </mml:math>
+              </alternatives>
+            </disp-formula>
+          </p>
+        </sec>
+        <sec id="priors-nb-5">
+          <title>Priors</title>
+          <table-wrap>
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Prior</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pooled log-OR (<inline-formula><alternatives><tex-math><![CDATA[\mu]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mi>μ</mml:mi></mml:math></alternatives></inline-formula>)</td>
+                  <td>
+                    <inline-formula>
+                      <alternatives>
+                        <tex-math><![CDATA[\mathcal{N}(0,1)]]></tex-math>
+                        <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline">
+                          <mml:mrow>
+                            <mml:mi>𝒩</mml:mi>
+                            <mml:mo stretchy="false" form="prefix">(</mml:mo>
+                            <mml:mn>0</mml:mn>
+                            <mml:mo>,</mml:mo>
+                            <mml:mn>1</mml:mn>
+                            <mml:mo stretchy="false" form="postfix">)</mml:mo>
+                          </mml:mrow>
+                        </mml:math>
+                      </alternatives>
+                    </inline-formula>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Between-study SD (<inline-formula><alternatives><tex-math><![CDATA[\tau]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mi>τ</mml:mi></mml:math></alternatives></inline-formula>)</td>
+                  <td>Half-Cauchy<inline-formula><alternatives><tex-math><![CDATA[(0, 0.5)]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>0.5</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></td>
+                </tr>
+                <tr>
+                  <td>Moderator coefficients</td>
+                  <td>
+                    <inline-formula>
+                      <alternatives>
+                        <tex-math><![CDATA[\mathcal{N}(0, 0.5)]]></tex-math>
+                        <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline">
+                          <mml:mrow>
+                            <mml:mi>𝒩</mml:mi>
+                            <mml:mo stretchy="false" form="prefix">(</mml:mo>
+                            <mml:mn>0</mml:mn>
+                            <mml:mo>,</mml:mo>
+                            <mml:mn>0.5</mml:mn>
+                            <mml:mo stretchy="false" form="postfix">)</mml:mo>
+                          </mml:mrow>
+                        </mml:math>
+                      </alternatives>
+                    </inline-formula>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+        </sec>
+        <sec id="sampling-nb-5">
+          <title>Sampling</title>
+          <p><monospace>brms</monospace> with the Stan backend: 4 chains ×
+    4,000 iterations (1,000 warm-up),
+    <monospace>adapt_delta = 0.99</monospace>,
+    <monospace>max_treedepth = 12</monospace>. Convergence assessed by
+    <inline-formula><alternatives><tex-math><![CDATA[\hat{R} < 1.01]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mover><mml:mi>R</mml:mi><mml:mo accent="true">̂</mml:mo></mml:mover><mml:mo>&lt;</mml:mo><mml:mn>1.01</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    and bulk-ESS &gt; 1,000.</p>
+        </sec>
+        <sec id="sensitivity-analyses-nb-5">
+          <title>Sensitivity analyses</title>
+          <list list-type="order">
+            <list-item>
+              <p><bold>Inclusive pool</bold> (n=140) added to test robustness
+        to lower-quality studies</p>
+            </list-item>
+            <list-item>
+              <p><bold>Pathogen subgroups</bold> (gram+ / gram−) via
+        meta-regression</p>
+            </list-item>
+            <list-item>
+              <p><bold>TTP cutpoint</bold> as a meta-regression moderator
+        (per-hour log-OR change)</p>
+            </list-item>
+            <list-item>
+              <p><bold>Data source</bold> — 2×2 vs back-calculated vs
+        continuous</p>
+            </list-item>
+            <list-item>
+              <p><bold>Adjustment status</bold> — adjusted vs unadjusted
+        reported estimates</p>
+            </list-item>
+            <list-item>
+              <p><bold>Publication year trend</bold> — per-year log-OR
+        change</p>
+            </list-item>
+          </list>
+        </sec>
+      </sec>
+      <sec id="software-nb-5">
+        <title>Software</title>
+        <table-wrap>
+          <table>
+            <thead>
+              <tr>
+                <th>Package</th>
+                <th>Used for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <monospace>brms</monospace>
+                </td>
+                <td>Bayesian models (Stan backend)</td>
+              </tr>
+              <tr>
+                <td>
+                  <monospace>metafor</monospace>
+                </td>
+                <td>Effect-size computation, fixed-effects sanity checks</td>
+              </tr>
+              <tr>
+                <td>
+                  <monospace>posterior</monospace>
+                </td>
+                <td>Posterior summaries, <inline-formula><alternatives><tex-math><![CDATA[\hat{R}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mover><mml:mi>R</mml:mi><mml:mo accent="true">̂</mml:mo></mml:mover></mml:math></alternatives></inline-formula>
+          / ESS</td>
+              </tr>
+              <tr>
+                <td>
+                  <monospace>bayesplot</monospace>
+                </td>
+                <td>Diagnostic plots</td>
+              </tr>
+              <tr>
+                <td>
+                  <monospace>ggdist</monospace>
+                </td>
+                <td>Halfeye / interval plots</td>
+              </tr>
+              <tr>
+                <td><monospace>tidyverse</monospace> +
+          <monospace>gt</monospace> +
+          <monospace>patchwork</monospace></td>
+                <td>Data wrangling, tables, layout</td>
+              </tr>
+              <tr>
+                <td>
+                  <monospace>readxl</monospace>
+                </td>
+                <td>Read workbook sheets</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+      </sec>
+    </body>
+    <back>
+</back>
+  </sub-article>
+</article>
