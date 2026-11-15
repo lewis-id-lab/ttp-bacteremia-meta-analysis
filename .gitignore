@@ -13,3 +13,9 @@ _brms_cache/
 # Internal working drafts (not for the public repo)
 PROSPERO_TTP_protocol.md
 search_strategies.md
+
+# Local CmdStan install
+/.cmdstan/
+
+# Machine-specific R environment
+.Renviron

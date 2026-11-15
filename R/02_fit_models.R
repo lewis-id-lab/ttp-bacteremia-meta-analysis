@@ -104,6 +104,17 @@ fit_all_models <- function(es_mort, cache_dir = "_brms_cache") {
       priors  = c(.prior_intercept, .prior_tau, .prior_mod),
       name = "fit_cutpoint", cache_dir = cache_dir)
 
+  # 5b. Cutpoint meta-regression restricted to cutpoints <= 24 h
+  es_cut24 <- es_cut |>
+    filter(ttp_cutpoint_hours <= 24) |>
+    mutate(cutpoint_c = ttp_cutpoint_hours - median(ttp_cutpoint_hours, na.rm = TRUE))
+  if (nrow(es_cut24) >= 5)
+    fits$fit_cutpoint_le24 <- fit_one(
+      es_cut24,
+      formula = bf(yi | se(sei) ~ 1 + cutpoint_c + (1 | study_id)),
+      priors  = c(.prior_intercept, .prior_tau, .prior_mod),
+      name = "fit_cutpoint_le24", cache_dir = cache_dir)
+
   # 6. 2x2 only
   es_2x2 <- es_mort |> filter(es_source == "two_by_two")
   if (nrow(es_2x2) >= 3)
@@ -170,7 +181,7 @@ pooled_summary <- function(fit) {
   vi_typical <- mean(fit$data$sei^2, na.rm = TRUE)
   i2 <- tau^2 / (tau^2 + vi_typical) * 100
   # 95% prediction interval: marginal predictive distribution for a new study
-  pi_logOR <- rnorm(length(logOR), mean = logOR, sd = tau)
+  pi_logOR <- withr::with_seed(6159, rnorm(length(logOR), mean = logOR, sd = tau))
   list(
     logOR_draws = logOR,
     OR_draws    = exp(logOR),
