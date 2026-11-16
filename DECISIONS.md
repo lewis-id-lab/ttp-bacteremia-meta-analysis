@@ -52,3 +52,20 @@ Median I² (62%) and the frequentist trim-and-fill estimate (1.51; 1.23 to 1.86)
 - *Human confirmation.* The project lead confirmed that the workbook contains only study-level data from published reports.
 
 `data/` was therefore kept in the site resources. The site was published with `quarto publish gh-pages --no-render` (gh-pages `267ef38`), and the live appendix page was checked.
+
+## 2026-11-16: Workaround for missing figures on the HTML article page
+
+**What was seen.** After the site was republished (gh-pages `267ef38`), six of the seven figures on the live article page returned 404: all the figures embedded from notebooks under `index_files/figure-html/`. The PRISMA diagram, which is served from `data/`, loaded. The October site (gh-pages `6ded9aa`) had these files.
+
+**Diagnosis.** When html, docx and pdf are rendered together, Quarto 1.9.35 writes the article's embedded figures to `_manuscript/_tex/index_files/` but not to `_manuscript/index_files/`, where `index.html` links to them. Rendering html alone puts them in the right place. The root cause inside Quarto was not established. quarto-cli issue #14613 shows the same symptom, but it was Windows-specific and fixed for 1.10, so this may be a different problem. Putting `html` last in the format list did not help and was reverted.
+
+**Workaround.** `R/post_render_html_figures.R` runs as a project `post-render` script. It copies any `index_files/figure-html/` image that `index.html` links to but that is missing, taking it from `_manuscript/_tex/` or `_freeze/index/`. When nothing is missing it does nothing, so it can be removed once a Quarto release no longer needs it. Check by rendering, deleting the script, and confirming the figures are still present.
+
+**Related changes.** While debugging, the appendix notebook page stopped being produced, and its package citations were unresolved when its frozen results were reused. Two changes fixed this:
+
+- `packages.bib` was added to the project-level `bibliography` in `_quarto.yml`.
+- Quarto's `.quarto/` cache was cleared; it had accumulated many stale session folders. This is an assistant inference with moderate confidence; it is not confirmed which of the two changes was needed.
+
+After both, a full render produced all article figures and the appendix page with no warnings. Committed in `81c36f4`.
+
+**Known leftover.** A small `_freeze/` folder of old PRISMA `.svg` copies, about 200 KB, is copied into the site output. It comes from the `../data/` image path in `notebooks/methods.qmd`; it is harmless and was not changed.
