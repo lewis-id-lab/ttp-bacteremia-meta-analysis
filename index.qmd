@@ -28,7 +28,7 @@ abstract: |
 importance: |
   Blood cultures are the standard test for bloodstream infection, and automated systems record how long a culture takes to turn positive. Because cultures that turn positive sooner often contain more bacteria, this time to positivity might help clinicians identify patients at higher risk of dying. We combined results from 58 studies that reported mortality. Patients whose cultures turned positive quickly were, on average, about twice as likely to die, and the association appeared stronger for infections caused by Gram-negative bacteria. However, studies differed widely in how they defined a "quick" result, and the pattern of results suggested that smaller studies reported larger effects, so the true association may be smaller than the average suggests. Time to positivity is therefore best used as one supporting clue, alongside the patient's condition and the identified organism, rather than as a stand-alone guide to treatment.
 funding: "No specific funding was received for this study."
-prospero: "[CRD420261398553]"
+prospero: "CRD420261398553"
 ---
 
 ```{r}
