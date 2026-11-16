@@ -16,7 +16,15 @@ Quarto manuscript project (systematic review and Bayesian meta-analysis) prepare
 quarto render
 ```
 
-Notebooks run from the project root (`execute-dir: project`). Fitted brms models are cached in `_brms_cache/` (not in the repository); the first render refits them, which is slow. The clinical failure notebook uses the cmdstanr backend, which needs CmdStan installed.
+Notebooks run from the project root (`execute-dir: project`). Fitted brms models are cached in `_brms_cache/` (not in the repository); the first render refits them, which is slow. On a fresh cache, render the notebooks before `index.qmd` (for example `quarto render notebooks/mortality-analysis.qmd`, then `notebooks/clinical_failure.qmd`, then `index.qmd`, or a full `quarto render`): `index.qmd` reads fits that only the notebooks create (the sensitivity-pool `fit_base`, `fit_pb`, `fit_clr`, the pathogen-specific cutpoint fits) and fails if they are missing.
+
+### rstan and RcppParallel
+
+rstan (2.32.7) currently needs RcppParallel 5.1.x. RcppParallel 6.x bundles oneTBB, which drops `tbb::task_scheduler_init`, and compiled rstan models then fail to load (`symbol not found in flat namespace '__ZN3tbb19task_scheduler_init10initializeEim'`). Install the older version with:
+
+```r
+remotes::install_version("RcppParallel", "5.1.11")
+``` The clinical failure notebook uses the cmdstanr backend, which needs CmdStan installed.
 
 ### CmdStan setup
 

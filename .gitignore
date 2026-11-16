@@ -5,6 +5,7 @@
 .posit/assistant
 /.quarto/
 **/*.quarto_ipynb
+*.rmarkdown
 /_manuscript/
 *_cache/
 *_files/
