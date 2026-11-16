@@ -207,7 +207,7 @@ if (nrow(es_rel) >= 3) {
 
 2. **Direction of association may flip across studies.** In v1, Ok2013 reported the *opposite* direction (short TTP → less persistent bacteremia) to the other studies — a real-world finding, not an extraction error. Look for similar directional outliers in v4.
 
-3. **Outcome definitions vary widely.** Persistent bacteremia at 48h, 72h, or 7 days; clearance defined as "first negative culture" vs "two consecutive negatives"; relapse within 30d vs 90d. These are *not* interchangeable. A subset analysis by definition group is included above (@fig-pb-bydef), but power is very low (≤6 effects per group).
+3. **Outcome definitions vary widely.** Persistent bacteremia at 48h, 72h, or 7 days; clearance defined as "first negative culture" vs "two consecutive negatives"; relapse within 30d vs 90d. These are *not* interchangeable. A subset analysis by definition group is included above ([forest plot by definition group](#fig-pb-bydef)), but power is very low (≤6 effects per group).
 
 4. **Inclusive-pool studies (n=40) are excluded** from this page since their outcome data is largely descriptive (no TTP↔outcome model). If you want to add them, re-run with `include_inclusive_pool = TRUE` in the setup chunk.
 :::
