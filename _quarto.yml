@@ -2,6 +2,8 @@ project:
   type: manuscript
   # Notebooks use paths relative to the project root (R/, data/, _brms_cache/)
   execute-dir: project
+  # Works around HTML article figures going missing when pdf is rendered too
+  post-render: R/post_render_html_figures.R
 
 manuscript:
   article: index.qmd
@@ -44,7 +46,9 @@ format:
         \usepackage{lineno}
         \linenumbers
 
-bibliography: references.bib
+bibliography:
+  - references.bib
+  - packages.bib
 csl: asm.csl
 
 execute:
