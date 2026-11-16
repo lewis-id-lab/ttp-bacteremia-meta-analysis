@@ -67,7 +67,7 @@ study_label <- function(id, author, year) {
 
 # Overview
 
-This appendix accompanies the main manuscript and gives (1) details of the included studies, (2) model specification, fit, diagnostics, and convergence, and (3) sensitivity analyses. All numbers are generated from the extraction workbook (`data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx`) and the cached `brms` fits in the project repository.
+This appendix accompanies the main manuscript and gives (1) details of the included studies, (2) model specification, fit, diagnostics, and convergence, (3) sensitivity analyses, and (4) the software and R packages used. All numbers are generated from the extraction workbook (`data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx`) and the cached `brms` fits in the project repository.
 
 The **primary pool** comprises `{r} attr(es_all, "n_studies")` studies meeting the strict eligibility criterion (a quantitative association between TTP and a clinical outcome); `{r} n_distinct(es_mort$study_id)` of these reported mortality, contributing `{r} nrow(es_mort)` effect sizes. The **sensitivity pool** adds studies that met only the inclusive criterion (TTP and a clinical outcome both reported in the same cohort, not necessarily cross-tabulated); it comprises `{r} nrow(tbl_study)` studies in total, `{r} n_distinct(es_inc$study_id)` of which contribute `{r} nrow(es_inc)` mortality effect sizes.
 
@@ -525,6 +525,54 @@ Model fits are cached in `_brms_cache/` (not in the repository) and are regenera
 #| label: session
 sessionInfo()
 ```
+
+# 6. R packages
+
+All analyses were run in R `{r} paste(R.version$major, R.version$minor, sep = ".")` with Quarto `{r} tryCatch(system2("quarto", "--version", stdout = TRUE)[1], error = \(e) "(version not found)")` for rendering. @tbl-packages lists the R packages that the analysis code calls directly, plus the Stan interface packages that `brms` uses to fit the models. Versions are those recorded in the project lockfile (`renv.lock`), which also lists every indirect dependency; `renv::restore()` reinstalls them.
+
+```{r}
+#| label: tbl-packages
+#| tbl-cap: "R packages used in the analysis, with the versions recorded in `renv.lock`."
+pkg_roles <- tribble(
+  ~Package,      ~Use,
+  "brms",        "Bayesian random-effects models and meta-regressions",
+  "rstan",       "Stan backend for brms (all mortality models)",
+  "StanHeaders", "Stan C++ headers used by rstan",
+  "RcppParallel","Threading library used by rstan (version 5.1.x required)",
+  "cmdstanr",    "CmdStan backend for brms (persistent bacteremia, clearance and relapse models)",
+  "posterior",   "Posterior draws and convergence diagnostics",
+  "loo",         "Leave-one-out cross-validation",
+  "bayesplot",   "Trace, rank and posterior predictive plots",
+  "metafor",     "Effect-size calculation and frequentist meta-analysis (Egger, Begg, trim-and-fill)",
+  "lme4",        "Mixed-effects logistic regression (dose-response analysis)",
+  "MASS",        "Multivariate normal simulation (dose-response analysis)",
+  "readxl",      "Reading the extraction workbook",
+  "tidyverse",   "Data manipulation (with dplyr, tidyr, purrr, stringr and readr)",
+  "dplyr",       "Data manipulation",
+  "tidyr",       "Data reshaping",
+  "purrr",       "Iteration",
+  "stringr",     "String handling",
+  "readr",       "Reading and writing text files",
+  "withr",       "Seeded random-number generation for prediction intervals",
+  "ggplot2",     "Graphics",
+  "ggdist",      "Posterior density and interval plots",
+  "patchwork",   "Combining plots",
+  "scales",      "Axis and label formatting",
+  "gt",          "HTML tables in the analysis notebooks",
+  "PRISMA2020",  "PRISMA 2020 flow diagram",
+  "knitr",       "Executing code chunks and formatting tables",
+  "rmarkdown",   "Document rendering with knitr"
+)
+lock_pkgs <- jsonlite::read_json("renv.lock")$Packages
+cited <- c("brms", "rstan", "metafor", "posterior", "loo", "lme4", "tidyverse", "PRISMA2020")
+pkg_roles |>
+  mutate(Version = vapply(Package, \(p) lock_pkgs[[p]]$Version %||% NA_character_, ""),
+         .after = Package) |>
+  mutate(Reference = ifelse(Package %in% cited, paste0("[@pkg_", Package, "]"), "")) |>
+  tab(w = c(2, 1.2, 5, 1.5))
+```
+
+CmdStan `{r} tryCatch(as.character(cmdstanr::cmdstan_version()), error = \(e) "(not found)")` is installed outside R; see the project README for setup.
 
 # References {.unnumbered}
 
