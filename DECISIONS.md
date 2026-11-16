@@ -33,3 +33,11 @@ Median I² (62%) and the frequentist trim-and-fill estimate (1.51; 1.23 to 1.86)
 - `R/04_prisma_flow.R` did not parse: line 60 was the `![PRISMA 2020 flow diagram ...](...){#fig-prisma}` markdown from `index.qmd`, pasted into the script in commit `ef20d03`. The line was removed.
 
 **What had been seen when this was decided.** The refitted estimates recorded in the entry above. The renv setup changed no analysis code or model settings. After the xfun update, `notebooks/clinical_failure.qmd` rendered under renv; the frozen outputs changed only in the random gt table IDs. The other notebooks and `index.qmd` have not yet been re-rendered under renv.
+
+## 2026-11-16: Stale subgroups freeze corrected; all documents re-executed under renv
+
+**Correction to the first entry of 2026-11-16.** The frozen results committed in `3153cb6` ("Update frozen render results after model refit") did not cover `notebooks/subgroups.qmd`. The full render that produced them used `freeze: auto`, which reuses frozen results for documents whose source has not changed, so the subgroups notebook was not re-executed and kept pre-refit estimates (for example Gram-negative OR 2.66 [1.72, 4.06], Gram-positive OR 1.48 [0.85, 2.58]). The abstract and `index.qmd` were not affected: they compute from the refitted models.
+
+**What was done.** After R was restarted on the renv project library, every document (`notebooks/mortality-analysis.qmd`, `subgroups.qmd`, `clinical_failure.qmd`, `rob.qmd`, `methods.qmd`, then `index.qmd`) was rendered individually, which forces execution. A full `quarto render` (HTML, docx, PDF) followed. All renders succeeded with no warnings, and no models were refitted. The subgroups outputs now match the refit (Gram-negative 2.67 [1.75, 4.11], Gram-positive 1.47 [0.83, 2.50]); committed in `084b122`. In the mortality-analysis notebook, only the `sessionInfo()` output changed, which now reflects the renv library. Freeze files for `clinical_failure` and `rob` changed only in gt-generated table IDs and cell `headers` attributes, and were reverted.
+
+**Lesson.** After a refit, re-execute each document individually (or clear `_freeze/`) before the project render; a project render alone can leave stale frozen outputs.
