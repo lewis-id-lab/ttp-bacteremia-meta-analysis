@@ -21,3 +21,15 @@ Dated entries, newest last. Earlier entries are not rewritten; corrections are a
 Median I² (62%) and the frequentist trim-and-fill estimate (1.51; 1.23 to 1.86) were unchanged. No conclusion changed.
 
 **Interpretation (assistant inference, not a human check; moderate confidence).** The differences are Monte Carlo variation: seeds are fixed, but the Stan toolchain differs from the one that produced the earlier fits, so draws are not reproduced exactly. Refitting under the earlier toolchain would settle this, but its versions were not recorded. Package versions should be pinned (for example with renv) so that future refits reproduce exactly.
+
+## 2026-11-16: renv set up; xfun updated to 0.62 in the project library
+
+**What happened.** After the refit above, renv was initialised so that future refits use the same package versions. The project library was populated from the system R library (`renv::hydrate()`), so it holds the versions that produced the current cached fits and frozen outputs, including RcppParallel 5.1.11, rstan 2.32.7, StanHeaders 2.39.1, brms 2.23.0 and cmdstanr 0.9.0 (CmdStan 2.40.0, installed outside renv).
+
+**Decisions.**
+
+- The first `renv::snapshot()` was aborted by renv's pre-flight check: litedown 1.0 (imported by gt and markdown) requires xfun >= 0.62, but the system library had xfun 0.61. xfun was updated to 0.62 in the project library only, so the lockfile can be restored. The system library is unchanged. This is the only version in `renv.lock` that differs from the library used for the refit. xfun is a knitr/rendering utility and is not in the Stan/brms fitting chain.
+- cmdstanr (used only as `backend = "cmdstanr"`) and PRISMA2020 (used by `R/04_prisma_flow.R`) were not found by renv's dependency scan. They are declared in `_dependencies.R`.
+- `R/04_prisma_flow.R` did not parse: line 60 was the `![PRISMA 2020 flow diagram ...](...){#fig-prisma}` markdown from `index.qmd`, pasted into the script in commit `ef20d03`. The line was removed.
+
+**What had been seen when this was decided.** The refitted estimates recorded in the entry above. The renv setup changed no analysis code or model settings. After the xfun update, `notebooks/clinical_failure.qmd` rendered under renv; the frozen outputs changed only in the random gt table IDs. The other notebooks and `index.qmd` have not yet been re-rendered under renv.
