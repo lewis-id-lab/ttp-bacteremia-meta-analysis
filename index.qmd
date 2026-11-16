@@ -22,13 +22,13 @@ abstract: |
 
   **Methods.** We searched PubMed, Embase, Scopus, the Cochrane Library, and Web of Science (updated May 2026) and extracted effect sizes from 100 studies meeting strict eligibility criteria. Log odds ratios for all-cause mortality (short versus long TTP) were pooled with a Bayesian random-effects model. We examined pathogen class, TTP cutpoint, publication bias, and a sensitivity analysis adding studies meeting more inclusive criteria. Persistent bacteremia and microbiological clearance were analyzed as secondary outcomes.
 
-  **Results.** Fifty-eight studies (72 effect sizes) reported mortality. Short TTP was associated with higher mortality (pooled OR 2.06; 95% credible interval [CrI], 1.67 to 2.55), with substantial heterogeneity (median I² 62%; 95% prediction interval, 0.5 to 8.6). The association was larger in Gram-negative (OR 2.66; 95% CrI, 1.72 to 4.06) than Gram-positive bacteremia (OR 1.48; 95% CrI, 0.85 to 2.58), although the credible intervals overlapped. Higher TTP cutpoints were associated with weaker associations overall, but this was not consistent across subgroups. The funnel plot was asymmetric, and trim-and-fill gave an adjusted OR of 1.51 (95% CI, 1.23 to 1.86). Short TTP was also associated with persistent bacteremia (OR 1.74; 95% CrI, 1.09 to 2.80); data on clearance were sparse.
+  **Results.** Fifty-eight studies (72 effect sizes) reported mortality. Short TTP was associated with higher mortality (pooled OR 2.05; 95% credible interval [CrI], 1.66 to 2.57), with substantial heterogeneity (median I² 62%; 95% prediction interval, 0.51 to 8.50). The association was larger in Gram-negative (OR 2.67; 95% CrI, 1.75 to 4.11) than Gram-positive bacteremia (OR 1.47; 95% CrI, 0.83 to 2.50), although the credible intervals overlapped. Higher TTP cutpoints were associated with weaker associations overall, but this was not consistent across subgroups. The funnel plot was asymmetric, and trim-and-fill gave an adjusted OR of 1.51 (95% CI, 1.23 to 1.86). Short TTP was also associated with persistent bacteremia (OR 1.72; 95% CrI, 1.09 to 2.79); data on clearance were sparse.
 
   **Conclusions.** Short TTP is associated with higher mortality, particularly in Gram-negative bacteremia, but heterogeneity, cutpoint dependence, probable confounding, and small-study effects limit its use as a stand-alone prognostic tool. Standardized thresholds and adjusted, individual-patient analyses are needed.
 importance: |
   Blood cultures are the standard test for bloodstream infection, and automated systems record how long a culture takes to turn positive. Because cultures that turn positive sooner often contain more bacteria, this time to positivity might help clinicians identify patients at higher risk of dying. We combined results from 58 studies that reported mortality. Patients whose cultures turned positive quickly were, on average, about twice as likely to die, and the association appeared stronger for infections caused by Gram-negative bacteria. However, studies differed widely in how they defined a "quick" result, and the pattern of results suggested that smaller studies reported larger effects, so the true association may be smaller than the average suggests. Time to positivity is therefore best used as one supporting clue, alongside the patient's condition and the identified organism, rather than as a stand-alone guide to treatment.
 funding: "No specific funding was received for this study."
-prospero: "[PROSPERO registration number to be inserted]"
+prospero: "CRD420261398553"
 ---
 
 ```{r}
@@ -116,17 +116,17 @@ We therefore updated a systematic review of the association between blood cultur
 
 ## Protocol and registration
 
-The review is reported according to the PRISMA 2020 statement and the PRISMA-S extension for searches. A protocol was prepared for registration in PROSPERO (registration number: {{< meta prospero >}}). The review builds on a master's thesis at the University of Padova (F. Pangallo, 2025/2026; supervisor R. E. Lewis) that produced the original 57-study extraction database. Because that work was substantially complete before the protocol was registered, registration is retrospective for the baseline studies, and the 2026 update (additional search, screening, extraction, and the inclusive-criterion re-screen) was added afterwards. The analysis plan was developed during the thesis; deviations from the protocol are listed in the supplementary notebook ([Methods and PRISMA](notebooks/methods.qmd)).
+The review is reported according to the PRISMA 2020 statement and the PRISMA-S extension for searches. A protocol was prepared for registration in PROSPERO (registration number: {{< meta prospero >}}). Deviations from the protocol are listed in the supplementary notebook ([Methods and PRISMA](notebooks/methods.qmd)).
 
 ## Search strategy and study selection
 
-Five databases were searched (PubMed, Embase, Scopus, Cochrane Library, and Web of Science), with an original search and a May 2026 update [insert run dates and per-database record counts]. The searches yielded 4,605 records, with 3,196 unique records after de-duplication. CINAHL, trial registers, and preprint servers were not searched, and no reference-list searching or citation tracking was performed; these are deviations from the registered protocol. Candidate records were triaged for relevance [confirm the role of the Elicit semantic search tool and PubMed enrichment in this step, and reconcile Alvarez 2012 and Peri 2026, which project notes record as handsearch or snowball identifications], and 355 reports were sought for full-text review. Of these, 53 were not retrieved after pre-screening as ineligible (mainly conference abstracts, non-English papers, and methods-only papers), and 302 full-text reports were assessed (5 additional PDFs duplicated baseline studies). Under the strict criterion 43 reports were included, which added to the 57 baseline studies gave 100 studies; 259 were excluded (104 ineligible design, 65 no TTP measured, 54 no quantitative TTP-outcome association, 29 no clinical outcome, 5 duplicates, 2 not bloodstream infection). A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative association identified 40 further studies (sensitivity pool, 140 studies in total). Eligibility criteria and the full search strings are in the supplementary notebook ([Methods and PRISMA](notebooks/methods.qmd)) and `search_strategies.md`. @fig-prisma shows study flow.
+Five databases were searched (PubMed, Embase, Scopus, Cochrane Library, and Web of Science), with an original search and a May 2026 update \[insert run dates and per-database record counts\]. The searches yielded 4,605 records, with 3,196 unique records after de-duplication. CINAHL, trial registers, and preprint servers were not searched, and no reference-list searching or citation tracking was performed; these are deviations from the registered protocol. Candidate records were triaged for relevance \[confirm the role of the Elicit semantic search tool and PubMed enrichment in this step, and reconcile Alvarez 2012 and Peri 2026, which project notes record as handsearch or snowball identifications\], and 355 reports were sought for full-text review. Of these, 53 were not retrieved after pre-screening as ineligible (mainly conference abstracts, non-English papers, and methods-only papers), and 302 full-text reports were assessed (5 additional PDFs duplicated baseline studies). Under the strict criterion 43 reports were included, which added to the 57 baseline studies gave 100 studies; 259 were excluded (104 ineligible design, 65 no TTP measured, 54 no quantitative TTP-outcome association, 29 no clinical outcome, 5 duplicates, 2 not bloodstream infection). A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative association identified 40 further studies (sensitivity pool, 140 studies in total). Eligibility criteria and the full search strings are in the supplementary notebook ([Methods and PRISMA](notebooks/methods.qmd)) and `search_strategies.md`. @fig-prisma shows study flow.
 
-![PRISMA 2020 flow diagram for the original search and the May 2026 update.](data/PRISMA_v4_update.png){#fig-prisma width="100%"}
+![PRISMA 2020 flow diagram for the original search and the May 2026 update (strict criterion). A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative TTP-outcome association identified 40 further studies, which form the sensitivity pool (140 studies in total) and are not shown in the flow.](data/PRISMA_v4_prisma2020.png){#fig-prisma width="100%"}
 
 ## Data extraction and risk of bias
 
-Data were extracted into a structured relational workbook with linked tables for study characteristics, population, TTP reporting (continuous, dichotomized, or categorical; units; cutpoints), and outcomes (events and totals by TTP group, reported effect estimates, adjustment status, and outcome definitions). TTP was recorded in hours. Where a study reported both 2×2 data and an effect estimate, the 2×2 data were preferred. The baseline 57 studies were extracted by the thesis author [confirm whether extraction was independently verified]. For the 2026 update, full-text screening and data extraction were performed by a large language model agent working from the full-text PDFs and the written eligibility criteria and extraction codebook. Each of the 43 strict-pool extractions was then independently verified field by field against the source PDF by a separate agent that had not performed the original extraction; this led to 7 corrections before analysis. Studies using TTP only as part of a catheter-related bloodstream infection case definition were excluded from effect-size pooling. The human contribution to screening and extraction decisions (spot-checking, adjudication, or second human review) is described in the AI-use statement below [confirm], and we did not perform dual independent human screening or report inter-rater agreement.
+Data were extracted into a structured relational workbook with linked tables for study characteristics, population, TTP reporting (continuous, dichotomized, or categorical; units; cutpoints), and outcomes (events and totals by TTP group, reported effect estimates, adjustment status, and outcome definitions). TTP was recorded in hours. Where a study reported both 2×2 data and an effect estimate, the 2×2 data were preferred. The baseline 57 studies were extracted by the thesis author \[confirm whether extraction was independently verified\]. For the 2026 update, full-text screening and data extraction were performed by a large language model agent working from the full-text PDFs and the written eligibility criteria and extraction codebook. Each of the 43 strict-pool extractions was then independently verified field by field against the source PDF by a separate agent that had not performed the original extraction; this led to 7 corrections before analysis. Studies using TTP only as part of a catheter-related bloodstream infection case definition were excluded from effect-size pooling. The human contribution to screening and extraction decisions (spot-checking, adjudication, or second human review) is described in the AI-use statement below \[confirm\], and we did not perform dual independent human screening or report inter-rater agreement.
 
 Risk of bias was assessed for every included study with the Quality in Prognosis Studies (QUIPS) tool across six domains (participation, attrition, prognostic factor measurement, outcome measurement, confounding, and statistical analysis and reporting), each rated as low, moderate, or high, with an overall rating per study ([notebook](notebooks/rob.qmd)). For the update these ratings were generated by the extraction agent and were not independently re-rated by a second human.
 
@@ -212,85 +212,29 @@ In this Bayesian random-effects meta-analysis, short TTP was associated with hig
 
 # Funding {.unnumbered}
 
-No specific funding was received for this study. The authors are supported by their institutional salaries (University of Padova). [Confirm.]
+No specific funding was received for this study. The authors are supported by their institutional salaries (University of Padova). \[Confirm.\]
 
 # Conflicts of interest {.unnumbered}
 
-R.E.L. serves as an Associate Editor at the Journal of Antimicrobial Chemotherapy. The other author declares no conflicts of interest. [Confirm with all co-authors.]
+R.E.L. serves as an Associate Editor at the Journal of Antimicrobial Chemotherapy. The other author declares no conflicts of interest. \[Confirm with all co-authors.\]
 
 # Data and code availability {.unnumbered}
 
-The extraction workbook, analysis code, and rendered notebooks are included in the manuscript project. [Insert repository and DOI, for example an OSF project, once deposited.]
+The extraction workbook, analysis code, and rendered notebooks are included in the manuscript project. \[Insert repository and DOI, for example an OSF project, once deposited.\]
 
 # Use of artificial intelligence {.unnumbered}
 
-A large language model agent was used to assist with full-text screening and data extraction for the 2026 update, and a second, independent agent verified the extractions against the source PDFs, as described in the Methods. [State the model name and version, how authors reviewed outputs, and who is responsible for the final data. Confirm the wording against ASM's current policy on AI use.] Analysis code was written and run in R and Stan. The authors take responsibility for the content of the manuscript.
+A large language model agent was used to assist with full-text screening and data extraction for the 2026 update, and a second, independent agent verified the extractions against the source PDFs, as described in the Methods. \[State the model name and version, how authors reviewed outputs, and who is responsible for the final data. Confirm the wording against ASM's current policy on AI use.\] Analysis code was written and run in R and Stan. The authors take responsibility for the content of the manuscript.
 
 # Acknowledgments {.unnumbered}
 
-[None to declare / add acknowledgments.]
+\[None to declare / add acknowledgments.\]
 
 # References {.unnumbered}
 
 ::: {#refs}
 :::
 
-# Supplementary appendix: model specification and diagnostics {.appendix .unnumbered}
+# Supplementary appendix {.unnumbered}
 
-## Model specification {.unnumbered}
-
-All pooled and moderator models were Bayesian random-effects models fitted with `brms`: $y_i \mid \mathrm{SE}_i \sim \mathcal{N}(\mu + u_s,\ \mathrm{SE}_i^2)$ with study-level random intercepts $u_s \sim \mathcal{N}(0, \tau^2)$, where $y_i$ is the log odds ratio for effect size $i$ and $\mathrm{SE}_i$ its standard error. Priors were $\mu \sim \mathcal{N}(0, 1)$, $\tau \sim \text{Half-Cauchy}(0, 0.5)$, and $\mathcal{N}(0, 0.5)$ for moderator coefficients. Each model used 4 chains of 4,000 iterations (1,000 warm-up; 12,000 post-warm-up draws), `adapt_delta = 0.99`, and `max_treedepth = 12`. The persistent bacteremia and microbiological clearance models were fitted with the CmdStan backend and all others with rstan. Convergence was judged by $\hat{R} < 1.01$, bulk and tail effective sample sizes, divergent transitions, and visual inspection of trace and rank plots. Code is in `R/02_fit_models.R` and the notebooks.
-
-## Convergence across all fitted models {.unnumbered}
-
-```{r}
-#| label: tbl-conv-all
-#| tbl-cap: "Convergence diagnostics for every fitted model. Parameters are population-level effects and the between-study SD; study-level random effects are not summarized."
-conv_row <- function(path) {
-  fit <- readRDS(path)
-  d <- posterior::summarise_draws(posterior::as_draws_df(fit), rhat = posterior::rhat,
-                                  ess_bulk = posterior::ess_bulk, ess_tail = posterior::ess_tail) |>
-    filter(!grepl("^lp__|^lprior|^Intercept$|^r_study_id|^z_", variable))
-  np <- brms::nuts_params(fit)
-  tibble(Model = sub("\\.rds$", "", basename(path)),
-         `Max R-hat` = sprintf("%.3f", max(d$rhat, na.rm = TRUE)),
-         `Min bulk ESS` = sprintf("%.0f", min(d$ess_bulk, na.rm = TRUE)),
-         `Min tail ESS` = sprintf("%.0f", min(d$ess_tail, na.rm = TRUE)),
-         `Divergent transitions` = sum(np$Value[np$Parameter == "divergent__"]),
-         `Treedepth limit hits` = sum(np$Value[np$Parameter == "treedepth__"] >= 12))
-}
-conv_files <- c(list.files("_brms_cache/primary", full.names = TRUE, pattern = "rds$"),
-                "_brms_cache/sensitivity/fit_base.rds")
-conv_tbl <- bind_rows(lapply(conv_files, conv_row)) |>
-  mutate(Model = c(rep("", 0), Model)) 
-conv_tbl$Model[nrow(conv_tbl)] <- "fit_base (sensitivity pool)"
-knitr::kable(conv_tbl)
-n_div <- sum(conv_tbl$`Divergent transitions`)
-max_rhat <- max(as.numeric(conv_tbl$`Max R-hat`))
-min_ess  <- min(as.numeric(conv_tbl$`Min bulk ESS`))
-div_models <- paste(conv_tbl$Model[conv_tbl$`Divergent transitions` > 0], collapse = ", ")
-```
-
-The maximum $\hat{R}$ across models was `{r} sprintf("%.3f", max_rhat)` and the minimum bulk ESS was `{r} fmt_n(min_ess)`. Divergent transitions occurred in `{r} n_div` post-warm-up draws in total, confined to these models: `{r} div_models`. Estimates from models with divergent transitions, which have few effect sizes, should be interpreted cautiously.
-
-## Primary pool: pooled model {.unnumbered}
-
-{{< embed notebooks/mortality-analysis.qmd#tbl-diag >}}
-
-{{< embed notebooks/mortality-analysis.qmd#fig-trace >}}
-
-{{< embed notebooks/mortality-analysis.qmd#fig-rank >}}
-
-{{< embed notebooks/mortality-analysis.qmd#fig-rhat >}}
-
-## Sensitivity pool: pooled model {.unnumbered}
-
-{{< embed notebooks/mortality-analysis.qmd#fig-trace-sens >}}
-
-{{< embed notebooks/mortality-analysis.qmd#fig-rank-sens >}}
-
-{{< embed notebooks/mortality-analysis.qmd#fig-rhat-sens >}}
-
-## Moderator and sensitivity analyses {.unnumbered}
-
-{{< embed notebooks/mortality-analysis.qmd#tbl-mods >}}
+Details of the included studies, model specification, fit, diagnostics and convergence, and the sensitivity analyses are provided in a separate supplementary appendix (`appendix.qmd`, rendered as `appendix.docx`).
