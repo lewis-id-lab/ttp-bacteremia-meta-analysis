@@ -1,0 +1,532 @@
+---
+title: "Supplementary appendix"
+subtitle: "Blood culture time to positivity and mortality in bacteremia: a systematic review and Bayesian meta-analysis"
+date: today
+format:
+  docx:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    fig-dpi: 300
+    reference-doc: appendix-reference.docx
+bibliography: references.bib
+csl: asm.csl
+link-citations: false
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto
+---
+
+```{r}
+#| label: setup
+#| include: false
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(brms)
+  library(posterior)
+})
+source("R/01_prepare_data.R")
+source("R/02_fit_models.R")
+source("R/theme_jama.R")
+
+xlsx <- "data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"
+prim_dir <- "_brms_cache/primary"
+sens_dir <- "_brms_cache/sensitivity"
+
+es_all  <- prepare_effect_sizes(xlsx, include_inclusive_pool = FALSE, drop_contaminated_ttp = TRUE)
+es_mort <- es_for_outcome(es_all, "mortality")
+es_inc  <- prepare_effect_sizes(xlsx, include_inclusive_pool = TRUE,  drop_contaminated_ttp = TRUE) |>
+  es_for_outcome("mortality")
+
+tbl_study <- readxl::read_excel(xlsx, sheet = "tbl_study")
+tbl_pop   <- readxl::read_excel(xlsx, sheet = "tbl_population")
+tbl_ttp   <- readxl::read_excel(xlsx, sheet = "tbl_ttp")
+tbl_out   <- readxl::read_excel(xlsx, sheet = "tbl_outcomes")
+
+bib_keys <- sub("^@[A-Za-z]+\\{([^,]+),.*", "\\1", grep("^@", readLines("references.bib"), value = TRUE))
+fit_path <- function(name, dir = prim_dir) file.path(dir, paste0(name, ".rds"))
+read_fit <- function(name, dir = prim_dir) readRDS(fit_path(name, dir))
+fmt_n    <- function(x) format(x, big.mark = ",")
+# Pipe table with relative column widths (pandoc reads widths from the separator row)
+tab <- function(x, w = NULL, ...) {
+  k <- as.character(knitr::kable(x, format = "pipe", ...))
+  if (!is.null(w)) {
+    stopifnot(length(w) == ncol(x))
+    k[2] <- paste0("|", paste0(":", strrep("-", pmax(3, round(100 * w / sum(w)))), collapse = "|"), "|")
+  }
+  knitr::asis_output(paste(c("", k, ""), collapse = "\n"))
+}
+
+# Studies with a bib entry are cited; the rest are given as author and year
+study_label <- function(id, author, year) {
+  ifelse(id %in% bib_keys, paste0(author, " ", year, " [@", id, "]"), paste(author, year))
+}
+```
+
+# Overview
+
+This appendix accompanies the main manuscript and gives (1) details of the included studies, (2) model specification, fit, diagnostics, and convergence, and (3) sensitivity analyses. All numbers are generated from the extraction workbook (`data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx`) and the cached `brms` fits in the project repository.
+
+The **primary pool** comprises `{r} attr(es_all, "n_studies")` studies meeting the strict eligibility criterion (a quantitative association between TTP and a clinical outcome); `{r} n_distinct(es_mort$study_id)` of these reported mortality, contributing `{r} nrow(es_mort)` effect sizes. The **sensitivity pool** adds studies that met only the inclusive criterion (TTP and a clinical outcome both reported in the same cohort, not necessarily cross-tabulated); it comprises `{r} nrow(tbl_study)` studies in total, `{r} n_distinct(es_inc$study_id)` of which contribute `{r} nrow(es_inc)` mortality effect sizes.
+
+# 1. Included studies
+
+## 1.1 Study characteristics
+
+```{r}
+#| label: tbl-studies
+#| tbl-cap: "Characteristics of all studies in the extraction workbook (primary and inclusive-only). N is the sum of participants across extracted arms. Pathogen: GN, Gram-negative; GP, Gram-positive; F, fungal; M, mixed or polymicrobial. Outcomes: M, mortality; PB, persistent bacteremia; MC, microbiological clearance; R, relapse; O, other clinical outcome. RoB, overall QUIPS risk of bias."
+path_abbr <- c(gram_negative = "GN", gram_positive = "GP", fungal = "F", mixed = "M")
+out_abbr <- function(x) {
+  grp <- case_when(
+    x == "mortality" | grepl("mortality", x) ~ "M",
+    x == "persistent_bacteremia"             ~ "PB",
+    x %in% c("microbiological_clearance", "bacteremia_clearance") ~ "MC",
+    x == "relapse"                           ~ "R",
+    TRUE                                     ~ "O")
+  paste(intersect(c("M", "PB", "MC", "R", "O"), unique(grp)), collapse = ", ")
+}
+
+pop_sum <- tbl_pop |>
+  group_by(study_id) |>
+  summarise(
+    N = if (all(is.na(n_total))) NA_real_ else sum(n_total, na.rm = TRUE),
+    Pathogen = paste(unique(na.omit(path_abbr[pathogen_class])), collapse = ", "),
+    .groups = "drop")
+out_sum <- tbl_out |> group_by(study_id) |> summarise(Outcomes = out_abbr(outcome_type), .groups = "drop")
+cut_sum <- tbl_ttp |>
+  group_by(study_id) |>
+  summarise(Cutpoint = if (all(is.na(ttp_cutpoint_hours))) "" else {
+    r <- range(ttp_cutpoint_hours, na.rm = TRUE)
+    if (r[1] == r[2]) format(r[1]) else paste(format(r[1]), format(r[2]), sep = "-") },
+    .groups = "drop")
+
+studies_tbl <- tbl_study |>
+  left_join(pop_sum, by = "study_id") |>
+  left_join(out_sum, by = "study_id") |>
+  left_join(cut_sum, by = "study_id") |>
+  mutate(Pool = if_else(grepl("[INCLUSIVE_ONLY]", coalesce(notes, ""), fixed = TRUE),
+                        "Inclusive", "Primary")) |>
+  arrange(factor(Pool, c("Primary", "Inclusive")), first_author, pub_year)
+
+studies_tbl |>
+  transmute(
+    Study = study_label(study_id, first_author, pub_year),
+    Country = country,
+    Design = str_replace_all(study_design, "_", " "),
+    N = ifelse(is.na(N), "NR", fmt_n(N)),
+    Pathogen,
+    Outcomes,
+    `Cut-point (h)` = Cutpoint,
+    RoB = str_to_title(rob_overall),
+    Pool) |>
+  tab(w = c(3.4, 1.5, 1.8, .8, 1, 1.3, 1.1, 1.1, 1.1))
+```
+
+Pool: Primary, strict criterion (`{r} sum(studies_tbl$Pool == "Primary")` studies); Inclusive, meets only the inclusive criterion (`{r} sum(studies_tbl$Pool == "Inclusive")` studies). NR, not reported. Cutpoint is the TTP threshold (hours) used to define short versus long TTP, given as a range when a study reported several.
+
+## 1.2 Summary of included studies
+
+```{r}
+#| label: tbl-studies-summary
+#| tbl-cap: "Summary of study-level characteristics by analysis pool."
+sm <- studies_tbl |>
+  mutate(Design = str_replace_all(study_design, "_", " "),
+         RoB = factor(rob_overall, levels = c("low", "moderate", "high", "critical")))
+bind_rows(
+  sm |> count(Pool, Level = Design) |> mutate(Characteristic = "Design"),
+  sm |> count(Pool, Level = as.character(RoB)) |> mutate(Characteristic = "Risk of bias (QUIPS)"),
+  sm |> mutate(Level = as.character(cut(pub_year, c(-Inf, 2009, 2014, 2019, Inf),
+                                        labels = c("2009 or earlier", "2010-2014", "2015-2019", "2020 or later")))) |>
+    count(Pool, Level) |> mutate(Characteristic = "Publication year")
+) |>
+  pivot_wider(names_from = Pool, values_from = n, values_fill = 0) |>
+  mutate(Total = Primary + Inclusive) |>
+  select(Characteristic, Level, Primary, Inclusive, Total) |>
+  tab()
+```
+
+## 1.3 Mortality effect sizes
+
+```{r}
+#| label: tbl-es-mortality
+#| tbl-cap: "Mortality effect sizes in the primary pool (short versus long TTP). Source: 2x2, computed from event counts; Rep-adj and Rep-unadj, back-calculated from a reported adjusted or unadjusted OR, HR, or RR with 95% CI. Time is the outcome time point in days. OR is exp(yi) with a Wald 95% CI."
+src_abbr <- c(two_by_two = "2x2", reported_adjusted = "Rep-adj", reported_unadjusted = "Rep-unadj",
+              continuous_per_hour = "Per-hour")
+es_mort |>
+  left_join(select(tbl_study, study_id, first_author), by = "study_id") |>
+  arrange(first_author, pub_year, study_id, arm_id) |>
+  transmute(
+    Study = study_label(study_id, first_author, pub_year),
+    Arm = arm_id,
+    `Time (d)` = outcome_timepoint_days,
+    Source = unname(src_abbr[es_source]),
+    Pathogen = coalesce(unname(path_abbr[pathogen_class]), ""),
+    `Cut-point (h)` = ifelse(is.na(ttp_cutpoint_hours), "", format(ttp_cutpoint_hours)),
+    `OR (95% CI)` = sprintf("%.2f (%.2f to %.2f)", exp(yi), exp(yi - qnorm(.975) * sei), exp(yi + qnorm(.975) * sei))) |>
+  tab(w = c(3.2, 1, 1, 1.2, 1, 1.2, 2.2))
+```
+
+# 2. Model specification
+
+All pooled and moderator models were Bayesian random-effects models fitted with `brms`: $y_i \mid \mathrm{SE}_i \sim \mathcal{N}(\mu + u_s,\ \mathrm{SE}_i^2)$ with study-level random intercepts $u_s \sim \mathcal{N}(0, \tau^2)$, where $y_i$ is the log odds ratio for effect size $i$ and $\mathrm{SE}_i$ its standard error. Priors were $\mu \sim \mathcal{N}(0, 1)$, $\tau \sim \text{Half-Cauchy}(0, 0.5)$, and $\mathcal{N}(0, 0.5)$ for moderator coefficients. Each model used 4 chains of 4,000 iterations (1,000 warm-up; 12,000 post-warm-up draws), `adapt_delta = 0.99`, and `max_treedepth = 12`. The persistent bacteremia and microbiological clearance models were fitted with the CmdStan backend and all others with rstan. The 95% prediction interval for a new study is the central 95% interval of the predictive distribution $\mathcal{N}(\mu, \tau^2)$. $I^2$ was computed per posterior draw as $\tau^2 / (\tau^2 + \bar{v})$, where $\bar{v}$ is the mean within-study variance. Code is in `R/02_fit_models.R` and the analysis notebooks.
+
+```{r}
+#| label: tbl-model-list
+#| tbl-cap: "Fitted models. k is the number of effect sizes and Studies the number of distinct studies in each model."
+model_desc <- tribble(
+  ~name,                 ~Description,
+  "fit_base",            "Overall pooled effect, mortality",
+  "fit_gram_pos",        "Pooled effect, Gram-positive subgroup",
+  "fit_gram_neg",        "Pooled effect, Gram-negative subgroup",
+  "fit_fungal",          "Pooled effect, fungal subgroup",
+  "fit_metareg",         "Pathogen class meta-regression (Gram-positive vs Gram-negative)",
+  "fit_cutpoint",        "TTP cutpoint meta-regression (2x2 effect sizes; cutpoint centered at median)",
+  "fit_cutpoint_le24",   "TTP cutpoint meta-regression restricted to cutpoints of 24 h or less",
+  "fit_gneg_cutpoint",   "TTP cutpoint meta-regression, Gram-negative effect sizes",
+  "fit_gpos_cutpoint",   "TTP cutpoint meta-regression, Gram-positive effect sizes",
+  "fit_gpos_cutpoint_sens", "Gram-positive cutpoint meta-regression excluding Minejima 2019 (72 h)",
+  "fit_2x2",             "Pooled effect, 2x2-derived effect sizes only",
+  "fit_reported",        "Pooled effect, reported (back-calculated) effect sizes only",
+  "fit_es_source",       "Effect-size source meta-regression (2x2 as reference)",
+  "fit_adjustment",      "Adjusted vs unadjusted reported estimates",
+  "fit_year",            "Publication year meta-regression (centered at median)",
+  "fit_pb",              "Pooled effect, persistent bacteremia",
+  "fit_pb_defgroup",     "Persistent bacteremia by outcome-definition group",
+  "fit_clr",             "Pooled effect, microbiological clearance")
+prim_files <- sub("\\.rds$", "", list.files(prim_dir, pattern = "\\.rds$"))
+model_desc |>
+  filter(name %in% prim_files) |>
+  mutate(fit = map(name, read_fit),
+         Formula = map_chr(fit, \(f) paste(deparse(formula(f)$formula), collapse = "")),
+         k = map_int(fit, \(f) nrow(f$data)),
+         Studies = map_int(fit, \(f) n_distinct(f$data$study_id))) |>
+  select(Model = name, Description, Formula, k, Studies) |>
+  tab(w = c(2.2, 4.5, 4.3, .6, .9))
+```
+
+# 3. Model fit, diagnostics, and convergence
+
+## 3.1 Posterior summaries of the pooled models
+
+```{r}
+#| label: tbl-pooled-fit
+#| tbl-cap: "Posterior summaries of the pooled random-effects models. OR is the posterior median odds ratio (short versus long TTP) with its 95% credible interval; PI is the 95% prediction interval for a new study; tau is the between-study SD of the log-OR; I2 is the posterior median; P(OR > 1) is the posterior probability of an association in the direction of harm."
+pooled_row <- function(name, label, dir = prim_dir) {
+  if (!file.exists(fit_path(name, dir))) return(NULL)
+  f <- read_fit(name, dir); p <- pooled_summary(f)
+  tibble(Model = label,
+         k = nrow(f$data), Studies = n_distinct(f$data$study_id),
+         OR = sprintf("%.2f (%.2f to %.2f)", p$median_OR, p$ci_OR[1], p$ci_OR[2]),
+         PI = sprintf("%.2f to %.2f", p$pi_OR[1], p$pi_OR[2]),
+         tau = sprintf("%.2f", p$median_tau),
+         I2 = sprintf("%.0f%%", p$median_i2),
+         `P(OR > 1)` = sprintf("%.1f%%", 100 * p$p_harm))
+}
+bind_rows(
+  pooled_row("fit_base",     "Mortality, all (primary)"),
+  pooled_row("fit_gram_neg", "Mortality, Gram-negative"),
+  pooled_row("fit_gram_pos", "Mortality, Gram-positive"),
+  pooled_row("fit_fungal",   "Mortality, fungal"),
+  pooled_row("fit_2x2",      "Mortality, 2x2 only"),
+  pooled_row("fit_reported", "Mortality, reported only"),
+  pooled_row("fit_pb",       "Persistent bacteremia"),
+  pooled_row("fit_clr",      "Microbiological clearance"),
+  pooled_row("fit_base",     "Mortality, all (sensitivity pool)", sens_dir)
+) |> tab()
+```
+
+The microbiological clearance model rests on 4 effect sizes from 3 studies, so its between-study SD, and therefore its prediction interval, is essentially unconstrained by the data and the interval should not be interpreted.
+
+## 3.2 Convergence across all fitted models
+
+```{r}
+#| label: tbl-conv-all
+#| tbl-cap: "Convergence diagnostics for every fitted model. Parameters are population-level effects and the between-study SD; study-level random effects are not summarized. Treedepth hits count post-warm-up iterations that reached the maximum tree depth of 12."
+conv_row <- function(path, pool) {
+  fit <- readRDS(path)
+  d <- summarise_draws(as_draws_df(fit), rhat = rhat, ess_bulk = ess_bulk, ess_tail = ess_tail) |>
+    filter(!grepl("^lp__|^lprior|^Intercept$|^r_study_id|^z_", variable))
+  np <- nuts_params(fit)
+  tibble(Model = sub("\\.rds$", "", basename(path)), Pool = pool,
+         `Max R-hat` = sprintf("%.3f", max(d$rhat, na.rm = TRUE)),
+         `Min bulk ESS` = sprintf("%.0f", min(d$ess_bulk, na.rm = TRUE)),
+         `Min tail ESS` = sprintf("%.0f", min(d$ess_tail, na.rm = TRUE)),
+         `Divergent transitions` = sum(np$Value[np$Parameter == "divergent__"]),
+         `Treedepth hits` = sum(np$Value[np$Parameter == "treedepth__"] >= 12))
+}
+conv_tbl <- bind_rows(
+  map(list.files(prim_dir, full.names = TRUE, pattern = "\\.rds$"), conv_row, pool = "Primary"),
+  map(list.files(sens_dir, full.names = TRUE, pattern = "\\.rds$"), conv_row, pool = "Sensitivity"))
+tab(conv_tbl, w = c(2.6, 1.3, 1, 1.1, 1.1, 1.3, 1.1))
+n_div     <- sum(conv_tbl$`Divergent transitions`)
+max_rhat  <- max(as.numeric(conv_tbl$`Max R-hat`))
+min_ess   <- min(as.numeric(conv_tbl$`Min bulk ESS`))
+min_tail  <- min(as.numeric(conv_tbl$`Min tail ESS`))
+div_models <- paste(unique(paste0(conv_tbl$Model, " (", tolower(conv_tbl$Pool), ")")[conv_tbl$`Divergent transitions` > 0]), collapse = ", ")
+```
+
+Across `{r} nrow(conv_tbl)` fitted models the maximum $\hat{R}$ was `{r} sprintf("%.3f", max_rhat)`, the minimum bulk ESS was `{r} fmt_n(min_ess)`, and the minimum tail ESS was `{r} fmt_n(min_tail)`. `{r} if (n_div == 0) "No divergent transitions occurred." else paste0("Divergent transitions occurred in ", n_div, " post-warm-up draws in total, confined to: ", div_models, ". Estimates from models with divergent transitions, which have few effect sizes, should be interpreted cautiously.")`
+
+## 3.3 Primary pool: pooled model
+
+```{r}
+#| label: tbl-diag
+#| tbl-cap: "Convergence diagnostics for the primary pooled model (all mortality effect sizes)."
+fit_prim <- read_fit("fit_base")
+summarise_draws(as_draws_df(fit_prim), rhat = rhat, ess_bulk = ess_bulk, ess_tail = ess_tail) |>
+  filter(!grepl("^lp__|^lprior|^Intercept$|^r_study_id|^z_|^sigma$", variable)) |>
+  transmute(Parameter = variable, `R-hat` = sprintf("%.3f", rhat),
+            `Bulk ESS` = sprintf("%.0f", ess_bulk), `Tail ESS` = sprintf("%.0f", ess_tail)) |>
+  tab()
+```
+
+```{r}
+#| label: fig-trace
+#| fig-cap: "Trace plots for the mean (mu) and between-study SD (tau) of the primary pooled model. Well-mixed, overlapping chains indicate good convergence."
+#| fig-width: 6.5
+#| fig-height: 5
+bayesplot::mcmc_trace(
+  fit_prim, pars = c("b_Intercept", "sd_study_id__Intercept"),
+  facet_args = list(ncol = 1, labeller = as_labeller(c(
+    b_Intercept = "mu (pooled log-OR)", sd_study_id__Intercept = "tau (between-study SD)")))) +
+  theme_jama(base_size = 10)
+```
+
+```{r}
+#| label: fig-rank
+#| fig-cap: "Rank plots for the primary pooled model. Uniform histograms across chains indicate good mixing."
+#| fig-width: 6.5
+#| fig-height: 3.5
+bayesplot::mcmc_rank_overlay(fit_prim, pars = c("b_Intercept", "sd_study_id__Intercept")) +
+  theme_jama(base_size = 10)
+```
+
+```{r}
+#| label: fig-rhat
+#| fig-cap: "Distribution of R-hat across all parameters of the primary pooled model, including study-level random effects (dashed line at 1.01)."
+#| fig-width: 6.5
+#| fig-height: 3
+rhat_prim <- summarise_draws(fit_prim, rhat = rhat) |>
+  filter(!grepl("^lp__|^lprior", variable)) |> (\(d) setNames(d$rhat, d$variable))()
+bayesplot::mcmc_rhat_hist(rhat_prim, binwidth = 0.0005) +
+  geom_vline(xintercept = 1.01, linetype = "dashed", color = jama_ref_line) +
+  theme_jama(base_size = 10)
+```
+
+## 3.4 Posterior predictive check and cross-validation
+
+```{r}
+#| label: fig-ppc
+#| fig-cap: "Posterior predictive check for the primary pooled model: observed log odds ratios (dark line) against 50 replicated data sets drawn from the posterior (light lines)."
+#| fig-width: 6.5
+#| fig-height: 3.5
+# Observation-level SEs are fixed in the model, so replicates use each effect size's own SE
+brms::pp_check(fit_prim, type = "dens_overlay", ndraws = 50) +
+  labs(x = "Log odds ratio") + theme_jama(base_size = 10)
+```
+
+```{r}
+#| label: tbl-loo
+#| tbl-cap: "Leave-one-out cross-validation (PSIS-LOO) for the pooled models. Pareto k above 0.7 means the importance-sampling approximation is unreliable for that effect size. Many effect sizes exceed this threshold, as is typical when each study has its own random intercept, so the ELPD values are reported for completeness and should not be used to compare models."
+loo_row <- function(name, label, dir) {
+  l <- suppressWarnings(brms::loo(read_fit(name, dir)))
+  k <- loo::pareto_k_values(l)
+  tibble(Model = label, Observations = length(k),
+         `ELPD (SE)` = sprintf("%.1f (%.1f)", l$estimates["elpd_loo", "Estimate"], l$estimates["elpd_loo", "SE"]),
+         `Effective parameters` = sprintf("%.1f", l$estimates["p_loo", "Estimate"]),
+         `Pareto k > 0.7` = sum(k > 0.7),
+         `Max Pareto k` = sprintf("%.2f", max(k)))
+}
+bind_rows(
+  loo_row("fit_base", "Mortality, all (primary)", prim_dir),
+  loo_row("fit_base", "Mortality, all (sensitivity pool)", sens_dir)) |>
+  tab()
+```
+
+## 3.5 Sensitivity pool: pooled model
+
+```{r}
+#| label: fig-trace-sens
+#| fig-cap: "Trace plots for the mean (mu) and between-study SD (tau) of the sensitivity-pool pooled model."
+#| fig-width: 6.5
+#| fig-height: 5
+fit_sens <- read_fit("fit_base", sens_dir)
+bayesplot::mcmc_trace(
+  fit_sens, pars = c("b_Intercept", "sd_study_id__Intercept"),
+  facet_args = list(ncol = 1, labeller = as_labeller(c(
+    b_Intercept = "mu (pooled log-OR)", sd_study_id__Intercept = "tau (between-study SD)")))) +
+  theme_jama(base_size = 10)
+```
+
+```{r}
+#| label: fig-rank-sens
+#| fig-cap: "Rank plots for the sensitivity-pool pooled model."
+#| fig-width: 6.5
+#| fig-height: 3.5
+bayesplot::mcmc_rank_overlay(fit_sens, pars = c("b_Intercept", "sd_study_id__Intercept")) +
+  theme_jama(base_size = 10)
+```
+
+```{r}
+#| label: fig-rhat-sens
+#| fig-cap: "Distribution of R-hat across all parameters of the sensitivity-pool pooled model, including study-level random effects (dashed line at 1.01)."
+#| fig-width: 6.5
+#| fig-height: 3
+rhat_sens <- summarise_draws(fit_sens, rhat = rhat) |>
+  filter(!grepl("^lp__|^lprior", variable)) |> (\(d) setNames(d$rhat, d$variable))()
+bayesplot::mcmc_rhat_hist(rhat_sens, binwidth = 0.0005) +
+  geom_vline(xintercept = 1.01, linetype = "dashed", color = jama_ref_line) +
+  theme_jama(base_size = 10)
+```
+
+# 4. Sensitivity analyses
+
+## 4.1 Adding the inclusive-only studies
+
+```{r}
+#| label: tbl-sens-pool
+#| tbl-cap: "Pooled odds ratios for mortality in the primary pool (strict criterion) and the sensitivity pool (strict plus inclusive-only studies). Subgroup models are those defined in Section 2."
+pool_pair <- function(name, label) {
+  bind_rows(pooled_row(name, label) |> mutate(Pool = "Primary"),
+            pooled_row(name, label, sens_dir) |> mutate(Pool = "Sensitivity"))
+}
+bind_rows(
+  pool_pair("fit_base",     "All mortality"),
+  pool_pair("fit_gram_neg", "Gram-negative"),
+  pool_pair("fit_gram_pos", "Gram-positive"),
+  pool_pair("fit_fungal",   "Fungal"),
+  pool_pair("fit_2x2",      "2x2 only"),
+  pool_pair("fit_reported", "Reported only")) |>
+  select(Model, Pool, k, Studies, OR, PI, tau, I2) |>
+  tab()
+```
+
+```{r}
+#| label: fig-sens-pool
+#| fig-cap: "Posterior densities of the pooled odds ratio in the primary pool and the sensitivity pool (inclusive-only studies added)."
+#| fig-width: 6.5
+#| fig-height: 3.5
+bind_rows(
+  tibble(OR = pooled_summary(fit_prim)$OR_draws, Pool = sprintf("Primary (%d studies)", n_distinct(es_mort$study_id))),
+  tibble(OR = pooled_summary(fit_sens)$OR_draws, Pool = sprintf("Sensitivity (%d studies)", n_distinct(es_inc$study_id)))) |>
+  ggplot(aes(OR, fill = Pool)) +
+  geom_density(alpha = 0.55) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = jama_ref_line) +
+  scale_x_continuous(limits = c(0.5, 5)) +
+  scale_fill_jama() +
+  labs(x = "Pooled OR (short vs long TTP)", y = "Posterior density") +
+  theme_jama(base_size = 10) + theme(legend.position = "bottom")
+```
+
+## 4.2 Effect-size derivation
+
+```{r}
+#| label: tbl-es-source
+#| tbl-cap: "Pooled odds ratio by effect-size source (separate random-effects models)."
+src_post <- bind_rows(pooled_row("fit_2x2", "2x2-derived only"), pooled_row("fit_reported", "Reported only (adjusted and unadjusted)")) |>
+  select(Model, k, Studies, OR, tau, I2)
+tab(src_post)
+
+```
+
+```{r}
+#| label: tbl-es-contrast
+#| tbl-cap: "Contrasts from the joint effect-size-source meta-regression, with 2x2-derived effect sizes as the reference. A positive difference in log-OR means the reported estimates show a larger short-TTP association than the 2x2 estimates."
+d_src <- as_draws_df(read_fit("fit_es_source"))
+contr <- function(pat, label) {
+  b <- d_src[[grep(pat, names(d_src), value = TRUE)[1]]]
+  tibble(Contrast = label, `Difference in log-OR` = sprintf("%+.3f", median(b)),
+         `95% CrI` = sprintf("%+.3f to %+.3f", quantile(b, .025), quantile(b, .975)),
+         `P(difference > 0)` = sprintf("%.1f%%", 100 * mean(b > 0)))
+}
+bind_rows(contr("reported_adjusted", "Reported (adjusted) vs 2x2"),
+          contr("reported_unadjusted", "Reported (unadjusted) vs 2x2")) |>
+  tab()
+```
+
+## 4.3 TTP cutpoint analyses
+
+```{r}
+#| label: tbl-cutpoint
+#| tbl-cap: "Change in the log odds ratio per additional hour of TTP cutpoint across cutpoint meta-regressions. P(slope < 0) is the posterior probability that higher cutpoints are associated with weaker associations."
+slope_row <- function(name, label) {
+  f <- read_fit(name); d <- as_draws_df(f)
+  b <- d[[grep("^b_cutpoint_c$", names(d), value = TRUE)[1]]]
+  tibble(Model = label, k = nrow(f$data), Studies = n_distinct(f$data$study_id),
+         `Slope per hour` = sprintf("%.3f", median(b)),
+         `95% CrI` = sprintf("%.3f to %.3f", quantile(b, .025), quantile(b, .975)),
+         `P(slope < 0)` = sprintf("%.1f%%", 100 * mean(b < 0)))
+}
+bind_rows(
+  slope_row("fit_cutpoint",            "All cutpoints"),
+  slope_row("fit_cutpoint_le24",       "Cutpoints of 24 h or less"),
+  slope_row("fit_gneg_cutpoint",       "Gram-negative"),
+  slope_row("fit_gpos_cutpoint",       "Gram-positive"),
+  slope_row("fit_gpos_cutpoint_sens",  "Gram-positive, excluding Minejima 2019 (72 h)")) |>
+  tab()
+```
+
+## 4.4 Moderators
+
+```{r}
+#| label: tbl-mods
+#| tbl-cap: "Moderator meta-regressions (primary pool). The difference in log-OR is the change in the pooled log-OR per unit of the moderator; negative values shrink the short-TTP association."
+mod_row <- function(name, label, scale = 1, dir = "<") {
+  d <- as_draws_df(read_fit(name))
+  b <- d[[grep("^b_(?!Intercept)", names(d), perl = TRUE)[1]]]
+  tibble(Moderator = label, `Difference in log-OR` = sprintf("%.3f", median(b) * scale),
+         `95% CrI` = sprintf("%.3f to %.3f", quantile(b, .025) * scale, quantile(b, .975) * scale),
+         `P(direction)` = sprintf("%s %.1f%%", if (dir == "<") "P(< 0)" else "P(> 0)",
+                                  100 * if (dir == "<") mean(b < 0) else mean(b > 0)))
+}
+bind_rows(
+  mod_row("fit_cutpoint",   "TTP cutpoint (per 10 h)", scale = 10),
+  mod_row("fit_metareg",    "Pathogen: Gram-positive vs Gram-negative"),
+  mod_row("fit_adjustment", "Adjusted vs unadjusted estimate", dir = ">"),
+  mod_row("fit_year",       "Publication year (per 5 years)", scale = 5)) |>
+  tab()
+```
+
+## 4.5 Small-study effects
+
+```{r}
+#| label: tbl-pubbias
+#| tbl-cap: "Publication bias and small-study analyses for mortality (primary pool). These frequentist methods treat all effect sizes as independent and have limited reliability when heterogeneity is high."
+rma_mort <- metafor::rma(yi = yi, sei = sei, data = es_mort, method = "REML")
+egger <- metafor::regtest(rma_mort, model = "lm")
+begg  <- metafor::ranktest(rma_mort)
+tf    <- metafor::trimfill(rma_mort)
+tibble(
+  Analysis = c("Frequentist random-effects pooled OR (REML)",
+               "Egger regression test",
+               "Egger limit estimate as SE approaches 0 (OR)",
+               "Begg rank correlation test",
+               "Trim-and-fill: imputed studies",
+               "Trim-and-fill adjusted OR"),
+  Result = c(
+    sprintf("%.2f (%.2f to %.2f)", exp(rma_mort$beta[1]), exp(rma_mort$ci.lb), exp(rma_mort$ci.ub)),
+    sprintf("t = %.2f, df = %.0f, p %s", egger$zval, egger$ddf,
+            ifelse(egger$pval < 1e-4, "< 0.0001", sprintf("= %.4f", egger$pval))),
+    sprintf("%.2f (%.2f to %.2f)", exp(egger$est), exp(egger$ci.lb), exp(egger$ci.ub)),
+    sprintf("Kendall tau = %.2f, p = %.2f", begg$tau, begg$pval),
+    sprintf("%d", tf$k0),
+    sprintf("%.2f (%.2f to %.2f)", exp(tf$beta[1]), exp(tf$ci.lb), exp(tf$ci.ub)))) |>
+  tab()
+```
+
+# 5. Reproducibility
+
+Model fits are cached in `_brms_cache/` (not in the repository) and are regenerated by rendering the analysis notebooks or by `fit_all_models()` in `R/02_fit_models.R`; see the project README for CmdStan setup. This appendix can be rendered on its own with `quarto render appendix.qmd --to docx`.
+
+```{r}
+#| label: session
+sessionInfo()
+```
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

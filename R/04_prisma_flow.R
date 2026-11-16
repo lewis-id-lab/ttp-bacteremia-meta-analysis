@@ -57,3 +57,4 @@ make_prisma_flow <- function(out_dir = "data", stem = "PRISMA_v4_prisma2020") {
 }
 
 if (sys.nframe() == 0 || identical(Sys.getenv("MAKE_PRISMA"), "1")) make_prisma_flow()
+![PRISMA 2020 flow diagram for the original search and the May 2026 update (strict criterion). A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative TTP-outcome association identified 40 further studies, which form the sensitivity pool (140 studies in total) and are not shown in the flow.](data/PRISMA_v4_prisma2020.png){#fig-prisma width="100%"}

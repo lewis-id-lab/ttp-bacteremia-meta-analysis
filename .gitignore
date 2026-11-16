@@ -19,3 +19,6 @@ search_strategies.md
 
 # Machine-specific R environment
 .Renviron
+
+# Rendered standalone appendix
+/appendix.docx

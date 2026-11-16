@@ -122,7 +122,7 @@ with weakly-informative priors $\mu \sim \mathcal{N}(0,1)$, $\tau \sim \text{Hal
 
 ## PRISMA flow
 
-![Updated PRISMA 2020 flow](../data/PRISMA_v4_update.svg){#fig-prisma width="100%"}
+![Updated PRISMA 2020 flow](../data/PRISMA_v4_prisma2020.svg){#fig-prisma width="100%"}
 
 # Primary results — mortality
 
