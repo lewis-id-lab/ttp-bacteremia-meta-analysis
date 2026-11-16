@@ -9,7 +9,9 @@ format:
     number-sections: false
     fig-dpi: 300
     reference-doc: appendix-reference.docx
-bibliography: references.bib
+bibliography:
+  - references.bib
+  - packages.bib
 csl: asm.csl
 link-citations: false
 execute:
@@ -528,7 +530,7 @@ sessionInfo()
 
 # 6. R packages
 
-All analyses were run in R `{r} paste(R.version$major, R.version$minor, sep = ".")` with Quarto `{r} tryCatch(system2("quarto", "--version", stdout = TRUE)[1], error = \(e) "(version not found)")` for rendering. @tbl-packages lists the R packages that the analysis code calls directly, plus the Stan interface packages that `brms` uses to fit the models. Versions are those recorded in the project lockfile (`renv.lock`), which also lists every indirect dependency; `renv::restore()` reinstalls them.
+All analyses were run in R `{r} paste(R.version$major, R.version$minor, sep = ".")` with Quarto `{r} tryCatch(system2("quarto", "--version", stdout = TRUE)[1], error = \(e) "(version not found)")` for rendering. The table below lists the R packages that the analysis code calls directly, plus the Stan interface packages that `brms` uses to fit the models. Versions are those recorded in the project lockfile (`renv.lock`), which also lists every indirect dependency; `renv::restore()` reinstalls them.
 
 ```{r}
 #| label: tbl-packages
