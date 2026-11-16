@@ -5,7 +5,7 @@ date: today
 
 # PRISMA 2020 flow
 
-![Updated PRISMA flow for v4 database](../data/PRISMA_v4_update.svg){#fig-prisma width="100%"}
+![Updated PRISMA flow for v4 database (strict criterion). A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative TTP-outcome association identified 40 further studies, which form the sensitivity pool (140 studies in total) and are not shown in the flow.](../data/PRISMA_v4_prisma2020.svg){#fig-prisma width="100%"}
 
 # Search strategy
 
