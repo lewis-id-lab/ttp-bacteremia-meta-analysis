@@ -41,3 +41,14 @@ Median I² (62%) and the frequentist trim-and-fill estimate (1.51; 1.23 to 1.86)
 **What was done.** After R was restarted on the renv project library, every document (`notebooks/mortality-analysis.qmd`, `subgroups.qmd`, `clinical_failure.qmd`, `rob.qmd`, `methods.qmd`, then `index.qmd`) was rendered individually, which forces execution. A full `quarto render` (HTML, docx, PDF) followed. All renders succeeded with no warnings, and no models were refitted. The subgroups outputs now match the refit (Gram-negative 2.67 [1.75, 4.11], Gram-positive 1.47 [0.83, 2.50]); committed in `084b122`. In the mortality-analysis notebook, only the `sessionInfo()` output changed, which now reflects the renv library. Freeze files for `clinical_failure` and `rob` changed only in gt-generated table IDs and cell `headers` attributes, and were reverted.
 
 **Lesson.** After a refit, re-execute each document individually (or clear `_freeze/`) before the project render; a project render alone can leave stale frozen outputs.
+
+## 2026-11-16: Appendix published as a manuscript notebook; extraction workbook confirmed study-level before republishing
+
+**Appendix.** `appendix.qmd` was added to the manuscript notebooks in `_quarto.yml` (commit `3a84e8e`), so the site now has an HTML version (`appendix-preview.html`) that the article links to. Its Word output (`appendix.docx`) is unchanged. A new section 6 lists the R packages used, with versions taken from `renv.lock` (`c29ceda`). Citations for brms, rstan, metafor, posterior, loo, lme4, tidyverse and PRISMA2020 come from `citation()`. They are kept in `packages.bib`, because `R/03_build_references.R` regenerates `references.bib` in full.
+
+**Extraction workbook on the public site.** `data/` is a manuscript resource, so `data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx` is published on GitHub Pages. Before the site was republished, the workbook was checked in two steps:
+
+- *Assistant check (automated, not a human review).* Every sheet holds study-, arm- or outcome-level aggregates: counts, means, percentages and effect estimates. The smallest arm has n = 11. The 1,716 distinct free-text values summarise what published reports say. No reviewer names, initials or contact details were found; update rows record the extractor as "Cowork agent".
+- *Human confirmation.* The project lead confirmed that the workbook contains only study-level data from published reports.
+
+`data/` was therefore kept in the site resources. The site was published with `quarto publish gh-pages --no-render` (gh-pages `267ef38`), and the live appendix page was checked.
