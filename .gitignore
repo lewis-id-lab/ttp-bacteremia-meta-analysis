@@ -23,3 +23,6 @@ search_strategies.md
 
 # Rendered standalone appendix
 /appendix.docx
+
+# Quarto writes a new UUID-named copy of the PRISMA svg under each frozen figure folder on every render
+_freeze/index/figure-*/*-1-..

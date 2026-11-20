@@ -69,3 +69,34 @@ Median I² (62%) and the frequentist trim-and-fill estimate (1.51; 1.23 to 1.86)
 After both, a full render produced all article figures and the appendix page with no warnings. Committed in `81c36f4`.
 
 **Known leftover.** A small `_freeze/` folder of old PRISMA `.svg` copies, about 200 KB, is copied into the site output. It comes from the `../data/` image path in `notebooks/methods.qmd`; it is harmless and was not changed.
+
+## 2026-11-20: Cache rebuilt on a restored renv library; persistent-bacteremia and clearance estimates differ slightly from the 2026-11-16 refit
+
+**Points back to** the first entry of 2026-11-16 (full refit) and its table of refitted estimates.
+
+**What happened.** `_brms_cache/` was empty again, so `index.qmd` did not render. `renv::restore()` was run for the project (183 packages). Compiling `systemfonts` and `textshaping` needed the Homebrew freetype library on the linker path; this was set for one R session only, through a temporary `R_MAKEVARS_USER` file outside the project. No project or home-directory settings were changed. cmdstanr 0.9.0 and CmdStan 2.40.0 were found. Following the order in `README.md`, `notebooks/mortality-analysis.qmd`, `notebooks/clinical_failure.qmd` and then `index.qmd` were rendered (the last also rendered the other notebook previews and the PDF). All three renders exited with code 0 and the logs showed no render warnings.
+
+**What had been seen when this was decided.** The regenerated frozen outputs were compared with the committed ones.
+
+| Estimate | 2026-11-16 refit (committed) | 2026-11-20 refit |
+|---|---|---|
+| Persistent bacteremia OR (95% CrI) | 1.72 (1.09 to 2.79) | 1.74 (1.09 to 2.78) |
+| Microbiological clearance OR (95% CrI) | 1.66 (0.23 to 9.83) | 1.66 (0.24 to 9.41) |
+| Persistent-bacteremia definition-group meta-regression: intercept; endocarditis versus duration | 0.356; 0.596 | 0.366; 0.587 |
+
+- The mortality results were unchanged at the precision printed: pooled OR 2.05 (1.66 to 2.57), median I² 62%, 95% prediction interval 0.51 to 8.50, Gram-negative OR 2.67 (1.75 to 4.11), Gram-positive OR 1.47 (0.83 to 2.50), trim-and-fill 1.51 (1.23 to 1.86), Egger t = 6.19. In the mortality-analysis frozen output the only differences were the `sessionInfo()` package listing, random gt table IDs, and a dropped "package built under R version" warning. That file was reverted to its committed version.
+- The `clinical_failure` output has two Stan warnings that the committed version does not: 3 of 12,000 post-warm-up transitions hit the maximum treedepth limit of 10, and 9 of 12,000 ended with a divergence. They have not been matched to individual fits.
+
+**Decision.** The persistent-bacteremia figures in the abstract of `index.qmd` were changed from 1.72 (1.09 to 2.79) to 1.74 (1.09 to 2.78), to agree with the inline-computed Results and Discussion. No other hard-coded estimate in `index.qmd` needed changing. The new `clinical_failure` and `index` frozen outputs have not yet been committed.
+
+**Interpretation (assistant inference, not a human check; low to moderate confidence).** The cause of the shift is not established. One observation bears on it. The mortality fits go through `R/02_fit_models.R`, which passes a fixed seed, and they reproduced exactly. The three `brm()` calls in `notebooks/clinical_failure.qmd` (`fit_pb`, `fit_pb_defgroup`, `fit_clr`) set no `seed`, so their draws would be expected to differ on every refit whatever the toolchain. If that is the cause, the statement above that "seeds are fixed" holds for the mortality fits only. This has not been tested. Adding a seed to those calls, refitting twice and checking that the estimates agree would settle it. It would also show whether the treedepth and divergence warnings persist. Until then, treat the persistent-bacteremia and clearance estimates as dependent on the run, and note that the abstract hard-codes the persistent-bacteremia figures, so they can fall out of step with the Results after any refit.
+
+**Open, not decided.** The leftover PRISMA `.svg` copies noted above recurred: each render writes a new `_freeze/index/figure-{docx,html,ipynb}/<uuid>-1-../data/` folder. No frozen output or `index.html` refers to them. Whether to delete them and untrack the 10 already-committed ones is not yet decided.
+
+## 2026-11-20: Stray PRISMA `.svg` copies under `_freeze/` untracked and ignored (reverses the "known leftover" note of 2026-11-16)
+
+**Reverses** the "Known leftover" paragraph of the 2026-11-16 entry "Workaround for missing figures on the HTML article page", which left these copies in place as harmless. That entry is not rewritten, and the "Open, not decided" item in the entry above is now decided.
+
+**What was seen.** Every render of `index.qmd` writes a new UUID-named folder `_freeze/index/figure-{docx,html,ipynb}/<uuid>-1-../data/` holding a copy of a PRISMA `.svg`. Ten such files were tracked in git (3 of `PRISMA_v4_prisma2020.svg`, 7 of `PRISMA_v4_update.svg`), and the render of 2026-11-20 added three untracked ones. No `_freeze` JSON file and no `_manuscript/index.html` refers to them. The three new copies are byte-identical to `data/PRISMA_v4_prisma2020.svg`. The tracked `PRISMA_v4_update.svg` copies were not compared with anything, because `data/` no longer holds that file. The cause is not established beyond the earlier attribution to the `../data/` image path in `notebooks/methods.qmd`.
+
+**Decision.** The three untracked folders were deleted. The ten tracked files were removed from the git index with `git rm --cached` (they stay on disk, and git history keeps them). `_freeze/index/figure-*/*-1-..` was added to `.gitignore`. This affects git only: the site output still receives whichever copies exist on disk at render time. The staged removals have not been committed.
