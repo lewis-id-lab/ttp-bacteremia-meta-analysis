@@ -237,4 +237,4 @@ A large language model agent was used to assist with full-text screening and dat
 
 # Supplementary appendix {.unnumbered}
 
-Details of the included studies, model specification, fit, diagnostics and convergence, and the sensitivity analyses are provided in a separate supplementary appendix (`appendix.qmd`, rendered as `appendix.docx`).
+Details of the included studies, model specification, fit, diagnostics and convergence, and the sensitivity analyses are provided in a separate supplementary appendix ([HTML version](appendix-preview.html); [Word version](downloads/appendix.docx)).
