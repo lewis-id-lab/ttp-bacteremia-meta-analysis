@@ -100,3 +100,25 @@ After both, a full render produced all article figures and the appendix page wit
 **What was seen.** Every render of `index.qmd` writes a new UUID-named folder `_freeze/index/figure-{docx,html,ipynb}/<uuid>-1-../data/` holding a copy of a PRISMA `.svg`. Ten such files were tracked in git (3 of `PRISMA_v4_prisma2020.svg`, 7 of `PRISMA_v4_update.svg`), and the render of 2026-11-20 added three untracked ones. No `_freeze` JSON file and no `_manuscript/index.html` refers to them. The three new copies are byte-identical to `data/PRISMA_v4_prisma2020.svg`. The tracked `PRISMA_v4_update.svg` copies were not compared with anything, because `data/` no longer holds that file. The cause is not established beyond the earlier attribution to the `../data/` image path in `notebooks/methods.qmd`.
 
 **Decision.** The three untracked folders were deleted. The ten tracked files were removed from the git index with `git rm --cached` (they stay on disk, and git history keeps them). `_freeze/index/figure-*/*-1-..` was added to `.gitignore`. This affects git only: the site output still receives whichever copies exist on disk at render time. The staged removals have not been committed.
+
+## 2026-11-20: Fixed seed added to the `clinical_failure` fits; supersedes the "untested" note above
+
+**Supersedes** the interpretation in the first 2026-11-20 entry ("Cache rebuilt on a restored renv library…"), which called the missing-seed explanation untested, and the abstract figures of 1.74 (1.09 to 2.78) recorded there.
+
+**What changed.** `seed = 6382` was added to the three `brm()` calls in `notebooks/clinical_failure.qmd` (`fit_pb`, `fit_pb_defgroup`, `fit_clr`). Their cached `.rds` files were deleted, and the notebook was then rendered twice, deleting the three files again before the second render.
+
+**What was seen.** For all three fits the posterior draws were identical in the two runs (maximum absolute difference 0 across the shared parameters), with the same sampler diagnostics in both runs:
+
+| Fit | Divergences | Treedepth hits (limit 10) | Max R-hat | Estimate (both runs) |
+|---|---|---|---|---|
+| `fit_pb` | 0 | 5 of 12,000 | 1.0019 | OR 1.72 (1.06 to 2.80) |
+| `fit_pb_defgroup` | 0 | 0 | 1.0030 | intercept 0.357; endocarditis 0.598; other 0.254 |
+| `fit_clr` | 2 of 12,000 | 0 | 1.0037 | OR 1.63 (0.24 to 9.55) |
+
+The unseeded refit earlier the same day had given persistent bacteremia 1.74 (1.09 to 2.78), clearance 1.66 (0.24 to 9.41), definition-group coefficients 0.366 and 0.587 (intercept and endocarditis), and warnings of 3 treedepth hits and 9 divergences across the notebook's fits. The seeded fits do not reproduce those figures.
+
+**Interpretation (assistant inference, not a human check; moderate confidence).** The missing seed is the most likely reason the `clinical_failure` estimates changed between refits while the mortality fits, which are seeded in `R/02_fit_models.R`, reproduced exactly. This is now supported by the exact reproduction under a fixed seed. It is not proven, because the unseeded fits were not rerun to confirm that they differ from each other. Reproduction across different machines or toolchains was not tested, so seeded draws may still differ there.
+
+**Decision.** The persistent-bacteremia figures in the abstract of `index.qmd` were changed from 1.74 (1.09 to 2.78) to 1.72 (1.06 to 2.80). The Results text from the most recent partial render (persistent bacteremia 1.72 [1.06 to 2.80], clearance 1.63 [0.24 to 9.55]) was checked first and agrees with the seeded fits. The clearance figure appears only in the inline-computed text.
+
+**Not yet done.** The complete `index.qmd` re-render did not finish. Two attempts stopped with `NotFound ... index-preview.html`, while a `quarto preview index.qmd` process (started 18:39 in a terminal) held `.quarto/preview/lock`. That link is an assistant inference with moderate confidence; the preview was not stopped. The rendered `_manuscript/index.html` and `index.docx` therefore contain the seeded Results text but the old abstract, and `index.pdf` pre-dates both. The frozen outputs and changes are not committed.
