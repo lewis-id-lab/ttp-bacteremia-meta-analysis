@@ -147,12 +147,34 @@ TITLE-ABS-KEY ( "time to positivity" OR "time to blood culture positivity"
 ("time to positivity") OR ("time to blood culture positivity") OR ("time to culture positivity")
  AND
  ((outcome) OR (outcome assessment) OR (patient outcome) OR (prognosis) OR (mortality)
-  OR (sepsis) OR (severe sepsis) OR (septic shock)) OR (persistent bacteraemia))
+  OR (sepsis) OR (severe sepsis) OR (septic shock)) OR (persistent bacteremia))
 ```
 
 ## 1.8 Elicit search
 
-Candidates were also identified with a new search in Elicit, an AI-assisted literature search tool, which returned 445 rows (348 unique DOIs). After studies already extracted for the earlier review were removed, 323 candidates remained, ranked by Elicit relevance score, and all were sought for full text. **[TO COMPLETE: Elicit search date and the query or prompt used.]**
+Candidates were also identified with a new search in Elicit, an AI-assisted literature search tool, which returned 445 rows (348 unique DOIs). After studies already extracted for the earlier review were removed, 323 candidates remained, ranked by Elicit relevance score, and all were sought for full text. The search was run on May 25, 2026. The question and criteria entered in Elicit were:
+
+```
+Option #2: Does TTP predict the risk of antibiotic failure?
+
+Population: Adults with documented bloodstream infection (bacteremia) confirmed by
+positive blood culture, including:
+  Gram-positive organisms (with S. aureus as priority subgroup)
+  Gram-negative organisms
+  Any infection source (with stratification by source control status)
+
+Index Prognostic Factor (Exposure): Time to positivity (TTP) of blood cultures, analyzed as:
+  Continuous variable (hours)
+  Study-level contrasts (short vs. prolonged TTP where dichotomized)
+
+Comparator: Shorter TTP vs. longer TTP; Per-hour increments in TTP (for continuous modeling)
+
+Outcomes:
+  Primary: Persistent bacteremia (positive blood cultures at 48-72 hours despite appropriate therapy)
+  Primary: Relapse/recurrence (recurrent positive cultures after initial clearance, within 30-90 days)
+  Primary: Microbiological clearance (documented negative follow-up cultures)
+  Secondary: All-cause mortality (in-hospital or 30-day mortality)
+```
 
 ## 1.9 Strategies specified in the protocol but not run
 
