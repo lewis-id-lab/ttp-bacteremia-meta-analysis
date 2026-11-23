@@ -300,7 +300,7 @@ CINAHL Complete (EBSCOhost), ClinicalTrials.gov, WHO ICTRP, medRxiv and bioRxiv 
 
 # Overview
 
-This appendix accompanies the main manuscript and gives the search strategy (section 1), details of the included studies (section 2), model specification (section 3), model fit, diagnostics, and convergence (section 4), sensitivity analyses (section 5), and reproducibility and the software and R packages used (sections 6 and 7). All numbers are generated from the extraction workbook (`data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx`) and the cached `brms` fits in the project repository.
+This appendix accompanies the main manuscript and gives the search strategy (section 1), details of the included studies (section 2), model specification (section 3), model fit, diagnostics, and convergence (section 4), sensitivity analyses (section 5), reproducibility and the software and R packages used (sections 6 and 7), and the PRISMA 2020 checklist (section 8). All numbers are generated from the extraction workbook (`data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx`) and the cached `brms` fits in the project repository.
 
 The **primary pool** comprises `{r} attr(es_all, "n_studies")` studies meeting the strict eligibility criterion (a quantitative association between TTP and a clinical outcome); `{r} n_distinct(es_mort$study_id)` of these reported mortality, contributing `{r} nrow(es_mort)` effect sizes. The **sensitivity pool** adds studies that met only the inclusive criterion (TTP and a clinical outcome both reported in the same cohort, not necessarily cross-tabulated); it comprises `{r} nrow(tbl_study)` studies in total, `{r} n_distinct(es_inc$study_id)` of which contribute `{r} nrow(es_inc)` mortality effect sizes.
 
@@ -848,6 +848,64 @@ pkg_roles |>
 ```
 
 CmdStan `{r} tryCatch(as.character(cmdstanr::cmdstan_version()), error = \(e) "(not found)")` is installed outside R; see the project README for setup.
+
+# 8. PRISMA 2020 checklist
+
+Location refers to the main manuscript (MS) section or to this appendix (App.). Items that were not done or not reported are listed as such, not left out. Checklist from Page MJ et al. BMJ 2021;372:n71.
+
+| Section and topic | # | Checklist item | Location where item is reported |
+|:------------------|:--|:---------------------------------------------|:-----------------------------------|
+| **TITLE** | | | |
+| Title | 1 | Identify the report as a systematic review. | MS, title |
+| **ABSTRACT** | | | |
+| Abstract | 2 | See the PRISMA 2020 for Abstracts checklist. | MS, abstract |
+| **INTRODUCTION** | | | |
+| Rationale | 3 | Describe the rationale for the review in the context of existing knowledge. | MS, Introduction, paragraphs 1–2 |
+| Objectives | 4 | Provide an explicit statement of the objective(s) or question(s) the review addresses. | MS, Introduction, paragraph 3 |
+| **METHODS** | | | |
+| Eligibility criteria | 5 | Specify the inclusion and exclusion criteria for the review and how studies were grouped for the syntheses. | Methods notebook, Eligibility criteria (strict and inclusive pools, standing exclusions); App. section 2 \[not stated in the MS Methods; add a summary sentence\] |
+| Information sources | 6 | Specify all databases, registers, websites, organisations, reference lists and other sources searched or consulted, with the date when each was last searched or consulted. | MS, Search strategy and study selection; App. sections 1.1, 1.2, 1.9 |
+| Search strategy | 7 | Present the full search strategies for all databases, registers and websites, including any filters and limits used. | App. sections 1.3–1.7 \[PubMed strategy as run to be confirmed\] |
+| Selection process | 8 | Specify the methods used to decide whether a study met the inclusion criteria, including how many reviewers screened each record and each report, whether they worked independently, and automation tools used. | MS, Search strategy and study selection; App. section 1.8 |
+| Data collection process | 9 | Specify the methods used to collect data from reports, including how many reviewers collected data, whether they worked independently, processes for confirming data, and automation tools used. | MS, Data extraction and risk of bias; Use of artificial intelligence |
+| Data items | 10a | List and define all outcomes for which data were sought, including whether all results compatible with each outcome domain were sought and the methods used to decide which results to collect. | MS, Data extraction and risk of bias; Methods notebook, Eligibility criteria and Data extraction; App. section 2.3 |
+| | 10b | List and define all other variables for which data were sought and describe assumptions made about missing or unclear information. | Methods notebook, Data extraction; App. section 2.1 |
+| Study risk of bias assessment | 11 | Specify the methods used to assess risk of bias in the included studies, including the tool(s) used, how many reviewers assessed each study and whether they worked independently. | MS, Data extraction and risk of bias (QUIPS) |
+| Effect measures | 12 | Specify for each outcome the effect measure(s) used in the synthesis or presentation of results. | MS, Statistical analysis (odds ratio, short vs long TTP); Methods notebook, Effect-size computation |
+| Synthesis methods | 13a | Describe the processes used to decide which studies were eligible for each synthesis. | MS, Statistical analysis; Methods notebook, Effect-size computation; App. section 3 (table of fitted models) |
+| | 13b | Describe any methods required to prepare the data for presentation or synthesis, such as handling of missing summary statistics or data conversions. | Methods notebook, Effect-size computation (zero-cell correction, back-calculation of SE from CI) |
+| | 13c | Describe any methods used to tabulate or visually display results of individual studies and syntheses. | MS, Primary analysis (forest plot); App. sections 2.1, 2.3 |
+| | 13d | Describe any methods used to synthesize results and provide a rationale for the choice(s). If meta-analysis was performed, describe the model(s), method(s) to identify the presence and extent of statistical heterogeneity, and software package(s) used. | MS, Statistical analysis; App. sections 3, 4, 7 |
+| | 13e | Describe any methods used to explore possible causes of heterogeneity among study results. | MS, Statistical analysis; App. sections 5.3, 5.4 |
+| | 13f | Describe any sensitivity analyses conducted to assess robustness of the synthesized results. | MS, Statistical analysis; App. sections 5.1, 5.2, 5.6, 5.7 |
+| Reporting bias assessment | 14 | Describe any methods used to assess risk of bias due to missing results in a synthesis (arising from reporting biases). | MS, Publication bias; App. section 5.5 \[methods not described in the MS Methods\] |
+| Certainty assessment | 15 | Describe any methods used to assess certainty (or confidence) in the body of evidence for an outcome. | Not done \[no GRADE or equivalent assessment\] |
+| **RESULTS** | | | |
+| Study selection | 16a | Describe the results of the search and selection process, from the number of records identified in the search to the number of studies included in the review, ideally using a flow diagram. | MS, Search strategy and study selection, PRISMA flow diagram; App. sections 1.2, 1.8 |
+| | 16b | Cite studies that might appear to meet the inclusion criteria, but which were excluded, and explain why they were excluded. | Not reported \[full-text exclusion reasons are in the data deposit; consider a table of near-miss exclusions\] |
+| Study characteristics | 17 | Cite each included study and present its characteristics. | App. sections 2.1, 2.2 |
+| Risk of bias in studies | 18 | Present assessments of risk of bias for each included study. | MS, Study selection and characteristics; App. section 2.1 (overall rating); RoB notebook (domain ratings) |
+| Results of individual studies | 19 | For all outcomes, present, for each study: (a) summary statistics for each group (where appropriate) and (b) an effect estimate and its precision, ideally using structured tables or plots. | MS, forest plot; App. section 2.3 |
+| Results of syntheses | 20a | For each synthesis, briefly summarise the characteristics and risk of bias among contributing studies. | MS, Study selection and characteristics; App. section 2.2 |
+| | 20b | Present results of all statistical syntheses conducted. If meta-analysis was done, present for each the summary estimate and its precision and measures of statistical heterogeneity. | MS, Primary analysis, Pathogen class, TTP cutpoint, Clinical failure outcomes; App. section 4.1 |
+| | 20c | Present results of all investigations of possible causes of heterogeneity among study results. | MS, Pathogen class, TTP cutpoint; App. sections 5.3, 5.4 |
+| | 20d | Present results of all sensitivity analyses conducted to assess the robustness of the synthesized results. | MS, Sensitivity analyses; App. sections 5.1, 5.2, 5.6, 5.7 |
+| Reporting biases | 21 | Present assessments of risk of bias due to missing results (arising from reporting biases) for each synthesis assessed. | MS, Publication bias (mortality only); App. section 5.5 |
+| Certainty of evidence | 22 | Present assessments of certainty (or confidence) in the body of evidence for each outcome assessed. | Not done |
+| **DISCUSSION** | | | |
+| Discussion | 23a | Provide a general interpretation of the results in the context of other evidence. | MS, Discussion |
+| | 23b | Discuss any limitations of the evidence included in the review. | MS, Discussion, Strengths and limitations |
+| | 23c | Discuss any limitations of the review processes used. | MS, Discussion, Strengths and limitations |
+| | 23d | Discuss implications of the results for practice, policy, and future research. | MS, Discussion, Implications |
+| **OTHER INFORMATION** | | | |
+| Registration and protocol | 24a | Provide registration information for the review, including register name and registration number, or state that the review was not registered. | MS, Protocol and registration (PROSPERO CRD420261398553) \[confirm registration status; the MS says "prepared for registration"\] |
+| | 24b | Indicate where the review protocol can be accessed, or state that a protocol was not prepared. | MS, Protocol and registration \[add access route\] |
+| | 24c | Describe and explain any amendments to information provided at registration or in the protocol. | MS, Search strategy and study selection, Strengths and limitations; App. sections 1.1, 1.9 |
+| Support | 25 | Describe sources of financial or non-financial support for the review, and the role of the funders or sponsors in the review. | MS, Funding |
+| Competing interests | 26 | Declare any competing interests of review authors. | MS, Conflicts of interest |
+| Availability of data, code and other materials | 27 | Report which of the following are publicly available and where they can be found: template data collection forms; data extracted from included studies; data used for all analyses; analytic code; any other materials used in the review. | MS, Data and code availability \[repository and DOI to be inserted\]; App. section 6 |
+
+: PRISMA 2020 checklist. Text in square brackets marks items that are incomplete or need confirmation before submission. {#tbl-prisma-checklist}
 
 # References {.unnumbered}
 
