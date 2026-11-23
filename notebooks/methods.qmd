@@ -5,7 +5,7 @@ date: today
 
 # PRISMA 2020 flow
 
-![Flow diagram of the May 2026 update (strict criterion), adapted from PRISMA 2020 because the database records were not screened in Covidence. A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative TTP-outcome association identified 40 further studies, which form the sensitivity pool (140 studies in total) and are not shown in the flow.](PRISMA_v4_prisma2020.svg){#fig-prisma width="100%"}
+![PRISMA 2020 flow diagram of the May 2026 update (strict criterion), generated with the PRISMA2020 R package by `R/04_prisma_flow.R`. Title and abstract screening was performed by a staged automated procedure (deterministic keyword rule set, large language model adjudication of abstracts for records without a detected TTP signal, then relevance triage) rather than by two independent human reviewers in Covidence, which was used for de-duplication only. All reports sought for full text were present in the database export, so no separate identification route is shown. Of the 4,605 records screened, 3,254 were unique: a further 1,351 duplicate records that Covidence had not detected were identified after export. A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative TTP-outcome association identified 40 further studies, which form the sensitivity pool (140 studies in total) and are not shown in the flow.](PRISMA_v4_prisma2020.svg){#fig-prisma width="100%"}
 
 # Search strategy
 

@@ -31,7 +31,7 @@ suppressPackageStartupMessages({
 })
 source("R/01_prepare_data.R")
 source("R/02_fit_models.R")
-source("R/theme_jama.R")
+source("R/theme_jama.R"); source("R/06_sensitivity_models.R")
 
 xlsx <- "data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"
 prim_dir <- "_brms_cache/primary"
@@ -76,19 +76,18 @@ study_label <- function(id, author, year) {
 | Sources searched | MEDLINE (PubMed), Embase (Elsevier), Scopus (Elsevier), Web of Science Core Collection (Clarivate) and Cochrane CENTRAL (Wiley Cochrane Library) |
 | Search date | All sources were searched on May 22, 2026, from database inception |
 | Date and language limits | None at the search level |
-| Filters | No methodological or publication-type filter |
-| Concept blocks | A time-to-positivity block combined with AND with one or more clinical-outcome blocks (shock, mortality, sepsis, prognosis, outcome assessment). The wording of each block differs between sources, as shown below. The protocol specified no outcome block, so adding one was a deviation that may have reduced sensitivity. |
-| Records | 6,014 records identified across the five sources; 1,409 duplicates removed automatically in Covidence (none manually); 4,605 unique records remained (table 2) |
-| Planned but not searched | CINAHL, ClinicalTrials.gov, WHO ICTRP, medRxiv, bioRxiv, forward citation tracking and reference-list searching were specified in the protocol but not carried out for the update (section 1.9) |
-| De-duplication | Covidence |
-| Selection route | Covidence was used for de-duplication only; no title and abstract screening was recorded in it. Database records not already in the earlier review were assigned to relevance tiers by keyword and enriched with PubMed abstracts, giving 44 priority candidates. A separate Elicit search (section 1.8) supplied 323 further candidates. The two routes gave 355 candidate reports, all sought for full text (see the flow diagram in the main text and in the supplementary notebook). |
-| Baseline studies | The 57 baseline studies came from an earlier (thesis) review. Its Elicit-assisted search found 55 of them; the other two (Alvarez 2012 and Peri 2026) were identified by hand-searching. |
+| Filters | No methodological or publication-type filter was applied to the Embase, Scopus, Web of Science or CENTRAL strategies. See section 1.3 for the PubMed strategy. |
+| Concept blocks | The Embase, Scopus and Web of Science strategies combined a time-to-positivity block with one or more clinical-outcome blocks (shock, mortality, sepsis, prognosis, outcome assessment). The protocol specified no outcome block, so adding one was a deviation that may have reduced sensitivity. The wording of each block differs between sources, as shown below. |
+| Records | 6,014 records identified across the five sources; 1,409 duplicates removed automatically in Covidence (none manually); 4,605 records entered screening. A further 1,351 of those were subsequently identified as duplicate records that Covidence had not detected, leaving 3,254 unique records (table 2) |
+| De-duplication | Covidence (automatic), supplemented after export by exact matching on normalised title |
+| Selection route | Covidence was used for de-duplication only; no title and abstract screening was recorded in it. Screening was performed by the staged automated procedure described in section 1.8, which identified 355 reports sought for full-text review. Every one of those 355 reports is present in the database export, so no record reached full text from a source other than the five databases. |
+| Baseline studies | The 57 studies carried forward from the earlier (thesis) review were identified by that review and were not re-screened here. Two of them (Alvarez 2012 and Peri 2026) were identified by hand-searching at that time. |
 
 : Search parameters. {#tbl-search-params}
 
 ## 1.2 Records retrieved per source
 
-| Source | Records identified | Duplicates removed | Unique records retained |
+| Source | Records identified | Duplicates removed | Records to screening |
 |:-----------------------|-----------:|-----------:|-----------:|
 | Embase | 2,877 | 136 | 2,741 |
 | Scopus | 1,649 | 3 | 1,646 |
@@ -96,12 +95,27 @@ study_label <- function(id, author, year) {
 | Web of Science | 237 | 148 | 89 |
 | Cochrane CENTRAL | 1 | 1 | 0 |
 | **Total** | **6,014** | **1,409** | **4,605** |
+| *Residual duplicates identified after export* | | *1,351* | |
+| ***Unique records screened*** | | | ***3,254*** |
 
 : Records retrieved per source, from the Covidence import records. {#tbl-search-counts}
 
 The strategies below are reproduced as they were run.
 
 ## 1.3 PubMed (MEDLINE)
+
+\[**Unresolved — confirm against the PubMed search history before submission.**\] Two different
+PubMed strategies are recorded in the project and they are not interchangeable. The strategy
+reproduced below as (a) is the one previously reported as executed. The strategy reproduced as
+(b) was designed on May 12, 2026 after a documented relative-recall exercise, and the record
+favours (b) as the strategy actually run on May 22: (b) was counted at 1,245 hits on May 12,
+Covidence imported 1,250 PubMed records on May 22, and re-running (b) today with those date
+limits returns 1,266 and 1,272 respectively — a constant offset consistent with retrospective
+MEDLINE indexing, with an increment between the two dates of +6 against the +5 recorded. Strategy
+(a) returns 55 records at the search date. Resolve which was run, retain that one here, and
+delete the other.
+
+**(a) Three-block strategy, as previously reported**
 
 ```
 (((("time to positivity") OR ("time to culture positivity")) OR ("time to blood culture positivity"))
@@ -111,6 +125,50 @@ The strategies below are reproduced as they were run.
  (("Prognosis"[Mesh]) OR ("Outcome Assessment, Health Care"[Mesh]))
 )
 ```
+
+The second and third blocks carry no free-text equivalents, so any record not yet MeSH-indexed
+under those headings is unreachable; this disproportionately removes recently published papers.
+
+**(b) Two-block strategy (population AND exposure, no outcome block), consistent with the protocol**
+
+```
+(
+  "Blood Culture"[Mesh] OR "Bacteremia"[Mesh] OR "Fungemia"[Mesh]
+  OR "Candidemia"[Mesh] OR "Sepsis"[Mesh]
+  OR "Bacteraemi*"[tiab] OR "Bacteremi*"[tiab]
+  OR "Fungaemi*"[tiab] OR "Fungemi*"[tiab]
+  OR "Candidaemi*"[tiab] OR "Candidemi*"[tiab]
+  OR "Blood culture"[tiab] OR "Blood cultures"[tiab]
+  OR "Bloodstream infection"[tiab] OR "Bloodstream infections"[tiab]
+  OR "Blood stream infection"[tiab] OR "Blood stream infections"[tiab]
+  OR "BSI"[tiab] OR "BSIs"[tiab]
+)
+AND
+(
+    "time to positivity"[tiab] OR "time-to-positivity"[tiab]
+  OR "time to blood culture positivity"[tiab]
+  OR "time to culture positivity"[tiab]
+  OR "blood culture positivity"[tiab]
+  OR "culture positivity"[tiab]
+  OR "time to detection"[tiab] OR "time-to-detection"[tiab]
+  OR "time to growth"[tiab]
+  OR "time to positive"[tiab]
+  OR "growth detection time"[tiab]
+  OR "differential time to positivity"[tiab]
+  OR "DTP"[tiab] OR "DTTP"[tiab]
+  OR ( "TTP"[tiab]
+       AND ("blood culture"[tiab] OR "blood cultures"[tiab]
+            OR bacter*emi*[tiab] OR bloodstream[tiab]) )
+  OR "bacteremia duration"[tiab] OR "bacteraemia duration"[tiab]
+  OR "duration of bacteremia"[tiab] OR "duration of bacteraemia"[tiab]
+)
+NOT (animals[MeSH Terms] NOT humans[MeSH Terms])
+```
+
+Strategy (b) applies a human filter, so the "no methodological filter" statement in table 1 would
+need qualifying if (b) is confirmed. Measured against the 125 included studies that are indexed in
+PubMed, strategy (b) retrieves 121 (97%) and strategy (a) retrieves 38 (30%); because four terms in
+(b) were added after inspecting earlier misses, its recall is not an entirely independent estimate.
 
 ## 1.4 Embase
 
@@ -150,31 +208,61 @@ TITLE-ABS-KEY ( "time to positivity" OR "time to blood culture positivity"
   OR (sepsis) OR (severe sepsis) OR (septic shock)) OR (persistent bacteremia))
 ```
 
-## 1.8 Elicit search
+## 1.8 Screening and prioritisation methods
 
-Candidates were also identified with a new search in Elicit, an AI-assisted literature search tool, which returned 445 rows (348 unique DOIs). After studies already extracted for the earlier review were removed, 323 candidates remained, ranked by Elicit relevance score, and all were sought for full text. The search was run on May 25, 2026. The question and criteria entered in Elicit were:
+Title and abstract screening was performed by a staged automated procedure. Covidence was used
+for de-duplication only; no screening decisions were recorded in it.
 
-```
-Option #2: Does TTP predict the risk of antibiotic failure?
+**Stage 1 — deterministic keyword classification.** Every record was classified by a rule set
+(`scripts/tier_new_papers.py`, reproduced in the data deposit) that matched title and abstract
+against a time-to-positivity concept block and a bloodstream-infection concept block. The
+time-to-positivity block allowed up to five intervening words (so that, for example, "time to
+blood culture positivity" and "time to first positivity" both match) and included the
+differential-time-to-positivity and growth-detection forms. A homonym filter suppressed records
+in which "TTP" denoted thrombotic thrombocytopenic purpura, TTP/HUS, ADAMTS13, plasma exchange,
+time to progression, or the total testing process. Records were assigned to five tiers:
 
-Population: Adults with documented bloodstream infection (bacteremia) confirmed by
-positive blood culture, including:
-  Gram-positive organisms (with S. aureus as priority subgroup)
-  Gram-negative organisms
-  Any infection source (with stratification by source control status)
+| Tier | Definition | Records |
+|:---|:---|---:|
+| 1 | Explicit time-to-positivity phrase and a blood-culture concept | 1,017 |
+| 2 | "TTP" abbreviation and a blood-culture concept, homonyms removed | 23 |
+| 3 | Blood-culture concept only, no time-to-positivity signal | 1,928 |
+| 4 | Time-to-positivity signal only, no blood-culture concept | 118 |
+| 5 | Neither concept | 1,097 |
 
-Index Prognostic Factor (Exposure): Time to positivity (TTP) of blood cultures, analyzed as:
-  Continuous variable (hours)
-  Study-level contrasts (short vs. prolonged TTP where dichotomized)
+: Keyword tier assignment of the 4,183 records remaining after matching against the earlier review. {#tbl-tiers}
 
-Comparator: Shorter TTP vs. longer TTP; Per-hour increments in TTP (for continuous modeling)
+**Stage 2 — large language model adjudication of tier 3.** Tier-3 records carry blood-culture
+content but no detected time-to-positivity signal, which may still be discussed in the body of the
+paper. For tier-3 records with a retrievable PubMed abstract, a large language model read the
+abstract and judged whether time to positivity was discussed. 299 records were assessed; 146 were
+reclassified as carrying a signal and 153 were confirmed off-topic. Each decision is stored with a
+written rationale and is provided in the data deposit.
 
-Outcomes:
-  Primary: Persistent bacteremia (positive blood cultures at 48-72 hours despite appropriate therapy)
-  Primary: Relapse/recurrence (recurrent positive cultures after initial clearance, within 30-90 days)
-  Primary: Microbiological clearance (documented negative follow-up cultures)
-  Secondary: All-cause mortality (in-hospital or 30-day mortality)
-```
+**Stage 3 — relevance triage.** Records carrying a time-to-positivity signal were triaged for
+relevance to the review question, separating studies in which time to positivity is a clinical
+predictor from blood-culture system, bottle and media comparisons in which it is a laboratory
+performance endpoint. This stage classified the 146 records promoted at stage 2, of which 101 were
+judged off-topic and 45 were prioritised for full-text review. It did not individually classify
+the records already in tier 1 before stage 2. Of 568 unique records carrying a time-to-positivity
+signal, 138 reached full-text review and 430 were deferred; this is reported as a limitation in
+the main text.
+
+**Prioritisation with a semantic search tool.** An AI-assisted semantic search tool (Elicit,
+elicit.com) was used in parallel to rank the same literature against a natural-language statement
+of the review question. All 355 reports that the combined routes sent to full-text review are
+present in the database export (333 matched on DOI and the remaining 22 on normalised title), so
+the tool contributed no record that the five database searches had not already retrieved. It is
+therefore reported as a prioritisation aid and is not shown as an information source in the
+study-flow diagram in the main text. The question entered was whether time to positivity predicts the risk of antibiotic
+failure in adults with blood-culture-confirmed bloodstream infection, with persistent bacteremia,
+relapse or recurrence, microbiological clearance, and all-cause mortality as outcomes.
+
+**Full-text assessment.** The 302 reports assessed at full text were evaluated by a large language
+model agent working from the full-text PDFs against the written eligibility criteria, with a
+decision and a specific reason recorded for every report. The complete record is provided in the
+data deposit. No dual independent human screening was performed and inter-rater agreement was not
+assessed.
 
 ## 1.9 Strategies specified in the protocol but not run
 
@@ -642,6 +730,48 @@ tibble(
     sprintf("%.2f (%.2f to %.2f)", exp(tf$beta[1]), exp(tf$ci.lb), exp(tf$ci.ub)))) |>
   tab()
 ```
+
+## 5.6 Prior sensitivity
+
+The primary mortality model was refitted to the same `{r} nrow(es_mort)` effect sizes with alternative priors, changing one prior at a time. Two alternatives change the prior on the between-study SD ($\tau$): a half-normal prior that puts less weight on large values, and a wider half-Cauchy prior. Two change the prior on the pooled log odds ratio ($\mu$): a vague prior, and a skeptical prior centered on no association that gives 95% prior probability to an odds ratio between 0.5 and 2.
+
+```{r}
+#| label: tbl-prior-sens
+#| tbl-cap: "Prior sensitivity of the primary mortality model. The first row is the primary analysis (mu ~ Normal(0, 1), tau ~ Half-Cauchy(0, 0.5)); each other row changes one prior. Columns are as in the posterior summary table in section 4.1."
+prior_fits <- fit_prior_sensitivity(es_mort)
+sens_row <- function(fit, label) {
+  p <- pooled_summary(fit)
+  tibble(Analysis = label, k = nrow(fit$data), Studies = n_distinct(fit$data$study_id),
+         OR = sprintf("%.2f (%.2f to %.2f)", p$median_OR, p$ci_OR[1], p$ci_OR[2]),
+         PI = sprintf("%.2f to %.2f", p$pi_OR[1], p$pi_OR[2]),
+         tau = sprintf("%.2f", p$median_tau),
+         I2 = sprintf("%.0f%%", p$median_i2),
+         `P(OR > 1)` = sprintf("%.1f%%", 100 * p$p_harm))
+}
+prior_tbl <- bind_rows(
+  sens_row(fit_prim, "Primary priors"),
+  map2_dfr(prior_fits, names(prior_fits), \(f, nm) sens_row(f, prior_specs[[nm]]$label)))
+tab(prior_tbl, w = c(4, .6, .9, 2, 1.6, .7, .7, 1.1))
+prior_or <- vapply(c(list(fit_prim), prior_fits), \(f) pooled_summary(f)$median_OR, 0)
+```
+
+Across the five prior specifications the pooled odds ratio ranged from `{r} sprintf("%.2f", min(prior_or))` to `{r} sprintf("%.2f", max(prior_or))`. The skeptical prior gave the smallest estimate, as expected for a prior centered on no association.
+
+## 5.7 Risk of bias and adjustment
+
+The primary model was refitted, with the primary priors, to three subsets of the mortality effect sizes: studies rated at low overall risk of bias (QUIPS); studies at low or moderate risk of bias (excluding those rated high or critical); and effect sizes back-calculated from adjusted reported estimates only.
+
+```{r}
+#| label: tbl-subset-sens
+#| tbl-cap: "Pooled odds ratio for mortality restricted by risk of bias and by adjustment status, compared with the primary analysis. Columns are as in the posterior summary table in section 4.1."
+subset_fits <- fit_subset_sensitivity(es_mort)
+subset_tbl <- bind_rows(
+  sens_row(fit_prim, "All effect sizes (primary)"),
+  map2_dfr(subset_fits, names(subset_fits), \(f, nm) sens_row(f, subset_specs[[nm]]$label)))
+tab(subset_tbl, w = c(4, .6, .9, 2, 1.6, .7, .7, 1.1))
+```
+
+These subsets are small, especially the low-risk-of-bias and adjusted-only subsets, so their credible intervals are wider than the primary interval. The adjusted-only subset is the closest available approximation to the independent prognostic association of TTP, but its estimates were adjusted for different covariate sets.
 
 # 6. Reproducibility
 
