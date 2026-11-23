@@ -5,21 +5,23 @@ date: today
 
 # PRISMA 2020 flow
 
-![Updated PRISMA flow for v4 database (strict criterion). A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative TTP-outcome association identified 40 further studies, which form the sensitivity pool (140 studies in total) and are not shown in the flow.](../data/PRISMA_v4_prisma2020.svg){#fig-prisma width="100%"}
+![Flow diagram of the May 2026 update (strict criterion), adapted from PRISMA 2020 because the database records were not screened in Covidence. A second, inclusive re-screen of the 54 reports excluded only for lacking a quantitative TTP-outcome association identified 40 further studies, which form the sensitivity pool (140 studies in total) and are not shown in the flow.](../data/PRISMA_v4_prisma2020.svg){#fig-prisma width="100%"}
 
 # Search strategy
 
-Records were identified from five electronic databases on the original search date plus the May 2026 update:
+Records were identified on May 22, 2026, from inception, from five sources:
 
-- **PubMed**
-- **Embase**
-- **Scopus**
-- **Cochrane Library**
-- **Web of Science**
+- **PubMed** (1,250 records)
+- **Embase** (2,877)
+- **Scopus** (1,649)
+- **Web of Science Core Collection** (237)
+- **Cochrane CENTRAL** (1)
 
-Combined yield: 4,605 records → 1,409 duplicates removed → 3,196 unique records after deduplication.
+Combined yield: 6,014 records → 1,409 duplicates removed in Covidence → 4,605 unique records. No title and abstract screening was recorded in Covidence. Database records not already in the earlier review were assigned to relevance tiers by keyword and enriched with PubMed abstracts, giving 44 priority candidates. A separate Elicit search returned 445 rows (348 unique DOIs), of which 323 candidates remained after removing studies already extracted. The two routes gave 355 candidate reports (323 from Elicit, 32 from database tiering only), all sought for full text.
 
-Search strings, date ranges, and per-database counts are in `PROSPERO_TTP_protocol.md` in the project root.
+CINAHL, ClinicalTrials.gov, WHO ICTRP, medRxiv, bioRxiv, forward citation tracking, and reference-list searching were specified in the protocol but not carried out for the update. The 57 baseline studies came from an earlier (thesis) review; two of them were found by hand-searching.
+
+The search strings are in the supplementary appendix (section 1).
 
 # Eligibility criteria
 

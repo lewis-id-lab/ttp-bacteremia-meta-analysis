@@ -122,3 +122,50 @@ The unseeded refit earlier the same day had given persistent bacteremia 1.74 (1.
 **Decision.** The persistent-bacteremia figures in the abstract of `index.qmd` were changed from 1.74 (1.09 to 2.78) to 1.72 (1.06 to 2.80). The Results text from the most recent partial render (persistent bacteremia 1.72 [1.06 to 2.80], clearance 1.63 [0.24 to 9.55]) was checked first and agrees with the seeded fits. The clearance figure appears only in the inline-computed text.
 
 **Not yet done.** The complete `index.qmd` re-render did not finish. Two attempts stopped with `NotFound ... index-preview.html`, while a `quarto preview index.qmd` process (started 18:39 in a terminal) held `.quarto/preview/lock`. That link is an assistant inference with moderate confidence; the preview was not stopped. The rendered `_manuscript/index.html` and `index.docx` therefore contain the seeded Results text but the old abstract, and `index.pdf` pre-dates both. The frozen outputs and changes are not committed.
+
+## 2026-11-23: Search, selection route and PRISMA flow rewritten after Covidence showed zero screening
+
+**What was seen.** The Covidence PRISMA panel (author screenshot, 2026-11-21) shows 6,014 studies imported (Embase 2,877; Scopus 1,649; PubMed 1,250; Web of Science 237; ClinicalTrials.gov 1), 1,409 duplicates identified by Covidence and 0 manually, and **0 studies screened, 0 irrelevant, 0 full-text studies assessed**. Before that, `index.qmd`, `notebooks/methods.qmd`, `notebooks/abstract.qmd` and `R/04_prisma_flow.R` described a flow in which 4,605 database records led to 3,196 unique records, 2,841 excluded at title and abstract, and 355 reports sought. The author's search summary of 2026-11-21 listed Cochrane CENTRAL as not run and ClinicalTrials.gov as run, and gave 4,605 records "entering title/abstract screening" with 2,841 excluded, which is internally inconsistent (4,605 - 355 = 4,250).
+
+**Where the 355 reports came from.** `TTP_Update_Screening_Pool.xlsx` (README and Source column, in `ttp_meta_new/new_ttp_metaanalysis`) shows the pool of 355 was made of 323 candidates from a new Elicit search (445 rows, 348 unique DOIs, after removing the 57 already extracted) and 32 from keyword tiering of the database records with PubMed abstract enrichment (19 Priority A and 13 Priority B). No title and abstract screening of the 4,605 records is recorded anywhere in the project.
+
+**Numbers that changed or were withdrawn.**
+
+| Item | Earlier text and figure | Now |
+|---|---|---|
+| Databases and registers | PubMed, Embase, Scopus, Cochrane Library, Web of Science | PubMed, Embase, Scopus, Web of Science, ClinicalTrials.gov |
+| Records identified | 4,605 | 6,014 (4,605 after 1,409 duplicates) |
+| Records screened | 3,196 (a short-lived assistant edit on 2026-11-21 said 4,605) | Not applicable: nothing was screened in Covidence. Both figures are withdrawn |
+| Records excluded at title and abstract | 2,841 | Withdrawn (it was 3,196 - 355, not a count) |
+| Trial registers | "not searched" | ClinicalTrials.gov searched (1 record, a duplicate) |
+| Reference-list searching | "none" | None for the update; the two hand-searched studies (Alvarez 2012, Peri 2026) belong to the 57 baseline studies |
+
+Unchanged: 355 sought, 53 not retrieved, 302 assessed, 259 excluded, 43 new strict inclusions, 57 baseline, 100 in the primary pool, 40 inclusive-only, 140 in the sensitivity pool.
+
+**Decision.** The Methods, abstract, both notebooks, appendix section 1 and the figure caption were rewritten to describe the route as it happened. `R/04_prisma_flow.R` now draws the flow with Graphviz, because the PRISMA2020 template assumes screening of every database record; it checks that the counts add up. The new figure replaces `data/PRISMA_v4_prisma2020.{png,svg,pdf}`.
+
+**Deviation from the protocol.** `PROSPERO_TTP_protocol.md` planned title/abstract screening and full-text review by two independent reviewers in Covidence with kappa reported, plus CINAHL, Cochrane CENTRAL, trial registers, preprint servers and citation tracking. The first was not done at the screening stage (candidates were selected by keyword tiering and Elicit ranking, and full texts were assessed by an LLM agent with a second agent verifying extractions), and the others were not carried out. The manuscript now says so. Whether the PROSPERO record needs an amendment, and how the deviation is worded in the Discussion, are not decided.
+
+**Priority candidates (44 or 45).** `RESUME.md` and `TTP_Prioritized_Review_List.xlsx` count 45 (31 Priority A, 14 Priority B). The pool has 44 (30 A, 14 B). The one Priority A paper missing from the pool has DOI 10.1007/s40121-025-01274-4 (a *Pseudomonas aeruginosa* anaerobic-bottle TTP study, listed with year 2026), and the baseline database has a study `Marco2025`. *Assistant inference, moderate confidence:* it is that baseline study and was removed from the pool for that reason. It has not been checked against the DOI in the extraction workbook. The figure and text use 44.
+
+**Still open.** The verbatim Scopus string (saved search in the author's Scopus account) and the Elicit search date and query were not available and remain bracketed in `index.qmd` and the appendix.
+
+## 2026-11-23: Outcome block in the executed search strategies disclosed as a deviation (addendum to the entry above)
+
+**What was seen.** An updated working copy of `search_strategies.md` (outside the repository) records that the PubMed, Embase, Web of Science and ClinicalTrials.gov strategies combined a time-to-positivity block with clinical-outcome and severity blocks, while `PROSPERO_TTP_protocol.md` and the PROSPERO draft specify two concept blocks and no outcome block, to preserve sensitivity. The same file records that the single ClinicalTrials.gov record was uploaded to Covidence as `Cochrane.xml`, and that Cochrane CENTRAL was not searched.
+
+**Decision.** One sentence was added to the Methods in `index.qmd` and to the parameters table in appendix section 1 stating the deviation. Nothing else changed.
+
+**Not adopted.** That file also says the Embase, Web of Science and ClinicalTrials.gov strings are parsed with unintended operator precedence, and that this explains the very different yields. This is an inference by the earlier assistant session and has not been tested on those platforms, so it was not put in the manuscript. The file's sections 4 and 5 still give 3,196 screened and 2,841 excluded, which are the withdrawn figures above.
+
+**Scopus string added (2026-11-23).** The author supplied the verbatim Scopus query, which was added to appendix section 1.5. It has two TITLE-ABS-KEY blocks combined with AND (time to positivity terms; outcome, mortality and sepsis terms), so it also carries an outcome block.
+
+## 2026-11-23: Correction: the single register record was Cochrane CENTRAL, not ClinicalTrials.gov
+
+**Points back to** the first entry of 2026-11-23 and its addendum, and to the search summary of 2026-11-21.
+
+**What was seen.** Covidence labels the one-record import `Cochrane.xml` as "ClinicalTrials.gov" (it infers the source from the file schema). The author confirmed on 2026-11-23 that the record came from Cochrane CENTRAL. The earlier search summary, and the edits made from it, had therefore stated the wrong source.
+
+**What changed.** Sources searched are PubMed (1,250), Embase (2,877), Scopus (1,649), Web of Science (237) and Cochrane CENTRAL (1; a duplicate, so 0 retained), total 6,014. ClinicalTrials.gov was not searched; no trial register was. The string previously labelled ClinicalTrials.gov is the Cochrane CENTRAL string. `index.qmd` (abstract and Methods), `notebooks/methods.qmd`, `notebooks/abstract.qmd`, appendix section 1, `R/04_prisma_flow.R` and the figure were corrected. The first entry of 2026-11-23 still says Cochrane was dropped and ClinicalTrials.gov added; that statement is withdrawn here.
+
+**Open.** A yield of 1 record from CENTRAL for this query is very low. *Assistant inference, low confidence:* the string may have been run in a narrow Cochrane subset or parsed differently. This has not been tested. Whether the executed string contained "bactermeia" (as in the author's source document) or "bacteraemia" is unresolved; the appendix currently shows "bacteraemia".

@@ -67,15 +67,117 @@ study_label <- function(id, author, year) {
 }
 ```
 
+# 1. Search strategy
+
+## 1.1 Search parameters
+
+| Field | Content |
+|:-----------------------|:---------------------------------------------------------------|
+| Sources searched | MEDLINE (PubMed), Embase (Elsevier), Scopus (Elsevier), Web of Science Core Collection (Clarivate) and Cochrane CENTRAL (Wiley Cochrane Library) |
+| Search date | All sources were searched on May 22, 2026, from database inception |
+| Date and language limits | None at the search level |
+| Filters | No methodological or publication-type filter |
+| Concept blocks | A time-to-positivity block combined with AND with one or more clinical-outcome blocks (shock, mortality, sepsis, prognosis, outcome assessment). The wording of each block differs between sources, as shown below. The protocol specified no outcome block, so adding one was a deviation that may have reduced sensitivity. |
+| Records | 6,014 records identified across the five sources; 1,409 duplicates removed automatically in Covidence (none manually); 4,605 unique records remained (table 2) |
+| Planned but not searched | CINAHL, ClinicalTrials.gov, WHO ICTRP, medRxiv, bioRxiv, forward citation tracking and reference-list searching were specified in the protocol but not carried out for the update (section 1.9) |
+| De-duplication | Covidence |
+| Selection route | Covidence was used for de-duplication only; no title and abstract screening was recorded in it. Database records not already in the earlier review were assigned to relevance tiers by keyword and enriched with PubMed abstracts, giving 44 priority candidates. A separate Elicit search (section 1.8) supplied 323 further candidates. The two routes gave 355 candidate reports, all sought for full text (see the flow diagram in the main text and in the supplementary notebook). |
+| Baseline studies | The 57 baseline studies came from an earlier (thesis) review. Its Elicit-assisted search found 55 of them; the other two (Alvarez 2012 and Peri 2026) were identified by hand-searching. |
+
+: Search parameters. {#tbl-search-params}
+
+## 1.2 Records retrieved per source
+
+| Source | Records identified | Duplicates removed | Unique records retained |
+|:-----------------------|-----------:|-----------:|-----------:|
+| Embase | 2,877 | 136 | 2,741 |
+| Scopus | 1,649 | 3 | 1,646 |
+| PubMed (MEDLINE) | 1,250 | 1,121 | 129 |
+| Web of Science | 237 | 148 | 89 |
+| Cochrane CENTRAL | 1 | 1 | 0 |
+| **Total** | **6,014** | **1,409** | **4,605** |
+
+: Records retrieved per source, from the Covidence import records. {#tbl-search-counts}
+
+The strategies below are reproduced as they were run.
+
+## 1.3 PubMed (MEDLINE)
+
+```
+(((("time to positivity") OR ("time to culture positivity")) OR ("time to blood culture positivity"))
+ AND
+ (("Shock, Septic"[Mesh]) OR ("Mortality"[Mesh]) OR ("Sepsis"[Mesh]))
+ AND
+ (("Prognosis"[Mesh]) OR ("Outcome Assessment, Health Care"[Mesh]))
+)
+```
+
+## 1.4 Embase
+
+```
+'time to positivity' OR 'time to culture positivity' OR 'time to blood culture positivity'
+ AND
+ 'outcome'/exp OR 'outcome assessment'/exp OR 'prognosis'/exp OR 'patient outcomes'/exp
+```
+
+## 1.5 Scopus
+
+```
+TITLE-ABS-KEY ( "time to positivity" OR "time to blood culture positivity"
+                OR "time to culture positivity" )
+ AND TITLE-ABS-KEY ( outcome OR "outcome assessment" OR prognosis
+                     OR "patient outcome" OR mortality OR sepsis
+                     OR "severe sepsis" OR "septic shock" OR "persistent bacteremia" )
+```
+
+## 1.6 Web of Science Core Collection
+
+```
+"time to positivity" OR "time to blood culture positivity" OR "time to culture positivity"
+ AND
+ outcome OR outcome assessment OR prognosis OR patient outcome
+ AND
+ mortality OR mortality rate OR mortality risk OR sepsis OR severe sepsis OR septic shock
+   OR persistent bacteremia
+```
+
+## 1.7 Cochrane CENTRAL
+
+```
+("time to positivity") OR ("time to blood culture positivity") OR ("time to culture positivity")
+ AND
+ ((outcome) OR (outcome assessment) OR (patient outcome) OR (prognosis) OR (mortality)
+  OR (sepsis) OR (severe sepsis) OR (septic shock)) OR (persistent bacteraemia))
+```
+
+## 1.8 Elicit search
+
+Candidates were also identified with a new search in Elicit, an AI-assisted literature search tool, which returned 445 rows (348 unique DOIs). After studies already extracted for the earlier review were removed, 323 candidates remained, ranked by Elicit relevance score, and all were sought for full text. **[TO COMPLETE: Elicit search date and the query or prompt used.]**
+
+## 1.9 Strategies specified in the protocol but not run
+
+CINAHL Complete (EBSCOhost), ClinicalTrials.gov, WHO ICTRP, medRxiv and bioRxiv were listed in the protocol but not searched, and forward citation tracking and reference-list searching were not performed. The CINAHL strategy that had been prepared is given for transparency.
+
+```
+(((MH "Outcome Assessment") OR (MH "Fatal Outcome") OR (MH "Treatment Outcomes"))
+ OR ((MH "Prognosis") OR (MH "Clinical Assessment Tools"))
+ OR ((MH "Mortality") OR (MH "Maternal Mortality") OR (MH "Hospital Mortality") OR (MH "Child Mortality") OR (MH "Infant Mortality"))
+ OR ((MH "Neonatal Sepsis") OR (MH "Sepsis") OR (MH "Systemic Inflammatory Response Syndrome") OR (MH "Fungemia") OR (MH "Bacteremia"))
+)
+ AND
+ (TX "time to positivity" OR TX "time to blood culture positivity" OR TX "time to culture positivity"
+  OR "persistent bacteremia")
+```
+
 # Overview
 
-This appendix accompanies the main manuscript and gives (1) details of the included studies, (2) model specification, fit, diagnostics, and convergence, (3) sensitivity analyses, and (4) the software and R packages used. All numbers are generated from the extraction workbook (`data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx`) and the cached `brms` fits in the project repository.
+This appendix accompanies the main manuscript and gives the search strategy (section 1), details of the included studies (section 2), model specification (section 3), model fit, diagnostics, and convergence (section 4), sensitivity analyses (section 5), and reproducibility and the software and R packages used (sections 6 and 7). All numbers are generated from the extraction workbook (`data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx`) and the cached `brms` fits in the project repository.
 
 The **primary pool** comprises `{r} attr(es_all, "n_studies")` studies meeting the strict eligibility criterion (a quantitative association between TTP and a clinical outcome); `{r} n_distinct(es_mort$study_id)` of these reported mortality, contributing `{r} nrow(es_mort)` effect sizes. The **sensitivity pool** adds studies that met only the inclusive criterion (TTP and a clinical outcome both reported in the same cohort, not necessarily cross-tabulated); it comprises `{r} nrow(tbl_study)` studies in total, `{r} n_distinct(es_inc$study_id)` of which contribute `{r} nrow(es_inc)` mortality effect sizes.
 
-# 1. Included studies
+# 2. Included studies
 
-## 1.1 Study characteristics
+## 2.1 Study characteristics
 
 ```{r}
 #| label: tbl-studies
@@ -129,7 +231,7 @@ studies_tbl |>
 
 Pool: Primary, strict criterion (`{r} sum(studies_tbl$Pool == "Primary")` studies); Inclusive, meets only the inclusive criterion (`{r} sum(studies_tbl$Pool == "Inclusive")` studies). NR, not reported. Cutpoint is the TTP threshold (hours) used to define short versus long TTP, given as a range when a study reported several.
 
-## 1.2 Summary of included studies
+## 2.2 Summary of included studies
 
 ```{r}
 #| label: tbl-studies-summary
@@ -150,7 +252,7 @@ bind_rows(
   tab()
 ```
 
-## 1.3 Mortality effect sizes
+## 2.3 Mortality effect sizes
 
 ```{r}
 #| label: tbl-es-mortality
@@ -171,7 +273,7 @@ es_mort |>
   tab(w = c(3.2, 1, 1, 1.2, 1, 1.2, 2.2))
 ```
 
-# 2. Model specification
+# 3. Model specification
 
 All pooled and moderator models were Bayesian random-effects models fitted with `brms`: $y_i \mid \mathrm{SE}_i \sim \mathcal{N}(\mu + u_s,\ \mathrm{SE}_i^2)$ with study-level random intercepts $u_s \sim \mathcal{N}(0, \tau^2)$, where $y_i$ is the log odds ratio for effect size $i$ and $\mathrm{SE}_i$ its standard error. Priors were $\mu \sim \mathcal{N}(0, 1)$, $\tau \sim \text{Half-Cauchy}(0, 0.5)$, and $\mathcal{N}(0, 0.5)$ for moderator coefficients. Each model used 4 chains of 4,000 iterations (1,000 warm-up; 12,000 post-warm-up draws), `adapt_delta = 0.99`, and `max_treedepth = 12`. The persistent bacteremia and microbiological clearance models were fitted with the CmdStan backend and all others with rstan. The 95% prediction interval for a new study is the central 95% interval of the predictive distribution $\mathcal{N}(\mu, \tau^2)$. $I^2$ was computed per posterior draw as $\tau^2 / (\tau^2 + \bar{v})$, where $\bar{v}$ is the mean within-study variance. Code is in `R/02_fit_models.R` and the analysis notebooks.
 
@@ -209,9 +311,9 @@ model_desc |>
   tab(w = c(2.2, 4.5, 4.3, .6, .9))
 ```
 
-# 3. Model fit, diagnostics, and convergence
+# 4. Model fit, diagnostics, and convergence
 
-## 3.1 Posterior summaries of the pooled models
+## 4.1 Posterior summaries of the pooled models
 
 ```{r}
 #| label: tbl-pooled-fit
@@ -242,7 +344,7 @@ bind_rows(
 
 The microbiological clearance model rests on 4 effect sizes from 3 studies, so its between-study SD, and therefore its prediction interval, is essentially unconstrained by the data and the interval should not be interpreted.
 
-## 3.2 Convergence across all fitted models
+## 4.2 Convergence across all fitted models
 
 ```{r}
 #| label: tbl-conv-all
@@ -272,7 +374,7 @@ div_models <- paste(unique(paste0(conv_tbl$Model, " (", tolower(conv_tbl$Pool), 
 
 Across `{r} nrow(conv_tbl)` fitted models the maximum $\hat{R}$ was `{r} sprintf("%.3f", max_rhat)`, the minimum bulk ESS was `{r} fmt_n(min_ess)`, and the minimum tail ESS was `{r} fmt_n(min_tail)`. `{r} if (n_div == 0) "No divergent transitions occurred." else paste0("Divergent transitions occurred in ", n_div, " post-warm-up draws in total, confined to: ", div_models, ". Estimates from models with divergent transitions, which have few effect sizes, should be interpreted cautiously.")`
 
-## 3.3 Primary pool: pooled model
+## 4.3 Primary pool: pooled model
 
 ```{r}
 #| label: tbl-diag
@@ -318,7 +420,7 @@ bayesplot::mcmc_rhat_hist(rhat_prim, binwidth = 0.0005) +
   theme_jama(base_size = 10)
 ```
 
-## 3.4 Posterior predictive check and cross-validation
+## 4.4 Posterior predictive check and cross-validation
 
 ```{r}
 #| label: fig-ppc
@@ -348,7 +450,7 @@ bind_rows(
   tab()
 ```
 
-## 3.5 Sensitivity pool: pooled model
+## 4.5 Sensitivity pool: pooled model
 
 ```{r}
 #| label: fig-trace-sens
@@ -384,9 +486,9 @@ bayesplot::mcmc_rhat_hist(rhat_sens, binwidth = 0.0005) +
   theme_jama(base_size = 10)
 ```
 
-# 4. Sensitivity analyses
+# 5. Sensitivity analyses
 
-## 4.1 Adding the inclusive-only studies
+## 5.1 Adding the inclusive-only studies
 
 ```{r}
 #| label: tbl-sens-pool
@@ -423,7 +525,7 @@ bind_rows(
   theme_jama(base_size = 10) + theme(legend.position = "bottom")
 ```
 
-## 4.2 Effect-size derivation
+## 5.2 Effect-size derivation
 
 ```{r}
 #| label: tbl-es-source
@@ -449,7 +551,7 @@ bind_rows(contr("reported_adjusted", "Reported (adjusted) vs 2x2"),
   tab()
 ```
 
-## 4.3 TTP cutpoint analyses
+## 5.3 TTP cutpoint analyses
 
 ```{r}
 #| label: tbl-cutpoint
@@ -471,7 +573,7 @@ bind_rows(
   tab()
 ```
 
-## 4.4 Moderators
+## 5.4 Moderators
 
 ```{r}
 #| label: tbl-mods
@@ -492,7 +594,7 @@ bind_rows(
   tab()
 ```
 
-## 4.5 Small-study effects
+## 5.5 Small-study effects
 
 ```{r}
 #| label: tbl-pubbias
@@ -519,7 +621,7 @@ tibble(
   tab()
 ```
 
-# 5. Reproducibility
+# 6. Reproducibility
 
 Model fits are cached in `_brms_cache/` (not in the repository) and are regenerated by rendering the analysis notebooks or by `fit_all_models()` in `R/02_fit_models.R`; see the project README for CmdStan setup. This appendix can be rendered on its own with `quarto render appendix.qmd --to docx`.
 
@@ -528,7 +630,7 @@ Model fits are cached in `_brms_cache/` (not in the repository) and are regenera
 sessionInfo()
 ```
 
-# 6. R packages
+# 7. R packages
 
 All analyses were run in R `{r} paste(R.version$major, R.version$minor, sep = ".")` with Quarto `{r} tryCatch(system2("quarto", "--version", stdout = TRUE)[1], error = \(e) "(version not found)")` for rendering. The table below lists the R packages that the analysis code calls directly, plus the Stan interface packages that `brms` uses to fit the models. Versions are those recorded in the project lockfile (`renv.lock`), which also lists every indirect dependency; `renv::restore()` reinstalls them.
 
