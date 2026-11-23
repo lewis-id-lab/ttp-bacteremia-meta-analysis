@@ -175,3 +175,9 @@ Unchanged: 355 sought, 53 not retrieved, 302 assessed, 259 excluded, 43 new stri
 **Cochrane spelling resolved (2026-11-23).** The author confirmed the Cochrane CENTRAL string contained "persistent bacteremia". Appendix section 1.7 now shows that spelling. The "bactermeia" typo in the author's source documents and the "bacteraemia" in the search summary were both wrong. The unbalanced closing parenthesis in the string is kept as run.
 
 **Elicit search date added (2026-11-23).** The author gave the Elicit search date as May 25, 2026. It replaces the earlier wording that the date was not recorded and that the export was in the project by May 22, which was an inference from a triage-workbook date and was wrong. May 25, 2026 agrees with `RESUME.md` (updated 2026-05-25), which lists the 445-row export as uploaded.
+
+## 2026-11-23: Quarto render outputs untracked and ignored
+
+**What was seen.** A manuscript-project render writes HTML previews, `.embed.ipynb`, `.out.ipynb`, `index.html`, `index.docx` and `site_libs/` into the project root and then moves them into `_manuscript/`, which is already git-ignored. Copies of these had been committed earlier, so every render showed them as deleted (19 files under `site_libs/` and 15 others), and restoring them with `git restore` only lasted until the next render.
+
+**Decision.** The tracked copies were removed from the index with `git rm --cached` (they stay in git history) and the root-level patterns were added to `.gitignore`. The published site is built from `_manuscript/`, so nothing on GitHub Pages depends on them. `downloads/appendix.docx` and `_freeze/` remain tracked. This reverses no earlier decision, and it changes git only: renders are unaffected.
