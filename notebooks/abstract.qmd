@@ -53,7 +53,7 @@ Time-to-positivity (TTP) — the interval from blood culture incubation to autom
 
 ## Methods
 
-Five electronic databases were searched through May 2026 (3,196 unique records after deduplication). Studies were eligible if they reported a quantitative TTP–mortality association in adults with bloodstream infection confirmed by automated blood culture monitoring. Log odds ratios were derived from 2×2 tables or back-calculated from reported estimates. A Bayesian hierarchical model with weakly-informative priors was fitted using Stan; heterogeneity was quantified with τ and I². Risk of bias was assessed with the QUIPS tool.
+Four databases and Cochrane CENTRAL were searched in May 2026 (6,014 records; 4,605 unique after deduplication), supplemented by an Elicit search. Studies were eligible if they reported a quantitative TTP–mortality association in adults with bloodstream infection confirmed by automated blood culture monitoring. Log odds ratios were derived from 2×2 tables or back-calculated from reported estimates. A Bayesian hierarchical model with weakly-informative priors was fitted using Stan; heterogeneity was quantified with τ and I². Risk of bias was assessed with the QUIPS tool.
 
 ## Results
 

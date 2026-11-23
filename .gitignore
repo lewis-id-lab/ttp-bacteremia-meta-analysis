@@ -26,3 +26,17 @@ search_strategies.md
 
 # Quarto writes a new UUID-named copy of the PRISMA svg under each frozen figure folder on every render
 _freeze/index/figure-*/*-1-..
+
+# Quarto render outputs that a manuscript project moves into _manuscript/
+/index.html
+/index.docx
+/index-preview.html
+/index.embed.ipynb
+/index.out.ipynb
+/appendix-preview.html
+/appendix.embed.ipynb
+/appendix.out.ipynb
+/notebooks/*-preview.html
+/notebooks/*.embed.ipynb
+/notebooks/*.out.ipynb
+/site_libs/
