@@ -230,7 +230,7 @@ time to progression, or the total testing process. Records were assigned to five
 | 4 | Time-to-positivity signal only, no blood-culture concept | 118 |
 | 5 | Neither concept | 1,097 |
 
-: Keyword tier assignment of the 4,183 records remaining after matching against the earlier review. {#tbl-tiers}
+: Keyword tier assignment of the 4,183 records remaining after matching against the earlier review. Counts are of records as exported; because tiering used whatever title and abstract each record carried, duplicate records of the same report could be tiered differently, and a report was treated as carrying a signal if any of its records did. On that basis the 1,017 tier-1 records correspond to 794 unique reports, and tiers 1 and 2 together to 814. {#tbl-tiers}
 
 **Stage 2 — large language model adjudication of tier 3.** Tier-3 records carry blood-culture
 content but no detected time-to-positivity signal, which may still be discussed in the body of the
@@ -243,18 +243,37 @@ written rationale and is provided in the data deposit.
 relevance to the review question, separating studies in which time to positivity is a clinical
 predictor from blood-culture system, bottle and media comparisons in which it is a laboratory
 performance endpoint. This stage classified the 146 records promoted at stage 2, of which 101 were
-judged off-topic and 45 were prioritised for full-text review. It did not individually classify
-the records already in tier 1 before stage 2. Of 568 unique records carrying a time-to-positivity
-signal, 138 reached full-text review and 430 were deferred; this is reported as a limitation in
-the main text.
+judged off-topic and 45 were prioritised for full-text review, of which 44 entered the screening
+pool; the remaining report (growth in anaerobic bottles as a predictor of mortality in
+*Pseudomonas aeruginosa* bloodstream infection) was dropped without a recorded reason and was not
+assessed. Stage 3 did not individually classify the records already in tier 1 before stage 2. Of
+814 unique records carrying a time-to-positivity signal, 144 reached full-text review and 670 were
+deferred without an individual eligibility decision. Of those 670, 142 report a clinical outcome
+in their title or abstract; excluding paediatric and neonatal populations leaves 88 that meet the
+population and outcome criteria on the face of the record and were never assessed. They are listed in the data deposit and reported as a
+limitation in the main text.
+
+**Composition of the 355 reports sought for full text.** The two routes overlap, and most of the
+reports that reached full text had no time-to-positivity signal detectable by the keyword rule
+set:
+
+| How the record reached full-text review | Reports |
+|:---------------------------------------------------------------|--------:|
+| Time-to-positivity signal together with a blood-culture concept (tiers 1–2) | 144 |
+| Tiered, but no time-to-positivity signal together with a blood-culture concept (tiers 3–5) | 142 |
+| Never tiered: matched a study in the earlier review, or flagged for manual checking | 69 |
+| **Total** | **355** |
+
+: The 355 reports sought for full text, by what the keyword rule set had identified. The 142 tiered without a signal comprise 125 in tier 3, 5 in tier 4 and 12 in tier 5. By retrieval route the same 355 comprise 311 surfaced only by the semantic ranking, 32 only by keyword tiering and relevance triage, and 12 by both. {#tbl-selection-route}
 
 **Prioritisation with a semantic search tool.** An AI-assisted semantic search tool (Elicit,
 elicit.com) was used in parallel to rank the same literature against a natural-language statement
 of the review question. All 355 reports that the combined routes sent to full-text review are
 present in the database export (333 matched on DOI and the remaining 22 on normalised title), so
-the tool contributed no record that the five database searches had not already retrieved. It is
-therefore reported as a prioritisation aid and is not shown as an information source in the
-study-flow diagram in the main text. The question entered was whether time to positivity predicts the risk of antibiotic
+the tool identified no record that the five database searches had not already retrieved. It did,
+however, perform most of the selection: of the 355 reports sent to full text, only 144 carried a
+time-to-positivity signal that the keyword rule set had identified (@tbl-selection-route). It is therefore reported as a prioritisation aid and is not shown
+as an information source in the study-flow diagram in the main text. The question entered was whether time to positivity predicts the risk of antibiotic
 failure in adults with blood-culture-confirmed bloodstream infection, with persistent bacteremia,
 relapse or recurrence, microbiological clearance, and all-cause mortality as outcomes.
 

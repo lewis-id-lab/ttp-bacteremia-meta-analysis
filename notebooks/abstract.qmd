@@ -22,27 +22,31 @@ suppressPackageStartupMessages({
   library(ggdist)
   library(gt)
 })
-source("R/01_prepare_data.R")
-source("R/theme_jama.R")
-source("R/02_fit_models.R")
+project_root <- normalizePath(getwd())
+while (!file.exists(file.path(project_root, "R/01_prepare_data.R")) && dirname(project_root) != project_root)
+  project_root <- dirname(project_root)
+knitr::opts_knit$set(root.dir = project_root)
+source(file.path(project_root, "R/01_prepare_data.R"))
+source(file.path(project_root, "R/theme_jama.R"))
+source(file.path(project_root, "R/02_fit_models.R"))
 
-es_all  <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
+es_all  <- prepare_effect_sizes(file.path(project_root, "data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"),
                                 include_inclusive_pool = FALSE,
                                 drop_contaminated_ttp  = TRUE)
 es_mort <- es_for_outcome(es_all, "mortality")
 
-es_all_inc  <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
+es_all_inc  <- prepare_effect_sizes(file.path(project_root, "data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"),
                                     include_inclusive_pool = TRUE,
                                     drop_contaminated_ttp  = TRUE)
 es_mort_inc <- es_for_outcome(es_all_inc, "mortality")
 
-fits     <- fit_all_models(es_mort,     cache_dir = "_brms_cache/primary")
-fits_inc <- fit_all_models(es_mort_inc, cache_dir = "_brms_cache/sensitivity")
+fits     <- fit_all_models(es_mort,     cache_dir = file.path(project_root, "_brms_cache/primary"))
+fits_inc <- fit_all_models(es_mort_inc, cache_dir = file.path(project_root, "_brms_cache/sensitivity"))
 ```
 
 ```{r summaries}
 #| cache: false
-source("R/02_fit_models.R")
+source(file.path(project_root, "R/02_fit_models.R"))
 base_post <- pooled_summary(fits$fit_base)
 inc_post  <- pooled_summary(fits_inc$fit_base)
 ```
@@ -53,14 +57,14 @@ Time-to-positivity (TTP) — the interval from blood culture incubation to autom
 
 ## Methods
 
-Four databases and Cochrane CENTRAL were searched in May 2026 (6,014 records; 4,605 unique after deduplication), supplemented by an Elicit search. Studies were eligible if they reported a quantitative TTP–mortality association in adults with bloodstream infection confirmed by automated blood culture monitoring. Log odds ratios were derived from 2×2 tables or back-calculated from reported estimates. A Bayesian hierarchical model with weakly-informative priors was fitted using Stan; heterogeneity was quantified with τ and I². Risk of bias was assessed with the QUIPS tool.
+PubMed, Embase, Scopus, Web of Science, and Cochrane CENTRAL were searched on May 22, 2026 (6,014 records; 4,605 after Covidence de-duplication, of which 3,254 were unique). Records were screened by a staged automated procedure (keyword rule set, large language model adjudication, and relevance triage) rather than by two independent human reviewers; an AI-assisted semantic search tool (Elicit) was used to prioritise records already retrieved by the database searches. Studies were eligible if they reported a quantitative TTP–mortality association in adults with bloodstream infection confirmed by automated blood culture monitoring. Log odds ratios were derived from 2×2 tables or back-calculated from reported estimates. A Bayesian hierarchical model with weakly-informative priors was fitted using Stan; heterogeneity was quantified with τ and I². Risk of bias was assessed with the QUIPS tool.
 
 ## Results
 
 ```{r results-inline}
 #| results: asis
 n_es      <- nrow(es_mort)
-n_studies <- attr(es_all, "n_studies")
+n_studies <- n_distinct(es_mort$study_id)
 
 cat(sprintf(
   "%d mortality effect sizes from %d studies were pooled (Figure 2).
@@ -112,9 +116,10 @@ cat(sprintf(
    95%%\u202fCrI\u202f%.2f\u2013%.2f; P[OR\u202f>\u202f1]\u202f=\u202f%.0f%%)
    than in Gram-positive bacteremia (%d effect sizes; OR\u202f=\u202f%.2f,
    95%%\u202fCrI\u202f%.2f\u2013%.2f; P[OR\u202f>\u202f1]\u202f=\u202f%.0f%%).
-   Pathogen class meta-regression confirmed a lower effect size for Gram-positive
+   Pathogen class meta-regression suggested a weaker association in Gram-positive
    relative to Gram-negative organisms (\u0394\u202flog-OR\u202f=\u202f%.2f,
-   95%%\u202fCrI\u202f%.2f\u2013%.2f; P[Gram\u202f< Gram\u2212]\u202f=\u202f%.0f%%).\n\n",
+   95%%\u202fCrI\u202f%.2f\u2013%.2f; P[Gram+\u202f< Gram\u2212]\u202f=\u202f%.0f%%),
+   although the credible intervals overlapped.\n\n",
   n_gneg, gneg_post$median_OR, gneg_post$ci_OR[1], gneg_post$ci_OR[2],
   gneg_post$p_harm * 100,
   n_gpos, gpos_post$median_OR, gpos_post$ci_OR[1], gpos_post$ci_OR[2],
@@ -128,7 +133,8 @@ cat(sprintf(
    TTP cutpoint to define 'short' reported smaller mortality ORs
    (\u0394\u202flog-OR per 10\u202fh increase in cutpoint\u202f=\u202f%.3f,
    95%%\u202fCrI\u202f%.3f\u2013%.3f; multiplicative OR\u202f=\u202f%.2f;
-   P[slope\u202f<\u202f0]\u202f=\u202f%.1f%%).\n",
+   P[slope\u202f<\u202f0]\u202f=\u202f%.1f%%). This gradient was attenuated when cutpoints
+   above 24\u202fh were excluded and was not consistent across pathogen classes.\n",
   slope_med * 10, slope_ci[1] * 10, slope_ci[2] * 10,
   or_per10h, p_neg
 ))
@@ -136,7 +142,7 @@ cat(sprintf(
 
 ## Conclusions
 
-Short TTP is consistently associated with increased mortality risk in bacteremia; however, the effect size is substantially larger for Gram-negative than Gram-positive organisms, and depends strongly on the TTP cutpoint used — ORs fall by approximately 30% per 10-hour increase in the cutpoint threshold. Substantial between-study heterogeneity limits direct generalisation to individual clinical settings. Prospective studies with pre-specified, pathogen-stratified TTP thresholds are needed to establish clinical utility.
+Short TTP is associated with higher mortality in bacteremia, particularly in Gram-negative bacteremia, but heterogeneity, cutpoint dependence, probable confounding, and small-study effects limit its use as a stand-alone prognostic tool. Standardized thresholds and adjusted, individual-patient analyses are needed.
 
 ---
 
@@ -144,7 +150,7 @@ Short TTP is consistently associated with increased mortality risk in bacteremia
 
 ```{r fig-forest-abstract}
 #| label: fig-forest-abstract
-#| fig-cap: "Forest plot of OR (short vs long TTP) on mortality — primary pool (n=100 studies). Each row is a single effect size. Pooled Bayesian estimate in dark navy; solid bar = 95% CrI, dashed bar = 95% prediction interval."
+#| fig-cap: "Forest plot of OR (short vs long TTP) on mortality — primary pool, studies reporting mortality. Each row is a single effect size. Pooled Bayesian estimate in dark navy; solid bar = 95% CrI, dashed bar = 95% prediction interval."
 
 fig_h <- max(6, nrow(es_mort) * 0.55 + 2)
 knitr::opts_current$set(fig.height = fig_h)

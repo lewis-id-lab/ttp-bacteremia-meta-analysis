@@ -17,7 +17,24 @@ Records were identified on May 22, 2026, from inception, from five sources:
 - **Web of Science Core Collection** (237)
 - **Cochrane CENTRAL** (1)
 
-Combined yield: 6,014 records → 1,409 duplicates removed in Covidence → 4,605 unique records. No title and abstract screening was recorded in Covidence. Database records not already in the earlier review were assigned to relevance tiers by keyword and enriched with PubMed abstracts, giving 44 priority candidates. A separate Elicit search returned 445 rows (348 unique DOIs), of which 323 candidates remained after removing studies already extracted. The two routes gave 355 candidate reports (323 from Elicit, 32 from database tiering only), all sought for full text.
+Combined yield: 6,014 records → 1,409 duplicates removed in Covidence → 4,605 records entered screening. A further 1,351 of those were subsequently identified as duplicate records that Covidence had not detected, so 3,254 of the screened records were unique.
+
+No title and abstract screening was recorded in Covidence, which was used for de-duplication only. Screening was performed by the staged automated procedure described in appendix section 1.8: a deterministic keyword rule set assigned every record to one of five tiers by whether its title and abstract carried a time-to-positivity concept and a bloodstream-infection concept; tier-3 records (blood-culture concept, no detected time-to-positivity signal) with a retrievable PubMed abstract were re-examined by a large language model, which promoted 146 of 299; and records carrying a signal were triaged for relevance, yielding 45 priority candidates. An AI-assisted semantic search tool (Elicit) ranked the same literature in parallel.
+
+Together these routes sent 355 reports to full-text review. Every one of the 355 is present in the database export (333 matched on DOI and the remaining 22 on normalised title), so the semantic search identified no record that the five database searches had not already retrieved. It did, however, do most of the selecting: only 144 of the 355 carried a time-to-positivity signal that the keyword rule set had identified.
+
+| How the record reached full-text review | Reports |
+|:---------------------------------------------------------------|--------:|
+| Time-to-positivity signal together with a blood-culture concept (tiers 1–2) | 144 |
+| Tiered, but no time-to-positivity signal together with a blood-culture concept (tiers 3–5) | 142 |
+| Never tiered: matched a study in the earlier review, or flagged for manual checking | 69 |
+| **Total sought for full-text review** | **355** |
+
+: The 355 reports sought for full text, by what the keyword rule set had identified in the title and abstract. The 142 tiered without a signal comprise 125 in tier 3, 5 in tier 4 and 12 in tier 5. By retrieval route the same 355 comprise 311 surfaced only by the semantic ranking, 32 only by keyword tiering and relevance triage, and 12 by both. {#tbl-selection-route}
+
+Relevance triage classified only the records promoted at the abstract stage; it did not individually classify the records already in tier 1. It prioritised 45 reports, of which 44 entered the screening pool; the remaining report (growth in anaerobic bottles as a predictor of mortality in *Pseudomonas aeruginosa* bloodstream infection) was dropped without a recorded reason and was not assessed. Of 814 unique records carrying a time-to-positivity signal, 144 reached full-text review and 670 were deferred without an individual eligibility decision. Of those 670, 142 report a clinical outcome; excluding paediatric and neonatal populations leaves 88 that meet the population and outcome criteria on their title and abstract and were never assessed. This is stated as a limitation in the main text.
+
+Because tiering used whatever title and abstract each record carried, duplicate records of the same report could be tiered differently; a report is treated here as carrying a signal if any of its records did, which makes 814 unique reports across tiers 1 and 2.
 
 CINAHL, ClinicalTrials.gov, WHO ICTRP, medRxiv, bioRxiv, forward citation tracking, and reference-list searching were specified in the protocol but not carried out for the update. The 57 baseline studies came from an earlier (thesis) review; two of them were found by hand-searching.
 
