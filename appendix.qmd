@@ -854,7 +854,7 @@ CmdStan `{r} tryCatch(as.character(cmdstanr::cmdstan_version()), error = \(e) "(
 Location refers to the main manuscript (MS) section or to this appendix (App.). Items that were not done or not reported are listed as such, not left out. Checklist from Page MJ et al. BMJ 2021;372:n71.
 
 | Section and topic | # | Checklist item | Location where item is reported |
-|:------------------|:--|:---------------------------------------------|:-----------------------------------|
+|:--------------|:-----|:-------------------------------------------|:-------------------------------------|
 | **TITLE** | | | |
 | Title | 1 | Identify the report as a systematic review. | MS, title |
 | **ABSTRACT** | | | |
