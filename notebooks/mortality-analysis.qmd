@@ -161,17 +161,46 @@ tibble(
 
 ```{r}
 #| label: fig-forest
-#| fig-cap: "Forest plot of OR (short vs long TTP) on mortality — primary pool. Each row is a single effect size; multi-arm studies appear multiple times. Pooled estimate from the Bayesian model in dark navy."
+#| fig-height: !expr max(6, (nrow(es_mort) + 1) * 0.2 + 2)
+#| fig-cap: "Forest plot of the odds ratio (OR) for all-cause mortality, short versus long time to positivity (TTP), primary pool. Each row is one effect size with its 95% confidence interval; studies contributing more than one effect size are labelled by subgroup, outcome time point, adjustment status, or outcome definition. The bottom row is the pooled estimate from the Bayesian random-effects model: solid bar, 95% credible interval; dashed bar, 95% prediction interval for a new study. Dashed vertical line, OR = 1."
 
-fig_h <- max(6, nrow(es_mort) * 0.55 + 2)
-knitr::opts_current$set(fig.height = fig_h)
+
+arm_names <- c(in_hospital_mortality = "in-hospital", E_coli = "E. coli",
+               `TTP>48h` = "TTP >48 h", preantimicrobial_BC = "pre-antimicrobial cultures",
+               enterobacteriaceae = "Enterobacteriaceae", nonfermenters = "non-fermenters",
+               staphylococci = "staphylococci")
+clean_tp <- function(x) {
+  x <- gsub("_", "-", tolower(x))
+  ifelse(grepl("composite", x), "composite", sub("^during index hospitalization.*", "in-hospital", x))
+}
+# Text in parentheses if it differs within a study, otherwise the text before it
+def_desc <- function(def) {
+  inside <- ifelse(grepl("\\(", def), sub(".*\\((.*)\\).*", "\\1", def), NA)
+  before <- trimws(sub("\\s*\\(.*", "", def))
+  out <- if (anyNA(inside) || n_distinct(inside) < length(def) || n_distinct(before) == length(def)) before else inside
+  sub("^(.)", "\\L\\1", out, perl = TRUE)
+}
+
+# Shortest descriptor that tells a study's effect sizes apart
+row_desc <- function(arm, tp, es_source, def) {
+  if (length(arm) == 1) arm
+  else if (n_distinct(tp) == length(tp)) tp
+  else if (n_distinct(es_source) == length(es_source)) if_else(es_source == "reported_adjusted", "adjusted", "unadjusted")
+  else def_desc(def)
+}
 
 forest_data <- es_mort |>
+  left_join(select(attr(es_all, "tbl_study"), study_id, first_author), by = "study_id") |>
+  mutate(arm = if_else(is.na(arm_id) | arm_id == "all", NA_character_,
+                       coalesce(arm_names[arm_id], gsub("_", " ", arm_id))),
+         tp = clean_tp(outcome_timepoint_label)) |>
+  group_by(study_id, arm) |>
+  mutate(desc = row_desc(arm, tp, es_source, outcome_definition)) |>
+  ungroup() |>
   arrange(yi) |>
   mutate(
-    lbl = paste0(study_id,
-                 ifelse(is.na(arm_id) | arm_id == "all", "", paste0(" [", arm_id, "]"))),
-    lbl = make.unique(lbl, sep = " #"),
+    lbl = paste0(first_author, " ", pub_year, ifelse(is.na(desc), "", paste0(" (", desc, ")"))),
+    lbl = make.unique(lbl, sep = " "),
     lbl = factor(lbl, levels = lbl),
     or = exp(yi),
     ci_low  = exp(yi - 1.96*sei),
@@ -180,20 +209,20 @@ forest_data <- es_mort |>
   )
 
 pooled_row <- tibble(
-  lbl = "POOLED (Bayesian)",
+  lbl = "Pooled estimate",
   or = base_post$median_OR,
   ci_low  = base_post$ci_OR[1],
   ci_high = base_post$ci_OR[2],
   type = "Pooled"
 )
 pi_row <- tibble(
-  lbl     = "POOLED (Bayesian)",
+  lbl     = "Pooled estimate",
   pi_low  = base_post$pi_OR[1],
   pi_high = base_post$pi_OR[2]
 )
 
 forest_data$lbl <- factor(forest_data$lbl,
-                          levels = c("POOLED (Bayesian)", levels(forest_data$lbl)))
+                          levels = c("Pooled estimate", levels(forest_data$lbl)))
 pooled_row$lbl <- factor(pooled_row$lbl, levels = levels(forest_data$lbl))
 pi_row$lbl     <- factor(pi_row$lbl,     levels = levels(forest_data$lbl))
 
@@ -214,9 +243,7 @@ ggplot(bind_rows(forest_data, pooled_row),
   scale_color_manual(values = c("Study" = "#7F9DB9", "Pooled" = "#1F3447")) +
   scale_x_log10(breaks = c(0.1, 0.25, 0.5, 1, 2, 4, 8, 16, 32),
                 limits = c(0.05, 50)) +
-  labs(title = "Mortality forest plot — primary pool",
-       subtitle = "Solid bar = 95% CrI of pooled OR; dashed bar = 95% prediction interval",
-       x = "OR, short vs long TTP (log scale)",
+  labs(x = "OR, short vs long TTP (log scale)",
        y = NULL, color = NULL) +
   theme_jama(base_size = 9) +
   theme(legend.position = "bottom",
