@@ -25,6 +25,7 @@ suppressPackageStartupMessages({
 .prior_mod       <- prior(normal(0, 0.5), class = "b")
 
 .brms_defaults <- function(seed) list(
+  backend   = "cmdstanr",
   chains    = 4,
   iter      = 4000,
   warmup    = 1000,

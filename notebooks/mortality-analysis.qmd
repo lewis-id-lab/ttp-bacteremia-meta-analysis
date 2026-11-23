@@ -12,6 +12,10 @@ execute:
 
 ```{r setup}
 #| include: false
+project_root <- Sys.getenv("QUARTO_PROJECT_ROOT")
+if (!nzchar(project_root)) project_root <- if (dir.exists("R")) getwd() else normalizePath("..")
+knitr::opts_knit$set(root.dir = project_root)
+# root.dir applies to subsequent chunks; setup sources use absolute paths.
 suppressPackageStartupMessages({
   library(tidyverse)
   library(brms)
@@ -24,25 +28,25 @@ suppressPackageStartupMessages({
   library(gt)
 })
 
-source("R/01_prepare_data.R")
-source("R/theme_jama.R")
-source("R/02_fit_models.R")
+source(file.path(project_root, "R/01_prepare_data.R"))
+source(file.path(project_root, "R/theme_jama.R"))
+source(file.path(project_root, "R/02_fit_models.R"))
 
 # -------- PRIMARY POOL: strict (n=100) ---------------------------------------
-es_all   <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
+es_all   <- prepare_effect_sizes(file.path(project_root, "data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"),
                                  include_inclusive_pool = FALSE,
                                  drop_contaminated_ttp  = TRUE)
 es_mort  <- es_for_outcome(es_all, "mortality")
 
 # -------- SENSITIVITY POOL: strict + inclusive (n=140) -----------------------
-es_all_inc  <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
+es_all_inc  <- prepare_effect_sizes(file.path(project_root, "data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"),
                                     include_inclusive_pool = TRUE,
                                     drop_contaminated_ttp  = TRUE)
 es_mort_inc <- es_for_outcome(es_all_inc, "mortality")
 
 # -------- FIT MODELS (cached) ------------------------------------------------
-fits      <- fit_all_models(es_mort,      cache_dir = "_brms_cache/primary")
-fits_inc  <- fit_all_models(es_mort_inc,  cache_dir = "_brms_cache/sensitivity")
+fits      <- fit_all_models(es_mort,      cache_dir = file.path(project_root, "_brms_cache/primary"))
+fits_inc  <- fit_all_models(es_mort_inc,  cache_dir = file.path(project_root, "_brms_cache/sensitivity"))
 ```
 
 ```{r summaries}
@@ -50,7 +54,7 @@ fits_inc  <- fit_all_models(es_mort_inc,  cache_dir = "_brms_cache/sensitivity")
 #| cache: false
 # Summaries are always recomputed from the cached fits so changes to
 # pooled_summary() (e.g. adding pi_OR) take effect without clearing the cache.
-source("R/02_fit_models.R")
+source(file.path(project_root, "R/02_fit_models.R"))
 base_post <- pooled_summary(fits$fit_base)
 inc_post  <- pooled_summary(fits_inc$fit_base)
 ```
@@ -122,7 +126,7 @@ with weakly-informative priors $\mu \sim \mathcal{N}(0,1)$, $\tau \sim \text{Hal
 
 ## PRISMA flow
 
-![Updated PRISMA 2020 flow](../data/PRISMA_v4_prisma2020.svg){#fig-prisma width="100%"}
+![Updated PRISMA 2020 flow](PRISMA_v4_prisma2020.svg){#fig-prisma width="100%"}
 
 # Primary results — mortality
 
@@ -458,7 +462,7 @@ fit_gneg_cut  <- brm(
                  prior(cauchy(0, 0.5), class = "sd"),
                  prior(normal(0, 0.5), class = "b")),
   chains = 4, iter = 4000, warmup = 1000,
-  cores  = parallel::detectCores(),
+  cores  = parallel::detectCores(), backend = "cmdstanr",
   control = list(adapt_delta = 0.99, max_treedepth = 12),
   seed = 7421, file = gneg_cut_path, file_refit = "on_change",
   silent = 2, refresh = 0
@@ -557,7 +561,7 @@ fit_gpos_cut  <- brm(
                  prior(cauchy(0, 0.5), class = "sd"),
                  prior(normal(0, 0.5), class = "b")),
   chains = 4, iter = 4000, warmup = 1000,
-  cores  = parallel::detectCores(),
+  cores  = parallel::detectCores(), backend = "cmdstanr",
   control = list(adapt_delta = 0.99, max_treedepth = 12),
   seed = 3817, file = gpos_cut_path, file_refit = "on_change",
   silent = 2, refresh = 0
@@ -571,7 +575,7 @@ fit_gpos_cut_sens  <- brm(
                  prior(cauchy(0, 0.5), class = "sd"),
                  prior(normal(0, 0.5), class = "b")),
   chains = 4, iter = 4000, warmup = 1000,
-  cores  = parallel::detectCores(),
+  cores  = parallel::detectCores(), backend = "cmdstanr",
   control = list(adapt_delta = 0.99, max_treedepth = 12),
   seed = 5294, file = gpos_cut_sens_path, file_refit = "on_change",
   silent = 2, refresh = 0

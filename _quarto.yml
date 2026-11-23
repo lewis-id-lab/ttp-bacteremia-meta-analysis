@@ -18,8 +18,8 @@ manuscript:
       title: "Risk of bias (QUIPS)"
     - notebook: notebooks/methods.qmd
       title: "Methods and PRISMA flow"
-    - notebook: appendix.qmd
-      title: "Supplementary appendix"
+    # The appendix is a standalone DOCX, not a manuscript notebook.
+
   resources:
     - data/
   meca-bundle: true

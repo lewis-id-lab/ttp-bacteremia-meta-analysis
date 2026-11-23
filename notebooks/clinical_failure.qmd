@@ -6,15 +6,18 @@ date: today
 
 ```{r setup}
 #| include: false
+project_root <- Sys.getenv("QUARTO_PROJECT_ROOT")
+if (!nzchar(project_root)) project_root <- if (dir.exists("R")) getwd() else normalizePath("..")
+knitr::opts_knit$set(root.dir = project_root)
 suppressPackageStartupMessages({
   library(tidyverse); library(brms); library(metafor)
   library(posterior); library(ggdist); library(gt); library(patchwork)
 })
-source("R/01_prepare_data.R")
-source("R/theme_jama.R")
-source("R/02_fit_models.R")
+source(file.path(project_root, "R/01_prepare_data.R"))
+source(file.path(project_root, "R/theme_jama.R"))
+source(file.path(project_root, "R/02_fit_models.R"))
 
-es_all  <- prepare_effect_sizes("data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx",
+es_all  <- prepare_effect_sizes(file.path(project_root, "data/TTP_MetaAnalysis_Extraction_Complete_v4.xlsx"),
                                 include_inclusive_pool = FALSE,
                                 drop_contaminated_ttp  = TRUE)
 
